@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "waterwegenvic", "waterwegenvic\waterwegenvic.csproj", "{D7C8B1DE-2657-4274-ABCE-21DF4345B3E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "waterwegenvic.Tests", "waterwegenvic.Tests\waterwegenvic.Tests.csproj", "{A0E0D848-DFAD-48A7-BE5F-96DC26A3A6F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7C8B1DE-2657-4274-ABCE-21DF4345B3E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7C8B1DE-2657-4274-ABCE-21DF4345B3E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7C8B1DE-2657-4274-ABCE-21DF4345B3E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7C8B1DE-2657-4274-ABCE-21DF4345B3E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0E0D848-DFAD-48A7-BE5F-96DC26A3A6F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0E0D848-DFAD-48A7-BE5F-96DC26A3A6F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0E0D848-DFAD-48A7-BE5F-96DC26A3A6F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0E0D848-DFAD-48A7-BE5F-96DC26A3A6F6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29545317-CF49-4400-BB0E-98CADCB1D755}
+	EndGlobalSection
+EndGlobal
