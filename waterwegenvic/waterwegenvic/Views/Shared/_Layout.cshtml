@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>Waterwegenvic - @ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -20,9 +20,11 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Background", "Background", "Home")</li>
-                    <li>@Html.ActionLink("Substance", "Substance", "Home")</li>
+                    <li>@Html.ActionLink("Home", "Index", "Home", null, null, "home", null, null)</li>
+                    <li>@Html.ActionLink("Background", "Index", "Home", null, null, "background", null, null)</li>
+                    <li>@Html.ActionLink("Substance", "Index", "Home", null, null, "substance", null, null)</li>
+                    @*<li>@Html.ActionLink("Background", "Background", "Home", null, null, "background", null, null)</li>*@
+                    @*<li>@Html.ActionLink("Substance", "Substance", "Home", null, null, "substance", null, null)</li>*@
                     @*<li>@Html.ActionLink("Litter", "Litter", "Home")</li>*@
                     @*<li>@Html.ActionLink("Groundwater", "Groundwater", "Home")</li>*@
                     @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
