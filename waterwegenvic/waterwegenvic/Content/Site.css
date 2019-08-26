@@ -24,6 +24,19 @@ textarea {
     max-width: 280px;
 }
 
+ul {
+    overflow: hidden;
+    background-color: #333;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
 img {
     opacity: 0.8;
     filter: alpha(opacity=80); /* for IE 8 and earlier */
