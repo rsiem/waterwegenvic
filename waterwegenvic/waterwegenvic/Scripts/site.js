@@ -1,19 +1,26 @@
-﻿//var slideIndex = 0;
-//showSlides();
+﻿$(document).ready(function () {
+    // Add scrollspy to <body>
+    $('body').scrollspy({ target: ".navbar", offset: 50 });
 
-//function showSlides() {
-//    var i;
-//    var slides = document.getElementsByClassName("mySlides");
+    // Add smooth scrolling on all links inside the navbar
+    $(".navbar-collapse a").on('click', function (event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
 
-//    for (i = 0; i < slides.length; i++) {
-//        slides[i].style.display = "none";
-//    }
+            // Store hash
+            var hash = this.hash;
 
-//    slideIndex++;
-//    if (slideIndex > slides.length) {
-//        slideIndex = 1;
-//    }
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function () {
 
-//    slides[slideIndex - 1].style.display = "block";
-//    setTimeout(showSlides, 2000); // Change image every 2 seconds
-//}
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
+        }  // End if
+    });
+});
