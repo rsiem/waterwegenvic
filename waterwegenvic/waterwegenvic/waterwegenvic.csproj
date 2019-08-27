@@ -202,6 +202,8 @@
     <Content Include="Views\Home\Substance.cshtml" />
     <Content Include="Views\Home\Litter.cshtml" />
     <Content Include="Views\Home\Groundwater.cshtml" />
+    <Content Include="Views\.htaccess" />
+    <Content Include="Views\.htpswd" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
