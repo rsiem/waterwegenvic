@@ -6,9 +6,14 @@
     <title>Waterwegenvic - @ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+
+    <!-- Load d3-cloud -->
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #6699cc; border-color: #6699cc;">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -16,13 +21,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Waterwegenvic", "Index", "Home", null, null, "home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Waterwegenvic", "Index", "Home", null, null, "home", new { area = "" }, new { @class = "navbar-brand", @style = "color: white;" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", null, null, "home", null, null)</li>
-                    <li>@Html.ActionLink("Background", "Index", "Home", null, null, "background", null, null)</li>
-                    <li>@Html.ActionLink("Substance", "Index", "Home", null, null, "substance", null, null)</li>
+                    <li>@Html.ActionLink("Home", "Index", "Home", null, null, "home", null, new { @style = "color: white;" })</li>
+                    <li>@Html.ActionLink("Background", "Index", "Home", null, null, "background", null, new { @style = "color: white;" })</li>
+                    <li>@Html.ActionLink("Substance", "Index", "Home", null, null, "substance", null, new { @style = "color: white;" })</li>
                     @*<li>@Html.ActionLink("Background", "Background", "Home", null, null, "background", null, null)</li>*@
                     @*<li>@Html.ActionLink("Substance", "Substance", "Home", null, null, "substance", null, null)</li>*@
                     @*<li>@Html.ActionLink("Litter", "Litter", "Home")</li>*@
@@ -36,11 +41,15 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        @*<footer>
+            <p>&copy; @DateTime.Now.Year - Aguementi Team</p>
+        </footer>*@
+        <div id="footer" style="background-color: azure; text-align: center; width: 100%; left: 0; bottom: 0;">
+            <!-- Footer start -->
+            <p>&copy;Aguamenti 2019</p>
+            <!-- Footer end -->
+        </div>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/script")
