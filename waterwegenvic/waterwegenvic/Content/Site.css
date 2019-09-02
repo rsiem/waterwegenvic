@@ -40,3 +40,53 @@ img {
     opacity: 1;
     filter: alpha(opacity=80); /* for IE 8 and earlier */
 }
+
+.hero {
+    /* Sizing */
+    width: 100%;
+    height: 50%;
+    
+    /* Flexbox stuff */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Text styles */
+    text-align: center;
+    color: white; /* ADD THIS LINE */
+    
+    /* Background styles */
+    background-image: url('~/Content/Image/samuel-zeller-Xl9zLLHqz3o-unsplash.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.hero h1 {
+    /* Text styles */
+    font-size: 5em;
+ 
+    /* Margins */
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+/*#my_dataviz svg {
+    width: 450px;
+    height: 450px;
+}
+
+@media screen and (min-width: 400px) {
+    #my_dataviz svg {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+@media screen and (min-width: 1028px) {
+    #my_dataviz svg {
+        height: 200px;
+        width: 200px
+    }
+}*/
