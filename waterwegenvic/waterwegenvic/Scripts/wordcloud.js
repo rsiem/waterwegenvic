@@ -1,49 +1,42 @@
 ﻿// List of words
 var myWords = [
-    { word: "Hardness", size: "0" },
-    { word: "CalcHardness", size: "0" },
-    { word: "Calc TDS", size: "0" },
-    { word: "NO3+NO2", size: "0" },
-    { word: "Al", size: "0" },
-    { word: "Chlorophyll-a", size: "0" },
-    { word: "Phaeophytin", size: "0" },
-    { word: "Mo", size: "2" },
-    { word: "Se", size: "2" },
-    { word: "F", size: "2" },
+    { word: "Molybdenum", size: "2" },
+    { word: "Selenium", size: "2" },
+    { word: "Fluorine", size: "2" },
     { word: "Anions", size: "2" },
     { word: "Cations", size: "2" },
-    { word: "Cab", size: "6" },
-    { word: "OH", size: "6" },
-    { word: "BiCarb", size: "6" },
-    { word: "TOC", size: "8" },
-    { word: "Mn", size: "10" },
+    { word: "Cellulose Acetate Butyrate", size: "6" },
+    { word: "Hydroxide", size: "6" },
+    { word: "Bicarbonate", size: "6" },
+    { word: "Total Organic Carbon", size: "8" },
+    { word: "Manganese", size: "10" },
     { word: "DO", size: "10" },
-    { word: "Fe", size: "10" },
-    { word: "Hg", size: "22" },
+    { word: "Iron", size: "10" },
+    { word: "Mercury", size: "22" },
     { word: "Nitrite", size: "32" },
     { word: "Nitrate", size: "32" },
-    { word: "Cl", size: "34" },
-    { word: "K", size: "34" },
-    { word: "Ca", size: "34" },
-    { word: "Na", size: "34" },
-    { word: "SO4", size: "36" },
-    { word: "Total Alk", size: "36" },
-    { word: "Mg", size: "36" },
-    { word: "N", size: "40" },
+    { word: "Chlorine", size: "34" },
+    { word: "Potassium", size: "34" },
+    { word: "Calcium", size: "34" },
+    { word: "Sodium", size: "34" },
+    { word: "Sulfate", size: "36" },
+    { word: "Alkaline", size: "36" },
+    { word: "Magnesium", size: "36" },
+    { word: "Nitrogen", size: "40" },
     { word: "Ammonia", size: "40" },
-    { word: "DOC", size: "52" },
-    { word: "As", size: "54" },
-    { word: "Cd", size: "54" },
-    { word: "Cr", size: "54" },
-    { word: "Ni", size: "54" },
-    { word: "Cu", size: "54" },
-    { word: "Pb", size: "54" },
-    { word: "Zn", size: "54" },
-    { word: "SiO2", size: "100" },
-    { word: "TSS", size: "140" },
-    { word: "FRP", size: "160" },
-    { word: "Kjeldahl N", size: "180" },
-    { word: "P", size: "200" }
+    { word: "Dimethoxy Chloroamphetamine", size: "52" },
+    { word: "Arsenic", size: "54" },
+    { word: "Cadmium", size: "54" },
+    { word: "Chromium", size: "54" },
+    { word: "Nickel", size: "54" },
+    { word: "Copper", size: "54" },
+    { word: "Lead", size: "54" },
+    { word: "Zinc", size: "54" },
+    { word: "Silicon Dioxide", size: "100" },
+    { word: "Total Suspended Solids", size: "140" },
+    { word: "Fibre-Reinforced Plastic", size: "160" },
+    { word: "Kjeldahl Nitrogen", size: "180" },
+    { word: "Phosphorus", size: "200" }
 ];
 
 window.onload = function () {
@@ -61,8 +54,6 @@ window.onload = function () {
         w = 450;
         h = 450;
     }
-
-    console.log("")
     
     // set the dimensions and margins of the graph
     var margin = { top: 10, right: 10, bottom: 10, left: 10 },
@@ -105,11 +96,11 @@ window.onload = function () {
             .attr("transform", function (d) {
                 return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
             })
-            .text(function (d) { return d.text; });
+            .text(function (d) {
+                return d.text;
+            });
     }
 }
-
-
 
 window.onresize = function () {
 

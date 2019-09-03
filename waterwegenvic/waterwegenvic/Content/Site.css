@@ -72,21 +72,14 @@ img {
     margin-bottom: 0.5em;
 }
 
-/*#my_dataviz svg {
-    width: 450px;
-    height: 450px;
-}
-
-@media screen and (min-width: 400px) {
-    #my_dataviz svg {
-        height: 200px;
-        width: 200px;
+@media screen and (max-width: 400px) {
+    .hero h1 {
+        font-size: 2em;
     }
 }
 
-@media screen and (min-width: 1028px) {
-    #my_dataviz svg {
-        height: 200px;
-        width: 200px
+@media screen and (max-width: 1028px) {
+    .hero h1 {
+        font-size: 4em;
     }
-}*/
+}
