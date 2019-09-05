@@ -163,6 +163,8 @@
     <Content Include="App_Data\substance_db_log.ldf">
       <DependentUpon>substance_db.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\Image\bins.jpg" />
+    <Content Include="Content\Image\pic-bar-frozen.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -171,15 +173,26 @@
     <Content Include="Content\Image\Australia_average_accessible_volume2.png" />
     <Content Include="Content\Image\carlos-de-toro-oXcW6uWU0us-unsplash %281%29.jpg" />
     <Content Include="Content\Image\causation-graph.png" />
+    <Content Include="Content\Image\img1.jpg" />
+    <Content Include="Content\Image\img2.jpg" />
+    <Content Include="Content\Image\img3.jpg" />
+    <Content Include="Content\Image\img4.jpg" />
+    <Content Include="Content\Image\img5.jpg" />
+    <Content Include="Content\Image\img6.jpg" />
     <Content Include="Content\Image\jasmin-sessler-5Wfttm2CjeI-unsplash.jpg" />
     <Content Include="Content\Image\josefin-brosche-hagsgard-18388_en-1412x772.jpg" />
+    <Content Include="Content\Image\Liquid_Pool_Chlorine.jpg" />
     <Content Include="Content\Image\neonbrand-8Yk4T-tDSYY-unsplash.jpg" />
     <Content Include="Content\Image\output1-1.png" />
     <Content Include="Content\Image\output1-2.png" />
+    <Content Include="Content\Image\pollution.jpg" />
     <Content Include="Content\Image\samuel-zeller-Xl9zLLHqz3o-unsplash.jpg" />
+    <Content Include="Content\Image\soap_bar.jpg" />
+    <Content Include="Content\Image\tap.jpg" />
     <Content Include="Content\Image\tobias-tullius--wR0XMaegRo-unsplash %282%29.jpg" />
     <Content Include="Content\Image\tree-graph.png" />
     <Content Include="Content\Image\yarra-river-83116_1280.jpg" />
+    <Content Include="Content\tree.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -202,6 +215,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\site.js" />
+    <Content Include="Scripts\tree.js" />
     <Content Include="Scripts\wordcloud.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

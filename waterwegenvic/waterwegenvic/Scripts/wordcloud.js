@@ -1,14 +1,14 @@
 ﻿// List of words
 var myWords = [
-    { word: "Molybdenum", size: "2" },
-    { word: "Selenium", size: "2" },
-    { word: "Fluorine", size: "2" },
-    { word: "Anions", size: "2" },
-    { word: "Cations", size: "2" },
-    { word: "Cellulose Acetate Butyrate", size: "6" },
-    { word: "Hydroxide", size: "6" },
-    { word: "Bicarbonate", size: "6" },
-    { word: "Total Organic Carbon", size: "8" },
+    //{ word: "Molybdenum", size: "2" },
+    //{ word: "Selenium", size: "2" },
+    //{ word: "Fluorine", size: "2" },
+    //{ word: "Anions", size: "2" },
+    //{ word: "Cations", size: "2" },
+    //{ word: "Cellulose Acetate Butyrate", size: "6" },
+    //{ word: "Hydroxide", size: "6" },
+    //{ word: "Bicarbonate", size: "6" },
+    //{ word: "Total Organic Carbon", size: "8" },
     { word: "Manganese", size: "10" },
     { word: "DO", size: "10" },
     { word: "Iron", size: "10" },
@@ -73,7 +73,7 @@ window.onload = function () {
     // Wordcloud features that are different from one word to the other must be here
     var layout = d3.layout.cloud()
         .size([width, height])
-        .words(myWords.map(function (d) { return { text: d.word, size: d.size }; }))
+        .words(myWords.map(function (d) { return { text: d.word, size: (d.size / 2) }; }))
         .padding(5)        //space between words
         .rotate(function () { return ~~(Math.random() * 2) * 90; })
         .fontSize(function (d) { return d.size; })      // font size of words
