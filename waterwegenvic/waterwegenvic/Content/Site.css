@@ -41,65 +41,6 @@ img {
     filter: alpha(opacity=80); /* for IE 8 and earlier */
 }
 
-.hero {
-    /* Sizing */
-    width: 100%;
-    height: 50%;
-    
-    /* Flexbox stuff */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    /* Text styles */
-    text-align: center;
-    color: white; /* ADD THIS LINE */
-    
-    /* Background styles */
-    background-image: url('~/Content/Image/samuel-zeller-Xl9zLLHqz3o-unsplash.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-.hero h1 {
-    /* Text styles */
-    font-size: 5em;
- 
-    /* Margins */
-    margin-top: 0;
-    margin-bottom: 0.5em;
-}
-
-@media screen and (max-width: 400px) {
-    .hero h1 {
-        font-size: 2em;
-    }
-}
-
-@media screen and (max-width: 1028px) {
-    .hero h1 {
-        font-size: 4em;
-    }
-}
-
-h3 {
-    text-align: center;
-}
-
-.section-title {
-    border: 4px solid #000;
-    padding: 50px;
-    position: relative;
-    text-align: center;
-    margin-bottom: 92px;
-}
-
-.section-title {
-    border-color: #ffffff;
-}
-
 .gallery__img {
     width: 100%;
     height: 100%;
@@ -244,7 +185,7 @@ h3 {
     }
 /*}*/
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
     .gallery {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
@@ -368,12 +309,27 @@ h3 {
     font-size: 30px;
 }
 
-.hero-inner p {
-    font-size: 40px;
+#background {
+    font-size: 1.3em;
 }
 
-@media screen and (max-width: 576px) {
-    .hero-inner p {
-        font-size: 30px;
+#title {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#bottom-li {
+    padding-top: 5%;
+}
+
+@media (max-width: 992px) {
+    #background {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 850px) {
+    #background {
+        font-size: 1.1em;
     }
 }

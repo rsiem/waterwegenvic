@@ -1,181 +1,375 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Substance";
 }
 
-<div class="container-fluid" id="substance">
-    <div class="substance-page">
-        <h2>Substance Pollution</h2>
-        <hr />
-
-        <div class="row" id="introduction">
-            <div class="col-md-7 col-sm-12 col-xs-12">
-                <p>Water used in the agricultural, industrial and civil sectors often contains substances which will alter the ecosystem and hence must not be discharged directly into river flows.</p>
-                <br />
-                <p>Chemical pollution is the introduction of substances into the environment (by man) that are liable to harm human health, living resources, and ecological systems, damage structures or generally interfere with the legitimate use of the environment.</p>
-                <br />
-                <p>
-                    <b>What are the household items which emit harmful substances?</b>
-                    <ul>
-                        <li>Laundry Detergents</li>
-                        <li>All-Purpose Cleaners</li>
-                        <li>Swimming Pool Chloride Tablets</li>
-                        <li>etc.</li>
-                    </ul>
-                </p>
-            </div>
-            <div class="col-md-5 col-sm-12 col-xs-12">
-                <img class="img-responsive" src="~/Content/Image/jasmin-sessler-5Wfttm2CjeI-unsplash.jpg" alt="household_waste" />
-            </div>
-        </div>
-        <br />
-        <br />
-        <br />
-        <div class="row" id="choropleth-map">
-            <h3>Choropleth Map - Polluted area in Victoria</h3>
-            <div class="col-md-10 col-sm-12 col-xs-12">
-                <div class='tableauPlaceholder' id='viz1566714290157' style='position: relative'>
-                    <noscript>
-                        <a href='#'>
-                            <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;Substance-Most-polluted-area&#47;Sheet1&#47;1_rss.png' style='border: none' />
-                        </a>
-                    </noscript>
-                    <object class='tableauViz' style='display:none;'>
-                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                        <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
-                        <param name='name' value='Substance-Most-polluted-area&#47;Sheet1' />
-                        <param name='tabs' value='no' />
-                        <param name='toolbar' value='no' />
-                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;Substance-Most-polluted-area&#47;Sheet1&#47;1.png' />
-                        <param name='animate_transition' value='yes' />
-                        <param name='display_static_image' value='yes' />
-                        <param name='display_spinner' value='yes' />
-                        <param name='display_overlay' value='yes' />
-                        <param name='display_count' value='yes' />
-                        <param name='filter' value='publish=yes' />
-                    </object>
+<div class="row" id="substance">
+    <div class="container-fluid">
+        <div class=" row">
+            <section class="first-section hero" style="background-image:url('../../Content/Image/first-section-bg.png'); width: 100%">
+                <div class="hero-inner">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <h2>Substance Pollution</h2>
                 </div>
-                <script type='text/javascript'>
-                    var divElement = document.getElementById('viz1566714290157');
-                    var vizElement = divElement.getElementsByTagName('object')[0];
-                    vizElement.style.width = '100%';
-                    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-                    var scriptElement = document.createElement('script');
-                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-                </script>
-            </div>
-            <div class="col-md-2 col-sm-12 col-xs-12">
-                <p>
-                    <br />
-                    The redder area indicating the severe water polluted area based on the main activity of the facilities in that area and the number of facilities.
-                    <br />
-                    <br />
-                    Leongatha, Bowser and Bairnsdale are the most polluted suburbs in Victoria because they have a large number of facilities including landfill and treatment of wastewater. The area near Melbourne is heavily polluted mainly because of facilities that deal with the waste disposal and manufacture.
-                </p>
-            </div>
+            </section>
         </div>
-        <br />
-        <br />
-        <div class="row">
-            <h3>Chemical content in waterways</h3>
-        </div>
-        <br />
-        <div class="row" id="information">
-            <p>Water used in the agricultural, industrial and civil sectors often contains substances which will alter the ecosystem and hence must not be discharged directly into river flows.</p>
-            <br />
-            <p>Chemical pollution is the introduction of substances into the environment (by man) that are liable to harm human health, living resources, and ecological systems, damage structures or generally interfere with the legitimate use of the environment.</p>
-        </div>
-        <div class="row" id="wordcloud">
-            <div class="col-md-3 col-sm-1">
-
-            </div>
-            <div class="col-md-6 col-sm-10 col-xs-12">
-                <div id="my_dataviz"></div>
-            </div>
-            <div class="col-md-3 col-sm-1">
-
-            </div>
-        </div>
-        <br />
-        <div class="row" id="chemical-display">
-            <h3>The chemical content in waterways</h3>
-            <div class="col-md-8 col-sm-12 col-xs-12">
-                <div class='tableauPlaceholder' id='viz1566721902737' style='position: relative'>
-                    <noscript>
-                        <a href='#'>
-                            <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;Substance-chemical-content&#47;Sheet1&#47;1_rss.png' style='border: none' />
-                        </a>
-                    </noscript>
-                    <object class='tableauViz' style='display:none;'>
-                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                        <param name='embed_code_version' value='3' />
-                        <param name='site_root' value='' />
-                        <param name='name' value='Substance-chemical-content&#47;Sheet1' />
-                        <param name='tabs' value='no' />
-                        <param name='toolbar' value='no' />
-                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;Substance-chemical-content&#47;Sheet1&#47;1.png' />
-                        <param name='animate_transition' value='yes' />
-                        <param name='display_static_image' value='no' />
-                        <param name='display_spinner' value='yes' />
-                        <param name='display_overlay' value='yes' />
-                        <param name='display_count' value='yes' />
-                        <param name='filter' value='publish=yes' />
-                    </object>
-                </div>
-                <script type='text/javascript'>
-                    var divElement = document.getElementById('viz1566721902737');
-                    var vizElement = divElement.getElementsByTagName('object')[0];
-                    vizElement.style.width = '100%';
-                    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-                    var scriptElement = document.createElement('script');
-                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-                </script>
-            </div>
-            <div class="col-md-4 col-sm-12 col-xs-12">
-                <br />
-                <br />
-                <p>
-                    P, N, SIO2, TSS, FRP are the top 5 chemical content in the waterways that shown in the word cloud. The great amount of P and N indicating the main pollution comes from the living wastewater including disposal waste, kitchen waste, etc. As to SiO2, it shows that the high turbidity of waterways and contains a lot of sand.
-                </p>
-            </div>
-        </div>
-        <br />
-        <br />
-        <div class="row">
-            <h2>Take action now! Our waterways need your help</h2>
-        </div>
-        <br />        <div class="row">
-            <div class="col-md-6 col-xs-12 col-sm-12">
-                <div class="row">
+    </div>
+</div>
+<br />
+<div class="row" id="substance-page">
+    <div class="container-fluid">
+        <div class="substance-page">
+            <div class="container">
+                <div class="row" id="introduction">
                     <p>
-                        <h4><b>How to solve the current situation?</b></h4>
+                        Mindless disposal of chemicals and waste products in the agricultural,
+                        industrial and civil sectors often results in the contamination of
+                        waterways. This often causes harm to the ecosystem or interferes with
+                        the function of several ecological processes.
+                    </p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="row" id="title">
+                        <p>Things that can cause water pollution</p>
+                    </div>
+                    <div class="row">
+                        @*<div class="col-md-2 col-xs-12 col-sm-12">
+                    <p>
                         <ul>
-                            <li>Use Environmentally Friendly Detergents</li>
-                            Whenever possible, get environmentally friendly detergents, soaps, and dishwashing liquids. While these are sometimes more expensive, you are doing the environment a great service by using less harmful substances.
-                            <li>Avoid Pesticides</li>
-                            If you need to overhaul your garden, attempt to do so without using any herbicides or pesticides. These are very harmful to the environment. Talk to landscaping companies in your area about environmentally-friendly replacements for these products.
+                            <li>Detergents</li>
+                            <li>Chemicals</li>
+                            <li>Paint</li>
+                            <li>Oil</li>
+                            <li>Chlorine</li>
+                            <li>Soaps</li>
+                            <li>Pesticides</li>
+                            <li>Fertilizers</li>
                         </ul>
+                    </p>
+                </div>*@
+                        <div class="hidden-xs col-md-12">
+                            <div class="gallery">
+                                <figure class="gallery__item gallery__item--1">
+                                    <img src="~/Content/Image/img1.jpg" class="gallery__img" alt="Image 1">
+                                    <ul>
+                                        <li>Pesticides</li>
+                                    </ul>
+                                </figure>
+                                <figure class="gallery__item gallery__item--2">
+                                    <img src="~/Content/Image/img2.jpg" class="gallery__img" alt="Image 2">
+                                    <ul>
+                                        <li>Detergent bar</li>
+                                    </ul>
+                                </figure>
+                                <figure class="gallery__item gallery__item--3">
+                                    <img src="~/Content/Image/img3.jpg" class="gallery__img" alt="Image 3">
+                                    <ul>
+                                        <li>Oil</li>
+                                    </ul>
+                                </figure>
+                            </div>
+                            <br />
+                            <div class="gallery">
+                                <figure class="gallery__item gallery__item--4">
+                                    <img src="~/Content/Image/img4.jpg" class="gallery__img" alt="Image 4">
+                                    <ul>
+                                        <li>Paint</li>
+                                    </ul>
+                                </figure>
+                                <figure class="gallery__item gallery__item--5">
+                                    <img src="~/Content/Image/img5.jpg" class="gallery__img" alt="Image 5">
+                                    <ul>
+                                        <li>Detergent</li>
+                                    </ul>
+                                </figure>
+                                <figure class="gallery__item gallery__item--6">
+                                    <img src="~/Content/Image/img6.jpg" class="gallery__img" alt="Image 6">
+                                    <ul>
+                                        <li>Fertilizers</li>
+                                    </ul>
+                                </figure>
+                            </div>
+                            <br />
+                            <div class="gallery">
+                                <figure class="gallery__item gallery__item--7">
+                                    <img src="~/Content/Image/Liquid_Pool_Chlorine.jpg" class="gallery__img" alt="Image 7">
+                                    <ul>
+                                        <li>Chlorine</li>
+                                    </ul>
+                                </figure>
+                                <figure class="gallery__item gallery__item--8">
+                                    <img src="~/Content/Image/soap_bar.jpg" class="gallery__img" alt="Image 8">
+                                    <ul>
+                                        <li>Soaps</li>
+                                    </ul>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 hidden-lg hidden-md">
+                        <div class="gallery">
+                            <figure class="gallery__item gallery__item--1">
+                                <img src="~/Content/Image/img1.jpg" class="gallery__img" alt="Image 1">
+                                <ul>
+                                    <li>Pesticides</li>
+                                </ul>
+                            </figure>
+                            <figure class="gallery__item gallery__item--2">
+                                <img src="~/Content/Image/img2.jpg" class="gallery__img" alt="Image 2">
+                                <ul>
+                                    <li>Detergents bar</li>
+                                </ul>
+                            </figure>
+                        </div>
                         <br />
-                    </p>
+                        <div class="gallery">
+                            <figure class="gallery__item gallery__item--3">
+                                <img src="~/Content/Image/img3.jpg" class="gallery__img" alt="Image 3">
+                                <ul>
+                                    <li>Oil</li>
+                                </ul>
+                            </figure>
+                            <figure class="gallery__item gallery__item--4">
+                                <img src="~/Content/Image/img4.jpg" class="gallery__img" alt="Image 4">
+                                <ul>
+                                    <li>Paint</li>
+                                </ul>
+                            </figure>
+                        </div>
+                        <br />
+                        <div class="gallery">
+                            <figure class="gallery__item gallery__item--5">
+                                <img src="~/Content/Image/img5.jpg" class="gallery__img" alt="Image 5">
+                                <ul>
+                                    <li>Detergent</li>
+                                </ul>
+                            </figure>
+                            <figure class="gallery__item gallery__item--6">
+                                <img src="~/Content/Image/img6.jpg" class="gallery__img" alt="Image 6">
+                                <ul>
+                                    <li>Fertilizers</li>
+                                </ul>
+                            </figure>
+                        </div>
+                        <br />
+                        <div class="gallery">
+                            <figure class="gallery__item gallery__item--7">
+                                <img src="~/Content/Image/Liquid_Pool_Chlorine.jpg" class="gallery__img" alt="Image 7">
+                                <ul>
+                                    <li>Chlorine</li>
+                                </ul>
+                            </figure>
+                            <figure class="gallery__item gallery__item--8">
+                                <img src="~/Content/Image/soap_bar.jpg" class="gallery__img" alt="Image 8">
+                                <ul>
+                                    <li>Soaps</li>
+                                </ul>
+                            </figure>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="container">
+                <div class="row" id="choropleth-map">
+                    <div class="row" id="title">
+                        <p>Polluted area in Victoria</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9 col-sm-12 col-xs-12">
+                            <div class='tableauPlaceholder' id='viz1567507781168' style='position: relative'>
+                                <noscript>
+                                    <a href='#'>
+                                        <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;PN&#47;PN98GSHJ9&#47;1_rss.png' style='border: none' />
+                                    </a>
+                                </noscript>
+                                <object class='tableauViz' style='display:none;'>
+                                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                    <param name='embed_code_version' value='3' />
+                                    <param name='path' value='shared&#47;PN98GSHJ9' />
+                                    <param name='toolbar' value='no' />
+                                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;PN&#47;PN98GSHJ9&#47;1.png' />
+                                    <param name='animate_transition' value='yes' />
+                                    <param name='display_static_image' value='yes' />
+                                    <param name='display_spinner' value='yes' />
+                                    <param name='display_overlay' value='yes' />
+                                    <param name='display_count' value='yes' />
+                                    <param name='filter' value='publish=yes' />
+                                </object>
+                            </div>
+                            <script type='text/javascript'>
+                                var divElement = document.getElementById('viz1567507781168');
+                                var vizElement = divElement.getElementsByTagName('object')[0];
+                                vizElement.style.width = '100%';
+                                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                                var scriptElement = document.createElement('script');
+                                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                            </script>
+                        </div>
+                        <div class="col-md-3 col-sm-12 col-xs-12">
+                            <p>
+                                <br />
+                                <br />
+                                <br />
+                                The bluer area indicating the severe water polluted area based on the main activity of the facilities
+                                in that area and the number of facilities.
+                                <br />
+                                <br />
+                                Top 5 most polluted suburb:
+                                <ul>
+                                    <li>Wollert</li>
+                                    <li>Cosgrove</li>
+                                    <li>Eaglehawk</li>
+                                    <li>Truganina</li>
+                                    <li>Drysdale</li>
+                                </ul>
+                                <br />
+                                Water used in the agricultural, industrial and civil sectors often contains
+                                substances that can potentially alter the ecosystem. Hence this water must
+                                not be discharged directly into the rivers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="container">
                 <div class="row">
-                    <p>
-                        <h4><b>How to dispose the substance safely to protect waterways?</b></h4>
-                        <ul>
-                            <li>Be careful about what you throw down your sink or toilet! Don’t throw paints, oils or other forms of litter down the drain. Use environmentally household products, such as washing powder, household cleaning agents and toiletries.</li>
-                            <li>Take great care, not to overuse pesticides and fertilizers. This will prevent runoffs of the material into nearby water sources.</li>
-                            <li>By having more plants in your garden you are preventing fertilizer, pesticides and contaminated water from running off into nearby water sources.</li>
-                            <li>Don’t throw litter into rivers, lakes or oceans. Help clean up any litter you see on beaches or in rivers and lakes, make sure it is safe to collect the litter and put it in a nearby dustbin.</li>
-                        </ul>
-                    </p>
+                    <div class="row" id="title">
+                        <p>The chemical content in waterways</p>
+                    </div>
+                    <div class="row">
+                        <div class="row">
+                            <p>Chemical pollution is the introduction of substances into the environment (by man) that are liable to harm human health, living resources, and ecological systems, damage structures or generally interfere with the legitimate use of the environment.</p>
+                        </div>
+                        <div class="row" id="wordcloud">
+                            <div class="col-md-3 col-sm-1">
+
+                            </div>
+                            <div class="col-md-6 col-sm-10 col-xs-12">
+                                <div id="my_dataviz"></div>
+                            </div>
+                            <div class="col-md-3 col-sm-1">
+
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row" id="chemical-display">
+                        <div class="row">
+                            <div class="col-md-8 col-sm-12 col-xs-12">
+                                <div class='tableauPlaceholder' id='viz1567506867215' style='position: relative'>
+                                    <noscript>
+                                        <a href='#'>
+                                            <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;Substance-Chemical-BarChart-Name&#47;Dashboard1&#47;1_rss.png' style='border: none' />
+                                        </a>
+                                    </noscript>
+                                    <object class='tableauViz' style='display:none;'>
+                                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                        <param name='embed_code_version' value='3' />
+                                        <param name='site_root' value='' />
+                                        <param name='name' value='Substance-Chemical-BarChart-Name&#47;Dashboard1' />
+                                        <param name='tabs' value='no' />
+                                        <param name='toolbar' value='no' />
+                                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;Substance-Chemical-BarChart-Name&#47;Dashboard1&#47;1.png' />
+                                        <param name='animate_transition' value='yes' />
+                                        <param name='display_static_image' value='yes' />
+                                        <param name='display_spinner' value='yes' />
+                                        <param name='display_overlay' value='yes' />
+                                        <param name='display_count' value='yes' />
+                                        <param name='filter' value='publish=yes' />
+                                    </object>
+                                </div>
+                                <script type='text/javascript'>
+                                    var divElement = document.getElementById('viz1567506867215');
+                                    var vizElement = divElement.getElementsByTagName('object')[0];
+                                    vizElement.style.width = '100%';
+                                    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                                    var scriptElement = document.createElement('script');
+                                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                                </script>
+                            </div>
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                <br />
+                                <br />
+                                <br />
+                                <p>
+                                    Phosphorus, Kjeldahl Nitrogen, Fibre-Reinforced Plastic, Total Suspended Solids
+                                    and Silicon Dioxide are the top 5 chemical content in the waterways that shown
+                                    in the word cloud.
+                                    <br />
+                                    <br />
+                                    The great amount of Phosphorus and Nitrogen indicating the
+                                    main pollution comes from the living wastewater including disposal waste,
+                                    kitchen waste, etc. As to Slicon Dioxide, it shows that the high turbidity
+                                    of waterways and contains a lot of sand.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6 col-xs-12 col-sm-12">
-                <br />
-                <img class="img-responsive" src="~/Content/Image/tobias-tullius--wR0XMaegRo-unsplash (2).jpg" alt="rubbish-near-water" />
+            <br />
+            <br />
+            <div class="container">
+                <div class=" row">
+                    <section class="hero" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('../../Content/Image/bins.jpg'); height: 400px; width: 100%">
+                        <div class="container-block" style="background-color: #a9a9b0; opacity:0.8; padding: 20px">
+                            <div class="hero-inner" style="text-align:left">
+                                <p style="color:black;">Solution to the problem:</p>
+                                <ul>
+                                    <li style="color:black;">Use Environment friendly detergents.</li>
+                                    <li style="color:black;">Avoid Pesticides.</li>
+                                    <li style="color:black;">Use recycled products.</li>
+                                    <li style="color:black;">Use Products which are durable as well as with less packaging.</li>
+                                    <li style="color:black;">Use fruit and vegetables waste as mulch.</li>
+                                    <li style="color:black;">Use of non-chemical pesticides and herbicides in gardens.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class=" row">
+                    <section class="hero" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('../../Content/Image/bins.jpg'); height: 400px; width: 100%">
+                        <div class="container-block" style="background-color: #a9a9b0; opacity:0.8; padding: 20px">
+                            <div class="hero-inner" style="text-align:left">
+                                <p style="color:black;">How to dispose of the substance safely to protect waterways?</p>
+                                <ul>
+                                    <li style="color:black;">Be careful about what you throw down your sink or toilet!</li>
+                                    <li style="color:black;">Don’t throw paints, oils or other forms of litter down the drain.</li>
+                                    <li style="color:black;">Use appropriate containers while disposing of hazardous substances.</li>
+                                    <li style="color:black;">Ensure that the substances do not mix while the disposal as there might be a violent reaction.</li>
+                                    <li style="color:black;">Do not dispose of the electronic waste into the bins instead drop-off it at your nearest collection centers.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </div>
+        </div>
+        <br />
+        <br />
+        <div class="row" id="title">
+            <p>Take action now! Our waterways need your help</p>
         </div>
     </div>
 </div>
