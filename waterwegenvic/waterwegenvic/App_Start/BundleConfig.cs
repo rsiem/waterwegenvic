@@ -25,13 +25,15 @@ namespace waterwegenvic
             bundles.Add(new ScriptBundle("~/bundles/script").Include(
                       "~/Scripts/site.js",
                       "~/Scripts/wordcloud.js",
-                      "~/Scripts/tree.js"));
+                      "~/Scripts/tree.js",
+                      "~/Scripts/lightbox.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/Site.css",
                       "~/Content/tree.css",
-                      "~/Content/section.css"));
+                      "~/Content/section.css",
+                      "~/Content/lightbox.css"));
         }
     }
 }

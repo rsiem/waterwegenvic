@@ -171,8 +171,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Image\anastasia-taioglou-CTivHyiTbFw-unsplash.jpg" />
     <Content Include="Content\Image\Australia_average_accessible_volume2.png" />
+    <Content Include="Content\Image\bucket-white.png" />
     <Content Include="Content\Image\carlos-de-toro-oXcW6uWU0us-unsplash %281%29.jpg" />
     <Content Include="Content\Image\causation-graph.png" />
+    <Content Include="Content\Image\heading-bg.png" />
     <Content Include="Content\Image\img1.jpg" />
     <Content Include="Content\Image\img2.jpg" />
     <Content Include="Content\Image\img3.jpg" />
@@ -181,15 +183,16 @@
     <Content Include="Content\Image\img6.jpg" />
     <Content Include="Content\Image\jasmin-sessler-5Wfttm2CjeI-unsplash.jpg" />
     <Content Include="Content\Image\josefin-brosche-hagsgard-18388_en-1412x772.jpg" />
-    <Content Include="Content\Image\Liquid_Pool_Chlorine.jpg" />
+    <Content Include="Content\Image\img7.jpg" />
     <Content Include="Content\Image\neonbrand-8Yk4T-tDSYY-unsplash.jpg" />
     <Content Include="Content\Image\pollution.jpg" />
     <Content Include="Content\Image\first-section-bg.png" />
-    <Content Include="Content\Image\soap_bar.jpg" />
+    <Content Include="Content\Image\img8.jpg" />
     <Content Include="Content\Image\third-section-bg.png" />
     <Content Include="Content\Image\tobias-tullius--wR0XMaegRo-unsplash %282%29.jpg" />
     <Content Include="Content\Image\tree-graph.png" />
     <Content Include="Content\Image\yarra-river-83116_1280.jpg" />
+    <Content Include="Content\lightbox.css" />
     <Content Include="Content\section.css" />
     <Content Include="Content\tree.css" />
     <Content Include="favicon.ico" />
@@ -212,6 +215,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\lightbox.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\site.js" />
     <Content Include="Scripts\tree.js" />

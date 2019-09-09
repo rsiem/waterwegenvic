@@ -5,21 +5,10 @@
 <div class="row" id="substance">
     <div class="container-fluid">
         <div class=" row">
-            <section class="first-section hero" style="background-image:url('../../Content/Image/first-section-bg.png'); width: 100%">
-                <div class="hero-inner">
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <h2>Substance Pollution</h2>
+            <section class="first-section hero" style="background-image:url('../../Content/Image/heading-bg.png'); width: 100%">
+                <div class="hero-inner text-context">
+                    <p>Substance Pollution</p>
+                    <div class="line-dec"></div>
                 </div>
             </section>
         </div>
@@ -45,20 +34,113 @@
                         <p>Things that can cause water pollution</p>
                     </div>
                     <div class="row">
-                        @*<div class="col-md-2 col-xs-12 col-sm-12">
-                    <p>
-                        <ul>
-                            <li>Detergents</li>
-                            <li>Chemicals</li>
-                            <li>Paint</li>
-                            <li>Oil</li>
-                            <li>Chlorine</li>
-                            <li>Soaps</li>
-                            <li>Pesticides</li>
-                            <li>Fertilizers</li>
-                        </ul>
-                    </p>
-                </div>*@
+                        <div class="row" id="lightbox">
+                            <div class="column">
+                                <img src="~/Content/Image/img1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+                            </div>
+                            <div class="column">
+                                <img src="~/Content/Image/img2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                            </div>
+                            <div class="column">
+                                <img src="~/Content/Image/img3.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+                            </div>
+                            <div class="column">
+                                <img src="~/Content/Image/img4.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+                            </div>
+                            <div class="column">
+                                <img src="~/Content/Image/img5.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+                            </div>
+                            <div class="column">
+                                <img src="~/Content/Image/img6.jpg" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+                            </div>
+                            <div class="column">
+                                <img src="~/Content/Image/img7.jpg" style="width:100%" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
+                            </div>
+                            <div class="column">
+                                <img src="~/Content/Image/img8.jpg" style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
+                            </div>
+                        </div>
+
+                        <div id="myModal" class="modal">
+                            <span class="close cursor" onclick="closeModal()">&times;</span>
+                            <div class="modal-content">
+
+                                <div class="mySlides">
+                                    <div class="numbertext">1 / 8</div>
+                                    <img src="~/Content/Image/img1.jpg" style="width:100%">
+                                </div>
+
+                                <div class="mySlides">
+                                    <div class="numbertext">2 / 8</div>
+                                    <img src="~/Content/Image/img2.jpg" style="width:100%">
+                                </div>
+
+                                <div class="mySlides">
+                                    <div class="numbertext">3 / 8</div>
+                                    <img src="~/Content/Image/img3.jpg" style="width:100%">
+                                </div>
+
+                                <div class="mySlides">
+                                    <div class="numbertext">4 / 8</div>
+                                    <img src="~/Content/Image/img4.jpg" style="width:100%">
+                                </div>
+
+                                <div class="mySlides">
+                                    <div class="numbertext">5 / 8</div>
+                                    <img src="~/Content/Image/img5.jpg" style="width:100%">
+                                </div>
+
+                                <div class="mySlides">
+                                    <div class="numbertext">6 / 8</div>
+                                    <img src="~/Content/Image/img6.jpg" style="width:100%">
+                                </div>
+
+                                <div class="mySlides">
+                                    <div class="numbertext">7 / 8</div>
+                                    <img src="~/Content/Image/img7.jpg" style="width:100%">
+                                </div>
+
+                                <div class="mySlides">
+                                    <div class="numbertext">8 / 8</div>
+                                    <img src="~/Content/Image/img8.jpg" style="width:100%">
+                                </div>
+
+                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                                <div class="caption-container">
+                                    <p id="caption"></p>
+                                </div>
+
+
+                                <div class="column">
+                                    <img class="demo cursor" src="~/Content/Image/img1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Pesticides">
+                                </div>
+                                <div class="column">
+                                    <img class="demo cursor" src="~/Content/Image/img2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Detergent Bar">
+                                </div>
+                                <div class="column">
+                                    <img class="demo cursor" src="~/Content/Image/img3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Oil">
+                                </div>
+                                <div class="column">
+                                    <img class="demo cursor" src="~/Content/Image/img4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Detergent">
+                                </div>
+                                <div class="column">
+                                    <img class="demo cursor" src="~/Content/Image/img5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Paint">
+                                </div>
+                                <div class="column">
+                                    <img class="demo cursor" src="~/Content/Image/img6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Fertilizers">
+                                </div>
+                                <div class="column">
+                                    <img class="demo cursor" src="~/Content/Image/img7.jpg" style="width:100%" onclick="currentSlide(7)" alt="Chlorine">
+                                </div>
+                                <div class="column">
+                                    <img class="demo cursor" src="~/Content/Image/img8.jpg" style="width:100%" onclick="currentSlide(8)" alt="Soaps">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="row">
                         <div class="hidden-xs col-md-12">
                             <div class="gallery">
                                 <figure class="gallery__item gallery__item--1">
@@ -178,7 +260,7 @@
                                 </ul>
                             </figure>
                         </div>
-                    </div>
+                    </div>*@
                 </div>
             </div>
             <br />

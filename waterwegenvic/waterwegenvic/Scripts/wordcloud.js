@@ -107,8 +107,6 @@ window.onresize = function () {
     var w;
     var h;
 
-    console.log("inner width: " + window.innerWidth);
-
     if (window.innerWidth <= 400) {
         w = 250;
         h = 250;
@@ -119,8 +117,6 @@ window.onresize = function () {
         w = 450;
         h = 450;
     }
-
-    console.log("width: " + w);
 
     // set the dimensions and margins of the graph
     var margin = { top: 10, right: 10, bottom: 10, left: 10 },
