@@ -30,7 +30,8 @@ namespace waterwegenvic
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/Site.css",
-                      "~/Content/tree.css"));
+                      "~/Content/tree.css",
+                      "~/Content/section.css"));
         }
     }
 }
