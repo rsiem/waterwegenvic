@@ -22,18 +22,38 @@ namespace waterwegenvic
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/script").Include(
-                      "~/Scripts/site.js",
-                      "~/Scripts/wordcloud.js",
-                      "~/Scripts/tree.js",
-                      "~/Scripts/lightbox.js"));
+            //bundles.Add(new ScriptBundle("~/bundles/script").Include(
+            //          "~/Scripts/wordcloud.js",
+            //          "~/Scripts/tree.js"));
+            //          //"~/Scripts/d3-funnel.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/Site.css",
-                      "~/Content/tree.css",
                       "~/Content/section.css",
+                      "~/Content/Site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/Iteration1").Include(
+                      "~/Content/tree.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/iteration1").Include(
+                      "~/Scripts/tree.js",
+                      "~/Scripts/wordcloud.js",
+                      "~/Scripts/site.js"));
+
+            bundles.Add(new StyleBundle("~/Content/index").Include(
+                      "~/Content/funnel.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/litter").Include(
+                      "~/Scripts/site.js",
+                      "~/Scripts/d3-funnel.js",
+                      "~/Scripts/funnel.js"));
+
+            bundles.Add(new StyleBundle("~/Content/substance").Include(
                       "~/Content/lightbox.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/substance").Include(
+                      "~/Scripts/lightbox.js",
+                      "~/Scripts/wordcloud.js"));
         }
     }
 }

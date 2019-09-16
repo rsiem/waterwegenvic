@@ -2,6 +2,9 @@
     ViewBag.Title = "Substance";
 }
 
+@Styles.Render("~/Content/substance")
+@Scripts.Render("~/bundles/substance")
+
 <div class="row" id="substance">
     <div class="container-fluid">
         <div class=" row">
@@ -123,10 +126,10 @@
                                     <img class="demo cursor" src="~/Content/Image/img3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Oil">
                                 </div>
                                 <div class="column">
-                                    <img class="demo cursor" src="~/Content/Image/img4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Detergent">
+                                    <img class="demo cursor" src="~/Content/Image/img4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Paint">
                                 </div>
                                 <div class="column">
-                                    <img class="demo cursor" src="~/Content/Image/img5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Paint">
+                                    <img class="demo cursor" src="~/Content/Image/img5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Detergent">
                                 </div>
                                 <div class="column">
                                     <img class="demo cursor" src="~/Content/Image/img6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Fertilizers">
@@ -140,194 +143,75 @@
                             </div>
                         </div>
                     </div>
-                    @*<div class="row">
-                        <div class="hidden-xs col-md-12">
-                            <div class="gallery">
-                                <figure class="gallery__item gallery__item--1">
-                                    <img src="~/Content/Image/img1.jpg" class="gallery__img" alt="Image 1">
-                                    <ul>
-                                        <li>Pesticides</li>
-                                    </ul>
-                                </figure>
-                                <figure class="gallery__item gallery__item--2">
-                                    <img src="~/Content/Image/img2.jpg" class="gallery__img" alt="Image 2">
-                                    <ul>
-                                        <li>Detergent bar</li>
-                                    </ul>
-                                </figure>
-                                <figure class="gallery__item gallery__item--3">
-                                    <img src="~/Content/Image/img3.jpg" class="gallery__img" alt="Image 3">
-                                    <ul>
-                                        <li>Oil</li>
-                                    </ul>
-                                </figure>
-                            </div>
-                            <br />
-                            <div class="gallery">
-                                <figure class="gallery__item gallery__item--4">
-                                    <img src="~/Content/Image/img4.jpg" class="gallery__img" alt="Image 4">
-                                    <ul>
-                                        <li>Paint</li>
-                                    </ul>
-                                </figure>
-                                <figure class="gallery__item gallery__item--5">
-                                    <img src="~/Content/Image/img5.jpg" class="gallery__img" alt="Image 5">
-                                    <ul>
-                                        <li>Detergent</li>
-                                    </ul>
-                                </figure>
-                                <figure class="gallery__item gallery__item--6">
-                                    <img src="~/Content/Image/img6.jpg" class="gallery__img" alt="Image 6">
-                                    <ul>
-                                        <li>Fertilizers</li>
-                                    </ul>
-                                </figure>
-                            </div>
-                            <br />
-                            <div class="gallery">
-                                <figure class="gallery__item gallery__item--7">
-                                    <img src="~/Content/Image/Liquid_Pool_Chlorine.jpg" class="gallery__img" alt="Image 7">
-                                    <ul>
-                                        <li>Chlorine</li>
-                                    </ul>
-                                </figure>
-                                <figure class="gallery__item gallery__item--8">
-                                    <img src="~/Content/Image/soap_bar.jpg" class="gallery__img" alt="Image 8">
-                                    <ul>
-                                        <li>Soaps</li>
-                                    </ul>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 hidden-lg hidden-md">
-                        <div class="gallery">
-                            <figure class="gallery__item gallery__item--1">
-                                <img src="~/Content/Image/img1.jpg" class="gallery__img" alt="Image 1">
-                                <ul>
-                                    <li>Pesticides</li>
-                                </ul>
-                            </figure>
-                            <figure class="gallery__item gallery__item--2">
-                                <img src="~/Content/Image/img2.jpg" class="gallery__img" alt="Image 2">
-                                <ul>
-                                    <li>Detergents bar</li>
-                                </ul>
-                            </figure>
-                        </div>
-                        <br />
-                        <div class="gallery">
-                            <figure class="gallery__item gallery__item--3">
-                                <img src="~/Content/Image/img3.jpg" class="gallery__img" alt="Image 3">
-                                <ul>
-                                    <li>Oil</li>
-                                </ul>
-                            </figure>
-                            <figure class="gallery__item gallery__item--4">
-                                <img src="~/Content/Image/img4.jpg" class="gallery__img" alt="Image 4">
-                                <ul>
-                                    <li>Paint</li>
-                                </ul>
-                            </figure>
-                        </div>
-                        <br />
-                        <div class="gallery">
-                            <figure class="gallery__item gallery__item--5">
-                                <img src="~/Content/Image/img5.jpg" class="gallery__img" alt="Image 5">
-                                <ul>
-                                    <li>Detergent</li>
-                                </ul>
-                            </figure>
-                            <figure class="gallery__item gallery__item--6">
-                                <img src="~/Content/Image/img6.jpg" class="gallery__img" alt="Image 6">
-                                <ul>
-                                    <li>Fertilizers</li>
-                                </ul>
-                            </figure>
-                        </div>
-                        <br />
-                        <div class="gallery">
-                            <figure class="gallery__item gallery__item--7">
-                                <img src="~/Content/Image/Liquid_Pool_Chlorine.jpg" class="gallery__img" alt="Image 7">
-                                <ul>
-                                    <li>Chlorine</li>
-                                </ul>
-                            </figure>
-                            <figure class="gallery__item gallery__item--8">
-                                <img src="~/Content/Image/soap_bar.jpg" class="gallery__img" alt="Image 8">
-                                <ul>
-                                    <li>Soaps</li>
-                                </ul>
-                            </figure>
-                        </div>
-                    </div>*@
                 </div>
             </div>
             <br />
             <br />
-            <br />
-            <div class="container">
-                <div class="row" id="choropleth-map">
-                    <div class="row" id="title">
-                        <p>Polluted area in Victoria</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-9 col-sm-12 col-xs-12">
-                            <div class='tableauPlaceholder' id='viz1567507781168' style='position: relative'>
-                                <noscript>
-                                    <a href='#'>
-                                        <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;PN&#47;PN98GSHJ9&#47;1_rss.png' style='border: none' />
-                                    </a>
-                                </noscript>
-                                <object class='tableauViz' style='display:none;'>
-                                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                                    <param name='embed_code_version' value='3' />
-                                    <param name='path' value='shared&#47;PN98GSHJ9' />
-                                    <param name='toolbar' value='no' />
-                                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;PN&#47;PN98GSHJ9&#47;1.png' />
-                                    <param name='animate_transition' value='yes' />
-                                    <param name='display_static_image' value='yes' />
-                                    <param name='display_spinner' value='yes' />
-                                    <param name='display_overlay' value='yes' />
-                                    <param name='display_count' value='yes' />
-                                    <param name='filter' value='publish=yes' />
-                                </object>
+            <div class="row">
+                <section class="third-section container-fluid">
+                    <div class="row" id="choropleth-map">
+                        <div class="row" id="title">
+                            <p>Polluted area in Victoria</p>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-9 col-sm-12 col-xs-12">
+                                <div class='tableauPlaceholder' id='viz1567507781168' style='position: relative'>
+                                    <noscript>
+                                        <a href='#'>
+                                            <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;PN&#47;PN98GSHJ9&#47;1_rss.png' style='border: none' />
+                                        </a>
+                                    </noscript>
+                                    <object class='tableauViz' style='display:none;'>
+                                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                        <param name='embed_code_version' value='3' />
+                                        <param name='path' value='shared&#47;PN98GSHJ9' />
+                                        <param name='toolbar' value='no' />
+                                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;PN&#47;PN98GSHJ9&#47;1.png' />
+                                        <param name='animate_transition' value='yes' />
+                                        <param name='display_static_image' value='yes' />
+                                        <param name='display_spinner' value='yes' />
+                                        <param name='display_overlay' value='yes' />
+                                        <param name='display_count' value='yes' />
+                                        <param name='filter' value='publish=yes' />
+                                    </object>
+                                </div>
+                                <script type='text/javascript'>
+                                    var divElement = document.getElementById('viz1567507781168');
+                                    var vizElement = divElement.getElementsByTagName('object')[0];
+                                    vizElement.style.width = '100%';
+                                    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                                    var scriptElement = document.createElement('script');
+                                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                                </script>
                             </div>
-                            <script type='text/javascript'>
-                                var divElement = document.getElementById('viz1567507781168');
-                                var vizElement = divElement.getElementsByTagName('object')[0];
-                                vizElement.style.width = '100%';
-                                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-                                var scriptElement = document.createElement('script');
-                                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                                vizElement.parentNode.insertBefore(scriptElement, vizElement);
-                            </script>
-                        </div>
-                        <div class="col-md-3 col-sm-12 col-xs-12">
-                            <p>
-                                <br />
-                                <br />
-                                <br />
-                                The bluer area indicating the severe water polluted area based on the main activity of the facilities
-                                in that area and the number of facilities.
-                                <br />
-                                <br />
-                                Top 5 most polluted suburb:
-                                <ul>
-                                    <li>Wollert</li>
-                                    <li>Cosgrove</li>
-                                    <li>Eaglehawk</li>
-                                    <li>Truganina</li>
-                                    <li>Drysdale</li>
-                                </ul>
-                                <br />
-                                Water used in the agricultural, industrial and civil sectors often contains
-                                substances that can potentially alter the ecosystem. Hence this water must
-                                not be discharged directly into the rivers.
-                            </p>
+                            <div class="col-md-3 col-sm-12 col-xs-12">
+                                <p>
+                                    <br />
+                                    <br />
+                                    <br />
+                                    The bluer area indicating the severe water polluted area based on the main activity of the facilities
+                                    in that area and the number of facilities.
+                                    <br />
+                                    <br />
+                                    Top 5 most polluted suburb:
+                                    <ul>
+                                        <li>Wollert</li>
+                                        <li>Cosgrove</li>
+                                        <li>Eaglehawk</li>
+                                        <li>Truganina</li>
+                                        <li>Drysdale</li>
+                                    </ul>
+                                    <br />
+                                    Water used in the agricultural, industrial and civil sectors often contains
+                                    substances that can potentially alter the ecosystem. Hence this water must
+                                    not be discharged directly into the rivers.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
             <br />
             <br />
@@ -339,21 +223,24 @@
                         <p>The chemical content in waterways</p>
                     </div>
                     <div class="row">
-                        <div class="row">
-                            <p>Chemical pollution is the introduction of substances into the environment (by man) that are liable to harm human health, living resources, and ecological systems, damage structures or generally interfere with the legitimate use of the environment.</p>
+                        <p>Chemical pollution is the introduction of substances into the environment (by man) that are liable to harm human health, living resources, and ecological systems, damage structures or generally interfere with the legitimate use of the environment.</p>
+                    </div>
+                    @*<div class="row">
+                    <div class="row">
+                        <p>Chemical pollution is the introduction of substances into the environment (by man) that are liable to harm human health, living resources, and ecological systems, damage structures or generally interfere with the legitimate use of the environment.</p>
+                    </div>
+                    <div class="row" id="wordcloud">
+                        <div class="col-md-3 col-sm-1">
+
                         </div>
-                        <div class="row" id="wordcloud">
-                            <div class="col-md-3 col-sm-1">
+                        <div class="col-md-6 col-sm-10 col-xs-12">
+                            <div id="my_dataviz"></div>
+                        </div>
+                        <div class="col-md-3 col-sm-1">
 
-                            </div>
-                            <div class="col-md-6 col-sm-10 col-xs-12">
-                                <div id="my_dataviz"></div>
-                            </div>
-                            <div class="col-md-3 col-sm-1">
-
-                            </div>
                         </div>
                     </div>
+                </div>*@
                     <br />
                     <div class="row" id="chemical-display">
                         <div class="row">

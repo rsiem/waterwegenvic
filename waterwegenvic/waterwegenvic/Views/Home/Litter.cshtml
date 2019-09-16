@@ -1,7 +1,456 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Litter";
 }
 
-<h2>Litter</h2>
+@*@Styles.Render("~/Content/litter")*@
+@Scripts.Render("~/bundles/litter")
 
+<div class="row" id="litter">
+    <div class="container-fluid">
+        <div class=" row">
+            <section class="first-section hero" style="background-image:url('../../Content/Image/heading-bg.png'); width: 100%">
+                <div class="hero-inner text-context">
+                    <p>Litter Pollution</p>
+                    <div class="line-dec"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<br />
+<div class="row" id="litter-page">
+    <div class="container-fluid">
+        <div class="litter-page">
+            <div class="container">
+                <div class="row" id="introduction">
+                    <p>
+                        Mindless disposal of chemicals and waste products in the agricultural,
+                        industrial and civil sectors often results in the contamination of
+                        waterways. This often causes harm to the ecosystem or interferes with
+                        the function of several ecological processes.
+                    </p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="row" id="title">
+                        <p>Change to your title</p>
+                    </div>
+                    <div class="row">
+                        <div class="container-fluid">
+                            <div class="row" style="margin-top:20px ;min-height: 500px;">
+                                <div class="col-xs-8  col-md-6 funnel">
+                                    <div id="funnel"></div>
+                                </div>
+                                <div class="col-xs-4 col-md-2 hidden" id="infoSection">
+
+                                    <svg width="170" height="500" xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <rect x="-1" y="-1" width="172" height="502" id="canvas_background" fill="#fff" />
+                                            <g id="canvasGrid" display="none">
+                                                <rect id="svg_1" width="100%" height="100%" x="0" y="0" stroke-width="0"
+                                                      fill="url(#gridpattern)" />
+                                            </g>
+                                        </g>
+                                        <g>
+                                            <g stroke="null" id="svg_3">
+                                                <path stroke="#000" fill="#55ad59" stroke-width="1.5"
+                                                      d="m16.32201,121.181093l67.764166,-116.049304l67.764166,116.049304l-33.882091,0l0,116.607724l-67.76415,0l0,-116.607724l-33.882091,0z"
+                                                      id="svg_18" />
+                                                <path stroke="#000" fill="#da3732" stroke-width="1.5"
+                                                      d="m152.190497,379.554498l-67.571437,116.161629l-67.956708,-115.93666l33.882044,-0.056242l-0.193563,-116.607548l67.764057,-0.112485l0.193563,116.607548l33.882044,-0.056242z"
+                                                      id="svg_19" />
+                                                <rect stroke="#000" fill="#f7ca47" stroke-width="1.5" stroke-opacity="null" x="50.238194"
+                                                      y="239.775725" width="67.796925" height="21.165185" id="svg_20" />
+                                                <rect stroke="#000" fill="#ffffff" stroke-width="1.5" stroke-opacity="null" x="70.397099"
+                                                      y="98.055554" width="24.562591" height="128.441885" id="svg_22" />
+                                                <path stroke="#000" fill="#55ad59" stroke-width="1.5"
+                                                      d="m16.32201,121.181093l67.764166,-116.049304l67.764166,116.049304l-33.882091,0l0,116.607724l-67.76415,0l0,-116.607724l-33.882091,0z"
+                                                      id="svg_24" />
+                                                <rect stroke="#55ad59" fill="#ffffff" stroke-width="1.5" x="69.119207" y="123.837893"
+                                                      width="26.07838" height="106.898229" id="svg_26" />
+                                                <rect stroke="#da3732" fill="#ffffff" stroke-width="1.5" x="69.119207" y="269.169088"
+                                                      width="28.17078" height="112.129225" id="svg_30" />
+                                                <text stroke="#f7ca47" fill="#000000" stroke-width="0" fill-opacity="null" x="11.693418"
+                                                      y="216.891597" id="svg_31" font-size="7" font-family="Helvetica, Arial, sans-serif"
+                                                      text-anchor="start" xml:space="preserve"
+                                                      transform="matrix(-0.0142293846342919,-1.8391891884931044,1.8391891884931044,-0.0142293846342919,-312.09410378035346,399.3500822400103) "
+                                                      font-weight="bold">Least preferable</text>
+                                                <text stroke="#000" fill="#000000" stroke-width="0" stroke-opacity="null"
+                                                      fill-opacity="null" x="11.471835" y="123.720032" id="svg_32" font-size="7"
+                                                      font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve"
+                                                      transform="matrix(-0.01888180653900149,-1.8496853973711946,1.8496853973711946,-0.01888180653900149,-142.69939893965184,249.19274596653312) "
+                                                      font-weight="bold">Most preferable</text>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="col-xs-12  col-md-4">
+
+                                    <div class="panel panel-primary" style="display: none">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Primary Panel</h3>
+                                        </div>
+                                        <div class="panel-body" id="info">
+                                            Panel content
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="funnelTooltip">
+                        </div>
+
+                        <script>
+                            var textColour = "#ffffff" // text color for Avoid, Reduce etc...;
+                            var backgroundColorStart = "#BDD7DD";//top color for background
+                            var backgroundColorEnd = "#146E7F";// bottom color background
+                            var hoverColour = "#DE2F4C" // hover color for Avoid, Reduce etc...;;
+                            var fontSize = 20; // font size for Avoid, Reduce etc...;
+
+                            var colourValue = [0, 100, 250, 400, 500, 650, 900]
+
+                            console.log("height: " + parseInt(d3.select('.funnel').style('height')));
+                            console.log("width: " + parseInt(d3.select('.funnel').style('width')));
+
+                            var height = parseInt(d3.select('.funnel').style('height')),
+                                width = parseInt(d3.select('.funnel').style('width'));
+
+                            function rgbToHex(rgb) {
+                                rgb = rgb.match(/^rgb?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+                                return (rgb && rgb.length === 4) ? "#" +
+                                    ("0" + parseInt(rgb[1], 10).toString(16)).slice(-2) +
+                                    ("0" + parseInt(rgb[2], 10).toString(16)).slice(-2) +
+                                    ("0" + parseInt(rgb[3], 10).toString(16)).slice(-2) : '';
+                            }
+
+                            var gradientColor = d3.scaleLinear()
+                                .domain([0, 900])
+                                .range([backgroundColorStart, backgroundColorEnd])
+
+                            d3.select('#funnel')
+                                .attr('height', height)
+                                .attr('width', width);
+
+                            const data = [
+                                {
+                                    label: 'Avoid',
+                                    value: 1,
+                                    backgroundColor: rgbToHex(gradientColor(colourValue[0])),
+                                    // tooltip and click div text
+                                    tooltipText: "Does't purchase food if you won't use it, or it won't last"
+                                },
+                                {
+                                    label: 'Reduce',
+                                    value: 1,
+                                    backgroundColor: rgbToHex(gradientColor(colourValue[1])),
+                                    tooltipText: "Donate to Food charity, make a casserole"
+                                },
+                                {
+                                    label: 'Reuse',
+                                    value: 1,
+                                    backgroundColor: rgbToHex(gradientColor(colourValue[2])),
+                                    tooltipText: "Reuse bones, skins for a soup"
+                                },
+                                {
+                                    label: 'Recycle',
+                                    value: 1,
+                                    backgroundColor: rgbToHex(gradientColor(colourValue[3])),
+                                    tooltipText: "Separate food for worms and so on to the last least preferable"
+                                },
+                                {
+                                    label: 'Recover',
+                                    value: 1,
+                                    backgroundColor: rgbToHex(gradientColor(colourValue[4])),
+                                    tooltipText: "Recover"
+                                },
+                                {
+                                    label: 'Treat',
+                                    value: 1,
+                                    backgroundColor: rgbToHex(gradientColor(colourValue[5])),
+                                    tooltipText: "Treat"
+                                },
+                                {
+                                    label: 'Dispose',
+                                    value: 1,
+                                    backgroundColor: rgbToHex(gradientColor(colourValue[6])),
+                                    tooltipText: "Dispose to land fill"
+                                },
+                            ];
+
+                            const options = {
+                                block: {
+                                    dynamicHeight: true,
+                                    fill: {
+                                        type: 'solid',
+                                    },
+                                    highlight: true
+                                },
+                                chart: {
+                                    bottomWidth: 0,
+                                    bottomPinch: 0,
+                                    height: 500,
+                                    animate: 100
+                                },
+                                label: {
+                                    format: '{l}',
+                                    fontSize: fontSize + 'px',
+                                    fill: textColour
+                                },
+                                tooltip: {
+                                    enabled: false
+                                }
+                            };
+
+                            const chart = new D3Funnel('#funnel');
+                            chart.draw(data, options);
+
+                            // // Top Arrow Pointer mouseEvent
+                            d3.selectAll("#svg_24,#svg_26,#svg_32")
+                                .on("mouseover", function (d) {
+                                    var allPaths = d3.selectAll("#funnel path").nodes();
+                                    d3.select(allPaths[0])
+                                        .style('stroke-width', 5)
+                                        .style('stroke', 'white')
+                                        .style('fill-opacity', 0.8)
+                                        .style('cursor', 'pointer')
+
+                                    blink(allPaths[0], 0)
+                                })
+                                .on("mouseout", function (d) {
+                                    var allPaths = d3.selectAll("#funnel path").nodes();
+                                    d3.select(allPaths[0]).style('stroke', 'none')
+                                    removeAnimation(allPaths[0], 0)
+                                })
+
+                            // // Bottom Arrow Pointer mouseEvent
+                            d3.selectAll("#svg_19,#svg_31")
+                                .on("mouseover", function (d) {
+                                    var allPaths = d3.selectAll("#funnel path").nodes();
+                                    d3.select(allPaths[6])
+                                        .style('stroke-width', 5)
+                                        .style('stroke', 'white')
+                                        .style('fill-opacity', 0.8)
+
+                                    blink(allPaths[6], 6)
+                                })
+                                .on("mouseout", function (d) {
+                                    var allPaths = d3.selectAll("#funnel path").nodes();
+                                    d3.select(allPaths[6]).style('stroke', 'none')
+
+                                    removeAnimation(allPaths[6], 6)
+                                })
+
+                            // // Middle Arrow Pointer mouseEvent
+                            d3.select("#svg_20")
+                                .on("mouseover", function (d) {
+                                    var allPaths = d3.selectAll("#funnel path").nodes();
+                                    d3.select(allPaths[3])
+                                        .style('stroke-width', 5)
+                                        .style('stroke', 'white')
+                                        .style('fill-opacity', 0.8)
+
+                                    blink(allPaths[3], 3)
+                                })
+                                .on("mouseout", function (d) {
+                                    var allPaths = d3.selectAll("#funnel path").nodes();
+                                    d3.select(allPaths[3]).style('stroke', 'none')
+
+                                    removeAnimation(allPaths[3], 3)
+                                })
+
+                            setTimeout(addTooltip, 800);
+
+                            function addTooltip() {
+
+                                d3.selectAll("#svg_24")
+                                    .style('fill', rgbToHex(gradientColor(colourValue[0])))
+
+                                d3.selectAll("#svg_26")
+                                    .style('stroke', rgbToHex(gradientColor(colourValue[0])))
+
+                                d3.selectAll("#svg_20")
+                                    .style('fill', rgbToHex(gradientColor(colourValue[3])))
+
+                                d3.selectAll("#svg_19")
+                                    .style('fill', rgbToHex(gradientColor(colourValue[6])))
+
+                                d3.selectAll("#svg_30")
+                                    .style('stroke', rgbToHex(gradientColor(colourValue[6])))
+
+                                $("#infoSection").removeClass('hidden');
+
+                                d3.selectAll("#funnel path")
+                                    .on("mouseover", function (d) {
+                                        var text = data[d.index].tooltipText;
+                                        d3.select(this)
+                                            .style('stroke-width', '3px')
+                                            .style('stroke', 'white')
+                                            .style('fill-opacity', 0.8)
+                                            .style('cursor', 'pointer')
+
+                                        var colour = this.__data__.fill.raw
+
+                                        d3.select(".funnelTooltip").html(text)
+                                            .style("left", d3.event.pageX + "px")
+                                            .style("top", d3.event.pageY + "px")
+                                            .style('border', 'solid 2px')
+                                            .style('color', colour)
+                                            .style('border-color', colour)
+                                            .style("display", "inline-block")
+                                    })
+                                    .on("mousemove", function (d, i) {
+
+                                        d3.select(this)
+                                            .style('stroke-width', '3px')
+                                            .style('stroke', 'white')
+                                            .style('fill-opacity', 0.8)
+
+                                        blink(this, i)
+                                        var text = data[d.index].tooltipText;
+                                        var colour = this.__data__.fill.raw
+
+                                        d3.select(".funnelTooltip").html(text)
+                                            .style("left", d3.event.pageX + "px")
+                                            .style("top", d3.event.pageY + "px")
+                                            .style('border', 'solid 2px')
+                                            .style('color', 'black')
+                                            .style('border-color', colour)
+                                            .style("display", "inline-block")
+
+                                    })
+                                    .on("mouseout", function (d, i) {
+                                        d3.select(".funnelTooltip")
+                                            .style("display", "none")
+
+                                        d3.select(this.parentElement).select('path')
+                                            .style('stroke', 'none')
+                                            .style('fill-opacity', 1)
+
+                                        removeAnimation(this, d.index);
+                                    })
+                                    .on("click", function (d, i) {
+                                        var text = data[d.index].tooltipText;
+                                        d3.select("#info").text(text)
+
+                                        var color = $(this).attr('fill')
+
+                                        $('.panel-primary').css('border-color', color)
+                                            .css('display', 'block')
+
+                                        $('.panel-heading').css('border-color', color)
+                                            .css('background-color', color)
+                                            .text(d.label.raw)
+                                    })
+
+                                d3.selectAll("#funnel text")
+                                    .style('font-size', function (d, i) {
+                                        if (i == 6) {
+                                            return '11px';
+                                        }
+                                    })
+                            }
+
+                            function blink(ctr, index) {
+
+                                if (d3.select(ctr.parentNode).select('text').text() == "Dispose") {
+                                    fontSize = "12px";
+                                }
+                                d3.select(ctr.parentNode).select('text')
+                                    .style("fill", hoverColour)
+                                    .style("font-size", fontSize + 'px')
+                                    .transition()
+                                    .duration(200)
+                                    .transition()
+                                    .duration(200)
+                                    .style('fill', function (d, i) {
+                                        return textColour;
+                                    })
+                                    .on("end", function () {
+                                        blink(ctr, index);
+                                    })
+                            }
+
+                            function removeAnimation(ctr, index) {
+
+                                d3.select(ctr.parentNode).select('text').transition()
+                                    .duration(100)
+                                    .style("font-size", fontSize + 'px')
+                                    .style('fill', function (d, i) {
+                                        return textColour;
+                                    })
+
+
+                                    .style("font-weight", 'normal')
+
+                            }
+
+                        </script>
+
+
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="container">
+                <div class="row">
+                    <div class="funnelTooltip">
+                    </div>
+
+                    <div class="row" id="title">
+                        <p>Things that can cause water pollution</p>
+                    </div>
+                    <div class="row">
+                        <div class="row">
+                            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                <img src="~/Content/Image/img2.jpg" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3" id="bins" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                <img src="~/Content/Image/red.png" draggable="false">
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-3" id="bins" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                <img src="~/Content/Image/yellow.png" draggable="false">
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-3" id="bins" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                <img src="~/Content/Image/green.png" draggable="false">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="container">
+                <div class="row">
+                    <div class="row" id="title">
+                        <p>The chemical content in waterways</p>
+                    </div>
+                    <div class="row">
+                        <div class="row">
+                            <p>Chemical pollution is the introduction of substances into the environment (by man) that are liable to harm human health, living resources, and ecological systems, damage structures or generally interfere with the legitimate use of the environment.</p>
+                        </div>
+                        <div class="row" id="">
+
+                        </div>
+                        <br />
+                        <div class="row" id="">
+                            <div class="row">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -159,10 +159,15 @@
     <Content Include="App_Data\homepage_db_log.ldf">
       <DependentUpon>homepage_db.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\litter_db.mdf" />
+    <Content Include="App_Data\litter_db_log.ldf">
+      <DependentUpon>litter_db.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\substance_db.mdf" />
     <Content Include="App_Data\substance_db_log.ldf">
       <DependentUpon>substance_db.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\funnel.css" />
     <Content Include="Content\Image\bins.jpg" />
     <Content Include="Content\Image\bucket-final.png" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -174,6 +179,7 @@
     <Content Include="Content\Image\bucket-white.png" />
     <Content Include="Content\Image\carlos-de-toro-oXcW6uWU0us-unsplash %281%29.jpg" />
     <Content Include="Content\Image\causation-graph.png" />
+    <Content Include="Content\Image\green.PNG" />
     <Content Include="Content\Image\heading-bg.png" />
     <Content Include="Content\Image\img1.jpg" />
     <Content Include="Content\Image\img2.jpg" />
@@ -188,10 +194,12 @@
     <Content Include="Content\Image\pollution.jpg" />
     <Content Include="Content\Image\first-section-bg.png" />
     <Content Include="Content\Image\img8.jpg" />
+    <Content Include="Content\Image\red.PNG" />
     <Content Include="Content\Image\third-section-bg.png" />
     <Content Include="Content\Image\tobias-tullius--wR0XMaegRo-unsplash %282%29.jpg" />
     <Content Include="Content\Image\tree-graph.png" />
     <Content Include="Content\Image\yarra-river-83116_1280.jpg" />
+    <Content Include="Content\Image\yellow.PNG" />
     <Content Include="Content\lightbox.css" />
     <Content Include="Content\section.css" />
     <Content Include="Content\tree.css" />
@@ -206,6 +214,8 @@
     </Content>
     <None Include="Properties\PublishProfiles\waterwegenvic20190822020518 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\d3-funnel.js" />
+    <Content Include="Scripts\funnel.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -231,10 +241,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Background.cshtml" />
     <Content Include="Views\Home\Substance.cshtml" />
     <Content Include="Views\Home\Litter.cshtml" />
     <Content Include="Views\Home\Groundwater.cshtml" />
