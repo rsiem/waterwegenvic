@@ -95,13 +95,14 @@ img {
     font-size: 30px;
 }
 
-#background {
-    font-size: 1.3em;
+#background, #substance-page, #litter-page {
+    font-size: 1.2em;
 }
 
 #title p {
-    font-size: 1.5em;
+    font-size: 1.4em;
     text-align: center;
+    text-transform: uppercase;
 }
 
 #bottom-li {
@@ -125,4 +126,5 @@ img {
     padding: 10px;
     border-radius: 7px;
     box-shadow: 5px 10px 18px #4080bf;
+    margin: 2%;
 }

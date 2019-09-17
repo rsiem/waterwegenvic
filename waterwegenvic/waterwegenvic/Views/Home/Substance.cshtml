@@ -4,13 +4,14 @@
 
 @Styles.Render("~/Content/substance")
 @Scripts.Render("~/bundles/substance")
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <div class="row" id="substance">
     <div class="container-fluid">
         <div class=" row">
             <section class="first-section hero" style="background-image:url('../../Content/Image/heading-bg.png'); width: 100%">
                 <div class="hero-inner text-context">
-                    <p>Substance Pollution</p>
+                    <p>SUBSTANCE POLLUTION</p>
                     <div class="line-dec"></div>
                 </div>
             </section>
@@ -19,7 +20,7 @@
 </div>
 <br />
 <div class="row" id="substance-page">
-    <div class="container-fluid">
+    <div class="container-fluid" id="background">
         <div class="substance-page">
             <div class="container">
                 <div class="row" id="introduction">
@@ -34,7 +35,7 @@
             <div class="container">
                 <div class="row">
                     <div class="row" id="title">
-                        <p>Things that can cause water pollution</p>
+                        <p>Things That Can Cause Water Pollution</p>
                     </div>
                     <div class="row">
                         <div class="row" id="lightbox">
@@ -151,7 +152,7 @@
                 <section class="third-section container-fluid">
                     <div class="row" id="choropleth-map">
                         <div class="row" id="title">
-                            <p>Polluted area in Victoria</p>
+                            <p>Polluted Area In Victoria</p>
                         </div>
                         <br />
                         <div class="row">
@@ -180,7 +181,7 @@
                                     var divElement = document.getElementById('viz1567507781168');
                                     var vizElement = divElement.getElementsByTagName('object')[0];
                                     vizElement.style.width = '100%';
-                                    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                                    vizElement.style.height = (divElement.offsetWidth * 0.5) + 'px';
                                     var scriptElement = document.createElement('script');
                                     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
                                     vizElement.parentNode.insertBefore(scriptElement, vizElement);
@@ -188,9 +189,6 @@
                             </div>
                             <div class="col-md-3 col-sm-12 col-xs-12">
                                 <p>
-                                    <br />
-                                    <br />
-                                    <br />
                                     The bluer area indicating the severe water polluted area based on the main activity of the facilities
                                     in that area and the number of facilities.
                                     <br />
@@ -213,14 +211,12 @@
                     </div>
                 </section>
             </div>
-            <br />
-            <br />
-            <br />
-            <br />
+            <br class="hidden-sm hidden-xs"/>
+            <br class="hidden-sm hidden-xs"/>
             <div class="container">
                 <div class="row">
                     <div class="row" id="title">
-                        <p>The chemical content in waterways</p>
+                        <p>The Chemical Content In Waterways</p>
                     </div>
                     <div class="row">
                         <p>Chemical pollution is the introduction of substances into the environment (by man) that are liable to harm human health, living resources, and ecological systems, damage structures or generally interfere with the legitimate use of the environment.</p>
@@ -245,41 +241,72 @@
                     <div class="row" id="chemical-display">
                         <div class="row">
                             <div class="col-md-8 col-sm-12 col-xs-12">
-                                <div class='tableauPlaceholder' id='viz1567506867215' style='position: relative'>
-                                    <noscript>
-                                        <a href='#'>
-                                            <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;Substance-Chemical-BarChart-Name&#47;Dashboard1&#47;1_rss.png' style='border: none' />
-                                        </a>
-                                    </noscript>
-                                    <object class='tableauViz' style='display:none;'>
-                                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                                        <param name='embed_code_version' value='3' />
-                                        <param name='site_root' value='' />
-                                        <param name='name' value='Substance-Chemical-BarChart-Name&#47;Dashboard1' />
-                                        <param name='tabs' value='no' />
-                                        <param name='toolbar' value='no' />
-                                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;Substance-Chemical-BarChart-Name&#47;Dashboard1&#47;1.png' />
-                                        <param name='animate_transition' value='yes' />
-                                        <param name='display_static_image' value='yes' />
-                                        <param name='display_spinner' value='yes' />
-                                        <param name='display_overlay' value='yes' />
-                                        <param name='display_count' value='yes' />
-                                        <param name='filter' value='publish=yes' />
-                                    </object>
+                                <div id="chemical-bar">
+                                    <!-- Plotly chart will be drawn inside this DIV -->
                                 </div>
-                                <script type='text/javascript'>
-                                    var divElement = document.getElementById('viz1567506867215');
-                                    var vizElement = divElement.getElementsByTagName('object')[0];
-                                    vizElement.style.width = '100%';
-                                    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-                                    var scriptElement = document.createElement('script');
-                                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                                <script>
+                                    var data = [{
+                                        type: 'bar',
+                                        x: [97099, 94872, 85717, 62646, 22979, 12390, 12390, 12390, 12376, 12376, 136, 136, 100, 78, 78],
+                                        y:
+                                            ['Phosphorus', 'Kjeldahl Nitrogen', 'Fibre-Reinforced Plastic', 'Total Suspended Solids', 'Silicon Dioxide', 'Copper', 'Zinc', 'Lead', 'Chromium', 'Nickel', 'Anions', 'Cations', 'Fluorine', 'Selenium', 'Molybdenum'],
+                                        orientation: 'h',
+                                        marker: {
+                                            color: ['#EF5350', "#FFA500", "#7E57C2", "#CDDC39", "#00BCD4", "#4CAF50", "#FFC107", "#34729E", "#95CE67", "#CAC461", 'rgba(55,128,191,0.6)', "#2a9d8f", "#e76f51", "#264653", "#e9c46a"],
+                                            width: 1
+                                        }
+                                    }];
+
+                                    var layout = {
+                                        title: 'Chemical In Waterways',
+                                        showlegend: false,
+                                        yaxis: {
+                                            fixedrange: true,
+                                            automargin: true
+                                        },
+                                        xaxis: {
+                                            fixedrange: true
+                                        }
+                                    };
+
+                                    Plotly.newPlot('chemical-bar', data, layout, { displayModeBar: false, responsive: true });
                                 </script>
+
+                                @*<div class='tableauPlaceholder' id='viz1567506867215' style='position: relative'>
+            <noscript>
+                <a href='#'>
+                    <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;Substance-Chemical-BarChart-Name&#47;Dashboard1&#47;1_rss.png' style='border: none' />
+                </a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='Substance-Chemical-BarChart-Name&#47;Dashboard1' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='no' />
+                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;Substance-Chemical-BarChart-Name&#47;Dashboard1&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='filter' value='publish=yes' />
+            </object>
+        </div>
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1567506867215');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width = '100%';
+            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>*@
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12">
-                                <br />
-                                <br />
+                                <br class="hidden-xs hidden-sm" />
+                                <br class="hidden-xs hidden-sm" />
                                 <br />
                                 <p>
                                     Phosphorus, Kjeldahl Nitrogen, Fibre-Reinforced Plastic, Total Suspended Solids
@@ -292,6 +319,7 @@
                                     kitchen waste, etc. As to Slicon Dioxide, it shows that the high turbidity
                                     of waterways and contains a lot of sand.
                                 </p>
+                                <br />
                             </div>
                         </div>
                     </div>
@@ -334,11 +362,6 @@
                     </section>
                 </div>
             </div>
-        </div>
-        <br />
-        <br />
-        <div class="row" id="title">
-            <p>Take action now! Our waterways need your help</p>
         </div>
     </div>
 </div>

@@ -11,7 +11,7 @@
     color: white; /* ADD THIS LINE */
 
     /* Background styles */
-    background-image: url('~/Content/Image/first-section-bg.png');
+    /*background-image: url('~/Content/Image/first-section-bg.png');*/
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -44,6 +44,24 @@
     padding: 15% 5%;
     color: white;
 }
+
+.last-section {
+    background-image: url('../Content/Image/last-section-bg.jpg');
+    background-size: cover;
+    width: 100%;
+    background-repeat: no-repeat;
+    padding: 10% 5% 5% 5%;
+    color: white;
+}
+
+/*#footer {
+    background-image: url('../Content/Image/footer-bg.jpg');
+    background-size: cover;
+    width: 100%;
+    background-repeat: no-repeat;
+    /*padding: 10% 5% 5% 5%;*/
+    color: white;
+}*/
 
 .text-context {
     text-transform: uppercase;
@@ -117,6 +135,10 @@
     
     #substance .hero, #litter .hero, #groundwater .hero {
         margin-top: 0%;
+    }
+
+    .footer {
+        padding-top: 15%;
     }
 }
 

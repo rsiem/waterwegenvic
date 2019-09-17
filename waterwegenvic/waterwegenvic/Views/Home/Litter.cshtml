@@ -2,7 +2,7 @@
     ViewBag.Title = "Litter";
 }
 
-@*@Styles.Render("~/Content/litter")*@
+@Styles.Render("~/Content/litter")
 @Scripts.Render("~/bundles/litter")
 
 <div class="row" id="litter">
@@ -19,7 +19,7 @@
 </div>
 <br />
 <div class="row" id="litter-page">
-    <div class="container-fluid">
+    <div class="container-fluid" id="background">
         <div class="litter-page">
             <div class="container">
                 <div class="row" id="introduction">
@@ -29,6 +29,13 @@
                         waterways. This often causes harm to the ecosystem or interferes with
                         the function of several ecological processes.
                     </p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3" id="youtube-video">
+                        <iframe height="480" width="500" src="https://www.youtube.com/embed/hNiztbWCdSY?controls=0"></iframe>
+                    </div>
                 </div>
             </div>
             <div class="container">
@@ -373,22 +380,16 @@
                             }
 
                             function removeAnimation(ctr, index) {
-
                                 d3.select(ctr.parentNode).select('text').transition()
                                     .duration(100)
                                     .style("font-size", fontSize + 'px')
                                     .style('fill', function (d, i) {
                                         return textColour;
                                     })
-
-
                                     .style("font-weight", 'normal')
-
                             }
 
                         </script>
-
-
                     </div>
                 </div>
             </div>
@@ -397,16 +398,82 @@
             <br />
             <div class="container">
                 <div class="row">
-                    <div class="funnelTooltip">
-                    </div>
 
                     <div class="row" id="title">
                         <p>Things that can cause water pollution</p>
                     </div>
                     <div class="row">
                         <div class="row">
-                            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
-                                <img src="~/Content/Image/img2.jpg" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+                            <div class="col-md-4 col-sm-4 col-xs-4" draggable="true" ondragstart="return dragStart(event)">
+                                <img class="img-responsive grab litter" id="car" alt="car" src="https://cdn.glitch.com/20f985bd-431d-4807-857b-e966e015c91b%2Fcar-20clip-20art-1311497037_Vector_Clipart.png?1519011788408">
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4" draggable="true" ondragstart="return dragStart(event)">
+                                <img class="img-responsive grab litter" id="ambulance" alt="ambulance" src="https://cdn.glitch.com/20f985bd-431d-4807-857b-e966e015c91b%2Fambulance5.png?1519011787610">
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4" draggable="true" ondragstart="return dragStart(event)">
+                                <img class="img-responsive grab litter" id="bike" alt="bicycle" src="https://cdn.glitch.com/20f985bd-431d-4807-857b-e966e015c91b%2Fbicycle-20clip-20art-bicycle3.png?1519011787816">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <img src="~/Content/Image/red.png" draggable="false" id="red-bin" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)" />
+                                    @*<img src="~/Content/Image/red-open.jpg" style="visibility:hidden" draggable="false" id="purple-box-second" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)" />*@
+                                </div>
+                                <div class="row">
+                                    Waste Bin
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <img src="~/Content/Image/yellow.png" draggable="false" id="yellow-bin" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
+                                </div>
+                                <div class="row">
+                                    Recycling Bin
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <img src="~/Content/Image/green.png" draggable="false" id="green-bin" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
+                                </div>
+                                <div class="row">
+                                    Organics Bin
+                                </div>
+                            </div>
+                            
+                            @*<script type="text/javascript">
+                                function mouseaway() {
+                                    document.getElementById('purple-box-first').style.visibility = "hidden";
+                                    document.getElementById('purple-box-second').style.visibility = "visible";
+                                }
+
+                                function rollover() {
+                                    document.getElementById('purple-box-first').style.visibility = "visible";
+                                    document.getElementById('purple-box-second').style.visibility = "hidden";
+                                }
+                            </script>*@
+                        </div>
+                    </div>
+                    
+                    @*<div class="row">
+                        <div class="row vehicles">
+                            <div class="col-md-3">
+                                <!-- Fire Truck -->
+                                <img id="fire-truck" alt="fire truck" src="https://cdn.glitch.com/20f985bd-431d-4807-857b-e966e015c91b%2Ftruck-clip-art-fire-truck4.png?1519011787956" />
+                            </div>
+                            <div class="col-md-3">
+                                <!-- Ambulance -->
+                                <img id="ambulance" alt="ambulance" src="https://cdn.glitch.com/20f985bd-431d-4807-857b-e966e015c91b%2Fambulance5.png?1519011787610">
+                            </div>
+                            <div class="col-md-3">
+                                <!-- Car -->
+                                <img id="car" alt="car" src="https://cdn.glitch.com/20f985bd-431d-4807-857b-e966e015c91b%2Fcar-20clip-20art-1311497037_Vector_Clipart.png?1519011788408">
+                            </div>
+                            <div class="col-md-3">
+                                <!-- Bike -->
+                                <img id="bike" alt="bicycle" src="https://cdn.glitch.com/20f985bd-431d-4807-857b-e966e015c91b%2Fbicycle-20clip-20art-bicycle3.png?1519011787816">
                             </div>
                         </div>
 
@@ -423,13 +490,18 @@
                                 <img src="~/Content/Image/green.png" draggable="false">
                             </div>
                         </div>
-                    </div>
+                    </div>*@
                 </div>
             </div>
             <br />
             <br />
             <br />
             <br />
+            <div class="container">
+                <div class="row" id="quiz">
+
+                </div>
+            </div>
             <div class="container">
                 <div class="row">
                     <div class="row" id="title">
@@ -445,7 +517,8 @@
                         <br />
                         <div class="row" id="">
                             <div class="row">
-
+                                <div id="interact-5d8084a62406c0001400ebb2"></div>
+                                <script type="text/javascript">var app_5d8084a62406c0001400ebb2; (function (d, t) { var s = d.createElement(t), options = { "appId": "5d8084a62406c0001400ebb2", "aspect_ratio": "100%", "async": true, "host": "quiz.tryinteract.com", "footer": "show" }; s.src = 'https://i.tryinteract.com/embed/app.js'; s.onload = s.onreadystatechange = function () { var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return; try { app_5d8084a62406c0001400ebb2 = new InteractApp(); app_5d8084a62406c0001400ebb2.initialize(options); app_5d8084a62406c0001400ebb2.display(); } catch (e) { } }; var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr); })(document, 'script');</script>
                             </div>
                         </div>
                     </div>

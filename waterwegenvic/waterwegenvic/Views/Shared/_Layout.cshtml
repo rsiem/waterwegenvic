@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waterwegenvic - @ViewBag.Title</title>
+    <title>@ViewBag.Title - Waterwegenvic</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <!-- Load d3.js -->
@@ -11,11 +11,14 @@
     <script src="https://d3js.org/d3.v3.min.js"></script>
 
     <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <script src="~/Scripts/d3-funnel.js"></script>
+
     <!-- Load d3-cloud -->
     @*<script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>*@
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #16283b8f; border-color: #16283b8f; opacity: 0.8">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #16283b8f; border-color: #16283b8f; opacity: 1">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -31,6 +34,7 @@
                     @*<li>@Html.ActionLink("Substance", "Index", "Home", null, null, "substance", null, new { @style = "color: white;" })</li>*@
                     <li>@Html.ActionLink("Substance", "Substance", "Home", null, null, null, null, new { @style = "color: white;" })</li>
                     <li>@Html.ActionLink("Litter", "Litter", "Home", null, null, null, null, new { @style = "color: white;" })</li>
+                    @*<li>@Html.ActionLink("Iteration1", "Iteration1", "Home", null, null, null, null, new { @style = "color: white;" })</li>*@
                 </ul>
             </div>
         </div>
@@ -41,12 +45,14 @@
         @*<footer>
             <p>&copy; @DateTime.Now.Year - Aguementi Team</p>
         </footer>*@
-        <div id="footer" style="background-color: azure; text-align: center; width: 100%; left: 0; bottom: 0;">
+        @*<div id="footer" style="background-color: azure; text-align: center; width: 100%; left: 0; bottom: 0;">*@
+        <div id="footer" style="text-align: center; width: 100%; left: 0; bottom: 0;">
             <!-- Footer start -->
             <p>&copy;Aguamenti 2019</p>
             <!-- Footer end -->
         </div>
     </div>
+        
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @*@Scripts.Render("~/bundles/script")*@
