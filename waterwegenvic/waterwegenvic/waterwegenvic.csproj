@@ -166,6 +166,8 @@
     <Content Include="App_Data\substance_db_log.ldf">
       <DependentUpon>substance_db.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\Image\battery.png" />
+    <Content Include="Content\Image\egg-carton-4046693_960_720.jpg" />
     <Content Include="Content\Image\footer.jpg" />
     <Content Include="Content\Image\footer-bg.jpg" />
     <Content Include="Content\Image\jasmin-sessler-5Wfttm2CjeI-unsplash.jpg" />
@@ -189,15 +191,21 @@
     <Content Include="Content\Image\img7.jpg" />
     <Content Include="Content\Image\josefin-brosche-hagsgard-18388_en-1412x772.jpg" />
     <Content Include="Content\Image\first-section-bg.jpg" />
+    <Content Include="Content\Image\lamp.png" />
     <Content Include="Content\Image\neonbrand-8Yk4T-tDSYY-unsplash %281%29.jpg" />
+    <Content Include="Content\Image\orange-peel.jpg" />
+    <Content Include="Content\Image\paint.png" />
     <Content Include="Content\Image\pollution.jpg" />
     <Content Include="Content\Image\img8.jpg" />
     <Content Include="Content\Image\red-open.jpg" />
     <Content Include="Content\Image\red.png" />
     <Content Include="Content\Image\samuel-zeller-Xl9zLLHqz3o-unsplash %281%29.jpg" />
     <Content Include="Content\Image\last-section-bg.jpg" />
+    <Content Include="Content\Image\substance-box.jpg" />
     <Content Include="Content\Image\template.jpg" />
     <Content Include="Content\Image\third-section-bg.png" />
+    <Content Include="Content\Image\tip-section-bg.jpg" />
+    <Content Include="Content\Image\wet-wipes.jpg" />
     <Content Include="Content\Image\tobias-tullius--wR0XMaegRo-unsplash %282%29.jpg" />
     <Content Include="Content\Image\tree-graph.png" />
     <Content Include="Content\Image\yarra-river-83116_1280.jpg" />

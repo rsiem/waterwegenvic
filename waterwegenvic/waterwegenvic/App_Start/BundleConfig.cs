@@ -30,7 +30,8 @@ namespace waterwegenvic
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/Site.css",
-                      "~/Content/section.css"));
+                      "~/Content/section.css",
+                      "~/Content/last-section.css"));
 
             // iteration 1 page bundle
             bundles.Add(new StyleBundle("~/Content/Iteration1").Include(
@@ -43,8 +44,7 @@ namespace waterwegenvic
 
             // index page bundle
             bundles.Add(new StyleBundle("~/Content/index").Include(
-                      "~/Content/funnel.css",
-                      "~/Content/last-section.css"));
+                      "~/Content/funnel.css"));
 
             // substance page bundle
             bundles.Add(new StyleBundle("~/Content/substance").Include(

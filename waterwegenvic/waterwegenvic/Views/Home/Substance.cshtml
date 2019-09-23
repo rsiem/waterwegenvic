@@ -11,8 +11,9 @@
         <div class=" row">
             <section class="first-section hero" style="background-image:url('../../Content/Image/heading-bg.png'); width: 100%">
                 <div class="hero-inner text-context">
-                    <p>SUBSTANCE POLLUTION</p>
-                    <div class="line-dec"></div>
+                    <p><b>SUBSTANCE POLLUTION</b></p>
+                    <hr />
+                    <h4>Be part of the solution, not the pollution</h4>
                 </div>
             </section>
         </div>
@@ -66,7 +67,7 @@
                         </div>
 
                         <div id="myModal" class="modal">
-                            <span class="close cursor" onclick="closeModal()">&times;</span>
+                            <span class="close cursor" onclick="closeModal()" style="opacity:1;">&times;</span>
                             <div class="modal-content">
 
                                 <div class="mySlides">
@@ -156,7 +157,7 @@
                         </div>
                         <br />
                         <div class="row">
-                            <div class="col-md-9 col-sm-12 col-xs-12">
+                            <div class="col-md-8 col-sm-12 col-xs-12">
                                 <div class='tableauPlaceholder' id='viz1567507781168' style='position: relative'>
                                     <noscript>
                                         <a href='#'>
@@ -187,23 +188,23 @@
                                     vizElement.parentNode.insertBefore(scriptElement, vizElement);
                                 </script>
                             </div>
-                            <div class="col-md-3 col-sm-12 col-xs-12">
+                            <div class="col-md-4 col-sm-12 col-xs-12">
                                 <p>
-                                    The bluer area indicating the severe water polluted area based on the main activity of the facilities
+                                    The higher concentration of red indicates area that are severely polluted based on the main activity of the facilities
                                     in that area and the number of facilities.
                                     <br />
                                     <br />
                                     Top 5 most polluted suburb:
                                     <ul>
-                                        <li>Wollert</li>
-                                        <li>Cosgrove</li>
                                         <li>Eaglehawk</li>
                                         <li>Truganina</li>
+                                        <li>Cosgrove</li>
                                         <li>Drysdale</li>
+                                        <li>Wollert</li>
                                     </ul>
                                     <br />
                                     Water used in the agricultural, industrial and civil sectors often contains
-                                    substances that can potentially alter the ecosystem. Hence this water must
+                                    substances that can have adverse effect to the ecosystem. Hence this water must
                                     not be discharged directly into the rivers.
                                 </p>
                             </div>
@@ -211,8 +212,8 @@
                     </div>
                 </section>
             </div>
-            <br class="hidden-sm hidden-xs"/>
-            <br class="hidden-sm hidden-xs"/>
+            <br class="hidden-sm hidden-xs" />
+            <br class="hidden-sm hidden-xs" />
             <div class="container">
                 <div class="row">
                     <div class="row" id="title">
@@ -221,22 +222,6 @@
                     <div class="row">
                         <p>Chemical pollution is the introduction of substances into the environment (by man) that are liable to harm human health, living resources, and ecological systems, damage structures or generally interfere with the legitimate use of the environment.</p>
                     </div>
-                    @*<div class="row">
-                    <div class="row">
-                        <p>Chemical pollution is the introduction of substances into the environment (by man) that are liable to harm human health, living resources, and ecological systems, damage structures or generally interfere with the legitimate use of the environment.</p>
-                    </div>
-                    <div class="row" id="wordcloud">
-                        <div class="col-md-3 col-sm-1">
-
-                        </div>
-                        <div class="col-md-6 col-sm-10 col-xs-12">
-                            <div id="my_dataviz"></div>
-                        </div>
-                        <div class="col-md-3 col-sm-1">
-
-                        </div>
-                    </div>
-                </div>*@
                     <br />
                     <div class="row" id="chemical-display">
                         <div class="row">
@@ -261,8 +246,8 @@
                                         title: 'Chemical In Waterways',
                                         showlegend: false,
                                         yaxis: {
-                                            fixedrange: true,
-                                            automargin: true
+                                            fixedrange: true
+                                            //automargin: true
                                         },
                                         xaxis: {
                                             fixedrange: true
@@ -271,48 +256,16 @@
 
                                     Plotly.newPlot('chemical-bar', data, layout, { displayModeBar: false, responsive: true });
                                 </script>
-
-                                @*<div class='tableauPlaceholder' id='viz1567506867215' style='position: relative'>
-            <noscript>
-                <a href='#'>
-                    <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;Substance-Chemical-BarChart-Name&#47;Dashboard1&#47;1_rss.png' style='border: none' />
-                </a>
-            </noscript>
-            <object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name' value='Substance-Chemical-BarChart-Name&#47;Dashboard1' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='no' />
-                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;Substance-Chemical-BarChart-Name&#47;Dashboard1&#47;1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='filter' value='publish=yes' />
-            </object>
-        </div>
-        <script type='text/javascript'>
-            var divElement = document.getElementById('viz1567506867215');
-            var vizElement = divElement.getElementsByTagName('object')[0];
-            vizElement.style.width = '100%';
-            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
-        </script>*@
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12">
                                 <br class="hidden-xs hidden-sm" />
                                 <br class="hidden-xs hidden-sm" />
                                 <br />
                                 <p>
-                                    Phosphorus, Kjeldahl Nitrogen, Fibre-Reinforced Plastic, Total Suspended Solids
+                                    @*Phosphorus, Kjeldahl Nitrogen, Fibre-Reinforced Plastic, Total Suspended Solids
                                     and Silicon Dioxide are the top 5 chemical content in the waterways that shown
                                     in the word cloud.
-                                    <br />
+                                    <br />*@
                                     <br />
                                     The great amount of Phosphorus and Nitrogen indicating the
                                     main pollution comes from the living wastewater including disposal waste,
@@ -328,39 +281,37 @@
             <br />
             <br />
             <div class="container">
-                <div class=" row">
-                    <section class="hero" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('../../Content/Image/bins.jpg'); height: 400px; width: 100%">
-                        <div class="container-block" style="background-color: #a9a9b0; opacity:0.8; padding: 20px">
-                            <div class="hero-inner" style="text-align:left">
-                                <p style="color:black;">Solution to the problem:</p>
-                                <ul>
-                                    <li style="color:black;">Use Environment friendly detergents.</li>
-                                    <li style="color:black;">Avoid Pesticides.</li>
-                                    <li style="color:black;">Use recycled products.</li>
-                                    <li style="color:black;">Use Products which are durable as well as with less packaging.</li>
-                                    <li style="color:black;">Use fruit and vegetables waste as mulch.</li>
-                                    <li style="color:black;">Use of non-chemical pesticides and herbicides in gardens.</li>
-                                </ul>
+                <section class="hero" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('../../Content/Image/bins.jpg'); width: 100%; padding:2%">
+                    <div class="container-block">
+                        <div class="row">
+                            <div class="col-md-5" style="background-color: #a9a9b0; opacity:1; padding: 2%; margin:2%">
+                                <div class="hero-inner" style="text-align:left">
+                                    <p style="color:black;">Solution to the problem:</p>
+                                    <ul>
+                                        <li style="color:black;">Use Environment friendly detergents.</li>
+                                        <li style="color:black;">Avoid Pesticides.</li>
+                                        <li style="color:black;">Use recycled products.</li>
+                                        <li style="color:black;">Use Products which are durable as well as with less packaging.</li>
+                                        <li style="color:black;">Use fruit and vegetables waste as mulch.</li>
+                                        <li style="color:black;">Use of non-chemical pesticides and herbicides in gardens.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-md-offset-2" style="background-color: #a9a9b0; opacity:1; padding: 2%; margin:2%">
+                                <div class="hero-inner" style="text-align:left">
+                                    <p style="color:black;">How to dispose of the substance safely to protect waterways?</p>
+                                    <ul>
+                                        @*<li style="color:black;">Be careful about what you throw down your sink or toilet!</li>*@
+                                        <li style="color:black;">Don’t throw paints, oils or other forms of litter down the drain.</li>
+                                        <li style="color:black;">Use appropriate containers while disposing of hazardous substances.</li>
+                                        <li style="color:black;">Ensure that the substances do not mix while the disposal as there might be a violent reaction.</li>
+                                        <li style="color:black;">Do not dispose of the electronic waste into the bins instead drop-off it at your nearest collection centers.</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </section>
-                </div>
-                <div class=" row">
-                    <section class="hero" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('../../Content/Image/bins.jpg'); height: 400px; width: 100%">
-                        <div class="container-block" style="background-color: #a9a9b0; opacity:0.8; padding: 20px">
-                            <div class="hero-inner" style="text-align:left">
-                                <p style="color:black;">How to dispose of the substance safely to protect waterways?</p>
-                                <ul>
-                                    <li style="color:black;">Be careful about what you throw down your sink or toilet!</li>
-                                    <li style="color:black;">Don’t throw paints, oils or other forms of litter down the drain.</li>
-                                    <li style="color:black;">Use appropriate containers while disposing of hazardous substances.</li>
-                                    <li style="color:black;">Ensure that the substances do not mix while the disposal as there might be a violent reaction.</li>
-                                    <li style="color:black;">Do not dispose of the electronic waste into the bins instead drop-off it at your nearest collection centers.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-                </div>
+                    </div>
+                </section>
             </div>
         </div>
     </div>

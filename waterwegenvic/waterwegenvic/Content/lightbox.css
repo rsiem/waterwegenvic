@@ -43,7 +43,7 @@
 
 /* The Close Button */
 .close {
-    color: white;
+    color: red;
     position: absolute;
     top: 10%;
     right: 25px;

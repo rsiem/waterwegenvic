@@ -41,7 +41,7 @@
     background-size: cover;
     width: 100%;
     background-repeat: no-repeat;
-    padding: 15% 5%;
+    padding: 15% 5% 20% 5%;
     color: white;
 }
 
@@ -50,7 +50,16 @@
     background-size: cover;
     width: 100%;
     background-repeat: no-repeat;
-    padding: 10% 5% 5% 5%;
+    padding: 10% 5% 10% 5%;
+    color: white;
+}
+
+.tip-section {
+    background-image: url('../Content/Image/tip-section-bg.jpg');
+    background-size: cover;
+    width: 100%;
+    background-repeat: no-repeat;
+    padding: 10% 5% 20% 5%;
     color: white;
 }
 
@@ -59,7 +68,6 @@
     background-size: cover;
     width: 100%;
     background-repeat: no-repeat;
-    /*padding: 10% 5% 5% 5%;*/
     color: white;
 }*/
 
@@ -142,10 +150,13 @@
     }
 }
 
-.container-block {
+#main-reasons {
     background-color: #6a5f557a;
+}
+
+.container-block {
     opacity: 0.8;
-    padding: 5% 2% 2% 2%;
+    padding: 2%;
     width: 90%;
     margin-top: 3%;
 }

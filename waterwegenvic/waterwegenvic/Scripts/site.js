@@ -18,21 +18,21 @@ function dragDrop(ev) {
     var src = ev.dataTransfer.getData("Text");
     var id = ev.target.id;
     if (id == 'red-bin') {
-        if (src == 'car') {
+        if (src == 'wet-wipes') {
             ev.target.appendChild(document.getElementById(src));
             ev.stopPropagation();
         } else {
             alert('wrong dustbin.');
         }
     } else if (id == 'yellow-bin') {
-        if (src == 'ambulance') {
+        if (src == 'egg-carton') {
             ev.target.appendChild(document.getElementById(src));
             ev.stopPropagation();
         } else {
             alert('wrong dustbin.');
         }
     } else if (id == 'green-bin') {
-        if (src == 'bike') {
+        if (src == 'orange-peel') {
             ev.target.appendChild(document.getElementById(src));
             ev.stopPropagation();
         } else {

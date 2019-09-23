@@ -32,5 +32,15 @@ function showSlides(n) {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
-    captionText.innerHTML = dots[slideIndex - 1].alt;
+    var alt = dots[slideIndex - 1].alt;
+    if (alt == "Pesticides") {
+        alt = "Pesticides (e.g. fungicides, herbicides, and insecticides)"
+    } else if (alt == "Detergent Bar") {
+        alt = "Detergent Bar (e.g. Detergent powder, laundry detergent or dish detergent)"
+    } else if (alt == "Oil") {
+        alt = "Oil (Including canola oil, corn oil, cottonseed oil, olive oil, safflower oil, soybean oil, and sunflower oil.)"
+    } else if (alt == "Chlorine") {
+        alt = "Chlorine is used to manufacture household chlorine bleach, which whitens and disinfects clothes and disinfects kitchen and bathroom surfaces."
+    }
+    captionText.innerHTML = alt;
 }
