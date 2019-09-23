@@ -1,318 +1,371 @@
-﻿@{
-    ViewBag.Title = "Substance";
-}
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Waterwegenvic</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
 
-@Styles.Render("~/Content/substance")
-@Scripts.Render("~/bundles/substance")
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
 
-<div class="row" id="substance">
-    <div class="container-fluid">
-        <div class=" row">
-            <section class="first-section hero" style="background-image:url('../../Content/Image/heading-bg.png'); width: 100%">
-                <div class="hero-inner text-context">
-                    <p><b>SUBSTANCE POLLUTION</b></p>
-                    <hr />
-                    <h4>Be part of the solution, not the pollution</h4>
-                </div>
-            </section>
+    <script src="~/Scripts/d3-funnel.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <!-- Load d3-cloud -->
+    @*<script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>*@
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #16283b8f; border-color: #16283b8f; opacity: 1; font-size: 1.3em">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Waterwegenvic", "Index", "Home", null, null, "home", new { area = "" }, new { @class = "navbar-brand", @style = "color: white;" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Iteration2", null, null, "home", null, new { @style = "color: white;" })</li>
+                    @*<li>@Html.ActionLink("Substance", "Index", "Home", null, null, "substance", null, new { @style = "color: white;" })</li>*@
+                    <li>@Html.ActionLink("Substance", "Substance", "Iteration2", null, null, null, null, new { @style = "color: white;" })</li>
+                    <li>@Html.ActionLink("Litter", "Litter", "Iteration2", null, null, null, null, new { @style = "color: white;" })</li>
+                    @*<li>@Html.ActionLink("Iteration1", "Iteration1", "Home", null, null, null, null, new { @style = "color: white;" })</li>*@
+                </ul>
+            </div>
         </div>
     </div>
-</div>
-<br />
-<div class="row" id="substance-page">
-    <div class="container-fluid" id="background">
-        <div class="substance-page">
-            <div class="container">
-                <div class="row" id="introduction">
-                    <p>
-                        Mindless disposal of chemicals and waste products in the agricultural,
-                        industrial and civil sectors often results in the contamination of
-                        waterways. This often causes harm to the ecosystem or interferes with
-                        the function of several ecological processes.
-                    </p>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="row" id="title">
-                        <p>Things That Can Cause Water Pollution</p>
-                    </div>
-                    <div class="row">
-                        <div class="row" id="lightbox">
-                            <div class="column">
-                                <img src="~/Content/Image/img1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+    <div class="row">
+        <div class="container-fluid body-content">
+            @{
+                ViewBag.Title = "Substance";
+            }
+
+            @Styles.Render("~/Content/substance")
+            @Scripts.Render("~/bundles/substance")
+            <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+            <div class="row" id="substance">
+                <div class="container-fluid">
+                    <div class=" row">
+                        <section class="first-section hero" style="background-image:url('../../Content/Image/heading-bg.png'); width: 100%">
+                            <div class="hero-inner text-context">
+                                <p><b>SUBSTANCE POLLUTION</b></p>
+                                <hr />
+                                <h4>Be part of the solution, not the pollution</h4>
                             </div>
-                            <div class="column">
-                                <img src="~/Content/Image/img2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
-                            </div>
-                            <div class="column">
-                                <img src="~/Content/Image/img3.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
-                            </div>
-                            <div class="column">
-                                <img src="~/Content/Image/img4.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
-                            </div>
-                            <div class="column">
-                                <img src="~/Content/Image/img5.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
-                            </div>
-                            <div class="column">
-                                <img src="~/Content/Image/img6.jpg" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
-                            </div>
-                            <div class="column">
-                                <img src="~/Content/Image/img7.jpg" style="width:100%" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
-                            </div>
-                            <div class="column">
-                                <img src="~/Content/Image/img8.jpg" style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
-                            </div>
-                        </div>
-
-                        <div id="myModal" class="modal">
-                            <span class="close cursor" onclick="closeModal()" style="opacity:1;">&times;</span>
-                            <div class="modal-content">
-
-                                <div class="mySlides">
-                                    <div class="numbertext">1 / 8</div>
-                                    <img src="~/Content/Image/img1.jpg" style="width:100%">
-                                </div>
-
-                                <div class="mySlides">
-                                    <div class="numbertext">2 / 8</div>
-                                    <img src="~/Content/Image/img2.jpg" style="width:100%">
-                                </div>
-
-                                <div class="mySlides">
-                                    <div class="numbertext">3 / 8</div>
-                                    <img src="~/Content/Image/img3.jpg" style="width:100%">
-                                </div>
-
-                                <div class="mySlides">
-                                    <div class="numbertext">4 / 8</div>
-                                    <img src="~/Content/Image/img4.jpg" style="width:100%">
-                                </div>
-
-                                <div class="mySlides">
-                                    <div class="numbertext">5 / 8</div>
-                                    <img src="~/Content/Image/img5.jpg" style="width:100%">
-                                </div>
-
-                                <div class="mySlides">
-                                    <div class="numbertext">6 / 8</div>
-                                    <img src="~/Content/Image/img6.jpg" style="width:100%">
-                                </div>
-
-                                <div class="mySlides">
-                                    <div class="numbertext">7 / 8</div>
-                                    <img src="~/Content/Image/img7.jpg" style="width:100%">
-                                </div>
-
-                                <div class="mySlides">
-                                    <div class="numbertext">8 / 8</div>
-                                    <img src="~/Content/Image/img8.jpg" style="width:100%">
-                                </div>
-
-                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-                                <div class="caption-container">
-                                    <p id="caption"></p>
-                                </div>
-
-
-                                <div class="column">
-                                    <img class="demo cursor" src="~/Content/Image/img1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Pesticides">
-                                </div>
-                                <div class="column">
-                                    <img class="demo cursor" src="~/Content/Image/img2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Detergent Bar">
-                                </div>
-                                <div class="column">
-                                    <img class="demo cursor" src="~/Content/Image/img3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Oil">
-                                </div>
-                                <div class="column">
-                                    <img class="demo cursor" src="~/Content/Image/img4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Paint">
-                                </div>
-                                <div class="column">
-                                    <img class="demo cursor" src="~/Content/Image/img5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Detergent">
-                                </div>
-                                <div class="column">
-                                    <img class="demo cursor" src="~/Content/Image/img6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Fertilizers">
-                                </div>
-                                <div class="column">
-                                    <img class="demo cursor" src="~/Content/Image/img7.jpg" style="width:100%" onclick="currentSlide(7)" alt="Chlorine">
-                                </div>
-                                <div class="column">
-                                    <img class="demo cursor" src="~/Content/Image/img8.jpg" style="width:100%" onclick="currentSlide(8)" alt="Soaps">
-                                </div>
-                            </div>
-                        </div>
+                        </section>
                     </div>
                 </div>
             </div>
             <br />
-            <br />
-            <div class="row">
-                <section class="third-section container-fluid">
-                    <div class="row" id="choropleth-map">
-                        <div class="row" id="title">
-                            <p>Polluted Area In Victoria</p>
+            <div class="row" id="substance-page">
+                <div class="container-fluid" id="background">
+                    <div class="substance-page">
+                        <div class="container">
+                            <div class="row" id="introduction">
+                                <p>
+                                    Mindless disposal of chemicals and waste products in the agricultural,
+                                    industrial and civil sectors often results in the contamination of
+                                    waterways. This often causes harm to the ecosystem or interferes with
+                                    the function of several ecological processes.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="row" id="title">
+                                    <p>Things That Can Cause Water Pollution</p>
+                                </div>
+                                <div class="row">
+                                    <div class="row" id="lightbox">
+                                        <div class="column">
+                                            <img src="~/Content/Image/img1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+                                        </div>
+                                        <div class="column">
+                                            <img src="~/Content/Image/img2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                                        </div>
+                                        <div class="column">
+                                            <img src="~/Content/Image/img3.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+                                        </div>
+                                        <div class="column">
+                                            <img src="~/Content/Image/img4.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+                                        </div>
+                                        <div class="column">
+                                            <img src="~/Content/Image/img5.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+                                        </div>
+                                        <div class="column">
+                                            <img src="~/Content/Image/img6.jpg" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+                                        </div>
+                                        <div class="column">
+                                            <img src="~/Content/Image/img7.jpg" style="width:100%" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
+                                        </div>
+                                        <div class="column">
+                                            <img src="~/Content/Image/img8.jpg" style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
+                                        </div>
+                                    </div>
+
+                                    <div id="myModal" class="modal">
+                                        <span class="close cursor" onclick="closeModal()" style="opacity:1;">&times;</span>
+                                        <div class="modal-content">
+
+                                            <div class="mySlides">
+                                                <div class="numbertext">1 / 8</div>
+                                                <img src="~/Content/Image/img1.jpg" style="width:100%">
+                                            </div>
+
+                                            <div class="mySlides">
+                                                <div class="numbertext">2 / 8</div>
+                                                <img src="~/Content/Image/img2.jpg" style="width:100%">
+                                            </div>
+
+                                            <div class="mySlides">
+                                                <div class="numbertext">3 / 8</div>
+                                                <img src="~/Content/Image/img3.jpg" style="width:100%">
+                                            </div>
+
+                                            <div class="mySlides">
+                                                <div class="numbertext">4 / 8</div>
+                                                <img src="~/Content/Image/img4.jpg" style="width:100%">
+                                            </div>
+
+                                            <div class="mySlides">
+                                                <div class="numbertext">5 / 8</div>
+                                                <img src="~/Content/Image/img5.jpg" style="width:100%">
+                                            </div>
+
+                                            <div class="mySlides">
+                                                <div class="numbertext">6 / 8</div>
+                                                <img src="~/Content/Image/img6.jpg" style="width:100%">
+                                            </div>
+
+                                            <div class="mySlides">
+                                                <div class="numbertext">7 / 8</div>
+                                                <img src="~/Content/Image/img7.jpg" style="width:100%">
+                                            </div>
+
+                                            <div class="mySlides">
+                                                <div class="numbertext">8 / 8</div>
+                                                <img src="~/Content/Image/img8.jpg" style="width:100%">
+                                            </div>
+
+                                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                                            <div class="caption-container">
+                                                <p id="caption"></p>
+                                            </div>
+
+
+                                            <div class="column">
+                                                <img class="demo cursor" src="~/Content/Image/img1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Pesticides">
+                                            </div>
+                                            <div class="column">
+                                                <img class="demo cursor" src="~/Content/Image/img2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Detergent Bar">
+                                            </div>
+                                            <div class="column">
+                                                <img class="demo cursor" src="~/Content/Image/img3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Oil">
+                                            </div>
+                                            <div class="column">
+                                                <img class="demo cursor" src="~/Content/Image/img4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Paint">
+                                            </div>
+                                            <div class="column">
+                                                <img class="demo cursor" src="~/Content/Image/img5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Detergent">
+                                            </div>
+                                            <div class="column">
+                                                <img class="demo cursor" src="~/Content/Image/img6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Fertilizers">
+                                            </div>
+                                            <div class="column">
+                                                <img class="demo cursor" src="~/Content/Image/img7.jpg" style="width:100%" onclick="currentSlide(7)" alt="Chlorine">
+                                            </div>
+                                            <div class="column">
+                                                <img class="demo cursor" src="~/Content/Image/img8.jpg" style="width:100%" onclick="currentSlide(8)" alt="Soaps">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <br />
+                        <br />
                         <div class="row">
-                            <div class="col-md-8 col-sm-12 col-xs-12">
-                                <div class='tableauPlaceholder' id='viz1567507781168' style='position: relative'>
-                                    <noscript>
-                                        <a href='#'>
-                                            <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;PN&#47;PN98GSHJ9&#47;1_rss.png' style='border: none' />
-                                        </a>
-                                    </noscript>
-                                    <object class='tableauViz' style='display:none;'>
-                                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                                        <param name='embed_code_version' value='3' />
-                                        <param name='path' value='shared&#47;PN98GSHJ9' />
-                                        <param name='toolbar' value='no' />
-                                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;PN&#47;PN98GSHJ9&#47;1.png' />
-                                        <param name='animate_transition' value='yes' />
-                                        <param name='display_static_image' value='yes' />
-                                        <param name='display_spinner' value='yes' />
-                                        <param name='display_overlay' value='yes' />
-                                        <param name='display_count' value='yes' />
-                                        <param name='filter' value='publish=yes' />
-                                    </object>
+                            <section class="third-section container-fluid">
+                                <div class="row" id="choropleth-map">
+                                    <div class="row" id="title">
+                                        <p>Polluted Area In Victoria</p>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-md-8 col-sm-12 col-xs-12">
+                                            <div class='tableauPlaceholder' id='viz1567507781168' style='position: relative'>
+                                                <noscript>
+                                                    <a href='#'>
+                                                        <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;PN&#47;PN98GSHJ9&#47;1_rss.png' style='border: none' />
+                                                    </a>
+                                                </noscript>
+                                                <object class='tableauViz' style='display:none;'>
+                                                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                                    <param name='embed_code_version' value='3' />
+                                                    <param name='path' value='shared&#47;PN98GSHJ9' />
+                                                    <param name='toolbar' value='no' />
+                                                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;PN&#47;PN98GSHJ9&#47;1.png' />
+                                                    <param name='animate_transition' value='yes' />
+                                                    <param name='display_static_image' value='yes' />
+                                                    <param name='display_spinner' value='yes' />
+                                                    <param name='display_overlay' value='yes' />
+                                                    <param name='display_count' value='yes' />
+                                                    <param name='filter' value='publish=yes' />
+                                                </object>
+                                            </div>
+                                            <script type='text/javascript'>
+                                                var divElement = document.getElementById('viz1567507781168');
+                                                var vizElement = divElement.getElementsByTagName('object')[0];
+                                                vizElement.style.width = '100%';
+                                                vizElement.style.height = (divElement.offsetWidth * 0.5) + 'px';
+                                                var scriptElement = document.createElement('script');
+                                                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                                                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                                            </script>
+                                        </div>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <p>
+                                                The higher concentration of red indicates area that are severely polluted based on the main activity of the facilities
+                                                in that area and the number of facilities.
+                                                <br />
+                                                <br />
+                                                Top 5 most polluted suburb:
+                                                <ul>
+                                                    <li>Eaglehawk</li>
+                                                    <li>Truganina</li>
+                                                    <li>Cosgrove</li>
+                                                    <li>Drysdale</li>
+                                                    <li>Wollert</li>
+                                                </ul>
+                                                <br />
+                                                Water used in the agricultural, industrial and civil sectors often contains
+                                                substances that can have adverse effect to the ecosystem. Hence this water must
+                                                not be discharged directly into the rivers.
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <script type='text/javascript'>
-                                    var divElement = document.getElementById('viz1567507781168');
-                                    var vizElement = divElement.getElementsByTagName('object')[0];
-                                    vizElement.style.width = '100%';
-                                    vizElement.style.height = (divElement.offsetWidth * 0.5) + 'px';
-                                    var scriptElement = document.createElement('script');
-                                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-                                </script>
-                            </div>
-                            <div class="col-md-4 col-sm-12 col-xs-12">
-                                <p>
-                                    The higher concentration of red indicates area that are severely polluted based on the main activity of the facilities
-                                    in that area and the number of facilities.
-                                    <br />
-                                    <br />
-                                    Top 5 most polluted suburb:
-                                    <ul>
-                                        <li>Eaglehawk</li>
-                                        <li>Truganina</li>
-                                        <li>Cosgrove</li>
-                                        <li>Drysdale</li>
-                                        <li>Wollert</li>
-                                    </ul>
-                                    <br />
-                                    Water used in the agricultural, industrial and civil sectors often contains
-                                    substances that can have adverse effect to the ecosystem. Hence this water must
-                                    not be discharged directly into the rivers.
-                                </p>
+                            </section>
+                        </div>
+                        <br class="hidden-sm hidden-xs" />
+                        <br class="hidden-sm hidden-xs" />
+                        <div class="container">
+                            <div class="row">
+                                <div class="row" id="title">
+                                    <p>The Chemical Content In Waterways</p>
+                                </div>
+                                <div class="row">
+                                    <p>Chemical pollution is the introduction of substances into the environment (by man) that are liable to harm human health, living resources, and ecological systems, damage structures or generally interfere with the legitimate use of the environment.</p>
+                                </div>
+                                <br />
+                                <div class="row" id="chemical-display">
+                                    <div class="row">
+                                        <div class="col-md-8 col-sm-12 col-xs-12">
+                                            <div id="chemical-bar">
+                                                <!-- Plotly chart will be drawn inside this DIV -->
+                                            </div>
+                                            <script>
+                                                var data = [{
+                                                    type: 'bar',
+                                                    x: [97099, 94872, 85717, 62646, 22979, 12390, 12390, 12390, 12376, 12376, 136, 136, 100, 78, 78],
+                                                    y:
+                                                        ['Phosphorus', 'Kjeldahl Nitrogen', 'Fibre-Reinforced Plastic', 'Total Suspended Solids', 'Silicon Dioxide', 'Copper', 'Zinc', 'Lead', 'Chromium', 'Nickel', 'Anions', 'Cations', 'Fluorine', 'Selenium', 'Molybdenum'],
+                                                    orientation: 'h',
+                                                    marker: {
+                                                        color: ['#EF5350', "#FFA500", "#7E57C2", "#CDDC39", "#00BCD4", "#4CAF50", "#FFC107", "#34729E", "#95CE67", "#CAC461", 'rgba(55,128,191,0.6)', "#2a9d8f", "#e76f51", "#264653", "#e9c46a"],
+                                                        width: 1
+                                                    }
+                                                }];
+
+                                                var layout = {
+                                                    title: 'Chemical In Waterways',
+                                                    showlegend: false,
+                                                    yaxis: {
+                                                        fixedrange: true
+                                                        //automargin: true
+                                                    },
+                                                    xaxis: {
+                                                        fixedrange: true
+                                                    }
+                                                };
+
+                                                Plotly.newPlot('chemical-bar', data, layout, { displayModeBar: false, responsive: true });
+                                            </script>
+                                        </div>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <br class="hidden-xs hidden-sm" />
+                                            <br class="hidden-xs hidden-sm" />
+                                            <br />
+                                            <p>
+                                                @*Phosphorus, Kjeldahl Nitrogen, Fibre-Reinforced Plastic, Total Suspended Solids
+                                            and Silicon Dioxide are the top 5 chemical content in the waterways that shown
+                                            in the word cloud.
+                                            <br />*@
+                                                <br />
+                                                The great amount of Phosphorus and Nitrogen indicating the
+                                                main pollution comes from the living wastewater including disposal waste,
+                                                kitchen waste, etc. As to Slicon Dioxide, it shows that the high turbidity
+                                                of waterways and contains a lot of sand.
+                                            </p>
+                                            <br />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-            </div>
-            <br class="hidden-sm hidden-xs" />
-            <br class="hidden-sm hidden-xs" />
-            <div class="container">
-                <div class="row">
-                    <div class="row" id="title">
-                        <p>The Chemical Content In Waterways</p>
-                    </div>
-                    <div class="row">
-                        <p>Chemical pollution is the introduction of substances into the environment (by man) that are liable to harm human health, living resources, and ecological systems, damage structures or generally interfere with the legitimate use of the environment.</p>
-                    </div>
-                    <br />
-                    <div class="row" id="chemical-display">
-                        <div class="row">
-                            <div class="col-md-8 col-sm-12 col-xs-12">
-                                <div id="chemical-bar">
-                                    <!-- Plotly chart will be drawn inside this DIV -->
+                        <br />
+                        <br />
+                        <div class="container">
+                            <section class="hero" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('../../Content/Image/bins.jpg'); width: 100%; padding:2%">
+                                <div class="container-block">
+                                    <div class="row">
+                                        <div class="col-md-5" style="background-color: #a9a9b0; opacity:1; padding: 2%; margin:2%">
+                                            <div class="hero-inner" style="text-align:left">
+                                                <p style="color:black;">Solution to the problem:</p>
+                                                <ul>
+                                                    <li style="color:black;">Use Environment friendly detergents.</li>
+                                                    <li style="color:black;">Avoid Pesticides.</li>
+                                                    <li style="color:black;">Use recycled products.</li>
+                                                    <li style="color:black;">Use Products which are durable as well as with less packaging.</li>
+                                                    <li style="color:black;">Use fruit and vegetables waste as mulch.</li>
+                                                    <li style="color:black;">Use of non-chemical pesticides and herbicides in gardens.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 col-md-offset-2" style="background-color: #a9a9b0; opacity:1; padding: 2%; margin:2%">
+                                            <div class="hero-inner" style="text-align:left">
+                                                <p style="color:black;">How to dispose of the substance safely to protect waterways?</p>
+                                                <ul>
+                                                    @*<li style="color:black;">Be careful about what you throw down your sink or toilet!</li>*@
+                                                    <li style="color:black;">Don’t throw paints, oils or other forms of litter down the drain.</li>
+                                                    <li style="color:black;">Use appropriate containers while disposing of hazardous substances.</li>
+                                                    <li style="color:black;">Ensure that the substances do not mix while the disposal as there might be a violent reaction.</li>
+                                                    <li style="color:black;">Do not dispose of the electronic waste into the bins instead drop-off it at your nearest collection centers.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <script>
-                                    var data = [{
-                                        type: 'bar',
-                                        x: [97099, 94872, 85717, 62646, 22979, 12390, 12390, 12390, 12376, 12376, 136, 136, 100, 78, 78],
-                                        y:
-                                            ['Phosphorus', 'Kjeldahl Nitrogen', 'Fibre-Reinforced Plastic', 'Total Suspended Solids', 'Silicon Dioxide', 'Copper', 'Zinc', 'Lead', 'Chromium', 'Nickel', 'Anions', 'Cations', 'Fluorine', 'Selenium', 'Molybdenum'],
-                                        orientation: 'h',
-                                        marker: {
-                                            color: ['#EF5350', "#FFA500", "#7E57C2", "#CDDC39", "#00BCD4", "#4CAF50", "#FFC107", "#34729E", "#95CE67", "#CAC461", 'rgba(55,128,191,0.6)', "#2a9d8f", "#e76f51", "#264653", "#e9c46a"],
-                                            width: 1
-                                        }
-                                    }];
-
-                                    var layout = {
-                                        title: 'Chemical In Waterways',
-                                        showlegend: false,
-                                        yaxis: {
-                                            fixedrange: true
-                                            //automargin: true
-                                        },
-                                        xaxis: {
-                                            fixedrange: true
-                                        }
-                                    };
-
-                                    Plotly.newPlot('chemical-bar', data, layout, { displayModeBar: false, responsive: true });
-                                </script>
-                            </div>
-                            <div class="col-md-4 col-sm-12 col-xs-12">
-                                <br class="hidden-xs hidden-sm" />
-                                <br class="hidden-xs hidden-sm" />
-                                <br />
-                                <p>
-                                    @*Phosphorus, Kjeldahl Nitrogen, Fibre-Reinforced Plastic, Total Suspended Solids
-                                    and Silicon Dioxide are the top 5 chemical content in the waterways that shown
-                                    in the word cloud.
-                                    <br />*@
-                                    <br />
-                                    The great amount of Phosphorus and Nitrogen indicating the
-                                    main pollution comes from the living wastewater including disposal waste,
-                                    kitchen waste, etc. As to Slicon Dioxide, it shows that the high turbidity
-                                    of waterways and contains a lot of sand.
-                                </p>
-                                <br />
-                            </div>
+                            </section>
                         </div>
                     </div>
                 </div>
             </div>
-            <br />
-            <br />
-            <div class="container">
-                <section class="hero" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('../../Content/Image/bins.jpg'); width: 100%; padding:2%">
-                    <div class="container-block">
-                        <div class="row">
-                            <div class="col-md-5" style="background-color: #a9a9b0; opacity:1; padding: 2%; margin:2%">
-                                <div class="hero-inner" style="text-align:left">
-                                    <p style="color:black;">Solution to the problem:</p>
-                                    <ul>
-                                        <li style="color:black;">Use Environment friendly detergents.</li>
-                                        <li style="color:black;">Avoid Pesticides.</li>
-                                        <li style="color:black;">Use recycled products.</li>
-                                        <li style="color:black;">Use Products which are durable as well as with less packaging.</li>
-                                        <li style="color:black;">Use fruit and vegetables waste as mulch.</li>
-                                        <li style="color:black;">Use of non-chemical pesticides and herbicides in gardens.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-5 col-md-offset-2" style="background-color: #a9a9b0; opacity:1; padding: 2%; margin:2%">
-                                <div class="hero-inner" style="text-align:left">
-                                    <p style="color:black;">How to dispose of the substance safely to protect waterways?</p>
-                                    <ul>
-                                        @*<li style="color:black;">Be careful about what you throw down your sink or toilet!</li>*@
-                                        <li style="color:black;">Don’t throw paints, oils or other forms of litter down the drain.</li>
-                                        <li style="color:black;">Use appropriate containers while disposing of hazardous substances.</li>
-                                        <li style="color:black;">Ensure that the substances do not mix while the disposal as there might be a violent reaction.</li>
-                                        <li style="color:black;">Do not dispose of the electronic waste into the bins instead drop-off it at your nearest collection centers.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
         </div>
     </div>
-</div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*@Scripts.Render("~/bundles/script")*@
+</body>
+</html>
