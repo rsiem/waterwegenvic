@@ -13,27 +13,6 @@ namespace waterwegenvic.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
-        public ActionResult Background()
-        {
-            ViewBag.Message = "Your background page.";
-
-            return View();
-        }
-
         public ActionResult Substance()
         {
             ViewBag.Message = "Your substance page.";
@@ -51,13 +30,6 @@ namespace waterwegenvic.Controllers
         public ActionResult Groundwater()
         {
             ViewBag.Message = "Your groundwater page.";
-
-            return View();
-        }
-
-        public ActionResult Iteration1()
-        {
-            ViewBag.Message = "Iteration1.";
 
             return View();
         }

@@ -148,6 +148,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Iteration1Controller.cs" />
+    <Compile Include="Controllers\Iteration2Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -194,6 +196,7 @@
     <Content Include="Content\Image\lamp.png" />
     <Content Include="Content\Image\neonbrand-8Yk4T-tDSYY-unsplash %281%29.jpg" />
     <Content Include="Content\Image\orange-peel.jpg" />
+    <Content Include="Content\Image\output1-2.png" />
     <Content Include="Content\Image\paint.png" />
     <Content Include="Content\Image\pollution.jpg" />
     <Content Include="Content\Image\img8.jpg" />
@@ -259,7 +262,10 @@
     <Content Include="Views\Home\Groundwater.cshtml" />
     <Content Include="Views\.htaccess" />
     <Content Include="Views\.htpswd" />
-    <Content Include="Views\Home\Iteration1.cshtml" />
+    <Content Include="Views\Iteration1\Index.cshtml" />
+    <Content Include="Views\Iteration2\Index.cshtml" />
+    <Content Include="Views\Iteration2\Litter.cshtml" />
+    <Content Include="Views\Iteration2\Substance.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
