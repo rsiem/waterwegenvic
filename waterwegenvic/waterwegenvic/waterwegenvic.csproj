@@ -168,10 +168,12 @@
     <Content Include="App_Data\substance_db_log.ldf">
       <DependentUpon>substance_db.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\Image\bucket-white.png" />
     <Content Include="Content\Image\battery.png" />
     <Content Include="Content\Image\egg-carton-4046693_960_720.jpg" />
     <Content Include="Content\Image\footer.jpg" />
     <Content Include="Content\Image\footer-bg.jpg" />
+    <Content Include="Content\Image\hot.png" />
     <Content Include="Content\Image\jasmin-sessler-5Wfttm2CjeI-unsplash.jpg" />
     <Content Include="Content\funnel.css" />
     <Content Include="Content\Image\anastasia-taioglou-CTivHyiTbFw-unsplash.jpg" />
@@ -180,7 +182,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Image\bucket-white.png" />
     <Content Include="Content\Image\causation-graph.png" />
     <Content Include="Content\Image\green.png" />
     <Content Include="Content\Image\heading-bg.png" />
@@ -194,12 +195,14 @@
     <Content Include="Content\Image\josefin-brosche-hagsgard-18388_en-1412x772.jpg" />
     <Content Include="Content\Image\first-section-bg.jpg" />
     <Content Include="Content\Image\lamp.png" />
+    <Content Include="Content\Image\low_hot.png" />
     <Content Include="Content\Image\neonbrand-8Yk4T-tDSYY-unsplash %281%29.jpg" />
     <Content Include="Content\Image\orange-peel.jpg" />
     <Content Include="Content\Image\output1-2.png" />
     <Content Include="Content\Image\paint.png" />
     <Content Include="Content\Image\pollution.jpg" />
     <Content Include="Content\Image\img8.jpg" />
+    <Content Include="Content\Image\population.png" />
     <Content Include="Content\Image\red-open.jpg" />
     <Content Include="Content\Image\red.png" />
     <Content Include="Content\Image\samuel-zeller-Xl9zLLHqz3o-unsplash %281%29.jpg" />
