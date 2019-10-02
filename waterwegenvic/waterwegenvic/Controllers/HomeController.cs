@@ -27,9 +27,9 @@ namespace waterwegenvic.Controllers
             return View();
         }
 
-        public ActionResult Groundwater()
+        public ActionResult Stormwater()
         {
-            ViewBag.Message = "Your groundwater page.";
+            ViewBag.Message = "Your stormwater page.";
 
             return View();
         }

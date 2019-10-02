@@ -2,8 +2,8 @@
     ViewBag.Title = "Home Page";
 }
 
-@*@Styles.Render("~/Content/index")*@
-@*@Scripts.Render("~/bundles/index")*@
+@Styles.Render("~/Content/index")
+@Scripts.Render("~/bundles/index")
 
 <div class="row" id="home">
     <div class="container-fluid">
@@ -106,98 +106,7 @@
                                         <p>Main Reasons</p>
                                     </div>
                                     <div class="row">
-                                        <section class="hero">
-                                            <div class="container-block" id="main-reasons">
-                                                <div class="hero-inner" style="text-align:center">
-                                                    <p style="text-align:center">Population Growth</p>
-                                                    <br />
-                                                    <div class="row">
-                                                        <div class="col-md-4 col-sm-4 col-xs-4">
-                                                            <div class="row">
-                                                                <p>2001</p>
-                                                            </div>
-                                                            <div class="row">
-                                                                <i class='fas fa-male' style='font-size:48px'></i>
-                                                            </div>
-                                                            <br />
-                                                            <div class="row">
-                                                                <p>4,863,084</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4 col-sm-4 col-xs-4">
-                                                            <div class="row">
-                                                                <p>2016</p>
-                                                            </div>
-                                                            <div class="row">
-                                                                <i class='fas fa-male' style='font-size:63px'></i>
-                                                            </div>
-                                                            <br />
-                                                            <div class="row">
-                                                                <p>6,323,606</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4 col-sm-4 col-xs-4">
-                                                            <div class="row">
-                                                                <p>2056</p>
-                                                            </div>
-                                                            <div class="row">
-                                                                <i class='fas fa-male' style='font-size:112px'></i>
-                                                            </div>
-                                                            <br />
-                                                            <div class="row">
-                                                                <p>11,200,000</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <p>
-                                                            The latest projections from the Victoria in Future 2019 report show Victoria’s population is growing by an average of 125,000 people per year.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </section>
-                                    </div>
-                                    <div class="row">
-                                        <section class="hero">
-                                            <div class="container-block" id="main-reasons">
-                                                <div class="hero-inner" style="text-align:center">
-                                                    <p style="text-align:center">Climate Change</p>
-                                                    <br />
-                                                    <div class="row">
-                                                        <div class="col-md-5 col-sm-5 col-xs-5">
-                                                            <div class="row">
-                                                                <i class='fas fa-temperature-low' style='font-size:63px'></i>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-2 col-sm-2 col-xs-2">
-                                                            <div class="row">
-                                                                <i class='fas fa-arrow-right' style='font-size:63px'></i>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-5 col-sm-5 col-xs-5">
-                                                            <div class="row">
-                                                                <i class='fas fa-temperature-high' style='font-size:63px'></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <br />
-                                                    <div class="row">
-                                                        <p>The Earth's average temperature has increased by about 0.6 degrees Celcius during the 20th century.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </section>
-                                    </div>
-                                    <div class="row">
-                                        <section class="hero">
-                                            <div class="container-block" id="main-reasons">
-                                                <div class="hero-inner">
-                                                    <p style="text-align:center">Water Contamination</p>
-
-                                                </div>
-                                            </div>
-                                        </section>
+                                        @Html.Partial("~/Views/Home/_CollapseView.cshtml")
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-9 col-sm-12 col-xs-12">
@@ -336,7 +245,7 @@
                             </script>
                         </div>
                         <br />
-                        
+
                     </div>
                 </div>
             </div>
@@ -351,7 +260,7 @@
             @*<p>Take action now! Our waterways need your help</p>*@
             <p>What other components pollute the waterways?</p>
         </div>
-        <br class="hidden-xs hidden-sm"/>
+        <br class="hidden-xs hidden-sm" />
         <div class="row">
             <div class="col-md-1 col-lg-1"></div>
             <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
@@ -376,7 +285,7 @@
             </div>
             <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
                 <figure>
-                    <div class="media" id="litter-box"@*style="background-image:url('~/Content/Image/jasmin-sessler-5Wfttm2CjeI-unsplash.jpg');"*@></div>
+                    <div class="media" id="litter-box" @*style="background-image:url('~/Content/Image/jasmin-sessler-5Wfttm2CjeI-unsplash.jpg');"*@></div>
                     <figcaption>
                         <svg viewBox="0 0 200 200" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                             <defs>
@@ -392,7 +301,7 @@
                             <p>
                                 The quality of water in the Victorian waterways is majorly affected due to the mindless disposal of litter.
                                 @*Household waste is one of the key contributor of the pollution in waterways.
-                                However, it is also the most controllable pollution source since it generated in our daily life. Work sustainably and save water daily.*@
+                                    However, it is also the most controllable pollution source since it generated in our daily life. Work sustainably and save water daily.*@
                             </p>
                         </div>
                     </figcaption><a href="/Home/Litter"></a>

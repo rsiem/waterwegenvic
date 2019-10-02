@@ -234,7 +234,7 @@
                                         type: 'bar',
                                         x: [97099, 94872, 85717, 62646, 22979, 12390, 12390, 12390, 12376, 12376, 136, 136, 100, 78, 78],
                                         y:
-                                            ['Phosphorus', 'Kjeldahl Nitrogen', 'Fibre-Reinforced Plastic', 'Total Suspended Solids', 'Silicon Dioxide', 'Copper', 'Zinc', 'Lead', 'Chromium', 'Nickel', 'Anions', 'Cations', 'Fluorine', 'Selenium', 'Molybdenum'],
+                                            ['Phosphorus', 'Kjeldahl Nitrogen', 'Fibre-Reinforced Plastic', 'Suspended Solids', 'Silicon Dioxide', 'Copper', 'Zinc', 'Lead', 'Chromium', 'Nickel', 'Anions', 'Cations', 'Fluorine', 'Selenium', 'Molybdenum'],
                                         orientation: 'h',
                                         marker: {
                                             color: ['#EF5350', "#FFA500", "#7E57C2", "#CDDC39", "#00BCD4", "#4CAF50", "#FFC107", "#34729E", "#95CE67", "#CAC461", 'rgba(55,128,191,0.6)', "#2a9d8f", "#e76f51", "#264653", "#e9c46a"],
@@ -243,11 +243,13 @@
                                     }];
 
                                     var layout = {
-                                        title: 'Chemical In Waterways',
+                                        title: 'Chemical ',
                                         showlegend: false,
                                         yaxis: {
-                                            fixedrange: true
-                                            //automargin: true
+                                            fixedrange: true,
+                                            categoryorder: 'array',
+                                            categoryarray:
+                                                ['Molybdenum', 'Selenium', 'Fluorine', 'Cations', 'Anions', 'Nickel', 'Chromium', 'Lead', 'Zinc', 'Copper', 'Silicon Dioxide', 'Suspended Solids', 'Fibre-Reinforced Plastic', 'Kjeldahl Nitrogen', 'Phosphorus']
                                         },
                                         xaxis: {
                                             fixedrange: true

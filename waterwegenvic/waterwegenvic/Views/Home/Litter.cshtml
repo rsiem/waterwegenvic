@@ -5,6 +5,7 @@
 @Styles.Render("~/Content/litter")
 @Scripts.Render("~/bundles/litter")
 
+
 <div class="row" id="litter">
     <div class="container-fluid">
         <div class=" row">
@@ -12,7 +13,7 @@
                 <div class="hero-inner text-context">
                     <p><b>Litter Pollution</b></p>
                     <hr />
-                    <h4>Anti-Litter, Don’t Be Bitter, Stop This Litter!</h4>
+                    <h4>Anti-Litter, Don’t Be Bitter, Stop This Litter! Anti-Litter, Don’t Be Bitter, Stop This Litter!</h4>
                 </div>
             </section>
         </div>
@@ -41,7 +42,7 @@
                         </div>
                         <div class="row">
                             <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/KhAcIN-F-L8?controls=1" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/KhAcIN-F-L8?controls=0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -62,15 +63,19 @@
                             The degradation of the water quality in Victorian waterways is primarily due to the disposal of litter (waste). This waste can be classified into five major categories. These categories must be carefully separated and disposed of in their respected bins which eventually helps to reduce the total litter waste generated.
                         </p>
                     </div>
+
                     <div class="row" style="margin-top:20px;">
-                        <div class="col-md-9">
+                        <div class="col-lg-9">
                             <div id="treegraphPanel">
                                 <div id="treegraphContainer">
                                     <div id="treegraph"></div>
                                 </div>
                             </div>
+                            <div id="TreeParagraph">
+                                
+                            </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-lg-3">
                             <div class="panel panel-primary" id="tree-primary" style="display: none">
                                 <div class="panel-heading" id="tree-heading">
                                     <h3 class="panel-title">Primary Panel</h3>
@@ -81,6 +86,8 @@
                             </div>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </div>
@@ -89,6 +96,7 @@
             var fontSize = 15; // font size for waste type;
             var displayImage = true; // hide or show image
             var boxHeight = 90, boxWidth = 160;   /* Standard boxHeight = 90, boxWidth = 160 */
+            var lineColour = "#f00";// set node line colour here
             var treeData =
                 {
                     "name": "Waste",
@@ -210,7 +218,7 @@
                     links = treeData.descendants().slice(1);
 
                 // Adjust the position of y of each node. Comment out just this line and see how it's different
-                nodes.forEach(function (d) { d.y = d.depth * 170 });
+                nodes.forEach(function (d) { d.y = d.depth * 200 });
 
                 // Add unique id for each node, else it won't work
                 var node = g.selectAll('g.node')
@@ -246,6 +254,10 @@
                                     .style('visibility', "visible")
                                     .style('fill-opacity', '1')
                                     .style('transform', 'rotateY(0deg)')
+                                    .style('-webkit-transform', 'rotateY(0deg)')
+                                    .style('-ms-transform', 'rotateY(0deg)')
+                                    .style('-moz-transform', 'rotateY(0deg)')
+                                    .style('-o-transform', 'rotateY(0deg)')
                                     .classed('isActiveText', true)
 
                                 d3.select(this).select('.labelReadmore')
@@ -347,7 +359,7 @@
                         return d.children || d._children ? -0 : 0;
                     })
                     .attr("y", function (d) {
-                        return -15;
+                        return 0;
                     })
                     .attr("text-anchor", function (d) {
                         return d.children || d._children ? "middle" : "middle";
@@ -519,7 +531,7 @@
                 // Here we are just drawing lines, we can also draw curves, comment out below path for it.
 
                 var path = `M ${s.x} ${s.y}
-                                                                     L ${d.x} ${d.y}`;
+                                                                                                                     L ${d.x} ${d.y}`;
 
                 // var path = `M ${s.x} ${s.y}
                 //         C ${(s.x + d.x) / 2} ${s.y},
@@ -565,6 +577,8 @@
                     }
                 }
             }
+
+            svg.selectAll('path.link').style('stroke', lineColour)
         </script>
         <br />
         <br />
@@ -590,10 +604,10 @@
                 <div class="row">
                     <div class="container-fluid">
                         <div class="row" style="margin-top:20px; min-height: 500px;">
-                            <div class="col-xs-8 col-sm-8 col-md-6 funnel">
+                            <div class="col-xs-8 col-sm-8 col-md-5 funnel">
                                 <div id="funnel"></div>
                             </div>
-                            <div class="col-xs-4 col-sm-4 col-md-2 hidden" id="infoSection">
+                            <div class="col-xs-4 col-sm-4 col-md-3 hidden" id="infoSection">
                                 <svg width="170" height="500" xmlns="http://www.w3.org/2000/svg">
                                     <g>
                                         <rect x="-1" y="-1" width="172" height="502" id="canvas_background" fill="#fff" />
@@ -603,37 +617,67 @@
                                         </g>
                                     </g>
                                     <g>
+                                        @*<g stroke="null" id="svg_3">
+                                                <path stroke="#000" fill="#55ad59" stroke-width="1.5"
+                                                      d="m16.32201,121.181093l67.764166,-116.049304l67.764166,116.049304l-33.882091,0l0,116.607724l-67.76415,0l0,-116.607724l-33.882091,0z"
+                                                      id="svg_18" />
+                                                <path stroke="#000" fill="#da3732" stroke-width="1.5"
+                                                      d="m152.190497,379.554498l-67.571437,116.161629l-67.956708,-115.93666l33.882044,-0.056242l-0.193563,-116.607548l67.764057,-0.112485l0.193563,116.607548l33.882044,-0.056242z"
+                                                      id="svg_19" />
+                                                <rect stroke="#000" fill="#f7ca47" stroke-width="1.5" stroke-opacity="null" x="50.238194"
+                                                      y="239.775725" width="67.796925" height="21.165185" id="svg_20" />
+                                                <rect stroke="#000" fill="#ffffff" stroke-width="1.5" stroke-opacity="null" x="70.397099"
+                                                      y="98.055554" width="24.562591" height="128.441885" id="svg_22" />
+                                                <path stroke="#000" fill="#55ad59" stroke-width="1.5"
+                                                      d="m16.32201,121.181093l67.764166,-116.049304l67.764166,116.049304l-33.882091,0l0,116.607724l-67.76415,0l0,-116.607724l-33.882091,0z"
+                                                      id="svg_24" />
+                                                <rect stroke="#55ad59" fill="#ffffff" stroke-width="1.5" x="69.119207" y="123.837893"
+                                                      width="26.07838" height="106.898229" id="svg_26" />
+                                                <rect stroke="#da3732" fill="#ffffff" stroke-width="1.5" x="69.119207" y="269.169088"
+                                                      width="28.17078" height="112.129225" id="svg_30" />
+                                                <text stroke="#f7ca47" fill="#000000" stroke-width="0" fill-opacity="null" x="11.693418"
+                                                      y="216.891597" id="svg_31" font-size="7" font-family="Helvetica, Arial, sans-serif"
+                                                      text-anchor="start" xml:space="preserve"
+                                                      transform="matrix(-0.0142293846342919,-1.8391891884931044,1.8391891884931044,-0.0142293846342919,-312.09410378035346,399.3500822400103) "
+                                                      font-weight="bold">Least preferable</text>
+                                                <text stroke="#000" fill="#000000" stroke-width="0" stroke-opacity="null"
+                                                      fill-opacity="null" x="11.471835" y="123.720032" id="svg_32" font-size="7"
+                                                      font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve"
+                                                      transform="matrix(-0.01888180653900149,-1.8496853973711946,1.8496853973711946,-0.01888180653900149,-142.69939893965184,249.19274596653312) "
+                                                      font-weight="bold">Most preferable</text>
+                                            </g>*@
                                         <g stroke="null" id="svg_3">
-                                            <path stroke="#000" fill="#55ad59" stroke-width="1.5"
-                                                  d="m16.32201,121.181093l67.764166,-116.049304l67.764166,116.049304l-33.882091,0l0,116.607724l-67.76415,0l0,-116.607724l-33.882091,0z"
-                                                  id="svg_18" />
-                                            <path stroke="#000" fill="#da3732" stroke-width="1.5"
-                                                  d="m152.190497,379.554498l-67.571437,116.161629l-67.956708,-115.93666l33.882044,-0.056242l-0.193563,-116.607548l67.764057,-0.112485l0.193563,116.607548l33.882044,-0.056242z"
-                                                  id="svg_19" />
-                                            <rect stroke="#000" fill="#f7ca47" stroke-width="1.5" stroke-opacity="null" x="50.238194"
-                                                  y="239.775725" width="67.796925" height="21.165185" id="svg_20" />
-                                            <rect stroke="#000" fill="#ffffff" stroke-width="1.5" stroke-opacity="null" x="70.397099"
-                                                  y="98.055554" width="24.562591" height="128.441885" id="svg_22" />
-                                            <path stroke="#000" fill="#55ad59" stroke-width="1.5"
-                                                  d="m16.32201,121.181093l67.764166,-116.049304l67.764166,116.049304l-33.882091,0l0,116.607724l-67.76415,0l0,-116.607724l-33.882091,0z"
-                                                  id="svg_24" />
-                                            <rect stroke="#55ad59" fill="#ffffff" stroke-width="1.5" x="69.119207" y="123.837893"
-                                                  width="26.07838" height="106.898229" id="svg_26" />
-                                            <rect stroke="#da3732" fill="#ffffff" stroke-width="1.5" x="69.119207" y="269.169088"
-                                                  width="28.17078" height="112.129225" id="svg_30" />
-                                            <text stroke="#f7ca47" fill="#000000" stroke-width="0" fill-opacity="null" x="11.693418"
-                                                  y="216.891597" id="svg_31" font-size="7" font-family="Helvetica, Arial, sans-serif"
-                                                  text-anchor="start" xml:space="preserve"
-                                                  transform="matrix(-0.0142293846342919,-1.8391891884931044,1.8391891884931044,-0.0142293846342919,-312.09410378035346,399.3500822400103) "
-                                                  font-weight="bold">Least preferable</text>
-                                            <text stroke="#000" fill="#000000" stroke-width="0" stroke-opacity="null"
-                                                  fill-opacity="null" x="11.471835" y="123.720032" id="svg_32" font-size="7"
-                                                  font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve"
-                                                  transform="matrix(-0.01888180653900149,-1.8496853973711946,1.8496853973711946,-0.01888180653900149,-142.69939893965184,249.19274596653312) "
-                                                  font-weight="bold">Most preferable</text>
+                                            <path stroke="#000" fill="#55ad59" stroke-width="1.5" d="m3.32201,119.83697l45.3205,-117.70518l45.32049,117.70518l-22.66026,0l0,118.27158l-45.32049,0l0,-118.27158l-22.66024,0z" id="svg_18" />
+                                            <path stroke="#000" fill="rgb(20, 110, 127)" stroke-width="1.5" d="m94.1905,381.89705l-45.19161,117.81911l-45.44926,-117.59093l22.66022,-0.05705l-0.12945,-118.27139l45.32043,-0.1141l0.12945,118.2714l22.66022,-0.05704z" id="svg_19" />
+                                            <rect stroke="#000" fill="rgb(114, 168, 179)" stroke-width="1.5" x="26.00506" y="240.1238" width="45.34241" height="21.46719" id="svg_20" />
+                                            <rect stroke="#000" fill="#ffffff" stroke-width="1.5" stroke-opacity="null" x="39.48729" y="96.38146" width="16.4274" height="130.27459" id="svg_22" />
+                                            <path stroke="#000" fill="rgb(189, 215, 221)" stroke-width="1.5" d="m3.32201,119.83697l45.3205,-117.70518l45.32049,117.70518l-22.66026,0l0,118.27158l-45.32049,0l0,-118.27158l-22.66024,0z" id="svg_24" />
+                                            <rect stroke="rgb(189, 215, 221)" fill="rgb(189, 215, 221)" stroke-width="1.5" x="38.63264" y="122.53168" width="17.44115" height="108.42353" id="svg_26" />
+                                            <rect stroke="rgb(20, 110, 127)" fill="rgb(20, 110, 127)" stroke-width="1.5" x="38.63264" y="269.93657" width="22.48167" height="113.72917" id="svg_30" />
+                                            <text stroke="#f7ca47" fill="#000000" stroke-width="0" x="13.48402" y="197.14519" id="svg_31" font-size="7" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve" transform="matrix(-0.018950368320164637,-1.8578271757748341,2.4493900072400034,-0.014373582464237858,-426.7164512065446,407.3878203865447) " font-weight="bold">Least preferable</text>
+                                            <text stroke="#000" fill="#000000" stroke-width="0" x="11.66798" y="103.94515" id="svg_32" font-size="7" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve" transform="matrix(-0.0244771790228782,-1.8324898088668449,2.3978150879758235,-0.01870627194488897,-194.25785952772412,251.27264011862258) " font-weight="bold">Most preferable</text>
                                         </g>
                                     </g>
                                 </svg>
+
+                                @*<svg width="100" height="500" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <title>Layer 1</title>
+                                            <g stroke="null" id="svg_3">
+                                                <g stroke="null" id="svg_3">
+                                                    <path stroke="#000" fill="#55ad59" stroke-width="1.5" d="m3.32201,119.83697l45.3205,-117.70518l45.32049,117.70518l-22.66026,0l0,118.27158l-45.32049,0l0,-118.27158l-22.66024,0z" id="svg_18" />
+                                                    <path stroke="#000" fill="rgb(20, 110, 127)" stroke-width="1.5" d="m94.1905,381.89705l-45.19161,117.81911l-45.44926,-117.59093l22.66022,-0.05705l-0.12945,-118.27139l45.32043,-0.1141l0.12945,118.2714l22.66022,-0.05704z" id="svg_19" />
+                                                    <rect stroke="#000" fill="rgb(114, 168, 179)" stroke-width="1.5" x="26.00506" y="240.1238" width="45.34241" height="21.46719" id="svg_20" />
+                                                    <rect stroke="#000" fill="#ffffff" stroke-width="1.5" stroke-opacity="null" x="39.48729" y="96.38146" width="16.4274" height="130.27459" id="svg_22" />
+                                                    <path stroke="#000" fill="rgb(189, 215, 221)" stroke-width="1.5" d="m3.32201,119.83697l45.3205,-117.70518l45.32049,117.70518l-22.66026,0l0,118.27158l-45.32049,0l0,-118.27158l-22.66024,0z" id="svg_24" />
+                                                    <rect stroke="rgb(189, 215, 221)" fill="rgb(189, 215, 221)" stroke-width="1.5" x="38.63264" y="122.53168" width="17.44115" height="108.42353" id="svg_26" />
+                                                    <rect stroke="rgb(20, 110, 127)" fill="rgb(20, 110, 127)" stroke-width="1.5" x="38.63264" y="269.93657" width="22.48167" height="113.72917" id="svg_30" />
+                                                    <text stroke="#f7ca47" fill="#000000" stroke-width="0" x="13.48402" y="197.14519" id="svg_31" font-size="7" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve" transform="matrix(-0.018950368320164637,-1.8578271757748341,2.4493900072400034,-0.014373582464237858,-426.7164512065446,407.3878203865447) " font-weight="bold">Least preferable</text>
+                                                    <text stroke="#000" fill="#000000" stroke-width="0" x="11.66798" y="103.94515" id="svg_32" font-size="7" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve" transform="matrix(-0.0244771790228782,-1.8324898088668449,2.3978150879758235,-0.01870627194488897,-194.25785952772412,251.27264011862258) " font-weight="bold">Most preferable</text>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>*@
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-4">
                                 <div class="panel panel-primary" id="hierarchy-primary" style="display: none">
@@ -649,7 +693,7 @@
                     </div>
 
                     @*<div class="funnelTooltip">
-                    </div>*@
+                        </div>*@
 
                     <script>
                         var textColour = "#ffffff" // text color for Avoid, Reduce etc...;
@@ -711,15 +755,15 @@
                                 backgroundColor: rgbToHex(gradientColor(colourValue[4])),
                                 tooltipText: "<p style='font-size: 1em;'>Convert waste into resources (e.g. electricity, heat, compost, and fuel) by thermal and biological means.</p>"
                             },
-                            {
-                                label: 'Treat',
-                                value: 1,
-                                backgroundColor: rgbToHex(gradientColor(colourValue[5])),
-                                tooltipText: "<p style='font-size: 1em;'>Things you cannot recycle:<br /><ul><li>Cigarette buts.</li><li>Fabric Napkins, Tablecloths</li><li>Cleaning products (sponges, mops, etc.)</li><li>Paper with sticky tape, twine or string.</li><li>Food containers.</li><li>Treated or painted timber.</li><li>Dead animals.</li></ul></p>"
-                            },
+                            //{
+                            //    label: 'Treat',
+                            //    value: 1,
+                            //    backgroundColor: rgbToHex(gradientColor(colourValue[5])),
+                            //    tooltipText: "<p style='font-size: 1em;'>Things you cannot recycle:<br /><ul><li>Cigarette buts.</li><li>Fabric Napkins, Tablecloths</li><li>Cleaning products (sponges, mops, etc.)</li><li>Paper with sticky tape, twine or string.</li><li>Food containers.</li><li>Treated or painted timber.</li><li>Dead animals.</li></ul></p>"
+                            //},
                             {
                                 label: 'Dispose',
-                                value: 1,
+                                value: 2.5,
                                 backgroundColor: rgbToHex(gradientColor(colourValue[6])),
                                 tooltipText: "<p style='font-size: 1em;'>Finally, the waste hierarchy recognizes that some types of waste, such as hazardous chemicals or asbestos, cannot be safely recycled and direct treatment or disposal is the most appropriate management option.</p>"
                             },
@@ -774,18 +818,18 @@
                         d3.selectAll("#svg_19,#svg_31")
                             .on("mouseover", function (d) {
                                 var allPaths = d3.selectAll("#funnel path").nodes();
-                                d3.select(allPaths[6])
+                                d3.select(allPaths[5])
                                     .style('stroke-width', 5)
                                     .style('stroke', 'white')
                                     .style('fill-opacity', 0.8)
 
-                                blink(allPaths[6], 6)
+                                blink(allPaths[5], 5)
                             })
                             .on("mouseout", function (d) {
                                 var allPaths = d3.selectAll("#funnel path").nodes();
-                                d3.select(allPaths[6]).style('stroke', 'none')
+                                d3.select(allPaths[5]).style('stroke', 'none')
 
-                                removeAnimation(allPaths[6], 6)
+                                removeAnimation(allPaths[5], 5)
                             })
 
                         // // Middle Arrow Pointer mouseEvent
@@ -815,6 +859,7 @@
 
                             d3.selectAll("#svg_26")
                                 .style('stroke', rgbToHex(gradientColor(colourValue[0])))
+                                .style('fill', rgbToHex(gradientColor(colourValue[0])))
 
                             d3.selectAll("#svg_20")
                                 .style('fill', rgbToHex(gradientColor(colourValue[3])))
@@ -824,6 +869,7 @@
 
                             d3.selectAll("#svg_30")
                                 .style('stroke', rgbToHex(gradientColor(colourValue[6])))
+                                .style('fill', rgbToHex(gradientColor(colourValue[6])))
 
                             $("#infoSection").removeClass('hidden');
 
@@ -892,8 +938,8 @@
 
                             d3.selectAll("#funnel text")
                                 .style('font-size', function (d, i) {
-                                    if (i == 6) {
-                                        return '11px';
+                                    if (i == 5) {
+                                        return '16px';
                                     }
                                 })
                         }
@@ -1134,7 +1180,3 @@
         </div>
     </div>
 </div>
-        
-
-    
-

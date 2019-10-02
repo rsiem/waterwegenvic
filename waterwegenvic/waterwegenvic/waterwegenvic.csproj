@@ -156,18 +156,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\homepage_db.mdf" />
-    <Content Include="App_Data\homepage_db_log.ldf">
-      <DependentUpon>homepage_db.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\litter_db.mdf" />
-    <Content Include="App_Data\litter_db_log.ldf">
-      <DependentUpon>litter_db.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\substance_db.mdf" />
-    <Content Include="App_Data\substance_db_log.ldf">
-      <DependentUpon>substance_db.mdf</DependentUpon>
-    </Content>
+    <Content Include="Content\CollapseBox.css" />
     <Content Include="Content\Image\bucket-white.png" />
     <Content Include="Content\Image\battery.png" />
     <Content Include="Content\Image\egg-carton-4046693_960_720.jpg" />
@@ -230,8 +219,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\waterwegenvic - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\waterwegenvic20190822020518 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\CollapseBox.js" />
     <Content Include="Scripts\d3-funnel.js" />
     <Content Include="Scripts\funnel.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -269,8 +260,10 @@
     <Content Include="Views\Iteration2\Index.cshtml" />
     <Content Include="Views\Iteration2\Litter.cshtml" />
     <Content Include="Views\Iteration2\Substance.cshtml" />
+    <Content Include="Views\Home\_CollapseView.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

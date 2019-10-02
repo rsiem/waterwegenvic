@@ -1,0 +1,123 @@
+﻿.demo {
+    margin-top: 20px;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+#accordion .panel {
+    border: solid 2px #577D9D;
+    border-radius: 0;
+    margin-bottom: 5px;
+    box-shadow: none;
+}
+
+#accordion .panel-heading {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    position: relative;
+}
+
+#accordion .panel-title a {
+    display: block;
+    padding: 20px 30px;
+    margin: 0;
+    background: #577D9D;
+    font-size: 17px;
+    font-weight: bold;
+    color: #f9e2ad;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+#accordion .panel-title a:before,
+#accordion .panel-title a.collapsed:before {
+    font-family: 'Glyphicons Halflings';
+    content: "\e114";
+    float: right;
+    transition: all 0.5s;
+}
+
+#accordion .panel-title a:after,
+#accordion .panel-title a.collapsed:after {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+/*#accordion .panel-title a:after {
+    height: 0;
+}*/
+
+/*#accordion .panel-title a:before,
+#accordion .panel-title a.collapsed:before {
+    content: "";
+    width: 20px;
+    height: 2px;
+    background: #f9e2ad;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+#accordion .panel-title a:after,
+#accordion .panel-title a.collapsed:after {
+    content: "";
+    width: 2px;
+    height: 20px;
+    background: #f9e2ad;
+    position: absolute;
+    bottom: 18px;
+    right: 39px;
+    transition: all 0.5s ease 0s;
+}
+
+#accordion .panel-title a:after {
+    height: 0;
+}*/
+
+#accordion .panel-body {
+    padding: 20px 30px;
+    background: #fff;
+    border-top: 2px solid #000;
+    font-size: 15px;
+    color: #000;
+    line-height: 28px;
+    letter-spacing: 1px;
+}
+
+
+/*@media screen and (max-width: 425px) {
+    #treegraphPanel {
+        display: none;
+    }
+
+    #TreeParagraph {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 1024px) {
+    #treegraphPanel {
+        display: none;
+    }
+
+    #TreeParagraph {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #treegraphPanel {
+        display: block;
+    }
+
+    #TreeParagraph {
+        display: none;
+    }
+}*/

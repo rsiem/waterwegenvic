@@ -44,7 +44,10 @@ namespace waterwegenvic
 
             // index page bundle
             bundles.Add(new StyleBundle("~/Content/index").Include(
-                      "~/Content/funnel.css"));
+                      "~/Content/CollapseBox.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/index").Include(
+                      "~/Scripts/CollapseBox.js"));
 
             // substance page bundle
             bundles.Add(new StyleBundle("~/Content/substance").Include(
@@ -56,7 +59,8 @@ namespace waterwegenvic
 
             // litter page bundle
             bundles.Add(new StyleBundle("~/Content/litter").Include(
-                      "~/Content/litter.css"));
+                      "~/Content/litter.css",
+                      "~/Content/funnel.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/litter").Include(
                       "~/Scripts/site.js",
