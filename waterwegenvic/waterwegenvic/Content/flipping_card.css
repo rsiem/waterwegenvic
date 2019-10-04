@@ -1,0 +1,117 @@
+﻿body {
+    transform: translate3d(0, 0, 0);
+}
+
+.element-card {
+	 position: relative;
+	 width: 140px;
+	 height: 130px;
+	 transform-style: preserve-3d;
+	 transform: rotateY(0deg) translatex(0px) translatey(0px);
+	 transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	 box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+	 margin: 2% 5%;
+	 cursor: pointer;
+}
+
+.element-card:hover {
+	 transform: rotateY(45deg) translatex(0px) translatey(0px);
+}
+
+.element-card.open {
+	 width: 200px;
+	 height: 260px;
+	 transform: rotateY(-180deg) translatex(0px) translatey(0px);
+}
+
+.element-card .front-facing {
+	 transform: rotateY(0deg) translateZ(2px);
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 bottom: 0;
+	 right: 0;
+	 background-color: #ecf0f1;
+	 border: 2px white solid;
+	 border-radius: 5px;
+}
+
+.element-card .front-facing .abr {
+	 width: 100%;
+	 position: absolute;
+	 top: 50%;
+	 left: 0;
+	 font-size: 42px;
+	 margin: -35px 0 0 0;
+	 text-align: center;
+	 color: #3498db;
+}
+
+.element-card .front-facing .title {
+	 width: 100%;
+	 position: absolute;
+	 top: 50%;
+	 left: 0;
+	 text-transform: uppercase;
+	 font-size: 12px;
+	 margin: 15px 0 0 0;
+	 text-align: center;
+	 color: #3498db;
+}
+
+.element-card .front-facing .atomic-number {
+	 position: absolute;
+	 top: 10px;
+	 left: 10px;
+	 font-size: 12px;
+	 color: #2980b9;
+}
+
+.element-card .front-facing .atomic-mass {
+	 position: absolute;
+	 bottom: 10px;
+	 right: 10px;
+	 font-size: 12px;
+	 color: #2980b9;
+}
+
+.element-card .back-facing {
+	 transform: rotateY(180deg) translateZ(0px);
+	 display: flex;
+	 flex-direction: column;
+	 flex-wrap: nowrap;
+	 justify-content: center;
+	 align-items: center;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 bottom: 0;
+	 right: 0;
+	 background-color: #ecf0f1;
+	 border: 2px white solid;
+	 border-radius: 5px;
+	 padding: 20px;
+	 text-align: center;
+	 overflow: hidden;
+}
+ 
+.element-card .back-facing p {
+	 font-size: 14px;
+	 margin: 0;
+}
+ 
+.element-card .back-facing a.btn {
+	 display: inline-block;
+	 background-color: white;
+	 padding: 5px 15px;
+	 margin: 20px 0 0 0;
+	 color: #eee;
+	 background-color: #3498db;
+	 text-decoration: none;
+	 border-radius: 3px;
+}
+
+.element-card .back-facing a.btn:hover, .element-card .back-facing a.btn:focus {
+    color: #fff;
+    background-color: #2980b9;
+}

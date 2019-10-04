@@ -52,9 +52,11 @@ namespace waterwegenvic
 
             // substance page bundle
             bundles.Add(new StyleBundle("~/Content/substance").Include(
-                      "~/Content/lightbox.css"));
+                      "~/Content/lightbox.css",
+                      "~/Content/flipping_card.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/substance").Include(
+                      "~/Scripts/flipping_card.js",
                       "~/Scripts/lightbox.js"));
             //"~/Scripts/wordcloud.js"));
 

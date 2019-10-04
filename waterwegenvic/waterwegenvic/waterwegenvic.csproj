@@ -157,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\CollapseBox.css" />
+    <Content Include="Content\flipping_card.css" />
     <Content Include="Content\footer.css" />
     <Content Include="Content\Image\arrow2.png" />
     <Content Include="Content\Image\bucket-white.png" />
@@ -228,6 +229,7 @@
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\CollapseBox.js" />
     <Content Include="Scripts\d3-funnel.js" />
+    <Content Include="Scripts\flipping_card.js" />
     <Content Include="Scripts\funnel.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

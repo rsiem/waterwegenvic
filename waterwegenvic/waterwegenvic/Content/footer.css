@@ -24,7 +24,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     overflow: hidden;
-    position: absolute;
+    position: relative;
     bottom: 0px;
 }
 

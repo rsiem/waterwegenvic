@@ -2,6 +2,11 @@
     ViewBag.Title = "Substance";
 }
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 @Styles.Render("~/Content/substance")
 @Scripts.Render("~/bundles/substance")
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -264,10 +269,6 @@
                                 <br class="hidden-xs hidden-sm" />
                                 <br />
                                 <p>
-                                    @*Phosphorus, Kjeldahl Nitrogen, Fibre-Reinforced Plastic, Total Suspended Solids
-                                    and Silicon Dioxide are the top 5 chemical content in the waterways that shown
-                                    in the word cloud.
-                                    <br />*@
                                     <br />
                                     The great amount of Phosphorus and Nitrogen indicating the
                                     main pollution comes from the living wastewater including disposal waste,
@@ -275,6 +276,59 @@
                                     of waterways and contains a lot of sand.
                                 </p>
                                 <br />
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="container">
+
+                            <div class="element-card col-4-lg col-md-4 col-sm-4 col-xs-4">
+                                <div class="front-facing">
+                                    <h1 class="abr">P</h1>
+                                    <p class="title">Phosphorus</p>
+
+                                </div>
+                                <div class="back-facing">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+
+                                </div>
+                            </div>
+
+                            <div class="element-card col-4-lg col-md-4 col-sm-4 col-xs-4">
+                                <div class="front-facing">
+                                    <h1 class="abr">N</h1>
+                                    <p class="title">Nitrogen</p>
+
+                                </div>
+                                <div class="back-facing">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+
+                                </div>
+                            </div>
+
+                            <div class="element-card col-4-lg col-md-4 col-sm-4 col-xs-4" onclick="openFunc(this)">
+                                <div class="front-facing">
+                                    <h1 class="abr">SiO2</h1>
+                                    <p class="title">Silicon Dioxide</p>
+
+                                </div>
+                                <div class="back-facing">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+
+                                </div>
+                            </div>
+
+                            <div class="element-card col-4-lg col-md-4 col-sm-4 col-xs-4">
+                                <div class="front-facing">
+                                    <h1 class="abr">Rg</h1>
+                                    <p class="title">Roentgenium</p>
+
+                                </div>
+                                <div class="back-facing">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+
+                                </div>
                             </div>
                         </div>
                     </div>
