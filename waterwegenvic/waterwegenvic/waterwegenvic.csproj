@@ -157,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\CollapseBox.css" />
+    <Content Include="Content\Image\arrow2.png" />
     <Content Include="Content\Image\bucket-white.png" />
     <Content Include="Content\Image\battery.png" />
     <Content Include="Content\Image\egg-carton-4046693_960_720.jpg" />
@@ -192,6 +193,8 @@
     <Content Include="Content\Image\pollution.jpg" />
     <Content Include="Content\Image\img8.jpg" />
     <Content Include="Content\Image\population.png" />
+    <Content Include="Content\Image\population_single.png" />
+    <Content Include="Content\Image\population_triple.png" />
     <Content Include="Content\Image\red-open.jpg" />
     <Content Include="Content\Image\red.png" />
     <Content Include="Content\Image\samuel-zeller-Xl9zLLHqz3o-unsplash %281%29.jpg" />
@@ -253,7 +256,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Substance.cshtml" />
     <Content Include="Views\Home\Litter.cshtml" />
-    <Content Include="Views\Home\Groundwater.cshtml" />
+    <Content Include="Views\Home\Stormwater.cshtml" />
     <Content Include="Views\.htaccess" />
     <Content Include="Views\.htpswd" />
     <Content Include="Views\Iteration1\Index.cshtml" />

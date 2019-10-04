@@ -35,26 +35,8 @@ a:focus {
     position: relative;
 }
 
+/* horizontal line */
 #accordion .panel-title a:before,
-#accordion .panel-title a.collapsed:before {
-    font-family: 'Glyphicons Halflings';
-    content: "\e114";
-    float: right;
-    transition: all 0.5s;
-}
-
-#accordion .panel-title a:after,
-#accordion .panel-title a.collapsed:after {
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    transform: rotate(180deg);
-}
-
-/*#accordion .panel-title a:after {
-    height: 0;
-}*/
-
-/*#accordion .panel-title a:before,
 #accordion .panel-title a.collapsed:before {
     content: "";
     width: 20px;
@@ -65,6 +47,7 @@ a:focus {
     right: 30px;
 }
 
+/* vertical line */
 #accordion .panel-title a:after,
 #accordion .panel-title a.collapsed:after {
     content: "";
@@ -79,45 +62,45 @@ a:focus {
 
 #accordion .panel-title a:after {
     height: 0;
-}*/
+}
 
 #accordion .panel-body {
     padding: 20px 30px;
     background: #fff;
-    border-top: 2px solid #000;
     font-size: 15px;
     color: #000;
     line-height: 28px;
     letter-spacing: 1px;
 }
 
+#wasteBody {
+    padding-top: 50px !important;
+}
 
-/*@media screen and (max-width: 425px) {
-    #treegraphPanel {
-        display: none;
+@media screen and (max-width: 375px) {
+    #accordion .panel-title a {
+        font-size: 13px !important;
     }
 
-    #TreeParagraph {
-        display: block;
+    #accordion .panel-title a:before, #accordion .panel-title a.collapsed:before {
+        top: 24px !important;
+        right: 5px !important;
+    }
+
+    #accordion .panel-title a:after, #accordion .panel-title a.collapsed:after {
+        bottom: 20px !important;
+        right: 14px !important;
+    }
+
+    #accordion .panel-body {
+        padding: 20px 10px !important;
     }
 }
 
-@media screen and (min-width: 426px) and (max-width: 1024px) {
-    #treegraphPanel {
-        display: none;
-    }
-
-    #TreeParagraph {
-        display: block;
-    }
+#accordion .panel-title a {
+    padding: 20px 10px !important;
 }
 
-@media screen and (min-width: 1024px) {
-    #treegraphPanel {
-        display: block;
-    }
-
-    #TreeParagraph {
-        display: none;
-    }
-}*/
+#population, #climate {
+    height: 80px;
+}

@@ -1,0 +1,136 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.clr {
+    clear: both;
+}
+
+.footer-wrapper {
+    width: 100%;
+    height: auto;
+    min-height: 250px;
+    margin: auto;
+    background-image: url(pollution.jpg);
+    /*background-color: #64EDED;*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0px;
+}
+
+.footer-mid-part {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.footer-section-one {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 20px 20px;
+    background: rgba(255,255,255,.1);
+}
+
+.footer-section-two {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 20px 20px;
+    padding: 20px 20px;
+    background: rgba(255,255,255,.1);
+}
+
+.footer-section-three {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 20px 20px;
+}
+
+.footer-section-four {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 20px 20px;
+    background: rgba(255,255,255,.1);
+}
+
+.footer-heading {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.footer-heading h2 {
+    font-size: 18px;
+    text-align: left;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0px;
+}
+
+.footer-link {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.footer-link ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.footer-link ul li {
+    list-style-type: none;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.footer-link ul li a {
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.footer-link ul li a:hover {
+    color: #f00;
+}
+
+.footer-section-two .footer-heading h2 {
+    text-align: center;
+}
+
+.footer-bootom {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+}
+
+@media only screen and (max-width: 1199px) {
+    .footer-wrapper {
+        position: absolute;
+        background-attachment: scroll;
+    }
+}
