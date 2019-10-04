@@ -157,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\CollapseBox.css" />
+    <Content Include="Content\footer.css" />
     <Content Include="Content\Image\arrow2.png" />
     <Content Include="Content\Image\bucket-white.png" />
     <Content Include="Content\Image\battery.png" />

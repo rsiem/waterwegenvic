@@ -17,7 +17,7 @@ body {
     height: auto;
     min-height: 250px;
     margin: auto;
-    background-image: url(pollution.jpg);
+    background-image: url('Image/pollution.jpg');
     /*background-color: #64EDED;*/
     background-position: center;
     background-repeat: no-repeat;
