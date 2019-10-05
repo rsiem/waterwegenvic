@@ -160,6 +160,7 @@
     <Content Include="Content\flipping_card.css" />
     <Content Include="Content\footer.css" />
     <Content Include="Content\Image\arrow2.png" />
+    <Content Include="Content\Image\b1.jpg" />
     <Content Include="Content\Image\bucket-white.png" />
     <Content Include="Content\Image\battery.png" />
     <Content Include="Content\Image\egg-carton-4046693_960_720.jpg" />
@@ -214,6 +215,7 @@
     <Content Include="Content\lightbox.css" />
     <Content Include="Content\litter.css" />
     <Content Include="Content\section.css" />
+    <Content Include="Content\solution.css" />
     <Content Include="Content\tree.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

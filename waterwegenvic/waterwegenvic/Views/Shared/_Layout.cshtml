@@ -49,12 +49,14 @@
                 <p>&copy; @DateTime.Now.Year - Aguementi Team</p>
             </footer>*@
         @*<div id="footer" style="background-color: azure; text-align: center; width: 100%; left: 0; bottom: 0;">*@
-        @*<div id="footer" style="text-align: center; width: 100%; left: 0; bottom: 0;">
-                <!-- Footer start -->
-                <p>&copy;Aguamenti 2019</p>
-                <!-- Footer end -->
-            </div>*@
-        <div class="footer-wrapper">
+
+        <div id="footer" style="text-align: center; width: 100%; left: 0; bottom: 0;">
+            <!-- Footer start -->
+            <p>&copy;Aguamenti 2019</p>
+            <!-- Footer end -->
+        </div>
+            
+        @*<div class="footer-wrapper">
             <div class="container-fluid">
                 <div class="footer-mid-part">
                     <div class="row">
@@ -66,14 +68,9 @@
                             <div class="footer-link">
                                 <ul>
                                     <li>@Html.ActionLink("Home", "Index", "Home", null, null, "home", null, new { @style = "color: white;" })</li>
-                                    @*<li>@Html.ActionLink("Substance", "Index", "Home", null, null, "substance", null, new { @style = "color: white;" })</li>*@
                                     <li>@Html.ActionLink("Substance Pollution", "Substance", "Home", null, null, null, null, new { @style = "color: white;" })</li>
                                     <li>@Html.ActionLink("Litter Pollution", "Litter", "Home", null, null, null, null, new { @style = "color: white;" })</li>
                                     <li>@Html.ActionLink("Stormwater Pollution", "Stormwater", "Home", null, null, null, null, new { @style = "color: white;" })</li>
-                                    @*<li><a href="https://waterwegenvic.ml/#home">Home</a></li>
-                                    <li><a href="https://waterwegenvic.ml/Home/Substance">Substance Pollution</a></li>
-                                    <li><a href="https://waterwegenvic.ml/Home/Litter">Litter Pollution</a></li>
-                                    <li><a href="#">Stormwater Pollution</a></li>*@
                                 </ul>
                             </div>
                         </div>
@@ -89,10 +86,8 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>*@
     </div>
-    </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @*@Scripts.Render("~/bundles/script")*@

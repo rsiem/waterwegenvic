@@ -32,6 +32,7 @@ namespace waterwegenvic
                       "~/Content/Site.css",
                       "~/Content/footer.css",
                       "~/Content/section.css",
+                      "~/Content/solution.css",
                       "~/Content/last-section.css"));
 
             // iteration 1 page bundle

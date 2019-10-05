@@ -337,38 +337,109 @@
             <br />
             <br />
             <div class="container">
-                <section class="hero" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('../../Content/Image/bins.jpg'); width: 100%; padding:2%">
-                    <div class="container-block">
-                        <div class="row">
-                            <div class="col-md-5" style="background-color: #a9a9b0; opacity:1; padding: 2%; margin:2%">
-                                <div class="hero-inner" style="text-align:left">
-                                    <p style="color:black;">Solution to the problem:</p>
-                                    <ul>
-                                        <li style="color:black;">Use Environment friendly detergents.</li>
-                                        <li style="color:black;">Avoid Pesticides.</li>
-                                        <li style="color:black;">Use recycled products.</li>
-                                        <li style="color:black;">Use Products which are durable as well as with less packaging.</li>
-                                        <li style="color:black;">Use fruit and vegetables waste as mulch.</li>
-                                        <li style="color:black;">Use of non-chemical pesticides and herbicides in gardens.</li>
-                                    </ul>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="cardContainerSubstance inactive">
+                            <div class="card">
+                                <div class="side front">
+                                    <div class="img solution"></div>
+                                    <div class="info">
+                                        <h2 style="text-align: center;">Solution</h2>
+                                        <p align="justify-content">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-5 col-md-offset-2" style="background-color: #a9a9b0; opacity:1; padding: 2%; margin:2%">
-                                <div class="hero-inner" style="text-align:left">
-                                    <p style="color:black;">How to dispose of the substance safely to protect waterways?</p>
-                                    <ul>
-                                        @*<li style="color:black;">Be careful about what you throw down your sink or toilet!</li>*@
-                                        <li style="color:black;">Don’t throw paints, oils or other forms of litter down the drain.</li>
-                                        <li style="color:black;">Use appropriate containers while disposing of hazardous substances.</li>
-                                        <li style="color:black;">Ensure that the substances do not mix while the disposal as there might be a violent reaction.</li>
-                                        <li style="color:black;">Do not dispose of the electronic waste into the bins instead drop-off it at your nearest collection centers.</li>
-                                    </ul>
+                                <div class="side back">
+                                    <div class="info">
+                                        <h2 style="text-align: center;">Tips</h2>
+
+                                        <ul>
+                                            <li>Use environment friendly detergents. </li>
+                                            <li>Use recycled products. </li>
+                                            <li>Avoid pesticide and chemicals</li>
+                                            <li>Use of non-chemical pesticides and herbicides in gardens.</li>
+                                            <li>Use products which are durable as well as with less packaging.</li>
+                                            <li>Use fruit and vegetables waste as mulch.</li>
+                                        </ul>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="cardContainerSubstance inactive">
+                            <div class="card">
+                                <div class="side front">
+                                    <div class="img tips"></div>
+                                    <div class="info">
+                                        <h2 style="text-align: center;">Disposal Tips</h2>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                    </div>
+                                </div>
+                                <div class="side back">
+                                    <div class="info">
+                                        <h2 style="text-align: center;">Reuse</h2>
+
+                                        <ul>
+                                            <li>Use appropriate containers while disposing of hazardous substances.</li>
+                                            <li>Ensure that the substances do not mix while the disposal as there might be a violent reaction.</li>
+                                            <li>Do not dispose of the electronic waste into the bins instead drop-off it at your nearest collection centers</li>
+                                            <li>Don’t throw paints, oils or other forms of litter down the drain.</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+
+                        const cards = document.querySelectorAll('.card');
+
+                        function transition() {
+                            if (this.classList.contains('active')) {
+                                this.classList.remove('active');
+                            } else {
+                                this.classList.add('active');
+                            }
+                        }
+
+                        cards.forEach(card => card.addEventListener('click', transition));
+                    </script>
+                </div>
+                </div>
+            @*<div class="container">
+        <section class="hero" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('../../Content/Image/bins.jpg'); width: 100%; padding:2%">
+            <div class="container-block">
+                <div class="row">
+                    <div class="col-md-5" style="background-color: #a9a9b0; opacity:1; padding: 2%; margin:2%">
+                        <div class="hero-inner" style="text-align:left">
+                            <p style="color:black;">Solution to the problem:</p>
+                            <ul>
+                                <li style="color:black;">Use Environment friendly detergents.</li>
+                                <li style="color:black;">Avoid Pesticides.</li>
+                                <li style="color:black;">Use recycled products.</li>
+                                <li style="color:black;">Use Products which are durable as well as with less packaging.</li>
+                                <li style="color:black;">Use fruit and vegetables waste as mulch.</li>
+                                <li style="color:black;">Use of non-chemical pesticides and herbicides in gardens.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-md-offset-2" style="background-color: #a9a9b0; opacity:1; padding: 2%; margin:2%">
+                        <div class="hero-inner" style="text-align:left">
+                            <p style="color:black;">How to dispose of the substance safely to protect waterways?</p>
+                            <ul>
+            <li style="color:black;">Don’t throw paints, oils or other forms of litter down the drain.</li>
+            <li style="color:black;">Use appropriate containers while disposing of hazardous substances.</li>
+            <li style="color:black;">Ensure that the substances do not mix while the disposal as there might be a violent reaction.</li>
+            <li style="color:black;">Do not dispose of the electronic waste into the bins instead drop-off it at your nearest collection centers.</li>
+            </ul>
+        </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
-            </div>
+            </div>*@
         </div>
     </div>
 </div>
