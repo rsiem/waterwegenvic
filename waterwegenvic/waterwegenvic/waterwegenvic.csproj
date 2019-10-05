@@ -159,6 +159,8 @@
     <Content Include="Content\CollapseBox.css" />
     <Content Include="Content\flipping_card.css" />
     <Content Include="Content\footer.css" />
+    <Content Include="Content\Image\a1.jpg" />
+    <Content Include="Content\Image\a3.jpg" />
     <Content Include="Content\Image\arrow2.png" />
     <Content Include="Content\Image\b1.jpg" />
     <Content Include="Content\Image\bucket-white.png" />
@@ -206,6 +208,7 @@
     <Content Include="Content\Image\template.jpg" />
     <Content Include="Content\Image\third-section-bg.png" />
     <Content Include="Content\Image\tip-section-bg.jpg" />
+    <Content Include="Content\Image\waste.png" />
     <Content Include="Content\Image\wet-wipes.jpg" />
     <Content Include="Content\Image\tobias-tullius--wR0XMaegRo-unsplash %282%29.jpg" />
     <Content Include="Content\Image\tree-graph.png" />
