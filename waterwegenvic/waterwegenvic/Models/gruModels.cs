@@ -7,6 +7,11 @@ namespace waterwegenvic.Models
 
     public partial class gruModels : DbContext
     {
+        public gruModels(String connectionString)
+        {
+            this.Database.Connection.ConnectionString = connectionString;
+        }
+
         public gruModels()
             : base("name=gruModels")
         {

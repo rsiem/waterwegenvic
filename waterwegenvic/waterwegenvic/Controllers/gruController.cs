@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Mvc;
 using waterwegenvic.Models;
 
@@ -12,7 +13,8 @@ namespace waterwegenvic.Controllers
 {
     public class gruController : Controller
     {
-        private gruModels db = new gruModels();
+        private gruModels db = new gruModels(WebConfigurationManager.ConnectionStrings["gruModels"].ConnectionString);
+        // private gruModels db = new gruModels();
 
         // GET: gru
         public ActionResult Index()

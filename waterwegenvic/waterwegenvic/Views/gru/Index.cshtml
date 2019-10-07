@@ -98,10 +98,10 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="row">
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-4 col-sm-4">
                                             <img src="~/Content/Image/WaterCycle/rain.jpg" draggable="false" style="width:100%;">
                                         </div>
-                                        <div class="col-lg-8">
+                                        <div class="col-lg-8 col-sm-8">
                                             <p class="questionModelDialog">What is Rain? </p>
                                             <p class="answerModelDialog">Rain is liquid water in the form of droplets that have condensed from atmospheric water vapour and then become heavy enough to fall under gravity. </p>
                                             <p class="questionModelDialog">How can rain transfer into stormwater? </p>
@@ -264,10 +264,9 @@
                     </script>
                 </div>
                 <div class="row" id="gru-results" style="display:none;">
-
                     @*<p>
-                        @Html.ActionLink("Create New", "Create")
-                    </p>*@
+                            @Html.ActionLink("Create New", "Create")
+                        </p>*@
                     <table class="table">
                         <tr>
                             <th>
@@ -280,11 +279,11 @@
                                 @Html.DisplayNameFor(model => model.Suburb)
                             </th>
                             @*<th>
-                                @Html.DisplayNameFor(model => model.Latitude)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Longitude)
-                            </th>*@
+                                    @Html.DisplayNameFor(model => model.Latitude)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Longitude)
+                                </th>*@
                             <th>
                                 @Html.DisplayNameFor(model => model.Site_history)
                             </th>
@@ -301,37 +300,37 @@
                         {
                             if (item.Post_Code == 3000)
                             {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Address)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Post_Code)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Suburb)
-                                </td>
-                                @*<td>
-                                    @Html.DisplayFor(modelItem => item.Latitude)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Longitude)
-                                </td>*@
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Site_history)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Restricted_uses)
-                                </td>
-                                <td>
-                                    <a href="@Html.DisplayFor(modelItem => item.Map_link)" target="_blank">More details</a>
-                                </td>
-                                @*<td>
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.Reference_number }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.Reference_number }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.Reference_number })
-                                </td>*@
-                            </tr>
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Address)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Post_Code)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Suburb)
+                                    </td>
+                                    @*<td>
+                                            @Html.DisplayFor(modelItem => item.Latitude)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Longitude)
+                                        </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Site_history)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Restricted_uses)
+                                    </td>
+                                    <td>
+                                        <a href="@Html.DisplayFor(modelItem => item.Map_link)" target="_blank">More details</a>
+                                    </td>
+                                    @*<td>
+                                            @Html.ActionLink("Edit", "Edit", new { id = item.Reference_number }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.Reference_number }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.Reference_number })
+                                        </td>*@
+                                </tr>
                             }
                         }
 
@@ -390,6 +389,8 @@
         var fontFamilty = "cursive";
         var innerCicleTextFontSize = "18px";
         var arrowCircleBorderWidth = "3px";
+        var circleDefaultRadius = 50, circleHoverRadius = 55;
+
         // font-family: calibri;
         // default background dark color: #4F9DE7
         // light color: #8DC5E8
@@ -418,15 +419,85 @@
             .style("fill", defaultColor);
 
         // <rect id="rect" x="25%" y="25%" width="50%" height="50%" rx="15"/>
-        svgDefs.append("rect")
-            .attr("x", "25%")
-            .attr("y", "25%").attr("width", "50%")
-            .attr("height", "50%").attr("rx", "15");
-        svgDefs.append("clipPath").attr("id", "clip")
-            .append("use").attr("xlink:href", "#rect");
+        //        svgDefs.append("rect")
+        //            .attr("x", "25%")
+        //            .attr("y", "25%").attr("width", "50%")
+        //            .attr("height", "50%").attr("rx", "15");
+        //        svgDefs.append("clipPath").attr("id", "clip")
+        //            .append("use").attr("xlink:href", "#rect");
 
         //<use xlink:href="#rect" stroke-width="2" stroke="black"/>
         //svg.append("use").attr("xlink:href", "#rect").attr("stroke-width", "2").attr("stroke" , "black");
+
+        // pattern for rain image, for showing image inside circle
+        svgDefs.append("pattern")
+            .attr("id", "rainImage")
+            .attr("x", "0%")
+            .attr("y", "0%")
+            .attr("width", "100%")
+            .attr("height", "100%").attr("viewBox", "0 0 100 100")
+            .append('image')
+            .attr('xlink:href', 'https://waterwegenvic.ml/Content/Image/WaterCycle/rain.jpg')
+            .attr('width', 100)
+            .attr('height', 100)
+            .attr("x", "0%")
+            .attr("y", "0%");
+
+        // pattern for storm image, for showing image inside circle
+        svgDefs.append("pattern")
+            .attr("id", "stormWaterImage")
+            .attr("x", "0%")
+            .attr("y", "0%")
+            .attr("width", "100%")
+            .attr("height", "100%").attr("viewBox", "0 0 100 100")
+            .append('image')
+            .attr('xlink:href', 'https://waterwegenvic.ml/Content/Image/WaterCycle/stormwater_.jpg')
+            .attr('width', 100)
+            .attr('height', 100)
+            .attr("x", "0%")
+            .attr("y", "0%");
+
+        // pattern for drinking water image, for showing image inside circle
+        svgDefs.append("pattern")
+            .attr("id", "drinkingWaterImage")
+            .attr("x", "0%")
+            .attr("y", "0%")
+            .attr("width", "100%")
+            .attr("height", "100%").attr("viewBox", "0 0 100 100")
+            .append('image')
+            .attr('xlink:href', 'https://waterwegenvic.ml/Content/Image/WaterCycle/drinkingwater.jpg')
+            .attr('width', 100)
+            .attr('height', 100)
+            .attr("x", "0%")
+            .attr("y", "0%");
+
+        // pattern for ground water image, for showing image inside circle
+        svgDefs.append("pattern")
+            .attr("id", "groundWaterImage")
+            .attr("x", "0%")
+            .attr("y", "0%")
+            .attr("width", "100%")
+            .attr("height", "100%").attr("viewBox", "0 0 100 100")
+            .append('image')
+            .attr('xlink:href', 'https://waterwegenvic.ml/Content/Image/WaterCycle/groundwater.jpg')
+            .attr('width', 100)
+            .attr('height', 100)
+            .attr("x", "0%")
+            .attr("y", "0%");
+
+        // pattern for ground water image, for showing image inside circle
+        svgDefs.append("pattern")
+            .attr("id", "waterWayImage")
+            .attr("x", "0%")
+            .attr("y", "0%")
+            .attr("width", "100%")
+            .attr("height", "100%").attr("viewBox", "0 0 100 100")
+            .append('image')
+            .attr('xlink:href', 'https://waterwegenvic.ml/Content/Image/WaterCycle/waterways.jpg')
+            .attr('width', 100)
+            .attr('height', 100)
+            .attr("x", "0%")
+            .attr("y", "0%");
 
         // title
         svg.append("text")
@@ -439,86 +510,89 @@
             .style("text-decoration", "underline")
             .style("fill", defaultColor);
 
-        var circlesPositions = [
-
-        ];
+        var hoverTransition = 100;
 
         // Rain
         svg.append("circle")
             .attr("cx", 250)
             .attr("cy", 150)
-            .attr("r", "50")
-            .style("fill", "transparent")
+            .attr("r", circleDefaultRadius)
+            .style("fill", "url(#rainImage)")
             .style("stroke", defaultColor)
             .style("stroke-width", arrowCircleBorderWidth)
             .attr("class", "cirlceRain")
             .on("mouseover", function (d) {
-                d3.select(this).style("fill", "grey");
+                d3.select(this)
+                    .transition()
+                    .duration(hoverTransition)
+                    .attr('r', circleHoverRadius);
             })
             .style("cursor", "pointer")
             .on("mouseout", function (d) {
-                d3.select(this).style("fill", "transparent");
+                d3.select(this)
+                    .transition()
+                    .duration(hoverTransition)
+                    .attr('r', circleDefaultRadius);
             })
             .on("click", function () {
-                $('#rainDetailModal').modal({ backdrop: "static" });
+                $('#rainDetailModal').modal('show');
             });
 
-        // Add image inside circle
-        //var myimage = svg.append('image')
-        //.attr('xlink:href', 'http://localhost:63288/Content/Image/rain.jpg')//http://lorempixel.com/200/200/')
-        //.attr('width', 100)
-        //.attr('height', 100)
-        ////.style("border-radius", "50%")
-        ////.attr("clip-path","url(#clip)")
-        //.attr("x", 200)
-        //.attr("y", 100);
+        var circleInnerColor = "red";
 
         svg.append("text")
             .attr("x", 250)
             .attr("y", 150)
             .attr("dy", "0.3em")
             .style("font-family", fontFamilty)
-            .style("fill", defaultColor)
+            .style("fill", circleInnerColor)
             .style("font-size", innerCicleTextFontSize)
             .text("Rain")
             .style("cursor", "pointer")
             .attr("class", "textRain")
             .style("text-anchor", "middle")
             .on("mouseover", function (d) {
-                d3.select(".cirlceRain").style("fill", "grey");
+                d3.select(".cirlceRain")
+                    .transition()
+                    .duration(hoverTransition)
+                    .attr('r', circleHoverRadius);
             })
             .on("mouseout", function (d) {
-                d3.select(".cirlceRain").style("fill", "transparent");
+                d3.select(".cirlceRain")
+                    .transition()
+                    .duration(hoverTransition)
+                    .attr('r', circleDefaultRadius);
             })
             .on("click", function () {
-                $('#rainDetailModal').modal({ backdrop: "static" });
+                $('#rainDetailModal').modal('show');
             });
-
-        //var myimage = svg.append('image')
-        //    .attr('xlink:href', 'http://localhost:63288/Content/Image/waterways.jpg')//http://lorempixel.com/200/200/')
-        //    .attr('width', 100)
-        //    .attr('height', 100)
-        //    .style("border-radius", "50%")
-        //    .attr("x", 0)
-        //    .attr("y", 230);
 
         // Water way
         svg.append("circle")
             .attr("cx", 50)
             .attr("cy", 280)
-            .attr("r", "50")
-            .style("fill", "transparent")
+            .attr("r", circleDefaultRadius)
+            .style("fill", "url(#waterWayImage)")
             .style("stroke", defaultColor)
             .style("stroke-width", arrowCircleBorderWidth)
             .attr("class", "cirlceWaterway")
             .style("cursor", "pointer")
             .on("mouseover", function (d) {
-                d3.select(this).style("fill", "grey");
+                //d3.select(this).style("fill", "grey");
+                d3.select(this)
+                    .transition()
+                    .duration(hoverTransition)
+                    .attr('r', circleHoverRadius);
             })
             .on("mouseout", function (d) {
-                d3.select(this).style("fill", "transparent");
-            }).on("click", function () {
-                $('#waterWayDetailModal').modal({ backdrop: "static" });
+                //d3.select(this).style("fill", "url(#waterWayImage)");
+                d3.select(this)
+                    .transition()
+                    .duration(hoverTransition)
+                    .attr('r', circleDefaultRadius);
+            })
+            .on("click", function () {
+                $('#waterWayDetailModal').modal('show');
             });
 
 
@@ -526,23 +600,24 @@
         var txtWaterWay = svg.append("text")
             .attr("x", 50)
             .attr("y", 280)
-            //.attr("dy", "0.71em")
-
-            //.text("Water Way")
             .style("font-family", fontFamilty)
-            .style("fill", defaultColor)
+            .style("fill", circleInnerColor)
             .style("font-size", innerCicleTextFontSize)
             .attr("class", "textWaterway")
             .style("text-anchor", "middle")
             .style("cursor", "pointer")
             .on("mouseover", function (d) {
-                d3.select(".cirlceWaterway").style("fill", "grey");
+                d3.select(".cirlceWaterway").transition()
+                    .duration(hoverTransition)
+                    .attr('r', circleHoverRadius);
             })
             .on("mouseout", function (d) {
-                d3.select(".cirlceWaterway").style("fill", "transparent");
+                d3.select(".cirlceWaterway").transition()
+                    .duration(hoverTransition)
+                    .attr('r', circleDefaultRadius);
             })
             .on("click", function () {
-                $('#waterWayDetailModal').modal({ backdrop: "static" });
+                $('#waterWayDetailModal').modal('show');;
             });
 
         txtWaterWay.append("tspan").attr("dy", "0.0em").text("Water-");
@@ -552,37 +627,45 @@
         svg.append("circle")
             .attr("cx", 460)
             .attr("cy", 280)
-            .attr("r", "50")
-            .style("fill", "transparent")
+            .attr("r", circleDefaultRadius)
+            .style("fill", "url(#stormWaterImage)")
             .style("stroke", defaultColor)
             .attr("class", "cirlceStormWater")
             .style("stroke-width", arrowCircleBorderWidth)
             .on("mouseover", function (d) {
-                d3.select(this).style("fill", "grey");
+                d3.select(this).transition()
+                    .duration(hoverTransition)
+                    .attr('r', circleHoverRadius);
             })
             .style("cursor", "pointer")
             .on("mouseout", function (d) {
-                d3.select(this).style("fill", "transparent");
+                d3.select(this).transition()
+                    .duration(hoverTransition)
+                    .attr('r', circleDefaultRadius);
             }).on("click", function () {
-                $('#stormWaterDetailModal').modal({ backdrop: "static" });
+                $('#stormWaterDetailModal').modal('show');;
             });
 
         var txtStormWater = svg.append("text")
             .attr("x", 460)
             .attr("y", 280)
             .style("font-family", fontFamilty)
-            .style("fill", defaultColor)
+            .style("fill", circleInnerColor)//defaultColor)
             .style("font-size", innerCicleTextFontSize)
             .style("text-anchor", "middle")
             .on("mouseover", function (d) {
-                d3.select(".cirlceStormWater").style("fill", "grey");
+                d3.select(".cirlceStormWater").transition()
+                    .duration(hoverTransition)
+                    .attr('r', circleHoverRadius);
             })
             .on("mouseout", function (d) {
-                d3.select(".cirlceStormWater").style("fill", "transparent");
+                d3.select(".cirlceStormWater").transition()
+                    .duration(hoverTransition)
+                    .attr('r', circleDefaultRadius);
             })
             .style("cursor", "pointer")
             .on("click", function () {
-                $('#stormWaterDetailModal').modal({ backdrop: "static" });
+                $('#stormWaterDetailModal').modal('show');
             });
 
         txtStormWater.append("tspan").attr("dy", "0.0em").text("Storm-");
@@ -592,37 +675,46 @@
         svg.append("circle")
             .attr("cx", 250)
             .attr("cy", 400)
-            .attr("r", "50")
-            .style("fill", "transparent")
+            .attr("r", circleDefaultRadius)
+            .style("fill", "url(#groundWaterImage)")
             .style("stroke", defaultColor)
             .style("stroke-width", arrowCircleBorderWidth)
             .attr("class", "cirlceGroundWater")
             .on("mouseover", function (d) {
-                d3.select(this).style("fill", "grey");
+                d3.select(this).transition()
+                    .duration(hoverTransition)
+                    .attr('r', circleHoverRadius);
             })
             .style("cursor", "pointer")
             .on("mouseout", function (d) {
-                d3.select(this).style("fill", "transparent");
-            }).on("click", function () {
-                $('#groundWaterDetailModal').modal({ backdrop: "static" });
+                d3.select(this).transition()
+                    .duration(hoverTransition)
+                    .attr('r', circleDefaultRadius);
+            })
+            .on("click", function () {
+                $('#groundWaterDetailModal').modal('show');;
             });
 
         var txtGroundWater = svg.append("text")
             .attr("x", 250)
             .attr("y", 400)
             .style("font-family", fontFamilty)
-            .style("fill", defaultColor)
+            .style("fill", circleInnerColor)
             .style("font-size", innerCicleTextFontSize)
             .style("text-anchor", "middle")
             .on("mouseover", function (d) {
-                d3.select(".cirlceGroundWater").style("fill", "grey");
+                d3.select(".cirlceGroundWater").transition()
+                    .duration(hoverTransition)
+                    .attr('r', circleHoverRadius);
             })
             .on("mouseout", function (d) {
-                d3.select(".cirlceGroundWater").style("fill", "transparent");
+                d3.select(".cirlceGroundWater").transition()
+                    .duration(hoverTransition)
+                    .attr('r', circleDefaultRadius);
             })
             .style("cursor", "pointer")
             .on("click", function () {
-                $('#groundWaterDetailModal').modal({ backdrop: "static" });
+                $('#groundWaterDetailModal').modal('show');;
             });
 
         txtGroundWater.append("tspan").attr("dy", "0.0em").text("Ground-");
@@ -632,37 +724,46 @@
         svg.append("circle")
             .attr("cx", 460)
             .attr("cy", 500)
-            .attr("r", "50")
-            .style("fill", "transparent")
+            .attr("r", circleDefaultRadius)
+            .style("fill", "url(#drinkingWaterImage)")
             .style("stroke", defaultColor)
             .attr("class", "cirlceDrinkingWater")
             .style("stroke-width", arrowCircleBorderWidth)
             .on("mouseover", function (d) {
-                d3.select(this).style("fill", "grey");
+                d3.select(this).transition()
+                    .duration(hoverTransition)
+                    .attr('r', circleHoverRadius);
             })
             .style("cursor", "pointer")
             .on("mouseout", function (d) {
-                d3.select(this).style("fill", "transparent");
-            }).on("click", function () {
-                $('#drinkingWaterDetailModal').modal({ backdrop: "static" });
+                d3.select(this).transition()
+                    .duration(hoverTransition)
+                    .attr('r', circleDefaultRadius);
+            })
+            .on("click", function () {
+                $('#drinkingWaterDetailModal').modal('show');
             });
 
         var txtDrinkingWater = svg.append("text")
             .attr("x", 460)
             .attr("y", 500)
             .style("font-family", fontFamilty)
-            .style("fill", defaultColor)
+            .style("fill", circleInnerColor)//defaultColor)
             .style("font-size", innerCicleTextFontSize)
             .style("text-anchor", "middle")
             .on("mouseover", function (d) {
-                d3.select(".cirlceDrinkingWater").style("fill", "grey");
+                d3.select(".cirlceDrinkingWater").transition()
+                    .duration(hoverTransition)
+                    .attr('r', circleHoverRadius);
             })
             .on("mouseout", function (d) {
-                d3.select(".cirlceDrinkingWater").style("fill", "transparent");
+                d3.select(".cirlceDrinkingWater").transition()
+                    .duration(hoverTransition)
+                    .attr('r', circleDefaultRadius);
             })
             .style("cursor", "pointer")
             .on("click", function () {
-                $('#drinkingWaterDetailModal').modal({ backdrop: "static" });
+                $('#drinkingWaterDetailModal').modal('show');;
             });
 
         txtDrinkingWater.append("tspan").attr("dy", "0.0em").text("Drinking");
@@ -675,7 +776,6 @@
             .attr("y1", 230)
             .attr("x2", 190)
             .attr("y2", 150)
-
             .attr("stroke-width", arrowCircleBorderWidth)
             .attr("stroke", defaultColor)
             .attr("marker-end", "url(#triangle)");
@@ -698,7 +798,6 @@
             .attr("y1", 150)
             .attr("x2", 425)
             .attr("y2", 230)
-
             .attr("stroke-width", arrowCircleBorderWidth)
             .attr("stroke", defaultColor)
             .attr("marker-end", "url(#triangle)");
@@ -708,7 +807,6 @@
             .attr("x", 365)
             .attr("y", 180)
             .attr("dy", "0.71em")
-
             .style("font-family", fontFamilty)
             .style("fill", defaultColor)
             .style("font-size", innerCicleTextFontSize)
