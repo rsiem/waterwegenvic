@@ -70,6 +70,9 @@ namespace waterwegenvic
                       "~/Scripts/site.js",
                       //"~/Scripts/d3-funnel.js",
                       "~/Scripts/funnel.js"));
+
+            bundles.Add(new StyleBundle("~/Content/stormwater").Include(
+                    "~/Content/stormwater.css"));
         }
     }
 }

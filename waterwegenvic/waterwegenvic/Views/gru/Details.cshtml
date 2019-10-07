@@ -1,0 +1,83 @@
+﻿@model waterwegenvic.Models.gru
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>gru</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Post_Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Post_Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Suburb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Suburb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Site_history)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Site_history)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Restricted_uses)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Restricted_uses)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Map_link)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Map_link)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Reference_number }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

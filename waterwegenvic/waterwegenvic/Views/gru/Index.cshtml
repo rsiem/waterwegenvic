@@ -1,5 +1,8 @@
-﻿@*@{
+﻿@model IEnumerable<waterwegenvic.Models.gru>
+
+@{
     ViewBag.Title = "Stormwater";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @Styles.Render("~/Content/stormwater")
@@ -16,7 +19,6 @@
         </div>
     </div>
 </div>
-<br />
 <div class="row" id="groundwater-page">
     <div class="container-fluid">
         <div class="groundwater-page">
@@ -79,186 +81,305 @@
             <br />
             <br />
             <div class="container">
+
                 <div class="row">
-                    <div class="row" id="title">
-                        <p>The chemical content in waterways</p>
+                    <div id="renderToDiv" style="background-color:#4F9DE7;width:800px;margin-left:auto;margin-right:auto;">
+
                     </div>
-                    <div class="row">
-                        <div class="row">
-                            <p>Chemical pollution is the introduction of substances into the environment (by man) that are liable to harm human health, living resources, and ecological systems, damage structures or generally interfere with the legitimate use of the environment.</p>
+                    <!-- Modal -->
+                    <div class="modal fade" id="rainDetailModal" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header modelDialogHeader">
+                                    <button type="button" class="close closeModelDialog" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Rain</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <img src="~/Content/Image/WaterCycle/rain.jpg" draggable="false" style="width:100%;">
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <p class="questionModelDialog">What is Rain? </p>
+                                            <p class="answerModelDialog">Rain is liquid water in the form of droplets that have condensed from atmospheric water vapour and then become heavy enough to fall under gravity. </p>
+                                            <p class="questionModelDialog">How can rain transfer into stormwater? </p>
+                                            <p class="answerModelDialog">
+                                                When the clouds grow, they collect more and more water, Do you Know… these water drops falling into ground in the form of rain
+                                                Each year, 19700 million litres of rain falls on When the rains falls on the earth, and flows into drainage Melbourne, which would fill 7880 swimming pools. System, it becomes what we called stormwater.
+                                                More than half of these water collected from sealed surfaces, such as roofs and roads.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="row" id="">
-
+                    </div>
+                    <div class="modal fade" id="stormWaterDetailModal" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header modelDialogHeader">
+                                    <button type="button" class="close closeModelDialog" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Stormwater</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <img src="~/Content/Image/WaterCycle/stormwater_.jpg" draggable="false" style="width:100%;">
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <p class="questionModelDialog">What is Storm Water?</p>
+                                            <p class="answerModelDialog">Stormwater comes from precipitation events, which includes rain, storm events. Rain falls on the earth, flows along the surface as run-off, then enters the drainage system, now the water exists in the form of storm water</p>
+                                            <p class="answerModelDialog">Long term effects like certain cancer is also the consequence of polluted groundwater. About 70 towns in Victoria rely on groundwater as their primary water supply.</p>
+                                            <p class="questionModelDialog">How can groundwater polluted by storm water?</p>
+                                            <p class="answerModelDialog">
+                                                when stormwater seeps into the ground, now the water is available to us in the form of groundwater. However, stormwater carries pollutants (including leaves, sediment, oil and other hydrocarbons), and these are the cause of groundwater pollution.
+                                                Do you Know...
+                                                Each year, 105.73 million litres of stormwater flow into city’s water ways. If this stormwater is not intercepted by any form of water treatment, it will pollute our groundwater.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
                         </div>
-                        <br />
-                        <div class="row" id="">
-                            <div class="row">
-                                <div id="renderToDiv" style="background-color:#4F9DE7;width:800px;margin-left:auto;margin-right:auto;">
+                    </div>
+                    <div class="modal fade" id="groundWaterDetailModal" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header modelDialogHeader">
+                                    <button type="button" class="close closeModelDialog" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Groundwater</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <img src="~/Content/Image/WaterCycle/groundwater.jpg" draggable="false" style="width:100%;">
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <p class="questionModelDialog">What is Ground Water?</p>
+                                            <p class="answerModelDialog">Ground water is in pores and crevices of rocks and soil under the earth's surface. Aquifer is the layer that contain usable quantities of groundwater, aquifers lies under all parts of Victoria. precipitation</p>
+                                            <p class="answerModelDialog">
+                                                Groundwater the use of groundwater.it is the primary source of water supply in VICTORIA. Do you Know... - In Australia, groundwater makes up Drinking the groundwater being polluted can cause approximately 17% of accessible water resources serious diseases, such as hepatitis, dysentery; some and accounts for over 30% of our total water consumption.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="drinkingWaterDetailModal" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header modelDialogHeader">
+                                    <button type="button" class="close closeModelDialog" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Drinking Water</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <img src="~/Content/Image/WaterCycle/drinkingwater.jpg" draggable="false" style="width:100%;">
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <p class="questionModelDialog">What water can used as drinking water?</p>
+                                            <p class="answerModelDialog">Drinking water is the water safety to drink or to use for food preparation. The drinking water is needed for everyone to maintain good health. </p>
+                                            <p class="questionModelDialog">The importance of drinking water </p>
+                                            <p class="answerModelDialog">
+                                                Water is an essential nutrient and makes up 50-60 % of the human body weight. The average person can survive
+                                                Do you Know...
+                                                for about 40 days without food, but most people will die if
+                                                - a boy between 14-18 yr require 2.7L water they go for more than 72 hours without a drink
+                                                per day. - a girl between 14-18 yr require 2.2L water per day.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="waterWayDetailModal" role="dialog">
+                        <div class="modal-dialog">
 
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header modelDialogHeader">
+                                    <button type="button" class="close closeModelDialog" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Waterways</h4>
                                 </div>
-                                <!-- Modal -->
-                                <div class="modal fade" id="rainDetailModal" role="dialog">
-                                    <div class="modal-dialog">
-
-                                        <!-- Modal content-->
-                                        <div class="modal-content">
-                                            <div class="modal-header modelDialogHeader">
-                                                <button type="button" class="close closeModelDialog" data-dismiss="modal">&times;</button>
-                                                <h4 class="modal-title">Rain</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="row">
-                                                    <div class="col-lg-4">
-                                                        <img src="~/Content/Image/WaterCycle/rain.jpg" draggable="false" style="width:100%;">
-                                                    </div>
-                                                    <div class="col-lg-8">
-                                                        <p class="questionModelDialog">What is Rain? </p>
-                                                        <p class="answerModelDialog">Rain is liquid water in the form of droplets that have condensed from atmospheric water vapour and then become heavy enough to fall under gravity. </p>
-                                                        <p class="questionModelDialog">How can rain transfer into stormwater? </p>
-                                                        <p class="answerModelDialog">
-                                                            When the clouds grow, they collect more and more water, Do you Know… these water drops falling into ground in the form of rain
-                                                            Each year, 19700 million litres of rain falls on When the rains falls on the earth, and flows into drainage Melbourne, which would fill 7880 swimming pools. System, it becomes what we called stormwater.
-                                                            More than half of these water collected from sealed surfaces, such as roofs and roads.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <img src="~/Content/Image/WaterCycle/waterways.jpg" draggable="false" style="width:100%;">
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <p class="questionModelDialog">What is water ways?</p>
+                                            <p class="answerModelDialog">Waterway is any navigable body of water. There are three categories of waterway in Victoria: which are inland water, enclosed water and coastal waters. The most common waterways we have seen is inland water like rivers, lakes or creeks.</p>
+                                            <p class="questionModelDialog">How can water ways transfer back to the rain? - Evaporation</p>
+                                            <p class="answerModelDialog">
+                                                The sun heats up the water from waterways(lakes, rivers) and water changes into water vapour by the process of evaporation. These water vapours form tiny water droplets and eventually fall in the form of rain.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="modal fade" id="stormWaterDetailModal" role="dialog">
-                                    <div class="modal-dialog">
-                                        <!-- Modal content-->
-                                        <div class="modal-content">
-                                            <div class="modal-header modelDialogHeader">
-                                                <button type="button" class="close closeModelDialog" data-dismiss="modal">&times;</button>
-                                                <h4 class="modal-title">Stormwater</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="row">
-                                                    <div class="col-lg-4">
-                                                        <img src="~/Content/Image/WaterCycle/stormwater_.jpg" draggable="false" style="width:100%;">
-                                                    </div>
-                                                    <div class="col-lg-8">
-                                                        <p class="questionModelDialog">What is Storm Water?</p>
-                                                        <p class="answerModelDialog">Stormwater comes from precipitation events, which includes rain, storm events. Rain falls on the earth, flows along the surface as run-off, then enters the drainage system, now the water exists in the form of storm water</p>
-                                                        <p class="answerModelDialog">Long term effects like certain cancer is also the consequence of polluted groundwater. About 70 towns in Victoria rely on groundwater as their primary water supply.</p>
-                                                        <p class="questionModelDialog">How can groundwater polluted by storm water?</p>
-                                                        <p class="answerModelDialog">
-                                                            when stormwater seeps into the ground, now the water is available to us in the form of groundwater. However, stormwater carries pollutants (including leaves, sediment, oil and other hydrocarbons), and these are the cause of groundwater pollution.
-                                                            Do you Know...
-                                                            Each year, 105.73 million litres of stormwater flow into city’s water ways. If this stormwater is not intercepted by any form of water treatment, it will pollute our groundwater.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal fade" id="groundWaterDetailModal" role="dialog">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header modelDialogHeader">
-                                                <button type="button" class="close closeModelDialog" data-dismiss="modal">&times;</button>
-                                                <h4 class="modal-title">Groundwater</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="row">
-                                                    <div class="col-lg-4">
-                                                        <img src="~/Content/Image/WaterCycle/groundwater.jpg" draggable="false" style="width:100%;">
-                                                    </div>
-                                                    <div class="col-lg-8">
-                                                        <p class="questionModelDialog">What is Ground Water?</p>
-                                                        <p class="answerModelDialog">Ground water is in pores and crevices of rocks and soil under the earth's surface. Aquifer is the layer that contain usable quantities of groundwater, aquifers lies under all parts of Victoria. precipitation</p>
-                                                        <p class="answerModelDialog">
-                                                            Groundwater the use of groundwater.it is the primary source of water supply in VICTORIA. Do you Know... - In Australia, groundwater makes up Drinking the groundwater being polluted can cause approximately 17% of accessible water resources serious diseases, such as hepatitis, dysentery; some and accounts for over 30% of our total water consumption.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal fade" id="drinkingWaterDetailModal" role="dialog">
-                                    <div class="modal-dialog">
-                                        <!-- Modal content-->
-                                        <div class="modal-content">
-                                            <div class="modal-header modelDialogHeader">
-                                                <button type="button" class="close closeModelDialog" data-dismiss="modal">&times;</button>
-                                                <h4 class="modal-title">Drinking Water</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="row">
-                                                    <div class="col-lg-4">
-                                                        <img src="~/Content/Image/WaterCycle/drinkingwater.jpg" draggable="false" style="width:100%;">
-                                                    </div>
-                                                    <div class="col-lg-8">
-                                                        <p class="questionModelDialog">What water can used as drinking water?</p>
-                                                        <p class="answerModelDialog">Drinking water is the water safety to drink or to use for food preparation. The drinking water is needed for everyone to maintain good health. </p>
-                                                        <p class="questionModelDialog">The importance of drinking water </p>
-                                                        <p class="answerModelDialog">
-                                                            Water is an essential nutrient and makes up 50-60 % of the human body weight. The average person can survive
-                                                            Do you Know...
-                                                            for about 40 days without food, but most people will die if
-                                                            - a boy between 14-18 yr require 2.7L water they go for more than 72 hours without a drink
-                                                            per day. - a girl between 14-18 yr require 2.2L water per day.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal fade" id="waterWayDetailModal" role="dialog">
-                                    <div class="modal-dialog">
-
-                                        <!-- Modal content-->
-                                        <div class="modal-content">
-                                            <div class="modal-header modelDialogHeader">
-                                                <button type="button" class="close closeModelDialog" data-dismiss="modal">&times;</button>
-                                                <h4 class="modal-title">Waterways</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="row">
-                                                    <div class="col-lg-4">
-                                                        <img src="~/Content/Image/WaterCycle/waterways.jpg" draggable="false" style="width:100%;">
-                                                    </div>
-                                                    <div class="col-lg-8">
-                                                        <p class="questionModelDialog">What is water ways?</p>
-                                                        <p class="answerModelDialog">Waterway is any navigable body of water. There are three categories of waterway in Victoria: which are inland water, enclosed water and coastal waters. The most common waterways we have seen is inland water like rivers, lakes or creeks.</p>
-                                                        <p class="questionModelDialog">How can water ways transfer back to the rain? - Evaporation</p>
-                                                        <p class="answerModelDialog">
-                                                            The sun heats up the water from waterways(lakes, rivers) and water changes into water vapour by the process of evaporation. These water vapours form tiny water droplets and eventually fall in the form of rain.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <br />
+            <div class="container">
+                <div class="row">
+                    <form onsubmit="return getPostcode()">
+                        <div class="form-group">
+                            <label for="postcode">Postcode:</label>
+                            <input type="text" pattern="\d*" minlength="4" maxlength="4" class="form-control" id="postcode" placeholder="3000" name="postcode">
+                            <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                        </div>
+                    </form>
+                    <script>
+                        function getPostcode() {
+                            pcode = document.forms[0].postcode.value;
+
+                            document.getElementById("gru-results").style.display = "block";
+
+                            return false;
+                        }
+                    </script>
+                </div>
+                <div class="row" id="gru-results" style="display:none;">
+
+                    @*<p>
+                        @Html.ActionLink("Create New", "Create")
+                    </p>*@
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Address)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Post_Code)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Suburb)
+                            </th>
+                            @*<th>
+                                @Html.DisplayNameFor(model => model.Latitude)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Longitude)
+                            </th>*@
+                            <th>
+                                @Html.DisplayNameFor(model => model.Site_history)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Restricted_uses)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Map_link)
+                            </th>
+                            @*<th></th>*@
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            if (item.Post_Code == 3000)
+                            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Address)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Post_Code)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Suburb)
+                                </td>
+                                @*<td>
+                                    @Html.DisplayFor(modelItem => item.Latitude)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Longitude)
+                                </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Site_history)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Restricted_uses)
+                                </td>
+                                <td>
+                                    <a href="@Html.DisplayFor(modelItem => item.Map_link)" target="_blank">More details</a>
+                                </td>
+                                @*<td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.Reference_number }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.Reference_number }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.Reference_number })
+                                </td>*@
+                            </tr>
+                            }
+                        }
+
+                    </table>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div id="donut-chart"></div>
+                    <script>
+                        var data = [{
+                            values: [2, 12, 8, 78],
+                            labels: ['Urban', 'Domestic and stock', 'Power generation', 'Irrigation/Commmercial/Salinity Control'],
+                            domain: { column: 0 },
+                            name: 'Groundwater use',
+                            hoverinfo: 'label+percent',
+                            hole: .4,
+                            type: 'pie',
+                            marker: { colors: ["#E7F2F8", "#74BDCB", "#FFA384", "#EFE7BC"] }
+                        }];
+
+                        var layout = {
+                            title: 'Groundwater Use in Victoria',
+                            annotations: [
+                                {
+                                    font: {
+                                        size: 20
+                                    },
+                                    showarrow: false,
+                                    text: ' ',
+                                    x: 0.17,
+                                    y: 0.5
+                                }
+                            ],
+                            height: 400,
+                            width: 600,
+                            showlegend: false,
+                            grid: { rows: 1 }
+                        };
+
+                        Plotly.newPlot('donut-chart', data, layout, { displayModeBar: false, responsive: true });
+                    </script>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 <script>
     function drawChart() {
 
@@ -661,4 +782,4 @@
     }
 
     drawChart();
-</script>*@
+</script>
