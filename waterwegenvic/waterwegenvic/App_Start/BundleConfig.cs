@@ -22,10 +22,8 @@ namespace waterwegenvic
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
-            //bundles.Add(new ScriptBundle("~/bundles/script").Include(
-            //          "~/Scripts/wordcloud.js",
-            //          "~/Scripts/tree.js"));
-            //          //"~/Scripts/d3-funnel.js"));
+            bundles.Add(new ScriptBundle("~/bundles/script").Include(
+                      "~/Scripts/scroll.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
@@ -59,7 +57,6 @@ namespace waterwegenvic
             bundles.Add(new ScriptBundle("~/bundles/substance").Include(
                       "~/Scripts/flipping_card.js",
                       "~/Scripts/lightbox.js"));
-            //"~/Scripts/wordcloud.js"));
 
             // litter page bundle
             bundles.Add(new StyleBundle("~/Content/litter").Include(
@@ -71,8 +68,12 @@ namespace waterwegenvic
                       //"~/Scripts/d3-funnel.js",
                       "~/Scripts/funnel.js"));
 
+            // stormwater page bundle
             bundles.Add(new StyleBundle("~/Content/stormwater").Include(
                     "~/Content/stormwater.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/stormwater").Include(
+                    "~/Scripts/locations.js"));
         }
     }
 }

@@ -6,13 +6,14 @@
 }
 
 @Styles.Render("~/Content/stormwater")
+@Scripts.Render("~/bundles/stormwater")
 
 <div class="row" id="groundwater">
     <div class="container-fluid">
         <div class=" row">
             <section class="first-section hero" style="background-image:url('../../Content/Image/heading-bg.png'); width: 100%">
                 <div class="hero-inner text-context">
-                    <p>Groundwater Pollution</p>
+                    <p>Stormwater Pollution</p>
                     <div class="line-dec"></div>
                 </div>
             </section>
@@ -39,40 +40,6 @@
                     </div>
                     <div class="row">
 
-                    </div>
-                </div>
-            </div>
-            <br />
-            <br />
-            <br />
-            <div class="container">
-                <div class="row">
-                    <div class="funnelTooltip">
-                    </div>
-
-                    <div class="row" id="title">
-                        <p>Things that can cause water pollution</p>
-                    </div>
-                    <div class="row">
-                        <div class="row">
-                            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
-                                <img src="~/Content/Image/img2.jpg" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-3" id="bins" ondrop="drop(event)" ondragover="allowDrop(event)">
-                                <img src="~/Content/Image/red.png" draggable="false">
-                            </div>
-                            <div class="col-md-1"></div>
-                            <div class="col-md-3" id="bins" ondrop="drop(event)" ondragover="allowDrop(event)">
-                                <img src="~/Content/Image/yellow.png" draggable="false">
-                            </div>
-                            <div class="col-md-1"></div>
-                            <div class="col-md-3" id="bins" ondrop="drop(event)" ondragover="allowDrop(event)">
-                                <img src="~/Content/Image/green.png" draggable="false">
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -249,7 +216,7 @@
                     <form onsubmit="return getPostcode()">
                         <div class="form-group">
                             <label for="postcode">Postcode:</label>
-                            <input type="text" pattern="\d*" minlength="4" maxlength="4" class="form-control" id="postcode" placeholder="3000" name="postcode">
+                            <input type="text" pattern="\d*" minlength="4" maxlength="4" class="form-control" id="postcode" placeholder="3000" name="postcode" value="">
                             <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
                         </div>
                     </form>
@@ -257,6 +224,41 @@
                         function getPostcode() {
                             pcode = document.forms[0].postcode.value;
 
+                            // post code elements
+                            pcElements = document.getElementsByClassName("post-code");
+                            //console.log(pcElements[0].innerHTML.trim());
+                            //pcElements[0].hide();
+                            var i;
+                            for (i = 0; i < pcElements.length; i++) {
+                                pcElements[i].closest('tr').hidden = false;
+                            }
+                            var count = 0;
+                            for (i = 0; i < pcElements.length; i++) {
+                                var postcode = pcElements[i].innerHTML.trim();
+                                if (postcode === pcode) {
+                                    //console.log("success");
+                                    count += 1;
+                                    pcElements[i].closest('tr').setAttribute("id", "result");
+                                } else {
+                                    pcElements[i].closest('tr').hidden = true;
+                                }
+                            }
+
+                            if (count == 0) {
+                                document.getElementById("no-result").innerHTML = "No results found for " + pcode + ".";
+                                document.getElementById("no-result").hidden = false;
+                                document.getElementById("gru-table").hidden = true;
+                                document.getElementById("placeholder").hidden = true;
+                                document.getElementById("result-map").hidden = true;
+                            } else {
+                                document.getElementById("placeholder").innerHTML = "Showing results for " + pcode + ".";
+                                document.getElementById("no-result").hidden = true;
+                                document.getElementById("gru-table").hidden = false;
+                                document.getElementById("placeholder").hidden = false;
+                                document.getElementById("result-map").hidden = false;
+                            }
+
+                            document.getElementById("postcode").setAttribute("value", pcode);
                             document.getElementById("gru-results").style.display = "block";
 
                             return false;
@@ -264,26 +266,22 @@
                     </script>
                 </div>
                 <div class="row" id="gru-results" style="display:none;">
-                    @*<p>
-                            @Html.ActionLink("Create New", "Create")
-                        </p>*@
-                    <table class="table">
+                    <div id="placeholder" name="placeholder"></div>
+                    <div id="no-result" name="no-result" hidden></div>
+                    <table id="gru-table" class="table">
                         <tr>
                             <th>
                                 @Html.DisplayNameFor(model => model.Address)
                             </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Post_Code)
+                            <th hidden>
                             </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.Suburb)
                             </th>
-                            @*<th>
-                                    @Html.DisplayNameFor(model => model.Latitude)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Longitude)
-                                </th>*@
+                            <th hidden>
+                            </th>
+                            <th hidden>
+                            </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.Site_history)
                             </th>
@@ -295,46 +293,40 @@
                             </th>
                             @*<th></th>*@
                         </tr>
-
                         @foreach (var item in Model)
                         {
-                            if (item.Post_Code == 3000)
-                            {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Address)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Post_Code)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Suburb)
-                                    </td>
-                                    @*<td>
-                                            @Html.DisplayFor(modelItem => item.Latitude)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Longitude)
-                                        </td>*@
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Site_history)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Restricted_uses)
-                                    </td>
-                                    <td>
-                                        <a href="@Html.DisplayFor(modelItem => item.Map_link)" target="_blank">More details</a>
-                                    </td>
-                                    @*<td>
-                                            @Html.ActionLink("Edit", "Edit", new { id = item.Reference_number }) |
-                                            @Html.ActionLink("Details", "Details", new { id = item.Reference_number }) |
-                                            @Html.ActionLink("Delete", "Delete", new { id = item.Reference_number })
-                                        </td>*@
-                                </tr>
-                            }
+                            <tr class="coordinates">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Address)
+                                </td>
+                                <td class="post-code" hidden>
+                                    @Html.DisplayFor(modelItem => item.Post_Code)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Suburb)
+                                </td>
+                                <td hidden class="latitude">
+                                    @Html.DisplayFor(modelItem => item.Latitude)
+                                </td>
+                                <td hidden class="longitude">
+                                    @Html.DisplayFor(modelItem => item.Longitude)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Site_history)
+                                </td>
+                                <td class="restricted_use">
+                                    @Html.DisplayFor(modelItem => item.Restricted_uses)
+                                </td>
+                                <td>
+                                    <a href="@Html.DisplayFor(modelItem => item.Map_link)" target="_blank">More details</a>
+                                </td>
+                            </tr>
                         }
-
                     </table>
+                </div>
+                <div class="row" id="result-map" hidden>
+                    <button class="btn btn-default" onclick="openMap()">Show on Map</button>
+                    <div id="map" style="height:50vh; width: 100%"></div>
                 </div>
             </div>
             <div class="container">

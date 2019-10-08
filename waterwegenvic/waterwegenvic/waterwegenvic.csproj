@@ -184,6 +184,7 @@
     <Content Include="Content\Image\footer.jpg" />
     <Content Include="Content\Image\footer-bg.jpg" />
     <Content Include="Content\Image\hot.png" />
+    <Content Include="Content\Image\Icons\marker-15.svg" />
     <Content Include="Content\Image\jasmin-sessler-5Wfttm2CjeI-unsplash.jpg" />
     <Content Include="Content\funnel.css" />
     <Content Include="Content\Image\anastasia-taioglou-CTivHyiTbFw-unsplash.jpg" />
@@ -267,7 +268,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\lightbox.js" />
+    <Content Include="Scripts\locations.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\scroll.js" />
     <Content Include="Scripts\site.js" />
     <Content Include="Scripts\tree.js" />
     <Content Include="Scripts\wordcloud.js" />
