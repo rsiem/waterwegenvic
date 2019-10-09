@@ -218,116 +218,103 @@
             <br class="hidden-sm hidden-xs" />
             <br class="hidden-sm hidden-xs" />
             <div class="container">
+                <div class="row" id="title">
+                    <p>The Chemical Content In Waterways</p>
+                </div>
                 <div class="row">
-                    <div class="row" id="title">
-                        <p>The Chemical Content In Waterways</p>
-                    </div>
+                    <p>Chemical pollution is the introduction of substances into the environment (by man) that are liable to harm human health, living resources, and ecological systems, damage structures or generally interfere with the legitimate use of the environment.</p>
+                </div>
+                <br />
+                <div class="row" id="chemical-display">
                     <div class="row">
-                        <p>Chemical pollution is the introduction of substances into the environment (by man) that are liable to harm human health, living resources, and ecological systems, damage structures or generally interfere with the legitimate use of the environment.</p>
-                    </div>
-                    <br />
-                    <div class="row" id="chemical-display">
-                        <div class="row">
-                            <div class="col-md-8 col-sm-12 col-xs-12">
-                                <div id="chemical-bar">
-                                    <!-- Plotly chart will be drawn inside this DIV -->
-                                </div>
-                                <script>
-                                    var data = [{
-                                        type: 'bar',
-                                        x: [97099, 94872, 85717, 62646, 22979, 12390, 12390, 12390, 12376, 12376, 136, 136, 100, 78, 78],
-                                        y:
-                                            ['Phosphorus', 'Kjeldahl Nitrogen', 'Fibre-Reinforced Plastic', 'Suspended Solids', 'Silicon Dioxide', 'Copper', 'Zinc', 'Lead', 'Chromium', 'Nickel', 'Anions', 'Cations', 'Fluorine', 'Selenium', 'Molybdenum'],
-                                        orientation: 'h',
-                                        marker: {
-                                            color: ['#EF5350', "#FFA500", "#7E57C2", "#CDDC39", "#00BCD4", "#4CAF50", "#FFC107", "#34729E", "#95CE67", "#CAC461", 'rgba(55,128,191,0.6)', "#2a9d8f", "#e76f51", "#264653", "#e9c46a"],
-                                            width: 1
-                                        }
-                                    }];
-
-                                    var layout = {
-                                        title: 'Chemical ',
-                                        showlegend: false,
-                                        yaxis: {
-                                            fixedrange: true,
-                                            categoryorder: 'array',
-                                            categoryarray:
-                                                ['Molybdenum', 'Selenium', 'Fluorine', 'Cations', 'Anions', 'Nickel', 'Chromium', 'Lead', 'Zinc', 'Copper', 'Silicon Dioxide', 'Suspended Solids', 'Fibre-Reinforced Plastic', 'Kjeldahl Nitrogen', 'Phosphorus']
-                                        },
-                                        xaxis: {
-                                            fixedrange: true
-                                        }
-                                    };
-
-                                    Plotly.newPlot('chemical-bar', data, layout, { displayModeBar: false, responsive: true });
-                                </script>
+                        <div class="col-md-8 col-sm-12 col-xs-12">
+                            <div id="chemical-bar">
+                                <!-- Plotly chart will be drawn inside this DIV -->
                             </div>
-                            <div class="col-md-4 col-sm-12 col-xs-12">
-                                <br class="hidden-xs hidden-sm" />
-                                <br class="hidden-xs hidden-sm" />
+                            <script>
+                                var data = [{
+                                    type: 'bar',
+                                    x: [97099, 94872, 85717, 62646, 22979, 12390, 12390, 12390, 12376, 12376, 136, 136, 100, 78, 78],
+                                    y:
+                                        ['Phosphorus', 'Kjeldahl Nitrogen', 'Fibre-Reinforced Plastic', 'Suspended Solids', 'Silicon Dioxide', 'Copper', 'Zinc', 'Lead', 'Chromium', 'Nickel', 'Anions', 'Cations', 'Fluorine', 'Selenium', 'Molybdenum'],
+                                    orientation: 'h',
+                                    marker: {
+                                        color: ['#EF5350', "#FFA500", "#7E57C2", "#CDDC39", "#00BCD4", "#4CAF50", "#FFC107", "#34729E", "#95CE67", "#CAC461", 'rgba(55,128,191,0.6)', "#2a9d8f", "#e76f51", "#264653", "#e9c46a"],
+                                        width: 1
+                                    }
+                                }];
+
+                                var layout = {
+                                    title: 'Chemical ',
+                                    showlegend: false,
+                                    yaxis: {
+                                        fixedrange: true,
+                                        automargin: true,
+                                        categoryorder: 'array',
+                                        categoryarray:
+                                            ['Molybdenum', 'Selenium', 'Fluorine', 'Cations', 'Anions', 'Nickel', 'Chromium', 'Lead', 'Zinc', 'Copper', 'Silicon Dioxide', 'Suspended Solids', 'Fibre-Reinforced Plastic', 'Kjeldahl Nitrogen', 'Phosphorus']
+                                    },
+                                    xaxis: {
+                                        fixedrange: true
+                                    }
+                                };
+
+                                Plotly.newPlot('chemical-bar', data, layout, { displayModeBar: false, responsive: true });
+                            </script>
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <br class="hidden-xs hidden-sm" />
+                            <br class="hidden-xs hidden-sm" />
+                            <br />
+                            <p>
                                 <br />
-                                <p>
-                                    <br />
-                                    The great amount of Phosphorus and Nitrogen indicating the
-                                    main pollution comes from the living wastewater including disposal waste,
-                                    kitchen waste, etc. As to Slicon Dioxide, it shows that the high turbidity
-                                    of waterways and contains a lot of sand.
-                                </p>
-                                <br />
-                            </div>
+                                The great amount of Phosphorus and Nitrogen indicating the
+                                main pollution comes from the living wastewater including disposal waste,
+                                kitchen waste, etc. As to Slicon Dioxide, it shows that the high turbidity
+                                of waterways and contains a lot of sand.
+                            </p>
+                            <br />
                         </div>
                     </div>
-                    <br />
-                    <div class="row">
-                        <div class="container" id="substance-solution">
-                            <div class="row">
-
-                                <div class="element-card col-4-lg col-md-4 col-sm-4 col-xs-4">
-                                    <div class="front-facing">
-                                        <h1 class="abr">P</h1>
-                                        <p class="title">Phosphorus</p>
-
-                                    </div>
-                                    <div class="back-facing">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-
-                                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="container" id="substance-solution">
+                        <div class="row">
+                            <div class="element-card col-4-lg col-md-4 col-sm-4 col-xs-4">
+                                <div class="front-facing">
+                                    <h1 class="abr">P</h1>
+                                    <p class="title">Phosphorus</p>
                                 </div>
-
-                                <div class="element-card col-4-lg col-md-4 col-sm-4 col-xs-4">
-                                    <div class="front-facing">
-                                        <h1 class="abr">N</h1>
-                                        <p class="title">Nitrogen</p>
-
-                                    </div>
-                                    <div class="back-facing">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-
-                                    </div>
+                                <div class="back-facing">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
                                 </div>
-
-                                <div class="element-card col-4-lg col-md-4 col-sm-4 col-xs-4" onclick="openFunc(this)">
-                                    <div class="front-facing">
-                                        <h1 class="abr">SiO2</h1>
-                                        <p class="title">Silicon Dioxide</p>
-
-                                    </div>
-                                    <div class="back-facing">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-
-                                    </div>
+                            </div>
+                            <div class="element-card col-4-lg col-md-4 col-sm-4 col-xs-4">
+                                <div class="front-facing">
+                                    <h1 class="abr">N</h1>
+                                    <p class="title">Nitrogen</p>
                                 </div>
-
-                                <div class="element-card col-4-lg col-md-4 col-sm-4 col-xs-4">
-                                    <div class="front-facing">
-                                        <h1 class="abr">Rg</h1>
-                                        <p class="title">Roentgenium</p>
-
-                                    </div>
-                                    <div class="back-facing">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-
-                                    </div>
+                                <div class="back-facing">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                                </div>
+                            </div>
+                            <div class="element-card col-4-lg col-md-4 col-sm-4 col-xs-4" onclick="openFunc(this)">
+                                <div class="front-facing">
+                                    <h1 class="abr">SiO2</h1>
+                                    <p class="title">Silicon Dioxide</p>
+                                </div>
+                                <div class="back-facing">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                                </div>
+                            </div>
+                            <div class="element-card col-4-lg col-md-4 col-sm-4 col-xs-4">
+                                <div class="front-facing">
+                                    <h1 class="abr">Rg</h1>
+                                    <p class="title">Roentgenium</p>
+                                </div>
+                                <div class="back-facing">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
                                 </div>
                             </div>
                         </div>
@@ -336,110 +323,80 @@
             </div>
             <br />
             <br />
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="cardContainerSubstance inactive">
-                            <div class="card">
-                                <div class="side front">
-                                    <div class="img solution"></div>
-                                    <div class="info">
-                                        <h2 style="text-align: center;">Solution</h2>
-                                        <p align="justify-content">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <div class="row">
+                <div class="container-fluid last-section">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="cardContainerSubstance inactive">
+                                <div class="card">
+                                    <div class="side front">
+                                        <div class="img solution"></div>
+                                        <div class="info">
+                                            <h2 style="text-align: center;">Solution</h2>
+                                            <p align="justify-content">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="side back">
-                                    <div class="info">
-                                        <h2 style="text-align: center;">Tips</h2>
+                                    <div class="side back">
+                                        <div class="info">
+                                            <h2 style="text-align: center;">Tips</h2>
 
-                                        <ul>
-                                            <li>Use environment friendly detergents. </li>
-                                            <li>Use recycled products. </li>
-                                            <li>Avoid pesticide and chemicals</li>
-                                            <li>Use of non-chemical pesticides and herbicides in gardens.</li>
-                                            <li>Use products which are durable as well as with less packaging.</li>
-                                            <li>Use fruit and vegetables waste as mulch.</li>
-                                        </ul>
+                                            <ul>
+                                                <li>Use environment friendly detergents. </li>
+                                                <li>Use recycled products. </li>
+                                                <li>Avoid pesticide and chemicals</li>
+                                                <li>Use of non-chemical pesticides and herbicides in gardens.</li>
+                                                <li>Use products which are durable as well as with less packaging.</li>
+                                                <li>Use fruit and vegetables waste as mulch.</li>
+                                            </ul>
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="cardContainerSubstance inactive">
-                            <div class="card">
-                                <div class="side front">
-                                    <div class="img tips"></div>
-                                    <div class="info">
-                                        <h2 style="text-align: center;">Disposal Tips</h2>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                    </div>
-                                </div>
-                                <div class="side back">
-                                    <div class="info">
-                                        <h2 style="text-align: center;">Reuse</h2>
-
-                                        <ul>
-                                            <li>Use appropriate containers while disposing of hazardous substances.</li>
-                                            <li>Ensure that the substances do not mix while the disposal as there might be a violent reaction.</li>
-                                            <li>Do not dispose of the electronic waste into the bins instead drop-off it at your nearest collection centers</li>
-                                            <li>Don’t throw paints, oils or other forms of litter down the drain.</li>
-
-                                        </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <script type="text/javascript">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="cardContainerSubstance inactive">
+                                <div class="card">
+                                    <div class="side front">
+                                        <div class="img tips"></div>
+                                        <div class="info">
+                                            <h2 style="text-align: center;">Disposal Tips</h2>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                        </div>
+                                    </div>
+                                    <div class="side back">
+                                        <div class="info">
+                                            <h2 style="text-align: center;">Reuse</h2>
 
-                        const cards = document.querySelectorAll('.card');
+                                            <ul>
+                                                <li>Use appropriate containers while disposing of hazardous substances.</li>
+                                                <li>Ensure that the substances do not mix while the disposal as there might be a violent reaction.</li>
+                                                <li>Do not dispose of the electronic waste into the bins instead drop-off it at your nearest collection centers</li>
+                                                <li>Don’t throw paints, oils or other forms of litter down the drain.</li>
 
-                        function transition() {
-                            if (this.classList.contains('active')) {
-                                this.classList.remove('active');
-                            } else {
-                                this.classList.add('active');
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+
+                            const cards = document.querySelectorAll('.card');
+
+                            function transition() {
+                                if (this.classList.contains('active')) {
+                                    this.classList.remove('active');
+                                } else {
+                                    this.classList.add('active');
+                                }
                             }
-                        }
 
-                        cards.forEach(card => card.addEventListener('click', transition));
-                    </script>
-                </div>
-                </div>
-            @*<div class="container">
-        <section class="hero" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('../../Content/Image/bins.jpg'); width: 100%; padding:2%">
-            <div class="container-block">
-                <div class="row">
-                    <div class="col-md-5" style="background-color: #a9a9b0; opacity:1; padding: 2%; margin:2%">
-                        <div class="hero-inner" style="text-align:left">
-                            <p style="color:black;">Solution to the problem:</p>
-                            <ul>
-                                <li style="color:black;">Use Environment friendly detergents.</li>
-                                <li style="color:black;">Avoid Pesticides.</li>
-                                <li style="color:black;">Use recycled products.</li>
-                                <li style="color:black;">Use Products which are durable as well as with less packaging.</li>
-                                <li style="color:black;">Use fruit and vegetables waste as mulch.</li>
-                                <li style="color:black;">Use of non-chemical pesticides and herbicides in gardens.</li>
-                            </ul>
-                        </div>
+                            cards.forEach(card => card.addEventListener('click', transition));
+                        </script>
                     </div>
-                    <div class="col-md-5 col-md-offset-2" style="background-color: #a9a9b0; opacity:1; padding: 2%; margin:2%">
-                        <div class="hero-inner" style="text-align:left">
-                            <p style="color:black;">How to dispose of the substance safely to protect waterways?</p>
-                            <ul>
-            <li style="color:black;">Don’t throw paints, oils or other forms of litter down the drain.</li>
-            <li style="color:black;">Use appropriate containers while disposing of hazardous substances.</li>
-            <li style="color:black;">Ensure that the substances do not mix while the disposal as there might be a violent reaction.</li>
-            <li style="color:black;">Do not dispose of the electronic waste into the bins instead drop-off it at your nearest collection centers.</li>
-            </ul>
-        </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>*@
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -8,6 +8,13 @@
     height: 300px;
 }
 
+@media (max-width: 590px) {
+    #red-bin, #yellow-bin, #green-bin {
+        width: 100px;
+        height: 150px;
+    }
+}
+
 #bin-text {
     text-align: center;
 }

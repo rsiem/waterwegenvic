@@ -46,3 +46,7 @@ form.example::after {
     clear: both;
     display: table;
 }
+
+#renderToDiv {
+    width:70%;
+}

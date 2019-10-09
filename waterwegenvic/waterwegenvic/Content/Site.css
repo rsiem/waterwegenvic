@@ -21,7 +21,7 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 100%;
 }
 
 .navbar {
@@ -95,7 +95,7 @@ img {
     font-size: 30px;
 }
 
-#background, #substance-page, #litter-page {
+#background, #substance-page, #litter-page, #groundwater-page {
     font-size: 1.2em;
 }
 
