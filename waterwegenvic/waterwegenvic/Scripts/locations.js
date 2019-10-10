@@ -1,5 +1,9 @@
 ﻿function openMap() {
 
+    //document.getElementById("result-map").style.width = "100%";
+    //document.getElementById("result-map").style.height = "50vh";
+    //document.getElementById("result-map").hidden = false;
+
     var locations = [];
 
     // The first step is obtain all the latitude and longitude from the HTML
@@ -34,8 +38,6 @@
         };
         data.push(feature)
     }
-
-    console.log(locations);
 
     mapboxgl.accessToken = 'pk.eyJ1IjoicnNpZW0iLCJhIjoiY2psNGg4anU5MTVoczNrbjNyenZwanBxeSJ9.DBTDs4C0kgfrM2huvyW8vA';
     var map = new mapboxgl.Map({

@@ -10,7 +10,8 @@
 	 transform: rotateY(0deg) translatex(0px) translatey(0px);
 	 transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 	 box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
-	 margin: 2% 5%;
+	 /*margin: 2% 5%;*/
+     margin: auto;
 	 cursor: pointer;
 }
 

@@ -160,6 +160,10 @@ svg {
     height: 400px;
 }
 
+.info {
+    border: 1px solid black;
+}
+
 .front .img {
     background-color: #dadce2;
     background-position: center;
@@ -170,23 +174,35 @@ svg {
 }
 
 .front .solution {
-    background-image: url('Image/b1.jpg');
+    background-image: url('Image/Solution/organic.jpg');
 }
 
 .front .tips {
-    background-image: url('Image/b1.jpg');
+    background-image: url('Image/Solution/Disposal.jpg');
 }
 
 .front .recycle {
-    background-image: url('Image/waste.png');
+    background-image: url('Image/Solution/recycle.jpg');
 }
 
 .front .reduce {
-    background-image: url('Image/a3.jpg');
+    background-image: url('Image/Solution/reduce.jpg');
 }
 
 .front .reuse {
-    background-image: url('Image/a1.jpg');
+    background-image: url('Image/Solution/reuse.jpg');
+}
+
+.front .wash{
+    background-image: url('Image/Solution/wash.jpg');
+}
+
+.front .garden{
+    background-image: url('Image/Solution/garden.jpg');
+}
+
+.front .waste{
+    background-image: url('Image/Solution/waste.jpg')
 }
 
 .back {
