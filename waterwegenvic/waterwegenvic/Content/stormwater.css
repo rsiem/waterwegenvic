@@ -50,3 +50,19 @@ form.example::after {
 #renderToDiv {
     width:70%;
 }
+
+#map-feature {
+    width: 40%;
+}
+
+@media screen and (min-width: 426px) and (max-width: 1024px) {
+    #map-feature {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #map-feature {
+        width: 100%;
+    }
+}

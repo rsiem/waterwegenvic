@@ -61,11 +61,12 @@ namespace waterwegenvic
             // litter page bundle
             bundles.Add(new StyleBundle("~/Content/litter").Include(
                       "~/Content/litter.css",
+                      "~/Content/CollapseBox.css",
                       "~/Content/funnel.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/litter").Include(
                       "~/Scripts/site.js",
-                      //"~/Scripts/d3-funnel.js",
+                      "~/Scripts/CollapseBox.js",
                       "~/Scripts/funnel.js"));
 
             // stormwater page bundle

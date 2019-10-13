@@ -180,9 +180,11 @@
     <Content Include="Content\Image\battery.png" />
     <Content Include="Content\Image\compo_of_storm_pollution.png" />
     <Content Include="Content\Image\drink-ways.png" />
+    <Content Include="Content\Image\Solution\eco.jpg" />
     <Content Include="Content\Image\egg-carton-4046693_960_720.jpg" />
     <Content Include="Content\Image\footer.jpg" />
     <Content Include="Content\Image\footer-bg.jpg" />
+    <Content Include="Content\Image\groundwater_use.png" />
     <Content Include="Content\Image\hot.png" />
     <Content Include="Content\Image\Icons\marker-15.svg" />
     <Content Include="Content\Image\jasmin-sessler-5Wfttm2CjeI-unsplash.jpg" />
@@ -206,6 +208,7 @@
     <Content Include="Content\Image\josefin-brosche-hagsgard-18388_en-1412x772.jpg" />
     <Content Include="Content\Image\first-section-bg.jpg" />
     <Content Include="Content\Image\lamp.png" />
+    <Content Include="Content\Image\level_risk.png" />
     <Content Include="Content\Image\low_hot.png" />
     <Content Include="Content\Image\neonbrand-8Yk4T-tDSYY-unsplash %281%29.jpg" />
     <Content Include="Content\Image\orange-peel.jpg" />
@@ -252,10 +255,14 @@
     <Content Include="Content\Image\WaterCycle\drinkingwater.png" />
     <Content Include="Content\Image\WaterCycle\drop.jfif" />
     <Content Include="Content\Image\WaterCycle\evaporation.jpg" />
+    <Content Include="Content\Image\WaterCycle\exclamation.png" />
+    <Content Include="Content\Image\WaterCycle\gas.png" />
     <Content Include="Content\Image\WaterCycle\groundwater.jpg" />
     <Content Include="Content\Image\WaterCycle\groundwater.png" />
     <Content Include="Content\Image\WaterCycle\ho.png" />
+    <Content Include="Content\Image\WaterCycle\imark.jpg" />
     <Content Include="Content\Image\WaterCycle\leaves.jfif" />
+    <Content Include="Content\Image\WaterCycle\leaves.png" />
     <Content Include="Content\Image\WaterCycle\oil.png" />
     <Content Include="Content\Image\WaterCycle\rain.jfif" />
     <Content Include="Content\Image\WaterCycle\rain.jpg" />
@@ -350,6 +357,7 @@
     <Content Include="Views\Iteration3\Substance.cshtml" />
     <Content Include="Views\Iteration3\Stormwater.cshtml" />
     <Content Include="Views\Iteration3\_CollapseView.cshtml" />
+    <Content Include="Views\Home\_CollapseViewTree.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

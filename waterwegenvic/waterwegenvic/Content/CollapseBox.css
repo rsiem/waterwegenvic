@@ -104,3 +104,45 @@ a:focus {
 #population, #climate {
     height: 80px;
 }
+
+@media screen and (min-width: 426px) and (max-width: 1024px) {
+    #treegraphPanel {
+        display: none;
+    }
+
+    #TreeParagraph {
+        display: block;
+    }
+
+    #tree-primary {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #treegraphPanel {
+        display: block;
+    }
+
+    #TreeParagraph {
+        display: none;
+    }
+
+    #tree-primary {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #treegraphPanel {
+        display: none;
+    }
+
+    #TreeParagraph {
+        display: block;
+    }
+
+    #tree-primary {
+        display: none;
+    }
+}

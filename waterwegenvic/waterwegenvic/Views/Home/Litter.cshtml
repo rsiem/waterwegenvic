@@ -86,16 +86,29 @@
                                 </div>
                             </div>
                             <div id="TreeParagraph">
-
+                                @Html.Partial("~/Views/Home/_CollapseViewTree.cshtml")
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                            <div class="panel panel-primary" id="tree-primary" style="display: none">
-                                <div class="panel-heading" id="tree-heading">
-                                    <h3 class="panel-title">Primary Panel</h3>
+                            <div class="panel panel-primary" id="tree-primary">
+                                <div class="panel-heading" style=" background-color: rgb(120, 120, 120);" id="tree-heading">
+                                    <h3 class="panel-title">Waste</h3>
                                 </div>
                                 <div class="panel-body" id="tree-info">
-                                    Panel content
+                                    <p style='color:black;'>
+                                        Wastes are unwanted materials which we do not need or discarded after primary use.
+                                    </p>
+                                    <p style='color:black;'>
+                                        For example:
+                                        <ul style='color:black;'>
+                                            <li>Wastewater</li>
+                                            <li>Old newspapers</li>
+                                            <li>Waste detergents</li>
+                                            <li>Broken furniture</li>
+                                            <li>Ld batteries</li>
+                                            <li>etc.</li>
+                                        </ul>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -651,12 +664,22 @@
                             </svg>
                         </div>
                         <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
-                            <div class="panel panel-primary" id="hierarchy-primary" style="display: none">
-                                <div class="panel-heading" id="hierarchy-heading">
-                                    <h3 class="panel-title">Primary Panel</h3>
+                            <div class="panel panel-primary" id="hierarchy-primary" style="border-color: rgb(189, 215, 221)">
+                                <div class="panel-heading" id="hierarchy-heading" style="border-color: rgb(189, 215, 221); background-color: rgb(189, 215, 221);">
+                                    <h3 class="panel-title">Avoid</h3>
                                 </div>
                                 <div class="panel-body" id="hierarchy-info">
-                                    Panel content
+                                    <p style="font-size: 1em;">
+                                        Maximize efficiency and avoid unnecessary consumption through behaviors such as:
+                                        <br>
+                                    </p>
+                                    <ul>
+                                        <li>Use a real cup for coffee.</li>
+                                        <li>Take your refillable water bottle.</li>
+                                        <li>Say no to cutlery and straws made of plastic.</li>
+                                        <li>Remember your reusable shopping bags.</li>
+                                    </ul>
+                                    <p></p>
                                 </div>
                             </div>
                         </div>

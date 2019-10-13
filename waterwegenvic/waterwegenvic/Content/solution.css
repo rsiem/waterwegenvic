@@ -205,6 +205,10 @@ svg {
     background-image: url('Image/Solution/waste.jpg')
 }
 
+.front .eco{
+    background-image: url('Image/Solution/eco.jpg');
+}
+
 .back {
     position: relative;
 }

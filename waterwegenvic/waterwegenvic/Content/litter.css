@@ -124,3 +124,12 @@ g.isActive .readMore {
     -moz-transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
 }
+
+.panel-heading { /*BM: for default popup*/
+    padding: 16px;
+    font-size: 20px !important;
+}
+
+.panel-title {
+    font-size: 20px !important;
+}
