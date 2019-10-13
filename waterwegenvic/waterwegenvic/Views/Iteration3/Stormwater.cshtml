@@ -1,0 +1,1340 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Waterwegenvic</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <script src="~/Scripts/d3-funnel.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <!-- mapbox -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.css' rel='stylesheet' />
+
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #16283b8f; border-color: #16283b8f; opacity: 1; font-size: 1.3em">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Waterwegenvic", "Index", "Iteration3", null, null, "home", new { area = "" }, new { @class = "navbar-brand", @style = "color: white;" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Iteration3", null, null, "home", null, new { @style = "color: white;" })</li>
+                    <li>@Html.ActionLink("Substance", "Substance", "Iteration3", null, null, null, null, new { @style = "color: white;" })</li>
+                    <li>@Html.ActionLink("Litter", "Litter", "Iteration3", null, null, null, null, new { @style = "color: white;" })</li>
+                    <li>@Html.ActionLink("Stormwater", "Stormwater", "Iteration3", null, null, null, null, new { @style = "color: white;" })</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container-fluid body-content">
+
+            @model IEnumerable<waterwegenvic.Models.gru>
+
+            @{
+                ViewBag.Title = "Stormwater";
+                Layout = "~/Views/Shared/_Layout.cshtml";
+            }
+
+            @Styles.Render("~/Content/stormwater")
+            @Scripts.Render("~/bundles/stormwater")
+
+            <div class="row" id="groundwater">
+                <div class="container-fluid">
+                    <div class=" row">
+                        @*<section class="first-section hero" style="background-image:url('../../Content/Image/heading-bg.png'); width: 100%">*@
+                        <section class="first-section hero" style="background-image:url('../../Content/Image/Background/stormwater_heading.png'); width: 100%">
+                            <div class="hero-inner text-context">
+                                <p><b>Stormwater Pollution</b></p>
+                                <hr />
+                                <h4>Treat water right, it is your life</h4>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row" id="groundwater-page">
+                <div class="container-fluid" id="background">
+                    <div class="groundwater-page">
+                        <div class="container">
+                            <div class="row" id="introduction">
+                                <p>
+                                    Stormwater is one of the main causes of water pollution. Also,
+                                    it contributes to the water crisis by polluting the groundwater.
+                                    This mix of stormwater and untreated pollutants enters the stormwater
+                                    drainage system and from there into rivers and groundwater ultimately
+                                    waterways.
+                                </p>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="row">
+                            <div class="container">
+                                <div class="row" id="title">
+                                    <p>Relationship between stormwater and drinking water</p>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <p>
+                                        The movement of stormwater across the surface can cause erosion and carry
+                                        pollutants into our bodies of river, which is the result of water cycle.
+                                        Water never stands still but is always in constant movement. It happens on,
+                                        above and below the surface of earth. Therefore the water may exist and
+                                        transfers in the form of clouds, rain, groundwater and waterways. These
+                                        movements and transformations may result in a series of pollution.
+                                    </p>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div id="renderToDiv" style="margin-left:auto;margin-right:auto;">
+
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="rainDetailModal" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header modelDialogHeader">
+                                                    <button type="button" class="close closeModelDialog" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Rain</h4>
+                                                </div>
+                                                <div class="modal-body" style="color:black;">
+
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                            <p class="questionModelDialog"><div style="float:left;" class="questionModelDialog">What is Rain?</div><div style="float:left;"><img src="~/Content/Image/WaterCycle/drop.jfif" style="width:50px;"></div></p>
+                                                            <div style="clear:both;"></div>
+                                                            <p class="answerModelDialog">Rain is liquid water in the form of droplets that have condensed from atmospheric water vapour and then become heavy enough to fall under gravity. </p>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="text-align:center;">
+                                                            <img src="~/Content/Image/WaterCycle/rain2.png" draggable="false" style="width:70%;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                            <p class="questionModelDialog">How can rain transfer into stormwater? </p>
+                                                            <p class="answerModelDialog">
+                                                                When the clouds grow, they collect more and more water, Do you Know… these water drops falling into ground in the form of rain
+                                                                System, it becomes what we called stormwater.
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                            <p class="questionModelDialog">DO YOU KNOW... </p>
+                                                            <p class="answerModelDialog">Each year, 19700 million litres of rain falls on When the rains falls on the earth, and flows into drainage Melbourne, which would fill 7880 swimming pools.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" style="padding-top: 25px;">
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align:center;">
+                                                            <img src="~/Content/Image/WaterCycle/coudy.jpg" draggable="false" style="width:80%;">
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align:center;">
+                                                            <img src="~/Content/Image/WaterCycle/arrow_image.jpg" draggable="false" style="width:80%;">
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align:center;">
+                                                            <img src="~/Content/Image/WaterCycle/whitestormwater.jpg" draggable="false" style="width:80%;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-sm-12" style="text-align:center;">
+                                                            <img src="~/Content/Image/WaterCycle/rainfall99.png" draggable="false" style="width:100%;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="stormWaterDetailModal" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header modelDialogHeader">
+                                                    <button type="button" class="close closeModelDialog" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Stormwater</h4>
+                                                </div>
+                                                <div class="modal-body" style="color:black;">
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                            <p class="questionModelDialog">What is Storm Water?</p>
+                                                            <div style="clear:both;"></div>
+                                                            <p class="answerModelDialog">Stormwater comes from precipitation events, which includes rain, storm events. Rain falls on the earth, flows along the surface as run-off, then enters the drainage system, now the water exists in the form of storm water. </p>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="text-align:center;">
+                                                            <img src="~/Content/Image/WaterCycle/whitestormwater.jpg" draggable="false" style="width:65%;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                            <p class="questionModelDialog">How can groundwater polluted by storm water? </p>
+                                                            <p class="answerModelDialog">
+                                                                when stormwater seeps into the ground, now the water is available to us in the form of groundwater. However, stormwater carries pollutants (including leaves, sediment, oil and other hydrocarbons), and these are the cause of groundwater pollution.
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                            <p class="questionModelDialog">DO YOU KNOW... </p>
+                                                            <p class="answerModelDialog">Each year, 105.73 million litres of stormwater flow into city’s water ways. If this stormwater is not intercepted by any form of water treatment, it will pollute our groundwater.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" style="padding-top: 25px;">
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align:center;">
+                                                            <img src="~/Content/Image/WaterCycle/leaves.jfif" draggable="false" style="width:75%;">
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align:center;">
+                                                            <img src="~/Content/Image/WaterCycle/oil.png" draggable="false" style="width:75%;">
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align:center;">
+                                                            <img src="~/Content/Image/WaterCycle/ho.png" draggable="false" style="width:75%;">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="groundWaterDetailModal" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header modelDialogHeader">
+                                                    <button type="button" class="close closeModelDialog" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Groundwater</h4>
+                                                </div>
+                                                <div class="modal-body" style="color:black;">
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                            <p class="questionModelDialog">What is Ground Water?</p>
+                                                            <div style="clear:both;"></div>
+                                                            <p class="answerModelDialog">Ground water is in pores and crevices of rocks and soil under the earth's surface. Aquifer is the layer that contain usable quantities of groundwater, aquifers lies under all parts of Victoria. precipitation. </p>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="text-align:center;">
+                                                            <img src="~/Content/Image/WaterCycle/groundwater.jpg" draggable="false" style="width:65%;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                            <p class="questionModelDialog"> THE USE OF GROUNDWATER </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                            <p class="questionModelDialog"> IT IS THE PRIMARY OF WATER SUPPLY IN VICTORIA </p>
+                                                            <p class="answerModelDialog">
+                                                                <ul>
+                                                                    <li>In Australia, groundwater makes up approximately 17% of accessible water resources and accounts for over 30% of our total water consumption </li>
+                                                                    <li>About 70 towns in Victoria rely on groundwater as their primary water supply.</li>
+                                                                </ul>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                            <p class="questionModelDialog">DO YOU KNOW... </p>
+                                                            <p class="answerModelDialog">Groundwater the use of groundwater.it is the primary source of water supply in VICTORIA. Do you Know... - In Australia, groundwater makes up Drinking the groundwater being polluted can cause approximately 17% of accessible water resources serious diseases, such as hepatitis, dysentery; some and accounts for over 30% of our total water consumption.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="drinkingWaterDetailModal" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header modelDialogHeader">
+                                                    <button type="button" class="close closeModelDialog" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Drinking Water</h4>
+                                                </div>
+                                                <div class="modal-body" style="color:black;">
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                            <p class="questionModelDialog" style="text-transform:uppercase;">What water can used as drinking water?</p>
+                                                            <div style="clear:both;"></div>
+                                                            <p class="answerModelDialog">Drinking water is the water safety to drink or to use for food preparation. The drinking water is needed for everyone to maintain good health.</p>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="text-align:center;">
+                                                            <img src="~/Content/Image/WaterCycle/drinkingwater.jpg" draggable="false" style="width:65%;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                            <p class="questionModelDialog" style="text-transform:uppercase;">The importance of drinking water</p>
+                                                            <p class="answerModelDialog">
+                                                                Water is an essential nutrient and makes up 50-60 % of the human body weight. The average person can survive
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="text-align:center;">
+                                                            <p class="questionModelDialog">DO YOU KNOW... </p>
+                                                            <p class="answerModelDialog">
+                                                                for about 40 days without food, but most people will die if
+                                                                - a boy between 14-18 yr require 2.7L water they go for more than 72 hours without a drink
+                                                                per day. - a girl between 14-18 yr require 2.2L water per day.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="waterWayDetailModal" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header modelDialogHeader">
+                                                    <button type="button" class="close closeModelDialog" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Waterways</h4>
+                                                </div>
+                                                <div class="modal-body" style="color:black;">
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                            <p class="questionModelDialog">What is water ways?</p>
+                                                            <div style="clear:both;"></div>
+                                                            <p class="answerModelDialog">Waterway is any navigable body of water. There are three categories of waterway in Victoria: which are inland water, enclosed water and coastal waters. The most common waterways we have seen is inland water like rivers, lakes or creeks. </p>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="text-align:center;">
+                                                            <img src="~/Content/Image/WaterCycle/waterways.jpg" draggable="false" style="width:65%;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                            <p class="questionModelDialog" style="text-transform:uppercase;">How can water ways transfer back to the rain? -- Evaporation</p>
+                                                            <p class="answerModelDialog">
+                                                                The sun heats up the water from waterways(lakes, rivers) and water changes into water vapour by the process of evaporation. These water vapours form tiny water droplets and eventually fall in the form of rain.
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="text-align:center;">
+                                                            <img src="~/Content/Image/WaterCycle/evaporation.jpg" draggable="false" style="width:65%;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="container-fluid last-section">
+                                <div class="container">
+                                    <div class="row" id="title">
+                                        <p>Primary sources of stormwater pollution</p>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <p>
+                                            Did you know that water pollution can come from weather-related
+                                            activities. For example, in the rainy season where there is heavy
+                                            rainfall, a high volume of water may be contaminated in areas
+                                            where chemical wastage such as pesticides, fertilizers and gasoline
+                                            are present.
+                                        </p>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            @*<img class="img-responsive" src="~/Content/Image/why.jpg" />*@
+                                            <img class="img-responsive" src="~/Content/Image/compo_of_storm_pollution.png" draggable="false" style="width:90%;margin:auto;" />
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="row">
+                                                <br />
+                                                <p>
+                                                    <ul>
+                                                        <li>Chemical Pollution</li>
+                                                        &emsp; metals, hydrocarbons, pesticides, fertilizers or detergents
+                                                        <li>Litter</li>
+                                                        &emsp; Cigarette butts, cans, food wrappers, plastic bags or paper
+                                                        <li>Organic / 'Natural' Pollution</li>
+                                                        &emsp; Leaves, garden clippings or animal faeces
+                                                        <li>Bacterial Pollution</li>
+                                                        &emsp; From leaking, broken or overflowing sewers
+                                                    </ul>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br class="hidden-sm hidden-xs" />
+                        <div class="row">
+                            <div class="container">
+                                <div class="row" id="title">
+                                    <p>Groundwater use</p>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <p>
+                                        Groundwater is primarily used in Victoria for irrigation of crops and
+                                        dairy farms. However, it is also used to supply water for domestic
+                                        and stock purposes, power generation and for town water supply.
+                                        In areas where surface water is unavailable or cannot provide
+                                        security of supply, groundwater plays an important role in
+                                        sustaining communities and the local economy.
+                                    </p>
+                                    <br />
+                                    <p>
+                                        Approximately 70 towns across Victoria rely on groundwater
+                                        as either a supplementary or primary water supply.
+                                    </p>
+                                    <br />
+                                    <p>
+                                        Approx. 15% state’s total water use from groundwater in Victoria.
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <img class="img-responsive" src="~/Content/Image/drink-ways.png" draggable="false" style="padding-top:10%;" />
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div id="donut-chart"></div>
+                                        <script>
+                                            var data = [{
+                                                values: [2, 12, 8, 78],
+                                                labels: ['Urban', 'Domestic and stock', 'Power generation', 'Irrigation/Commmercial/Salinity Control'],
+                                                domain: { column: 0 },
+                                                name: 'Groundwater use',
+                                                hoverinfo: 'label+percent',
+                                                hole: .4,
+                                                type: 'pie',
+                                                marker: { colors: ["#E7F2F8", "#74BDCB", "#FFA384", "#EFE7BC"] }
+                                            }];
+
+                                            var layout = {
+                                                //title: 'Groundwater Use in Victoria',
+                                                annotations: [
+                                                    {
+                                                        font: {
+                                                            size: 20
+                                                        },
+                                                        showarrow: false,
+                                                        text: ' ',
+                                                        x: 0.17,
+                                                        y: 0.5
+                                                    }
+                                                ],
+                                                height: 350,
+                                                width: 350,
+                                                margin: {
+                                                    l: 10,
+                                                    r: 10,
+                                                    b: 0,
+                                                    t: 50,
+                                                    pad: 4
+                                                },
+                                                showlegend: false,
+                                                grid: { rows: 1 }
+                                            };
+
+                                            Plotly.newPlot('donut-chart', data, layout, { displayModeBar: false, responsive: true });
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="container-fluid last-section">
+                                <div class="row" id="title">
+                                    <p>level of risk for different drinking water source and impact</p>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <p>
+                                        There are more than 1,000,000 million litres of stormwater flows into
+                                        waterways per year in Victoria. Only in Yarra River, stormwater flows
+                                        into 14,000 tonnes of sediment, 650 tonnes of nutrients such as nitrogen
+                                        from fertiliser, litter, heavy metals and bacteria.
+                                    </p>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <p>
+                                        Unsafe water kills more people each year than war and all other forms of violence combined.
+                                    </p>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <p>
+                                        Levels of risk for different drinking water sources are shown in the risk hierarchy
+                                        below. Always use the highest quality of water available for drinking.
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                        <img class="img-responsive" draggable="false" src="~/Content/Image/risk_hierarchy_.png" style="height:60%; width:60%; margin:auto;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="container">
+                                <div class="row" id="title">
+                                    <p>Groundwater Restricted Uses</p>
+                                </div>
+                                <br />
+                                <div class="row" style="text-align:center;">
+                                    <p>Check whether the groundwater in your suburb is restricted for usage.</p>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <form onsubmit="return getPostcode()" style="width:40%;">
+                                        <label for="postcode">Enter your suburb or postcode to get started</label>
+                                        <div class="form-group input-group">
+                                            <input type="text" class="form-control" onfocus="complete()" id="postcode" placeholder="3000" name="postcode" value="">
+                                            <span class="input-group-btn">
+                                                <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                    <div id="test"></div>
+
+                                    <script>
+                                        function complete() {
+                                            var sElements = document.getElementsByClassName("suburb");
+                                            var pElements = document.getElementsByClassName("post-code");
+
+                                            // suburbs and postcodes array
+                                            var spcs = [];
+                                            var count = 0;
+                                            for (i = 0; i < sElements.length; i++) {
+                                                var pc = pElements[i].innerHTML.trim();
+                                                var s = sElements[i].innerHTML.trim();
+
+                                                spcs.push(s + ", " + pc);
+                                            }
+
+                                            function onlyUnique(value, index, self) {
+                                                return self.indexOf(value) === index;
+                                            }
+
+                                            var unique = spcs.filter(onlyUnique);
+
+                                            $("#postcode").autocomplete({
+                                                source: unique,
+                                                select: showText
+                                            });
+
+                                            function showText(event, ui) {
+                                                $('#result').text(ui.item.label)
+                                            }
+                                        }
+
+                                        function getPostcode() {
+                                            //document.getElementById("result-map").hidden = true;
+                                            //document.getElementById("result-map").style.width = "0";
+                                            //document.getElementById("result-map").style.height = "0";
+
+                                            pcode = document.forms[0].postcode.value;
+                                            var res = pcode.substring(pcode.length - 4, pcode.length);
+
+                                            // postcode elements
+                                            pcElements = document.getElementsByClassName("post-code");
+
+                                            var i;
+                                            for (i = 0; i < pcElements.length; i++) {
+                                                pcElements[i].closest('tr').hidden = false;
+                                            }
+                                            var count = 0;
+                                            for (i = 0; i < pcElements.length; i++) {
+                                                var postcode = pcElements[i].innerHTML.trim();
+                                                if (postcode === res) {
+                                                    //console.log("success");
+                                                    count += 1;
+                                                    pcElements[i].closest('tr').setAttribute("id", "result");
+                                                } else {
+                                                    pcElements[i].closest('tr').hidden = true;
+                                                }
+                                            }
+
+                                            if (count == 0) {
+                                                document.getElementById("no-result").innerHTML = "No results found for " + pcode + ".<br />";
+                                                document.getElementById("no-result").hidden = false;
+                                                document.getElementById("gru-table").hidden = true;
+                                                document.getElementById("placeholder").hidden = true;
+                                                document.getElementById("result-map").hidden = true;
+                                            } else {
+                                                document.getElementById("placeholder").innerHTML = "Showing results for " + pcode + ".<br />";
+                                                document.getElementById("no-result").hidden = true;
+                                                document.getElementById("gru-table").hidden = false;
+                                                document.getElementById("placeholder").hidden = false;
+                                                document.getElementById("result-map").hidden = false;
+                                            }
+
+                                            document.getElementById("postcode").setAttribute("value", pcode);
+                                            document.getElementById("gru-results").style.display = "block";
+
+                                            return false;
+                                        }
+                                    </script>
+                                </div>
+                                <div class="row" id="gru-results" style="display:none;">
+                                    <div id="placeholder" name="placeholder"></div>
+                                    <div id="no-result" name="no-result" hidden></div>
+                                    <table id="gru-table" class="table" style="font-size: 0.8em;">
+                                        <tr>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Address)
+                                            </th>
+                                            <th hidden>
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Suburb)
+                                            </th>
+                                            <th hidden>
+                                            </th>
+                                            <th hidden>
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Site_history)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Restricted_uses)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Map_link)
+                                            </th>
+                                            @*<th></th>*@
+                                        </tr>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr class="coordinates">
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Address)
+                                                </td>
+                                                <td class="post-code" hidden>
+                                                    @Html.DisplayFor(modelItem => item.Post_Code)
+                                                </td>
+                                                <td class="suburb">
+                                                    @Html.DisplayFor(modelItem => item.Suburb)
+                                                </td>
+                                                <td hidden class="latitude">
+                                                    @Html.DisplayFor(modelItem => item.Latitude)
+                                                </td>
+                                                <td hidden class="longitude">
+                                                    @Html.DisplayFor(modelItem => item.Longitude)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Site_history)
+                                                </td>
+                                                <td class="restricted_use" style="color:red;">
+                                                    @Html.DisplayFor(modelItem => item.Restricted_uses)
+                                                </td>
+                                                <td>
+                                                    <a href="@Html.DisplayFor(modelItem => item.Map_link)" target="_blank">More details</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </table>
+                                </div>
+                                <div class="row" id="result-map" hidden>
+                                    <button class="btn btn-default" onclick="openMap()">Show on Map</button>
+                                    <div id="map" style="height:50vh;width:100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="container-fluid last-section">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-8" id="youtube-video">
+                                        <div class="row">
+                                            <p>
+                                                The DIY video below is a simple distillation experiment video which helps to treat the saline water so that it can be reused.
+                                            </p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/QGLy71-kU2Q?controls=1" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <section class="container-fluid">
+                                <br />
+                                <div class="row" id="title">
+                                    <p>Some tips to reduce Stormwater Pollution</p>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="cardContainerLitter inactive">
+                                            <div class="card">
+                                                <div class="side front">
+                                                    <div class="img waste"></div>
+                                                    <div class="info">
+                                                        <h2 style="text-align: center;">Waste Management</h2>
+                                                        <p align="center">Reduce stormwater pollution by doing proper waste management</p>
+                                                    </div>
+                                                </div>
+                                                <div class="side back">
+                                                    <div class="info">
+                                                        <h2 style="text-align: center;">Waste Management Tips</h2>
+
+                                                        <ul style="">
+                                                            <li>
+                                                                Use traps such as grates and screens outside their house or in their neighbourhood to prevent unwanted litter from entering the stormwater drains.
+                                                                .
+                                                            </li>
+                                                            <li>Clean the pet waste.. </li>
+                                                            <li>Reducing the waste and doing Garbage sorting to avoid the litter dropped in the streets and eventually transported into drainage.</li>
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="cardContainerLitter inactive">
+                                            <div class="card">
+                                                <div class="side front">
+                                                    <div class="img garden"></div>
+                                                    <div class="info">
+                                                        <h2 style="text-align: center;">Gardening</h2>
+                                                        <p align="center">Rain water harvesting helps to conserve and reuse the stormwater to water the garden.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="side back">
+                                                    <div class="info">
+                                                        <h2 style="text-align: center;">Gardening Tips</h2>
+
+                                                        <ul>
+                                                            <li>Plant more native plants in the gardens or nearby. This type of plants is that it does not require fertilizers or chemicals. </li>
+
+                                                            <li>
+                                                                Using low environmental impact pest control products in gardening.
+                                                            </li>
+                                                            <li>
+                                                                Using the organic materials as garden mulch rather than sweeping down into the drainage.
+                                                            </li>
+
+                                                            <li>
+                                                                Using a low-maintenance garden which is known as Raingarden can help to collect the stormwater that runs off the hard surfaces during the rain.
+                                                            </li>
+
+                                                            <li>
+                                                                Reuse the stormwater to water the garden.
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="cardContainerLitter inactive">
+                                            <div class="card">
+                                                <div class="side front">
+                                                    <div class="img wash"></div>
+                                                    <div class="info">
+                                                        <h2 style="text-align: center;">Washing</h2>
+                                                        <p align="center">Consider using eco-friendly and low chemical washing products</p>
+                                                    </div>
+                                                </div>
+                                                <div class="side back">
+                                                    <div class="info">
+                                                        <h2 style="text-align: center;">Washing Tips</h2>
+
+                                                        <ul>
+                                                            <li>Washing vehicles with the water collected from rainwater harvesting.</li>
+                                                            <li>Consider using eco-friendly organic detergents.</li>
+                                                            <li>
+                                                                Toilet flushing.
+
+                                                            </li>
+                                                            <li>
+                                                                Watering the yard.
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script type="text/javascript">
+                                        const cards = document.querySelectorAll('.card');
+
+                                        function transition() {
+                                            if (this.classList.contains('active')) {
+                                                this.classList.remove('active');
+                                            } else {
+                                                this.classList.add('active');
+                                            }
+                                        }
+
+                                        cards.forEach(card => card.addEventListener('click', transition));
+                                    </script>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                function drawChart() {
+
+                    var margin = { top: 10, right: 120, bottom: 10, left: 120 },
+                        width = 800 - margin.left - margin.right,
+                        height = 570 - margin.top - margin.bottom;
+                    var defaultColor = "black";
+                    var fontFamilty = "sans-serif";
+                    var innerCicleTextFontSize = "18px";
+                    var arrowCircleBorderWidth = "3px";
+                    var circleDefaultRadius = 50, circleHoverRadius = 55;
+
+                    // font-family: calibri;
+                    // default background dark color: #4F9DE7
+                    // light color: #8DC5E8
+
+                    var svg = d3.select("#renderToDiv").append("svg")
+                        .attr("width", width + margin.left + margin.right)
+                        .attr("height", height + margin.top + margin.bottom)
+                        .attr("viewbox", "0 0 800 570")
+                        .append("g")
+                        .attr("transform",
+                            "translate(" + margin.left + "," + margin.top + ")");
+
+                    // Arrows
+                    var svgDefs = svg.append("svg:defs");
+
+                    svgDefs.append("svg:marker")
+                        .attr("id", "triangle")
+                        .attr("refX", 6)
+                        .attr("refY", 6)
+                        .attr("markerWidth", 40)
+                        .attr("markerHeight", 40)
+                        .attr("markerUnits", "userSpaceOnUse")
+                        .attr("orient", "auto")
+                        .append("path")
+                        .attr("d", "M 0 0 12 6 0 12 3 6")
+                        .style("fill", defaultColor);
+
+                    // <rect id="rect" x="25%" y="25%" width="50%" height="50%" rx="15"/>
+                    //        svgDefs.append("rect")
+                    //            .attr("x", "25%")
+                    //            .attr("y", "25%").attr("width", "50%")
+                    //            .attr("height", "50%").attr("rx", "15");
+                    //        svgDefs.append("clipPath").attr("id", "clip")
+                    //            .append("use").attr("xlink:href", "#rect");
+
+                    //<use xlink:href="#rect" stroke-width="2" stroke="black"/>
+                    //svg.append("use").attr("xlink:href", "#rect").attr("stroke-width", "2").attr("stroke" , "black");
+
+                    // pattern for rain image, for showing image inside circle
+                    svgDefs.append("pattern")
+                        .attr("id", "rainImage")
+                        .attr("x", "0%")
+                        .attr("y", "0%")
+                        .attr("width", "100%")
+                        .attr("height", "100%").attr("viewBox", "0 0 100 100")
+                        .append('image')
+                        .attr('xlink:href', 'https://waterwegenvic.ml/Content/Image/WaterCycle/rain.png')
+                        .attr('width', 100)
+                        .attr('height', 100)
+                        .attr("x", "0%")
+                        .attr("y", "0%")
+                        .attr("opacity", "0.7");
+
+                    // pattern for storm image, for showing image inside circle
+                    svgDefs.append("pattern")
+                        .attr("id", "stormWaterImage")
+                        .attr("x", "0%")
+                        .attr("y", "0%")
+                        .attr("width", "100%")
+                        .attr("height", "100%").attr("viewBox", "0 0 100 100")
+                        .append('image')
+                        .attr('xlink:href', 'https://waterwegenvic.ml/Content/Image/WaterCycle/stormwater.png')
+                        .attr('width', 100)
+                        .attr('height', 100)
+                        .attr("x", "0%")
+                        .attr("y", "0%")
+                        .attr("opacity", "0.7");
+
+                    // pattern for drinking water image, for showing image inside circle
+                    svgDefs.append("pattern")
+                        .attr("id", "drinkingWaterImage")
+                        .attr("x", "0%")
+                        .attr("y", "0%")
+                        .attr("width", "100%")
+                        .attr("height", "100%").attr("viewBox", "0 0 100 100")
+                        .append('image')
+                        .attr('xlink:href', 'https://waterwegenvic.ml/Content/Image/WaterCycle/drinkingwater.png')
+                        .attr('width', 100)
+                        .attr('height', 100)
+                        .attr("x", "0%")
+                        .attr("y", "0%")
+                        .attr("opacity", "0.7");
+
+                    // pattern for ground water image, for showing image inside circle
+                    svgDefs.append("pattern")
+                        .attr("id", "groundWaterImage")
+                        .attr("x", "0%")
+                        .attr("y", "0%")
+                        .attr("width", "100%")
+                        .attr("height", "100%").attr("viewBox", "0 0 100 100")
+                        .append('image')
+                        .attr('xlink:href', 'https://waterwegenvic.ml/Content/Image/WaterCycle/groundwater.png')
+                        .attr('width', 100)
+                        .attr('height', 100)
+                        .attr("x", "0%")
+                        .attr("y", "0%")
+                        .attr("opacity", "0.7");
+
+                    // pattern for ground water image, for showing image inside circle
+                    svgDefs.append("pattern")
+                        .attr("id", "waterWayImage")
+                        .attr("x", "0%")
+                        .attr("y", "0%")
+                        .attr("width", "100%")
+                        .attr("height", "100%").attr("viewBox", "0 0 100 100")
+                        .append('image')
+                        .attr('xlink:href', 'https://waterwegenvic.ml/Content/Image/WaterCycle/waterways_.png')
+                        .attr('width', 100)
+                        .attr('height', 100)
+                        .attr("x", "0%")
+                        .attr("y", "0%")
+                        .attr("opacity", "0.7");
+
+                    // title
+                    svg.append("text")
+                        .attr("x", 0)
+                        .attr("y", 35)
+                        .attr("dy", "0.71em")
+                        .style("font-size", "26px")
+                        .text("The Life Cycle of Water")
+                        .style("font-family", fontFamilty)
+                        .style("text-decoration", "underline")
+                        .style("fill", defaultColor);
+
+                    svg.append("text")
+                        .attr("x", 0)
+                        .attr("y", 75)
+                        .attr("dy", "0.71em")
+                        .style("font-size", "15px")
+                        .text("click on the circle to learn more details")
+                        .style("font-family", fontFamilty)
+                        .style("fill", defaultColor);
+
+                    var hoverTransition = 100;
+
+                    // Rain
+                    svg.append("circle")
+                        .attr("cx", 250)
+                        .attr("cy", 150)
+                        .attr("r", circleDefaultRadius)
+                        .style("fill", "url(#rainImage)")
+                        .style("stroke", defaultColor)
+                        .style("stroke-width", arrowCircleBorderWidth)
+                        .attr("class", "cirlceRain")
+                        .on("mouseover", function (d) {
+                            d3.select(this)
+                                .transition()
+                                .duration(hoverTransition)
+                                .attr('r', circleHoverRadius);
+                        })
+                        .style("cursor", "pointer")
+                        .on("mouseout", function (d) {
+                            d3.select(this)
+                                .transition()
+                                .duration(hoverTransition)
+                                .attr('r', circleDefaultRadius);
+                        })
+                        .on("click", function () {
+                            $('#rainDetailModal').modal('show');
+                        });
+
+                    var circleInnerColor = "black";
+
+                    svg.append("text")
+                        .attr("x", 250)
+                        .attr("y", 150)
+                        .attr("dy", "0.3em")
+                        .style("font-family", fontFamilty)
+                        .style("fill", circleInnerColor)
+                        .style("font-size", innerCicleTextFontSize)
+                        .text("Rain")
+                        .style("cursor", "pointer")
+                        .attr("class", "textRain")
+                        .style("text-anchor", "middle")
+                        .on("mouseover", function (d) {
+                            d3.select(".cirlceRain")
+                                .transition()
+                                .duration(hoverTransition)
+                                .attr('r', circleHoverRadius);
+                        })
+                        .on("mouseout", function (d) {
+                            d3.select(".cirlceRain")
+                                .transition()
+                                .duration(hoverTransition)
+                                .attr('r', circleDefaultRadius);
+                        })
+                        .on("click", function () {
+                            $('#rainDetailModal').modal('show');
+                        });
+
+                    // Water way
+                    svg.append("circle")
+                        .attr("cx", 50)
+                        .attr("cy", 280)
+                        .attr("r", circleDefaultRadius)
+                        .style("fill", "url(#waterWayImage)")
+                        .style("stroke", defaultColor)
+                        .style("stroke-width", arrowCircleBorderWidth)
+                        .attr("class", "cirlceWaterway")
+                        .style("cursor", "pointer")
+                        .on("mouseover", function (d) {
+                            //d3.select(this).style("fill", "grey");
+                            d3.select(this)
+                                .transition()
+                                .duration(hoverTransition)
+                                .attr('r', circleHoverRadius);
+                        })
+                        .on("mouseout", function (d) {
+                            //d3.select(this).style("fill", "url(#waterWayImage)");
+                            d3.select(this)
+                                .transition()
+                                .duration(hoverTransition)
+                                .attr('r', circleDefaultRadius);
+                        })
+                        .on("click", function () {
+                            $('#waterWayDetailModal').modal('show');
+                        });
+
+
+
+                    var txtWaterWay = svg.append("text")
+                        .attr("x", 50)
+                        .attr("y", 280)
+                        .style("font-family", fontFamilty)
+                        .style("fill", circleInnerColor)
+                        .style("font-size", innerCicleTextFontSize)
+                        .attr("class", "textWaterway")
+                        .style("text-anchor", "middle")
+                        .style("cursor", "pointer")
+                        .on("mouseover", function (d) {
+                            d3.select(".cirlceWaterway").transition()
+                                .duration(hoverTransition)
+                                .attr('r', circleHoverRadius);
+                        })
+                        .on("mouseout", function (d) {
+                            d3.select(".cirlceWaterway").transition()
+                                .duration(hoverTransition)
+                                .attr('r', circleDefaultRadius);
+                        })
+                        .on("click", function () {
+                            $('#waterWayDetailModal').modal('show');;
+                        });
+
+                    txtWaterWay.append("tspan").attr("dy", "0.0em").text("Water-");
+                    txtWaterWay.append("tspan").attr("dy", "1em").attr("x", 50).text("ways");
+
+                    // Storm water
+                    svg.append("circle")
+                        .attr("cx", 460)
+                        .attr("cy", 280)
+                        .attr("r", circleDefaultRadius)
+                        .style("fill", "url(#stormWaterImage)")
+                        .style("stroke", defaultColor)
+                        .attr("class", "cirlceStormWater")
+                        .style("stroke-width", arrowCircleBorderWidth)
+                        .on("mouseover", function (d) {
+                            d3.select(this).transition()
+                                .duration(hoverTransition)
+                                .attr('r', circleHoverRadius);
+                        })
+                        .style("cursor", "pointer")
+                        .on("mouseout", function (d) {
+                            d3.select(this).transition()
+                                .duration(hoverTransition)
+                                .attr('r', circleDefaultRadius);
+                        }).on("click", function () {
+                            $('#stormWaterDetailModal').modal('show');;
+                        });
+
+                    var txtStormWater = svg.append("text")
+                        .attr("x", 460)
+                        .attr("y", 280)
+                        .style("font-family", fontFamilty)
+                        .style("fill", circleInnerColor)//defaultColor)
+                        .style("font-size", innerCicleTextFontSize)
+                        .style("text-anchor", "middle")
+                        .on("mouseover", function (d) {
+                            d3.select(".cirlceStormWater").transition()
+                                .duration(hoverTransition)
+                                .attr('r', circleHoverRadius);
+                        })
+                        .on("mouseout", function (d) {
+                            d3.select(".cirlceStormWater").transition()
+                                .duration(hoverTransition)
+                                .attr('r', circleDefaultRadius);
+                        })
+                        .style("cursor", "pointer")
+                        .on("click", function () {
+                            $('#stormWaterDetailModal').modal('show');
+                        });
+
+                    txtStormWater.append("tspan").attr("dy", "0.0em").text("Storm-");
+                    txtStormWater.append("tspan").attr("dy", "1em").attr("x", 460).text("water");
+
+                    // ground water
+                    svg.append("circle")
+                        .attr("cx", 250)
+                        .attr("cy", 400)
+                        .attr("r", circleDefaultRadius)
+                        .style("fill", "url(#groundWaterImage)")
+                        .style("stroke", defaultColor)
+                        .style("stroke-width", arrowCircleBorderWidth)
+                        .attr("class", "cirlceGroundWater")
+                        .on("mouseover", function (d) {
+                            d3.select(this).transition()
+                                .duration(hoverTransition)
+                                .attr('r', circleHoverRadius);
+                        })
+                        .style("cursor", "pointer")
+                        .on("mouseout", function (d) {
+                            d3.select(this).transition()
+                                .duration(hoverTransition)
+                                .attr('r', circleDefaultRadius);
+                        })
+                        .on("click", function () {
+                            $('#groundWaterDetailModal').modal('show');;
+                        });
+
+                    var txtGroundWater = svg.append("text")
+                        .attr("x", 250)
+                        .attr("y", 400)
+                        .style("font-family", fontFamilty)
+                        .style("fill", circleInnerColor)
+                        .style("font-size", innerCicleTextFontSize)
+                        .style("text-anchor", "middle")
+                        .on("mouseover", function (d) {
+                            d3.select(".cirlceGroundWater").transition()
+                                .duration(hoverTransition)
+                                .attr('r', circleHoverRadius);
+                        })
+                        .on("mouseout", function (d) {
+                            d3.select(".cirlceGroundWater").transition()
+                                .duration(hoverTransition)
+                                .attr('r', circleDefaultRadius);
+                        })
+                        .style("cursor", "pointer")
+                        .on("click", function () {
+                            $('#groundWaterDetailModal').modal('show');;
+                        });
+
+                    txtGroundWater.append("tspan").attr("dy", "0.0em").text("Ground-");
+                    txtGroundWater.append("tspan").attr("dy", "1em").attr("x", 250).text("water");
+
+                    // Drinking water
+                    svg.append("circle")
+                        .attr("cx", 460)
+                        .attr("cy", 500)
+                        .attr("r", circleDefaultRadius)
+                        .style("fill", "url(#drinkingWaterImage)")
+                        .style("stroke", defaultColor)
+                        .attr("class", "cirlceDrinkingWater")
+                        .style("stroke-width", arrowCircleBorderWidth)
+                        .on("mouseover", function (d) {
+                            d3.select(this).transition()
+                                .duration(hoverTransition)
+                                .attr('r', circleHoverRadius);
+                        })
+                        .style("cursor", "pointer")
+                        .on("mouseout", function (d) {
+                            d3.select(this).transition()
+                                .duration(hoverTransition)
+                                .attr('r', circleDefaultRadius);
+                        })
+                        .on("click", function () {
+                            $('#drinkingWaterDetailModal').modal('show');
+                        });
+
+                    var txtDrinkingWater = svg.append("text")
+                        .attr("x", 460)
+                        .attr("y", 500)
+                        .style("font-family", fontFamilty)
+                        .style("fill", circleInnerColor)//defaultColor)
+                        .style("font-size", innerCicleTextFontSize)
+                        .style("text-anchor", "middle")
+                        .on("mouseover", function (d) {
+                            d3.select(".cirlceDrinkingWater").transition()
+                                .duration(hoverTransition)
+                                .attr('r', circleHoverRadius);
+                        })
+                        .on("mouseout", function (d) {
+                            d3.select(".cirlceDrinkingWater").transition()
+                                .duration(hoverTransition)
+                                .attr('r', circleDefaultRadius);
+                        })
+                        .style("cursor", "pointer")
+                        .on("click", function () {
+                            $('#drinkingWaterDetailModal').modal('show');;
+                        });
+
+                    txtDrinkingWater.append("tspan").attr("dy", "0.0em").text("Drinking");
+                    txtDrinkingWater.append("tspan").attr("dy", "1em").attr("x", 460).text("Water");
+
+                    // Add arrows
+                    //1
+                    svg.append("line")
+                        .attr("x1", 75)
+                        .attr("y1", 230)
+                        .attr("x2", 190)
+                        .attr("y2", 150)
+                        .attr("stroke-width", arrowCircleBorderWidth)
+                        .attr("stroke", defaultColor)
+                        .attr("marker-end", "url(#triangle)");
+
+                    var arrowCaptionFontSize = "16px";
+                    // add evaporate text
+                    svg.append("text")
+                        .attr("x", 135)
+                        .attr("y", 170)
+                        .attr("dy", "0.71em")
+                        .text("evaporate")
+                        .style("font-family", fontFamilty)
+                        .style("fill", defaultColor)
+                        .style("font-size", innerCicleTextFontSize)
+                        .style("text-anchor", "end");
+
+                    // arrow 2
+                    svg.append("line")
+                        .attr("x1", 305)
+                        .attr("y1", 150)
+                        .attr("x2", 425)
+                        .attr("y2", 230)
+                        .attr("stroke-width", arrowCircleBorderWidth)
+                        .attr("stroke", defaultColor)
+                        .attr("marker-end", "url(#triangle)");
+
+                    // add falls to the earth
+                    var arrowCaption = svg.append("text")
+                        .attr("x", 365)
+                        .attr("y", 180)
+                        .attr("dy", "0.71em")
+                        .style("font-family", fontFamilty)
+                        .style("fill", defaultColor)
+                        .style("font-size", innerCicleTextFontSize)
+                        .style("text-anchor", "start");
+
+                    arrowCaption.append("tspan").attr("dy", "0.1em").text("falls to");
+                    arrowCaption.append("tspan").attr("dy", "1em").attr("x", "385").text("the earth");
+
+                    //// arrow 3
+                    svg.append("line")
+                        .attr("x1", 425)
+                        .attr("y1", 325)
+                        .attr("x2", 310)
+                        .attr("y2", 380)
+                        .attr("stroke-width", arrowCircleBorderWidth)
+                        .attr("stroke", defaultColor)
+                        .attr("marker-end", "url(#triangle)");
+
+                    // add becomes text
+                    svg.append("text")
+                        .attr("x", 370)
+                        .attr("y", 365)
+                        .attr("dy", "0.3em")
+                        .text("becomes")
+                        .style("font-family", fontFamilty)
+                        .style("fill", defaultColor)
+                        .style("font-size", innerCicleTextFontSize)
+                        .style("text-anchor", "start");
+
+                    //// arrow 4
+                    svg.append("line")
+                        .attr("x1", 195)
+                        .attr("y1", 380)
+                        .attr("x2", 95)
+                        .attr("y2", 320)
+                        .attr("stroke-width", arrowCircleBorderWidth)
+                        .attr("stroke", defaultColor)
+                        .attr("marker-end", "url(#triangle)");
+
+                    // add effect text
+                    svg.append("text")
+                        .attr("x", 145)
+                        .attr("y", 360)
+                        .attr("dy", "0.3em")
+                        .text("effect")
+                        .style("font-family", fontFamilty)
+                        .style("fill", defaultColor)
+                        .style("font-size", innerCicleTextFontSize)
+                        .style("text-anchor", "end");
+
+                    //// arrow 5
+                    svg.append("line")
+                        .attr("x1", 300)
+                        .attr("y1", 420)
+                        .attr("x2", 400)
+                        .attr("y2", 480)
+                        .attr("stroke-width", arrowCircleBorderWidth)
+                        .attr("stroke", defaultColor)
+                        .attr("marker-end", "url(#triangle)");
+
+                    // add provides text
+                    svg.append("text")
+                        .attr("x", 350)
+                        .attr("y", 460)
+                        .attr("dy", "0.3em")
+                        .text("provides")
+                        .style("font-family", fontFamilty)
+                        .style("fill", defaultColor)
+                        .style("font-size", innerCicleTextFontSize)
+                        .style("text-anchor", "end");
+                }
+
+                drawChart();
+            </script>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*@RenderSection("scripts", required: false)*@
+</body>
+</html>

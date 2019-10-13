@@ -16,8 +16,15 @@
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-    <!-- Load d3-cloud -->
-    @*<script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>*@
+    <!-- mapbox -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.css' rel='stylesheet' />
+
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
     <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #16283b8f; border-color: #16283b8f; opacity: 1; font-size: 1.3em">
@@ -28,25 +35,27 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Waterwegenvic", "Index", "Iteration2", null, null, "home", new { area = "" }, new { @class = "navbar-brand", @style = "color: white;" })
+                @Html.ActionLink("Waterwegenvic", "Index", "Iteration3", null, null, "home", new { area = "" }, new { @class = "navbar-brand", @style = "color: white;" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Iteration2", null, null, "home", null, new { @style = "color: white;" })</li>
-                    <li>@Html.ActionLink("Substance", "Substance", "Iteration2", null, null, null, null, new { @style = "color: white;" })</li>
-                    <li>@Html.ActionLink("Litter", "Litter", "Iteration2", null, null, null, null, new { @style = "color: white;" })</li>
+                    <li>@Html.ActionLink("Home", "Index", "Iteration3", null, null, "home", null, new { @style = "color: white;" })</li>
+                    <li>@Html.ActionLink("Substance", "Substance", "Iteration3", null, null, null, null, new { @style = "color: white;" })</li>
+                    <li>@Html.ActionLink("Litter", "Litter", "Iteration3", null, null, null, null, new { @style = "color: white;" })</li>
+                    <li>@Html.ActionLink("Stormwater", "Index", "gru", null, null, null, null, new { @style = "color: white;" })</li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="container-fluid body-content">
+
             @{
                 ViewBag.Title = "Home Page";
             }
 
-            @*@Styles.Render("~/Content/index")*@
-            @*@Scripts.Render("~/bundles/index")*@
+            @Styles.Render("~/Content/index")
+            @Scripts.Render("~/bundles/index")
 
             <div class="row" id="home">
                 <div class="container-fluid">
@@ -86,11 +95,6 @@
                                 </p>
                             </div>
                         </div>
-                        @*<div class="jumbotron">
-                            <h1>News</h1>
-                            <p class="lead">Place holder for news</p>
-                            <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-                        </div>*@
                         <br />
                         <div class="container">
                             <div class="row">
@@ -120,176 +124,52 @@
                                             </ul>
                                         </p>
                                     </div>
-                                    @*<div class="col-md-4 col-sm-12 col-xs-12">
-                                        <p>
-                                            <br />
-                                            Water contamination can be due to the following:<br />
-                                            <ul>
-                                                <li>Surface water contamination</li>
-                                                <li>Underground water contamination</li>
-                                            </ul>
-                                            <br />
-                                            <b>Surface water contamination:</b><br />
-                                            The surface water gets contaminated due to climate change, disposal
-                                            of harmful chemical substances, disposal of litter into the waterways
-                                            and due to human activities which include agricultural use, breeding
-                                            industry use, etc.<br />
-                                            <br />
-                                            <b>Underground water contamination:</b><br />
-                                            The overuse of groundwater and increased salinity are the two main
-                                            reasons for the contamination of underground water.<br />
-
-                                            <br />
-                                        </p>
-                                    </div>*@
                                 </div>
                                 <br />
                                 <div class="row">
-                                    <p>
-                                        At present, some of the waterways are still in natural conditions
-                                        while others have lost their attractiveness and have also become saltier
-                                        or have more nutrient levels. The water contamination is not only painful
-                                        and expensive to clean but have also affected the water storage levels.
-                                    </p>
-
+                                    <div class="col-sm-12 col-xs-12">
+                                        <p>
+                                            At present, some of the waterways are still in natural conditions
+                                            while others have lost their attractiveness and have also become saltier
+                                            or have more nutrient levels. The water contamination is not only painful
+                                            and expensive to clean but have also affected the water storage levels.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <br />
+                        <br class="hidden-lg hidden-md" />
+                        <br class="hidden-lg hidden-md" />
                         <br />
                         <div class="row">
                             <section class="third-section container-fluid">
                                 <div class="container-fluid" id="introduction">
                                     <div class="row">
                                         <div class="row" id="title">
-                                            <p>Accessible Water Storage Volume In Victoria</p>
+                                            @*<p>Accessible Water Storage Volume In Victoria</p>*@
+                                            <p>Main Reasons of Water Crisis in Victoria</p>
                                         </div>
                                         <br />
                                         <div class="row">
-                                            <div class="col-lg-6 col-md-3 hidden-xs hidden-sm right-text">
+                                            <p style="text-align:center;">There might be a water crisis in Victoria due to the decreasing of accessible water storage.</p>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 right-text">
                                                 <div class="row" id="title">
                                                     <p>Main Reasons</p>
                                                 </div>
                                                 <div class="row">
-                                                    <section class="hero">
-                                                        <div class="container-block" id="main-reasons">
-                                                            <div class="hero-inner" style="text-align:center">
-                                                                <p style="text-align:center">Population Growth</p>
-                                                                <br />
-                                                                <div class="row">
-                                                                    <div class="col-md-6 col-sm-6 col-xs-6">
-                                                                        <div class="row">
-                                                                            <p>2001</p>
-                                                                        </div>
-                                                                        <div class="row">
-                                                                            <i class='fas fa-male' style='font-size:48px'></i>
-                                                                        </div>
-                                                                        <br />
-                                                                        <div class="row">
-                                                                            <p>4,863,084</p>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6 col-sm-6 col-xs-6">
-                                                                        <div class="row">
-                                                                            <p>2016</p>
-                                                                        </div>
-                                                                        <div class="row">
-                                                                            <i class='fas fa-male' style='font-size:63px'></i>
-                                                                        </div>
-                                                                        <br />
-                                                                        <div class="row">
-                                                                            <p>6,323,606</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </section>
-                                                </div>
-                                                <div class="row">
-                                                    <section class="hero">
-                                                        <div class="container-block" id="main-reasons">
-                                                            <div class="hero-inner">
-                                                                <p style="text-align:center">Climate Change</p>
-                                                                <br />
-                                                                <p>The Earth's average temperature has increased by about 0.6 degrees Celcius during the 20th century.</p>
-                                                            </div>
-                                                        </div>
-                                                    </section>
-                                                </div>
-                                                <div class="row">
-                                                    <section class="hero">
-                                                        <div class="container-block" id="main-reasons">
-                                                            <div class="hero-inner">
-                                                                <p style="text-align:center">Water Contamination</p>
-
-                                                            </div>
-                                                        </div>
-                                                    </section>
+                                                    @Html.Partial("~/Views/Home/_CollapseView.cshtml")
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-md-9 col-sm-12 col-xs-12">
-                                                <img class="img-responsive" src="~/Content/Image/bucket-white.png" alt="water storage level" />
-                                            </div>
-                                            <div class="col-xs-12 col-sm-12 hidden-md hidden-lg right-text">
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                                 <div class="row" id="title">
-                                                    <p>Main Reasons</p>
+                                                    <p>Accessible water storage volume in Victoria (GL)</p>
                                                 </div>
                                                 <div class="row">
-                                                    <section class="hero" style="padding-bottom:5%">
-                                                        <div class="container-block" id="main-reasons">
-                                                            <div class="hero-inner" style="text-align:center">
-                                                                <p>Population Growth</p>
-                                                                <br />
-                                                                <div class="row">
-                                                                    <div class="col-md-6 col-sm-6 col-xs-6">
-                                                                        <div class="row">
-                                                                            <p>2001</p>
-                                                                        </div>
-                                                                        <div class="row">
-                                                                            <i class='fas fa-male' style='font-size:48px'></i>
-                                                                        </div>
-                                                                        <br />
-                                                                        <div class="row">
-                                                                            <p>4,863,084</p>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6 col-sm-6 col-xs-6">
-                                                                        <div class="row">
-                                                                            <p>2016</p>
-                                                                        </div>
-                                                                        <div class="row">
-                                                                            <i class='fas fa-male' style='font-size:63px'></i>
-                                                                        </div>
-                                                                        <br />
-                                                                        <div class="row">
-                                                                            <p>6,323,606</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </section>
-                                                </div>
-                                                <div class="row">
-                                                    <section class="hero" style="padding-bottom:5%; padding-top:10%;">
-                                                        <div class="container-block" id="main-reasons">
-                                                            <div class="hero-inner">
-                                                                <p style="text-align:center">Climate Change</p>
-                                                                <br />
-                                                                <p>The Earth's average temperature has increased by about 0.6 degrees Celcius during the 20th century.</p>
-                                                            </div>
-                                                        </div>
-                                                    </section>
-                                                </div>
-                                                <div class="row">
-                                                    <section class="hero" style="padding-bottom:5%; padding-top:10%;">
-                                                        <div class="container-block" id="main-reasons">
-                                                            <div class="hero-inner">
-                                                                <p style="text-align:center">Water Contamination</p>
-                                                            </div>
-                                                        </div>
-                                                    </section>
+                                                    <img class="img-responsive" src="~/Content/Image/bucket-white.png" alt="water storage level" />
                                                 </div>
                                             </div>
                                         </div>
@@ -348,12 +228,14 @@
                     </div>
                 </div>
             </div>
+            @*<button class="btn btn-primary scroll-top" data-scroll="up" type="button">
+                <i class="fas fa-chevron-up"></i>
+            </button>*@
             <br />
             <br />
             <div class="row">
                 <div class="container-fluid last-section">
                     <div class="row" id="title">
-                        @*<p>Take action now! Our waterways need your help</p>*@
                         <p>What other components pollute the waterways?</p>
                     </div>
                     <br class="hidden-xs hidden-sm" />
@@ -376,7 +258,7 @@
                                     <div class="body">
                                         <p>Disposal of chemicals and waste from agriculture and industry are one of the biggest sources of pollution in waterways.</p>
                                     </div>
-                                </figcaption><a href="/Iteration2/Substance"></a>
+                                </figcaption><a href="/Iteration3/Substance"></a>
                             </figure>
                         </div>
                         <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
@@ -400,7 +282,7 @@
                                             However, it is also the most controllable pollution source since it generated in our daily life. Work sustainably and save water daily.*@
                                         </p>
                                     </div>
-                                </figcaption><a href="/Iteration2/Litter"></a>
+                                </figcaption><a href="/Iteration3/Litter"></a>
                             </figure>
                         </div>
                     </div>
@@ -411,6 +293,6 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @*@Scripts.Render("~/bundles/script")*@
+    @*@RenderSection("scripts", required: false)*@
 </body>
 </html>

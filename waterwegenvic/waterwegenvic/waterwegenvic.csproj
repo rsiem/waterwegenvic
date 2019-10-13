@@ -159,6 +159,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Iteration1Controller.cs" />
     <Compile Include="Controllers\Iteration2Controller.cs" />
+    <Compile Include="Controllers\Iteration3Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -167,10 +168,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\stormwater_DB.mdf" />
-    <Content Include="App_Data\stormwater_DB_log.ldf">
-      <DependentUpon>stormwater_DB.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\CollapseBox.css" />
     <Content Include="Content\flipping_card.css" />
     <Content Include="Content\footer.css" />
@@ -348,8 +345,14 @@
     <Content Include="Views\gru\Details.cshtml" />
     <Content Include="Views\gru\Edit.cshtml" />
     <Content Include="Views\gru\Index.cshtml" />
+    <Content Include="Views\Iteration3\Index.cshtml" />
+    <Content Include="Views\Iteration3\Litter.cshtml" />
+    <Content Include="Views\Iteration3\Substance.cshtml" />
+    <Content Include="Views\Iteration3\Stormwater.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
