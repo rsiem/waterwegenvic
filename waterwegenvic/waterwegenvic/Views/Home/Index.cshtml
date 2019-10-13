@@ -5,6 +5,7 @@
 @Styles.Render("~/Content/index")
 @Scripts.Render("~/bundles/index")
 
+<!--Header section of the Landing page-->
 <div class="row" id="home">
     <div class="container-fluid">
         <div class=" row">
@@ -28,11 +29,14 @@
         </div>
     </div>
 </div>
+<!--End of header section-->
 <br />
+<!--Landing page contents-->
 <div class="row">
     <div class="container-fluid" id="background">
         <div class="background-page">
             <br />
+            <!--Introduction-->
             <div class="container">
                 <div class="row">
                     <p>
@@ -44,6 +48,9 @@
                 </div>
             </div>
             <br />
+            <br class="hidden-sm hidden-xs"/>
+            <!--End of Introduction section-->
+            <!--Main Causes of contamination section-->
             <div class="container">
                 <div class="row">
                     <div class="row" id="title">
@@ -86,16 +93,16 @@
                     </div>
                 </div>
             </div>
+            <!--End Main cause section-->
             <br />
             <br class="hidden-lg hidden-md" />
-            <br class="hidden-lg hidden-md" />
             <br />
+            <!-- Main Reasons of water crisis section-->
             <div class="row">
                 <section class="third-section container-fluid">
                     <div class="container-fluid" id="introduction">
                         <div class="row">
                             <div class="row" id="title">
-                                @*<p>Accessible Water Storage Volume In Victoria</p>*@
                                 <p>Main Reasons of Water Crisis in Victoria</p>
                             </div>
                             <br />
@@ -125,6 +132,9 @@
                     </div>
                 </section>
             </div>
+            <!--End of Main reasons section-->
+            <br class="hidden-lg hidden-md" />
+            <!--Water storage level prediction section-->
             <div class="container">
                 <div class="row" id="water-storage-level-prediction">
                     <div class="row" id="title">
@@ -173,14 +183,14 @@
                     </div>
                 </div>
             </div>
+            <!--End of Water storage prediction section-->
         </div>
     </div>
 </div>
-@*<button class="btn btn-primary scroll-top" data-scroll="up" type="button">
-    <i class="fas fa-chevron-up"></i>
-</button>*@
-<br />
-<br />
+<!--End of Landing page content section-->
+<br class="hidden-sm hidden-xs" />
+<br class="hidden-sm hidden-xs" />
+<!--Hyperlink Box Section to take to Substance, Litter and Stormwater Pollution page-->
 <div class="row">
     <div class="container-fluid last-section">
         <div class="row" id="title">
@@ -191,7 +201,7 @@
             <div class="col-md-1 col-lg-1"></div>
             <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
                 <figure>
-                    <div class="media" id="substance-box" @*style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/bg_15.png);"*@></div>
+                    <div class="media" id="substance-box"></div>
                     <figcaption>
                         <svg viewBox="0 0 200 200" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                             <defs>
@@ -211,7 +221,7 @@
             </div>
             <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
                 <figure>
-                    <div class="media" id="litter-box" @*style="background-image:url('~/Content/Image/jasmin-sessler-5Wfttm2CjeI-unsplash.jpg');"*@></div>
+                    <div class="media" id="litter-box"></div>
                     <figcaption>
                         <svg viewBox="0 0 200 200" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                             <defs>
@@ -226,8 +236,6 @@
                         <div class="body">
                             <p>
                                 The quality of water in the Victorian waterways is majorly affected due to the mindless disposal of litter.
-                                @*Household waste is one of the key contributor of the pollution in waterways.
-                                    However, it is also the most controllable pollution source since it generated in our daily life. Work sustainably and save water daily.*@
                             </p>
                         </div>
                     </figcaption><a href="/Home/Litter"></a>
@@ -236,3 +244,7 @@
         </div>
     </div>
 </div>
+<!--End of Hyperlink section-->
+<button class="btn btn-primary scroll-top" data-scroll="up" type="button">
+    <i class="fas fa-chevron-up"></i>
+</button>

@@ -141,18 +141,47 @@ img.hover-shadow {
 }
 
 @media (max-width: 992px) {
+    .column {
+        width: 25%;
+    }
 
+    #lightbox img,
+        .column .demo {
+            height: 150px;
+    }
+
+    .mySlides img {
+        height: 40vh;
+    }
 }
 
 @media (max-width: 750px) {
     .column {
-        width: 50%;
+        width: 33%;
+    }
+
+    #lightbox img,
+        .column .demo {
+            height: 150px;
+    }
+
+    .mySlides img {
+        height: 40vh;
     }
 }
 
 
 @media (max-width: 590px) {
     .column {
-        width: 100%;
+        width: 50%;
+    }
+
+    #lightbox img,
+        .column .demo {
+            height: 100px;
+    }
+
+    .mySlides img {
+        height: 30vh;
     }
 }

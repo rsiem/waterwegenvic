@@ -8,11 +8,10 @@
 @Scripts.Render("~/bundles/substance")
 
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
+<!--Substance Pollution Header Section-->
 <div class="row" id="substance">
     <div class="container-fluid">
         <div class=" row">
-            @*<section class="first-section hero" style="background-image:url('../../Content/Image/heading-bg.png'); width: 100%">*@
             <section class="first-section hero" style="background-image:url('../../Content/Image/Background/substance_heading.png'); width: 100%">
                 <div class="hero-inner text-context">
                     <p><b>SUBSTANCE POLLUTION</b></p>
@@ -23,10 +22,13 @@
         </div>
     </div>
 </div>
+<!--End of header section-->
 <br />
+<!--Substance Pollution Content Section-->
 <div class="row" id="substance-page">
     <div class="container-fluid" id="background">
         <div class="substance-page">
+            <!--Intro to Substance Pollution Section-->
             <div class="container">
                 <div class="row" id="introduction">
                     <p>
@@ -37,125 +39,130 @@
                     </p>
                 </div>
             </div>
+            <!--End of Intro section-->
+            <br />
+            <!--Image Grid Section-->
             <div class="container">
+                <div class="row" id="title">
+                    <p>Things That Can Cause Water Pollution</p>
+                </div>
                 <div class="row">
-                    <div class="row" id="title">
-                        <p>Things That Can Cause Water Pollution</p>
-                    </div>
-                    <div class="row">
-                        <div class="row" id="lightbox">
-                            <div class="column">
-                                <img src="~/Content/Image/img1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
-                            </div>
-                            <div class="column">
-                                <img src="~/Content/Image/img2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
-                            </div>
-                            <div class="column">
-                                <img src="~/Content/Image/img3.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
-                            </div>
-                            <div class="column">
-                                <img src="~/Content/Image/img4.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
-                            </div>
-                            <div class="column">
-                                <img src="~/Content/Image/img5.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
-                            </div>
-                            <div class="column">
-                                <img src="~/Content/Image/img6.jpg" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
-                            </div>
-                            <div class="column">
-                                <img src="~/Content/Image/img7.jpg" style="width:100%" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
-                            </div>
-                            <div class="column">
-                                <img src="~/Content/Image/img8.jpg" style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
-                            </div>
+                    <div class="row" id="lightbox">
+                        <div class="column">
+                            <img src="~/Content/Image/img1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
                         </div>
+                        <div class="column">
+                            <img src="~/Content/Image/img2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                        </div>
+                        <div class="column">
+                            <img src="~/Content/Image/img3.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+                        </div>
+                        <div class="column">
+                            <img src="~/Content/Image/img4.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+                        </div>
+                        <div class="column">
+                            <img src="~/Content/Image/img5.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+                        </div>
+                        <div class="column">
+                            <img src="~/Content/Image/img6.jpg" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+                        </div>
+                        <div class="column">
+                            <img src="~/Content/Image/img7.jpg" style="width:100%" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
+                        </div>
+                        <div class="column">
+                            <img src="~/Content/Image/img8.jpg" style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
+                        </div>
+                    </div>
 
-                        <div id="myModal" class="modal">
-                            <span class="close cursor" onclick="closeModal()" style="opacity:1;">&times;</span>
-                            <div class="modal-content">
+                    <div id="myModal" class="modal">
+                        <span class="close cursor" onclick="closeModal()" style="opacity:1;">&times;</span>
+                        <div class="modal-content">
 
-                                <div class="mySlides">
-                                    <div class="numbertext">1 / 8</div>
-                                    <img src="~/Content/Image/img1.jpg" style="width:100%">
-                                </div>
+                            <div class="mySlides">
+                                <div class="numbertext">1 / 8</div>
+                                <img src="~/Content/Image/img1.jpg" style="width:100%">
+                            </div>
 
-                                <div class="mySlides">
-                                    <div class="numbertext">2 / 8</div>
-                                    <img src="~/Content/Image/img2.jpg" style="width:100%">
-                                </div>
+                            <div class="mySlides">
+                                <div class="numbertext">2 / 8</div>
+                                <img src="~/Content/Image/img2.jpg" style="width:100%">
+                            </div>
 
-                                <div class="mySlides">
-                                    <div class="numbertext">3 / 8</div>
-                                    <img src="~/Content/Image/img3.jpg" style="width:100%">
-                                </div>
+                            <div class="mySlides">
+                                <div class="numbertext">3 / 8</div>
+                                <img src="~/Content/Image/img3.jpg" style="width:100%">
+                            </div>
 
-                                <div class="mySlides">
-                                    <div class="numbertext">4 / 8</div>
-                                    <img src="~/Content/Image/img4.jpg" style="width:100%">
-                                </div>
+                            <div class="mySlides">
+                                <div class="numbertext">4 / 8</div>
+                                <img src="~/Content/Image/img4.jpg" style="width:100%">
+                            </div>
 
-                                <div class="mySlides">
-                                    <div class="numbertext">5 / 8</div>
-                                    <img src="~/Content/Image/img5.jpg" style="width:100%">
-                                </div>
+                            <div class="mySlides">
+                                <div class="numbertext">5 / 8</div>
+                                <img src="~/Content/Image/img5.jpg" style="width:100%">
+                            </div>
 
-                                <div class="mySlides">
-                                    <div class="numbertext">6 / 8</div>
-                                    <img src="~/Content/Image/img6.jpg" style="width:100%">
-                                </div>
+                            <div class="mySlides">
+                                <div class="numbertext">6 / 8</div>
+                                <img src="~/Content/Image/img6.jpg" style="width:100%">
+                            </div>
 
-                                <div class="mySlides">
-                                    <div class="numbertext">7 / 8</div>
-                                    <img src="~/Content/Image/img7.jpg" style="width:100%">
-                                </div>
+                            <div class="mySlides">
+                                <div class="numbertext">7 / 8</div>
+                                <img src="~/Content/Image/img7.jpg" style="width:100%">
+                            </div>
 
-                                <div class="mySlides">
-                                    <div class="numbertext">8 / 8</div>
-                                    <img src="~/Content/Image/img8.jpg" style="width:100%">
-                                </div>
+                            <div class="mySlides">
+                                <div class="numbertext">8 / 8</div>
+                                <img src="~/Content/Image/img8.jpg" style="width:100%">
+                            </div>
 
-                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-                                <div class="caption-container">
-                                    <p id="caption"></p>
-                                </div>
+                            <div class="caption-container">
+                                <p id="caption"></p>
+                            </div>
 
 
-                                <div class="column">
-                                    <img class="demo cursor" src="~/Content/Image/img1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Pesticides">
-                                </div>
-                                <div class="column">
-                                    <img class="demo cursor" src="~/Content/Image/img2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Detergent Bar">
-                                </div>
-                                <div class="column">
-                                    <img class="demo cursor" src="~/Content/Image/img3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Oil">
-                                </div>
-                                <div class="column">
-                                    <img class="demo cursor" src="~/Content/Image/img4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Paint">
-                                </div>
-                                <div class="column">
-                                    <img class="demo cursor" src="~/Content/Image/img5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Detergent">
-                                </div>
-                                <div class="column">
-                                    <img class="demo cursor" src="~/Content/Image/img6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Fertilizers">
-                                </div>
-                                <div class="column">
-                                    <img class="demo cursor" src="~/Content/Image/img7.jpg" style="width:100%" onclick="currentSlide(7)" alt="Chlorine">
-                                </div>
-                                <div class="column">
-                                    <img class="demo cursor" src="~/Content/Image/img8.jpg" style="width:100%" onclick="currentSlide(8)" alt="Soaps">
-                                </div>
+                            <div class="column">
+                                <img class="demo cursor" src="~/Content/Image/img1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Pesticides">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="~/Content/Image/img2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Detergent Bar">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="~/Content/Image/img3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Oil">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="~/Content/Image/img4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Paint">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="~/Content/Image/img5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Detergent">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="~/Content/Image/img6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Fertilizers">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="~/Content/Image/img7.jpg" style="width:100%" onclick="currentSlide(7)" alt="Chlorine">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="~/Content/Image/img8.jpg" style="width:100%" onclick="currentSlide(8)" alt="Soaps">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!--End of Image grid section-->
             <br />
             <br />
+            <br class="hidden-lg hidden-md" />
+            <br class="hidden-lg hidden-md" />
+            <!--Most Polluted Area Map Section-->
             <div class="row">
                 <section class="third-section container-fluid">
-                    <div class="row" id="choropleth-map">
+                    <div class="container" id="choropleth-map">
                         <div class="row" id="title">
                             <p>Polluted Area In Victoria</p>
                         </div>
@@ -206,26 +213,36 @@
                                         <li>Drysdale</li>
                                         <li>Wollert</li>
                                     </ul>
-                                    <br />
-                                    Water used in the agricultural, industrial and civil sectors often contains
-                                    substances that can have adverse effect to the ecosystem. Hence this water must
-                                    not be discharged directly into the rivers.
                                 </p>
                             </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <p>
+                                Water used in the agricultural, industrial and civil sectors often contains
+                                substances that can have adverse effect to the ecosystem. Hence this water must
+                                not be discharged directly into the rivers.
+                            </p>
                         </div>
                     </div>
                 </section>
             </div>
-            <br class="hidden-sm hidden-xs" />
-            <br class="hidden-sm hidden-xs" />
+            <!--End of Most polluted map section-->
+            <br />
+            <!-- Chemical Content Section-->
             <div class="container">
                 <div class="row" id="title">
                     <p>The Chemical Content In Waterways</p>
                 </div>
-                <div class="row">
-                    <p>Chemical pollution is the introduction of substances into the environment (by man) that are liable to harm human health, living resources, and ecological systems, damage structures or generally interfere with the legitimate use of the environment.</p>
-                </div>
                 <br />
+                <div class="row">
+                    <p>
+                        Chemical pollution is primarily caused due to the careless disposal of harmful chemicals into
+                        our waterways by the people. This not only harms human life but also affects the marine life of
+                        Victoria. Apart from this, the substances get carried into the waterways during heavy rains.
+                    </p>
+                </div>
+                <!--Chemical Bar section-->
                 <div class="row" id="chemical-display">
                     <div class="row">
                         <div class="col-md-8 col-sm-12 col-xs-12">
@@ -266,7 +283,7 @@
                         <div class="col-md-4 col-sm-12 col-xs-12">
                             <br class="hidden-xs hidden-sm" />
                             <br class="hidden-xs hidden-sm" />
-                            <br />
+                            <br class="hidden-xs hidden-sm" />
                             <p>
                                 <br />
                                 The great amount of Phosphorus and Nitrogen indicating the
@@ -278,11 +295,13 @@
                         </div>
                     </div>
                 </div>
+                <!--End of Chemical bar section-->
                 <br />
+                <!--Top 5 Chemicals Flip Card Section-->
                 <div class="row">
                     <div class="container" id="substance-solution">
                         <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <div class="element-card">
                                     <div class="front-facing">
                                         <h1 class="abr">P</h1>
@@ -290,51 +309,64 @@
                                     </div>
                                     <div class="back-facing">
                                         <p>
-                                            Phosphorus is found in most of the products such as garden fertilizers, kitchen wears, baking powder and also in organic food waste.
-
+                                            Phosphorus is found in most of the products such as garden fertilizers, kitchen wears,
+                                            baking powder and also in organic food waste.
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <div class="element-card">
                                     <div class="front-facing">
                                         <h1 class="abr">N</h1>
                                         <p class="title">Kjeldahl Nitrogen</p>
                                     </div>
                                     <div class="back-facing">
-                                        <p>Nitrogen is mainly used in refrigerant’s which are mainly used for refrigerators and air conditioners. Apart from this, it is also present in organic waste such as food waste. </p>
+                                        <p>
+                                            Nitrogen is one of the primary components in the refrigerants which are mainly used in
+                                            refrigerators and air conditioners. Apart from this, it is also present in organic waste,
+                                            such as food waste.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <div class="element-card">
                                     <div class="front-facing">
                                         <h1 class="abr">Solid</h1>
                                         <p class="title">Solids</p>
                                     </div>
                                     <div class="back-facing">
-                                        <p>Approximately 4 billion plastic products are used in Australia every year, out of which about 150 million ends up in the waterways due to the careless disposal by the people.</p>
+                                        <p>
+                                            Approximately 4 billion plastic products are used in Australia every year, out of which
+                                            about 150 million ends up in the waterways due to the careless disposal by the people.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <div class="element-card">
                                     <div class="front-facing">
                                         <h1 class="abr">SiO2</h1>
                                         <p class="title">Silicon Dioxide</p>
                                     </div>
                                     <div class="back-facing">
-                                        <p>Large amount of SiO2 in waterways is due to the large amount of sand which results in high water turbidity. </p>
+                                        <p>
+                                            A large amount of SiO2 in waterways is due to the sand that gets carried into the waterways
+                                            during the rainy season, resulting in high water turbidity.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!--End of Chemical flip card section-->
             </div>
+            <!--End of Chemical content section-->
             <br />
             <br />
+            <!--Solution Flip Card Section-->
             <div class="row">
                 <div class="container-fluid last-section">
                     <div class="row" id="title">
@@ -342,7 +374,7 @@
                         <h3 align="center">CARE FOR THE NATURE. SAVE THE FUTURE.</h3>
                     </div>
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div class="cardContainerSubstance inactive">
                                 <div class="card">
                                     <div class="side front">
@@ -370,7 +402,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div class="cardContainerSubstance inactive">
                                 <div class="card">
                                     <div class="side front">
@@ -383,10 +415,9 @@
                                     <div class="side back">
                                         <div class="info">
                                             <h2 style="text-align: center;">Disposal Tips</h2>
-
                                             <ul>
                                                 <li>Use appropriate containers while disposing of hazardous substances.</li>
-                                                <li>Ensure that the substances do not mix while the disposal as there might be a violent reaction.</li>
+                                                <li>Ensure that the substances do not mix with the disposal as there might be a violent reaction.</li>
                                                 <li>Do not dispose of the electronic waste into the bins instead drop-off it at your nearest collection centers</li>
                                                 <li>Don’t throw paints, oils or other forms of litter down the drain.</li>
 
@@ -396,8 +427,8 @@
                                 </div>
                             </div>
                         </div>
+                        <!--Script for solution flip card-->
                         <script type="text/javascript">
-
                             const cards = document.querySelectorAll('.card');
 
                             function transition() {
@@ -410,9 +441,12 @@
 
                             cards.forEach(card => card.addEventListener('click', transition));
                         </script>
+                        <!--End of solution script-->
                     </div>
                 </div>
             </div>
+            <!--End of Solution flip card section-->
         </div>
     </div>
 </div>
+<!--End of Substance pollution content section-->

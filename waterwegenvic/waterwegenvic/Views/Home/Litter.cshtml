@@ -5,10 +5,10 @@
 @Styles.Render("~/Content/litter")
 @Scripts.Render("~/bundles/litter")
 
+<!--Litter Pollution Header Section-->
 <div class="row" id="litter">
     <div class="container-fluid">
         <div class=" row">
-            @*<section class="first-section hero" style="background-image:url('../../Content/Image/heading-bg.png'); width: 100%">*@
             <section class="first-section hero" style="background-image:url('../../Content/Image/Background/litter_heading.png'); width: 100%">
                 <div class="hero-inner text-context">
                     <p><b>Litter Pollution</b></p>
@@ -19,25 +19,34 @@
         </div>
     </div>
 </div>
+<!--End of header-->
 <br />
+<!--Litter Pollution Content-->
 <div class="row" id="litter-page">
     <div class="container-fluid" id="background">
         <div class="litter-page">
             <div class="container">
+                <!--Introduction-->
                 <div class="row" id="introduction">
                     <p>
-                        One of the critical reasons for the water contamination of Victorian waterways is mindless disposal of litter. On an average Victoria generate approximately 15,000 tonnes of litter per year. This litter then gets transported from the streets to the waterways due to rain via the stormwater system. For the safety of the Victorians, the Government spends millions of dollars to clean the waterways.
+                        One of the critical reasons for the water contamination of Victorian waterways is mindless disposal of litter.
+                        On an average Victoria generate approximately 15,000 tonnes of litter per year. This litter then gets transported
+                        from the streets to the waterways due to rain via the stormwater system. For the safety of the Victorians, the
+                        Government spends millions of dollars to clean the waterways.
                     </p>
                 </div>
+                <!--End of Intro section-->
             </div>
             <br />
+            <!--Video for showing the impacts of the litter pollution-->
             <div class="container">
                 <div class="row">
                     <div class="col-md-2"></div>
                     <div class="col-md-8" id="youtube-video">
                         <div class="row">
                             <p>
-                                The video below demonstrates the current problem in more details and also highlights the harmful effects of the existing problem.
+                                The video below demonstrates the current problem in more details and also highlights the harmful
+                                effects of the existing problem.
                             </p>
                         </div>
                         <div class="row">
@@ -48,8 +57,9 @@
                     </div>
                 </div>
             </div>
+            <!--End of Impact video section-->
             <br />
-            <br />
+            <!--Tree Based Hierarchy for Waste Graph-->
             <div class="row">
                 <div class="container-fluid last-section">
                     <div class="row">
@@ -59,23 +69,27 @@
                     </div>
                     <br />
                     <div class="row">
-                        <p>
-                            The degradation of the water quality in Victorian waterways is primarily due to the disposal of litter (waste). This waste can be classified into five major categories. These categories must be carefully separated and disposed of in their respected bins which eventually helps to reduce the total litter waste generated.
-                        </p>
+                        <div class="container">
+                            <p>
+                                The degradation of the water quality in Victorian waterways is primarily due to the disposal
+                                of litter (waste). This waste can be classified into five major categories. These categories
+                                must be carefully separated and disposed of in their respected bins which eventually helps
+                                to reduce the total litter waste generated.
+                            </p>
+                        </div>
                     </div>
-
                     <div class="row" style="margin-top:20px;">
-                        <div class="col-lg-9">
+                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                             <div id="treegraphPanel">
                                 <div id="treegraphContainer">
                                     <div id="treegraph"></div>
                                 </div>
                             </div>
                             <div id="TreeParagraph">
-                                
+
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                             <div class="panel panel-primary" id="tree-primary" style="display: none">
                                 <div class="panel-heading" id="tree-heading">
                                     <h3 class="panel-title">Primary Panel</h3>
@@ -86,11 +100,10 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
+        <!--Tree Graph Script-->
         <script>
             var textColour = "black" // text color for waste type;
             var fontSize = 15; // font size for waste type;
@@ -532,7 +545,7 @@
                 // Here we are just drawing lines, we can also draw curves, comment out below path for it.
 
                 var path = `M ${s.x} ${s.y}
-                                                                                                                     L ${d.x} ${d.y}`;
+                                                                                                                             L ${d.x} ${d.y}`;
 
                 // var path = `M ${s.x} ${s.y}
                 //         C ${(s.x + d.x) / 2} ${s.y},
@@ -581,417 +594,376 @@
 
             svg.selectAll('path.link').style('stroke', lineColour)
         </script>
-        <br />
-        <br />
+        <!--End of Tree graph script-->
+        <!--End of Tree graph section-->
+        <br class="hidden-sm hidden-xs" />
+        <!--Waste Hierarchy Section-->
         <div class="container">
+            <div class="row" id="title">
+                <p>Waste Management Hierarchy</p>
+            </div>
+            <br />
             <div class="row">
-                <div class="row" id="title">
-                    <p>Waste Management Hierarchy</p>
-                </div>
-                <div class="row">
-                    <p>The waste management hierarchy represents priorities for action to reduce and manage waste.</p>
-                    <p>
-                        The aim of the waste hierarchy is to extract the maximum practical benefits from products and to generate the minimum amount of waste by:
-                        <br />
-                        <ul>
-                            <li>Prevent emissions of greenhouse gases</li>
-                            <li>Reduces pollutants</li>
-                            <li>Saves energy</li>
-                            <li>Conserves resources</li>
-                            <li>Stimulate the development of green technologies</li>
-                        </ul>
-                    </p>
-                </div>
-                <div class="row">
-                    <div class="container-fluid">
-                        <div class="row" style="margin-top:20px; min-height: 500px;">
-                            <div class="col-xs-8 col-sm-8 col-md-5 funnel">
-                                <div id="funnel"></div>
-                            </div>
-                            <div class="col-xs-4 col-sm-4 col-md-3 hidden" id="infoSection">
-                                <svg width="170" height="330" xmlns="http://www.w3.org/2000/svg">
-                                    <g>
-                                        <rect x="-1" y="-1" width="172" height="502" id="canvas_background" fill="#fff" />
-                                        <g id="canvasGrid" display="none">
-                                            <rect id="svg_1" width="100%" height="100%" x="0" y="0" stroke-width="0"
-                                                  fill="url(#gridpattern)" />
-                                        </g>
+                <p>The waste management hierarchy represents priorities for action to reduce and manage waste.</p>
+                <br />
+                <p>
+                    The aim of the waste hierarchy is to extract the maximum practical benefits from products
+                    and to generate the minimum amount of waste by:
+                    <br />
+                    <ul>
+                        <li>Prevent emissions of greenhouse gases</li>
+                        <li>Reduces pollutants</li>
+                        <li>Saves energy</li>
+                        <li>Conserves resources</li>
+                        <li>Stimulate the development of green technologies</li>
+                    </ul>
+                </p>
+            </div>
+            <br />
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="row" style="margin-top:20px; min-height: 500px;">
+                        <div class="col-lg-5 col-md-5 col-xs-8 col-sm-8 funnel">
+                            <div id="funnel"></div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-4 col-sm-4" id="infoSection">
+                            <svg width="auto" height="502" xmlns="http://www.w3.org/2000/svg">
+                                <g>
+                                    <rect x="-1" y="-1" width="172" height="auto" id="canvas_background" fill="#fff" />
+                                    <g id="canvasGrid" display="none">
+                                        <rect id="svg_1" width="100%" height="100%" x="0" y="0" stroke-width="0"
+                                              fill="url(#gridpattern)" />
                                     </g>
-                                    <g>
-                                        @*<g stroke="null" id="svg_3">
-                                                <path stroke="#000" fill="#55ad59" stroke-width="1.5"
-                                                      d="m16.32201,121.181093l67.764166,-116.049304l67.764166,116.049304l-33.882091,0l0,116.607724l-67.76415,0l0,-116.607724l-33.882091,0z"
-                                                      id="svg_18" />
-                                                <path stroke="#000" fill="#da3732" stroke-width="1.5"
-                                                      d="m152.190497,379.554498l-67.571437,116.161629l-67.956708,-115.93666l33.882044,-0.056242l-0.193563,-116.607548l67.764057,-0.112485l0.193563,116.607548l33.882044,-0.056242z"
-                                                      id="svg_19" />
-                                                <rect stroke="#000" fill="#f7ca47" stroke-width="1.5" stroke-opacity="null" x="50.238194"
-                                                      y="239.775725" width="67.796925" height="21.165185" id="svg_20" />
-                                                <rect stroke="#000" fill="#ffffff" stroke-width="1.5" stroke-opacity="null" x="70.397099"
-                                                      y="98.055554" width="24.562591" height="128.441885" id="svg_22" />
-                                                <path stroke="#000" fill="#55ad59" stroke-width="1.5"
-                                                      d="m16.32201,121.181093l67.764166,-116.049304l67.764166,116.049304l-33.882091,0l0,116.607724l-67.76415,0l0,-116.607724l-33.882091,0z"
-                                                      id="svg_24" />
-                                                <rect stroke="#55ad59" fill="#ffffff" stroke-width="1.5" x="69.119207" y="123.837893"
-                                                      width="26.07838" height="106.898229" id="svg_26" />
-                                                <rect stroke="#da3732" fill="#ffffff" stroke-width="1.5" x="69.119207" y="269.169088"
-                                                      width="28.17078" height="112.129225" id="svg_30" />
-                                                <text stroke="#f7ca47" fill="#000000" stroke-width="0" fill-opacity="null" x="11.693418"
-                                                      y="216.891597" id="svg_31" font-size="7" font-family="Helvetica, Arial, sans-serif"
-                                                      text-anchor="start" xml:space="preserve"
-                                                      transform="matrix(-0.0142293846342919,-1.8391891884931044,1.8391891884931044,-0.0142293846342919,-312.09410378035346,399.3500822400103) "
-                                                      font-weight="bold">Least preferable</text>
-                                                <text stroke="#000" fill="#000000" stroke-width="0" stroke-opacity="null"
-                                                      fill-opacity="null" x="11.471835" y="123.720032" id="svg_32" font-size="7"
-                                                      font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve"
-                                                      transform="matrix(-0.01888180653900149,-1.8496853973711946,1.8496853973711946,-0.01888180653900149,-142.69939893965184,249.19274596653312) "
-                                                      font-weight="bold">Most preferable</text>
-                                            </g>*@
-                                        <g stroke="null" id="svg_3">
-                                            <path stroke="#000" fill="#55ad59" stroke-width="1.5" d="m3.32201,119.83697l45.3205,-117.70518l45.32049,117.70518l-22.66026,0l0,118.27158l-45.32049,0l0,-118.27158l-22.66024,0z" id="svg_18" />
-                                            <path stroke="#000" fill="rgb(20, 110, 127)" stroke-width="1.5" d="m94.1905,381.89705l-45.19161,117.81911l-45.44926,-117.59093l22.66022,-0.05705l-0.12945,-118.27139l45.32043,-0.1141l0.12945,118.2714l22.66022,-0.05704z" id="svg_19" />
-                                            <rect stroke="#000" fill="rgb(114, 168, 179)" stroke-width="1.5" x="26.00506" y="240.1238" width="45.34241" height="21.46719" id="svg_20" />
-                                            <rect stroke="#000" fill="#ffffff" stroke-width="1.5" stroke-opacity="null" x="39.48729" y="96.38146" width="16.4274" height="130.27459" id="svg_22" />
-                                            <path stroke="#000" fill="rgb(189, 215, 221)" stroke-width="1.5" d="m3.32201,119.83697l45.3205,-117.70518l45.32049,117.70518l-22.66026,0l0,118.27158l-45.32049,0l0,-118.27158l-22.66024,0z" id="svg_24" />
-                                            <rect stroke="rgb(189, 215, 221)" fill="rgb(189, 215, 221)" stroke-width="1.5" x="38.63264" y="122.53168" width="17.44115" height="108.42353" id="svg_26" />
-                                            <rect stroke="rgb(20, 110, 127)" fill="rgb(20, 110, 127)" stroke-width="1.5" x="38.63264" y="269.93657" width="22.48167" height="113.72917" id="svg_30" />
-                                            <text stroke="#f7ca47" fill="#000000" stroke-width="0" x="13.48402" y="197.14519" id="svg_31" font-size="7" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve" transform="matrix(-0.018950368320164637,-1.8578271757748341,2.4493900072400034,-0.014373582464237858,-426.7164512065446,407.3878203865447) " font-weight="bold">Least preferable</text>
-                                            <text stroke="#000" fill="#000000" stroke-width="0" x="11.66798" y="103.94515" id="svg_32" font-size="7" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve" transform="matrix(-0.0244771790228782,-1.8324898088668449,2.3978150879758235,-0.01870627194488897,-194.25785952772412,251.27264011862258) " font-weight="bold">Most preferable</text>
-                                        </g>
+                                </g>
+                                <g>
+                                    <g stroke="null" id="svg_3">
+                                        <path stroke="#000" fill="#55ad59" stroke-width="1.5" d="m3.32201,119.83697l45.3205,-117.70518l45.32049,117.70518l-22.66026,0l0,118.27158l-45.32049,0l0,-118.27158l-22.66024,0z" id="svg_18" />
+                                        <path stroke="#000" fill="rgb(20, 110, 127)" stroke-width="1.5" d="m94.1905,381.89705l-45.19161,117.81911l-45.44926,-117.59093l22.66022,-0.05705l-0.12945,-118.27139l45.32043,-0.1141l0.12945,118.2714l22.66022,-0.05704z" id="svg_19" />
+                                        <rect stroke="#000" fill="rgb(114, 168, 179)" stroke-width="1.5" x="26.00506" y="240.1238" width="45.34241" height="21.46719" id="svg_20" />
+                                        <rect stroke="#000" fill="#ffffff" stroke-width="1.5" stroke-opacity="null" x="39.48729" y="96.38146" width="16.4274" height="130.27459" id="svg_22" />
+                                        <path stroke="#000" fill="rgb(189, 215, 221)" stroke-width="1.5" d="m3.32201,119.83697l45.3205,-117.70518l45.32049,117.70518l-22.66026,0l0,118.27158l-45.32049,0l0,-118.27158l-22.66024,0z" id="svg_24" />
+                                        <rect stroke="rgb(189, 215, 221)" fill="rgb(189, 215, 221)" stroke-width="1.5" x="38.63264" y="122.53168" width="17.44115" height="108.42353" id="svg_26" />
+                                        <rect stroke="rgb(20, 110, 127)" fill="rgb(20, 110, 127)" stroke-width="1.5" x="38.63264" y="269.93657" width="22.48167" height="113.72917" id="svg_30" />
+                                        <text stroke="#f7ca47" fill="#000000" stroke-width="0" x="13.48402" y="197.14519" id="svg_31" font-size="7" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve" transform="matrix(-0.018950368320164637,-1.8578271757748341,2.4493900072400034,-0.014373582464237858,-426.7164512065446,407.3878203865447) " font-weight="bold">Least preferable</text>
+                                        <text stroke="#000" fill="#000000" stroke-width="0" x="11.66798" y="103.94515" id="svg_32" font-size="7" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve" transform="matrix(-0.0244771790228782,-1.8324898088668449,2.3978150879758235,-0.01870627194488897,-194.25785952772412,251.27264011862258) " font-weight="bold">Most preferable</text>
                                     </g>
-                                </svg>
-
-                                @*<svg width="100" height="500" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-                                        <g>
-                                            <title>Layer 1</title>
-                                            <g stroke="null" id="svg_3">
-                                                <g stroke="null" id="svg_3">
-                                                    <path stroke="#000" fill="#55ad59" stroke-width="1.5" d="m3.32201,119.83697l45.3205,-117.70518l45.32049,117.70518l-22.66026,0l0,118.27158l-45.32049,0l0,-118.27158l-22.66024,0z" id="svg_18" />
-                                                    <path stroke="#000" fill="rgb(20, 110, 127)" stroke-width="1.5" d="m94.1905,381.89705l-45.19161,117.81911l-45.44926,-117.59093l22.66022,-0.05705l-0.12945,-118.27139l45.32043,-0.1141l0.12945,118.2714l22.66022,-0.05704z" id="svg_19" />
-                                                    <rect stroke="#000" fill="rgb(114, 168, 179)" stroke-width="1.5" x="26.00506" y="240.1238" width="45.34241" height="21.46719" id="svg_20" />
-                                                    <rect stroke="#000" fill="#ffffff" stroke-width="1.5" stroke-opacity="null" x="39.48729" y="96.38146" width="16.4274" height="130.27459" id="svg_22" />
-                                                    <path stroke="#000" fill="rgb(189, 215, 221)" stroke-width="1.5" d="m3.32201,119.83697l45.3205,-117.70518l45.32049,117.70518l-22.66026,0l0,118.27158l-45.32049,0l0,-118.27158l-22.66024,0z" id="svg_24" />
-                                                    <rect stroke="rgb(189, 215, 221)" fill="rgb(189, 215, 221)" stroke-width="1.5" x="38.63264" y="122.53168" width="17.44115" height="108.42353" id="svg_26" />
-                                                    <rect stroke="rgb(20, 110, 127)" fill="rgb(20, 110, 127)" stroke-width="1.5" x="38.63264" y="269.93657" width="22.48167" height="113.72917" id="svg_30" />
-                                                    <text stroke="#f7ca47" fill="#000000" stroke-width="0" x="13.48402" y="197.14519" id="svg_31" font-size="7" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve" transform="matrix(-0.018950368320164637,-1.8578271757748341,2.4493900072400034,-0.014373582464237858,-426.7164512065446,407.3878203865447) " font-weight="bold">Least preferable</text>
-                                                    <text stroke="#000" fill="#000000" stroke-width="0" x="11.66798" y="103.94515" id="svg_32" font-size="7" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve" transform="matrix(-0.0244771790228782,-1.8324898088668449,2.3978150879758235,-0.01870627194488897,-194.25785952772412,251.27264011862258) " font-weight="bold">Most preferable</text>
-                                                </g>
-                                            </g>
-                                        </g>
-                                    </svg>*@
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-4">
-                                <div class="panel panel-primary" id="hierarchy-primary" style="display: none">
-                                    <div class="panel-heading" id="hierarchy-heading">
-                                        <h3 class="panel-title">Primary Panel</h3>
-                                    </div>
-                                    <div class="panel-body" id="hierarchy-info">
-                                        Panel content
-                                    </div>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
+                            <div class="panel panel-primary" id="hierarchy-primary" style="display: none">
+                                <div class="panel-heading" id="hierarchy-heading">
+                                    <h3 class="panel-title">Primary Panel</h3>
+                                </div>
+                                <div class="panel-body" id="hierarchy-info">
+                                    Panel content
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+                <script>
+                    var textColour = "#ffffff" // text color for Avoid, Reduce etc...;
+                    var backgroundColorStart = "#BDD7DD";//top color for background
+                    var backgroundColorEnd = "#146E7F";// bottom color background
+                    var hoverColour = "#DE2F4C" // hover color for Avoid, Reduce etc...;;
+                    var fontSize = 20; // font size for Avoid, Reduce etc...;
 
-                    @*<div class="funnelTooltip">
-                        </div>*@
+                    var colourValue = [0, 100, 250, 400, 500, 650, 900]
 
-                    <script>
-                        var textColour = "#ffffff" // text color for Avoid, Reduce etc...;
-                        var backgroundColorStart = "#BDD7DD";//top color for background
-                        var backgroundColorEnd = "#146E7F";// bottom color background
-                        var hoverColour = "#DE2F4C" // hover color for Avoid, Reduce etc...;;
-                        var fontSize = 20; // font size for Avoid, Reduce etc...;
+                    var height = parseInt(d3.select('.funnel').style('height')),
+                        width = parseInt(d3.select('.funnel').style('width'));
 
-                        var colourValue = [0, 100, 250, 400, 500, 650, 900]
+                    function rgbToHex(rgb) {
+                        rgb = rgb.match(/^rgb?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+                        return (rgb && rgb.length === 4) ? "#" +
+                            ("0" + parseInt(rgb[1], 10).toString(16)).slice(-2) +
+                            ("0" + parseInt(rgb[2], 10).toString(16)).slice(-2) +
+                            ("0" + parseInt(rgb[3], 10).toString(16)).slice(-2) : '';
+                    }
 
-                        var height = parseInt(d3.select('.funnel').style('height')),
-                            width = parseInt(d3.select('.funnel').style('width'));
+                    var gradientColor = d3.scaleLinear()
+                        .domain([0, 900])
+                        .range([backgroundColorStart, backgroundColorEnd])
 
-                        function rgbToHex(rgb) {
-                            rgb = rgb.match(/^rgb?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
-                            return (rgb && rgb.length === 4) ? "#" +
-                                ("0" + parseInt(rgb[1], 10).toString(16)).slice(-2) +
-                                ("0" + parseInt(rgb[2], 10).toString(16)).slice(-2) +
-                                ("0" + parseInt(rgb[3], 10).toString(16)).slice(-2) : '';
+                    d3.select('#funnel')
+                        .attr('height', height)
+                        .attr('width', width);
+
+                    const data = [
+                        {
+                            label: 'Avoid',
+                            value: 1,
+                            backgroundColor: rgbToHex(gradientColor(colourValue[0])),
+                            // tooltip and click div text
+                            tooltipText: "<p style='font-size: 1em;'>Maximize efficiency and avoid unnecessary consumption through behaviors such as:<br /><ul><li>Use a real cup for coffee.</li><li>Take your refillable water bottle.</li><li>Say no to cutlery and straws made of plastic.</li><li>Remember your reusable shopping bags.</li></ul></p>"
+                        },
+                        {
+                            label: 'Reduce',
+                            value: 1,
+                            backgroundColor: rgbToHex(gradientColor(colourValue[1])),
+                            tooltipText: "<p style='font-size: 1em;'><ul><li>Using leftover food rather than throwing it away.</li><li>Food rescue donation.</li><li>Repurposing without processing for animal feed.</li></ul></p>"
+                        },
+                        {
+                            label: 'Reuse',
+                            value: 1,
+                            backgroundColor: rgbToHex(gradientColor(colourValue[2])),
+                            tooltipText: "<p style='font-size: 1em;'>Many household products can be repaired, reused, sell or donated to charities:<br /><ul><li>Biotechnology solution for animal feed.</li><li>Reuse or sold or donate unused cosmetic products.</li><li>Worm farms.</li><li>Using biodegradable bags.</li><li>Reuse single-print paper.</li></ul></p>"
+                        },
+                        {
+                            label: 'Recycle',
+                            value: 1,
+                            backgroundColor: rgbToHex(gradientColor(colourValue[3])),
+                            tooltipText: "<p style='font-size: 1em;'>Top recycling tips:<br /><ul><li>Never put recyclables in a plastic bag.</li><li>Remove food scraps.</li><li>Never put recyclable items in the garbage chute or bin.</li><li>Know what can and can't be recycled.</li></ul></p>"
+                        },
+                        {
+                            label: 'Recover',
+                            value: 1,
+                            backgroundColor: rgbToHex(gradientColor(colourValue[4])),
+                            tooltipText: "<p style='font-size: 1em;'>Convert waste into resources (e.g. electricity, heat, compost, and fuel) by thermal and biological means.</p>"
+                        },
+                        //{
+                        //    label: 'Treat',
+                        //    value: 1,
+                        //    backgroundColor: rgbToHex(gradientColor(colourValue[5])),
+                        //    tooltipText: "<p style='font-size: 1em;'>Things you cannot recycle:<br /><ul><li>Cigarette buts.</li><li>Fabric Napkins, Tablecloths</li><li>Cleaning products (sponges, mops, etc.)</li><li>Paper with sticky tape, twine or string.</li><li>Food containers.</li><li>Treated or painted timber.</li><li>Dead animals.</li></ul></p>"
+                        //},
+                        {
+                            label: 'Dispose',
+                            value: 2.5,
+                            backgroundColor: rgbToHex(gradientColor(colourValue[6])),
+                            tooltipText: "<p style='font-size: 1em;'>Finally, the waste hierarchy recognizes that some types of waste, such as hazardous chemicals or asbestos, cannot be safely recycled and direct treatment or disposal is the most appropriate management option.</p>"
+                        },
+                    ];
+
+                    const options = {
+                        block: {
+                            dynamicHeight: true,
+                            fill: {
+                                type: 'solid',
+                            },
+                            highlight: true
+                        },
+                        chart: {
+                            bottomWidth: 0,
+                            bottomPinch: 0,
+                            height: 500,
+                            animate: 100
+                        },
+                        label: {
+                            format: '{l}',
+                            fontSize: fontSize + 'px',
+                            fill: textColour
+                        },
+                        tooltip: {
+                            enabled: false
                         }
+                    };
 
-                        var gradientColor = d3.scaleLinear()
-                            .domain([0, 900])
-                            .range([backgroundColorStart, backgroundColorEnd])
+                    const chart = new D3Funnel('#funnel');
+                    chart.draw(data, options);
 
-                        d3.select('#funnel')
-                            .attr('height', height)
-                            .attr('width', width);
+                    // // Top Arrow Pointer mouseEvent
+                    d3.selectAll("#svg_24,#svg_26,#svg_32")
+                        .on("mouseover", function (d) {
+                            var allPaths = d3.selectAll("#funnel path").nodes();
+                            d3.select(allPaths[0])
+                                .style('stroke-width', 5)
+                                .style('stroke', 'white')
+                                .style('fill-opacity', 0.8)
+                                .style('cursor', 'pointer')
 
-                        const data = [
-                            {
-                                label: 'Avoid',
-                                value: 1,
-                                backgroundColor: rgbToHex(gradientColor(colourValue[0])),
-                                // tooltip and click div text
-                                tooltipText: "<p style='font-size: 1em;'>Maximize efficiency and avoid unnecessary consumption through behaviors such as:<br /><ul><li>Use a real cup for coffee.</li><li>Take your refillable water bottle.</li><li>Say no to cutlery and straws made of plastic.</li><li>Remember your reusable shopping bags.</li></ul></p>"
-                            },
-                            {
-                                label: 'Reduce',
-                                value: 1,
-                                backgroundColor: rgbToHex(gradientColor(colourValue[1])),
-                                tooltipText: "<p style='font-size: 1em;'><ul><li>Using leftover food rather than throwing it away.</li><li>Food rescue donation.</li><li>Repurposing without processing for animal feed.</li></ul></p>"
-                            },
-                            {
-                                label: 'Reuse',
-                                value: 1,
-                                backgroundColor: rgbToHex(gradientColor(colourValue[2])),
-                                tooltipText: "<p style='font-size: 1em;'>Many household products can be repaired, reused, sell or donated to charities:<br /><ul><li>Biotechnology solution for animal feed.</li><li>Reuse or sold or donate unused cosmetic products.</li><li>Worm farms.</li><li>Using biodegradable bags.</li><li>Reuse single-print paper.</li></ul></p>"
-                            },
-                            {
-                                label: 'Recycle',
-                                value: 1,
-                                backgroundColor: rgbToHex(gradientColor(colourValue[3])),
-                                tooltipText: "<p style='font-size: 1em;'>Top recycling tips:<br /><ul><li>Never put recyclables in a plastic bag.</li><li>Remove food scraps.</li><li>Never put recyclable items in the garbage chute or bin.</li><li>Know what can and can't be recycled.</li></ul></p>"
-                            },
-                            {
-                                label: 'Recover',
-                                value: 1,
-                                backgroundColor: rgbToHex(gradientColor(colourValue[4])),
-                                tooltipText: "<p style='font-size: 1em;'>Convert waste into resources (e.g. electricity, heat, compost, and fuel) by thermal and biological means.</p>"
-                            },
-                            //{
-                            //    label: 'Treat',
-                            //    value: 1,
-                            //    backgroundColor: rgbToHex(gradientColor(colourValue[5])),
-                            //    tooltipText: "<p style='font-size: 1em;'>Things you cannot recycle:<br /><ul><li>Cigarette buts.</li><li>Fabric Napkins, Tablecloths</li><li>Cleaning products (sponges, mops, etc.)</li><li>Paper with sticky tape, twine or string.</li><li>Food containers.</li><li>Treated or painted timber.</li><li>Dead animals.</li></ul></p>"
-                            //},
-                            {
-                                label: 'Dispose',
-                                value: 2.5,
-                                backgroundColor: rgbToHex(gradientColor(colourValue[6])),
-                                tooltipText: "<p style='font-size: 1em;'>Finally, the waste hierarchy recognizes that some types of waste, such as hazardous chemicals or asbestos, cannot be safely recycled and direct treatment or disposal is the most appropriate management option.</p>"
-                            },
-                        ];
+                            blink(allPaths[0], 0)
+                        })
+                        .on("mouseout", function (d) {
+                            var allPaths = d3.selectAll("#funnel path").nodes();
+                            d3.select(allPaths[0]).style('stroke', 'none')
+                            removeAnimation(allPaths[0], 0)
+                        })
 
-                        const options = {
-                            block: {
-                                dynamicHeight: true,
-                                fill: {
-                                    type: 'solid',
-                                },
-                                highlight: true
-                            },
-                            chart: {
-                                bottomWidth: 0,
-                                bottomPinch: 0,
-                                height: 500,
-                                animate: 100
-                            },
-                            label: {
-                                format: '{l}',
-                                fontSize: fontSize + 'px',
-                                fill: textColour
-                            },
-                            tooltip: {
-                                enabled: false
-                            }
-                        };
+                    // // Bottom Arrow Pointer mouseEvent
+                    d3.selectAll("#svg_19,#svg_31")
+                        .on("mouseover", function (d) {
+                            var allPaths = d3.selectAll("#funnel path").nodes();
+                            d3.select(allPaths[5])
+                                .style('stroke-width', 5)
+                                .style('stroke', 'white')
+                                .style('fill-opacity', 0.8)
 
-                        const chart = new D3Funnel('#funnel');
-                        chart.draw(data, options);
+                            blink(allPaths[5], 5)
+                        })
+                        .on("mouseout", function (d) {
+                            var allPaths = d3.selectAll("#funnel path").nodes();
+                            d3.select(allPaths[5]).style('stroke', 'none')
 
-                        // // Top Arrow Pointer mouseEvent
-                        d3.selectAll("#svg_24,#svg_26,#svg_32")
+                            removeAnimation(allPaths[5], 5)
+                        })
+
+                    // // Middle Arrow Pointer mouseEvent
+                    d3.select("#svg_20")
+                        .on("mouseover", function (d) {
+                            var allPaths = d3.selectAll("#funnel path").nodes();
+                            d3.select(allPaths[3])
+                                .style('stroke-width', 5)
+                                .style('stroke', 'white')
+                                .style('fill-opacity', 0.8)
+
+                            blink(allPaths[3], 3)
+                        })
+                        .on("mouseout", function (d) {
+                            var allPaths = d3.selectAll("#funnel path").nodes();
+                            d3.select(allPaths[3]).style('stroke', 'none')
+
+                            removeAnimation(allPaths[3], 3)
+                        })
+
+                    setTimeout(addTooltip, 800);
+
+                    function addTooltip() {
+
+                        d3.selectAll("#svg_24")
+                            .style('fill', rgbToHex(gradientColor(colourValue[0])))
+
+                        d3.selectAll("#svg_26")
+                            .style('stroke', rgbToHex(gradientColor(colourValue[0])))
+                            .style('fill', rgbToHex(gradientColor(colourValue[0])))
+
+                        d3.selectAll("#svg_20")
+                            .style('fill', rgbToHex(gradientColor(colourValue[3])))
+
+                        d3.selectAll("#svg_19")
+                            .style('fill', rgbToHex(gradientColor(colourValue[6])))
+
+                        d3.selectAll("#svg_30")
+                            .style('stroke', rgbToHex(gradientColor(colourValue[6])))
+                            .style('fill', rgbToHex(gradientColor(colourValue[6])))
+
+                        $("#infoSection").removeClass('hidden');
+
+                        d3.selectAll("#funnel path")
                             .on("mouseover", function (d) {
-                                var allPaths = d3.selectAll("#funnel path").nodes();
-                                d3.select(allPaths[0])
-                                    .style('stroke-width', 5)
+                                var text = data[d.index].tooltipText;
+                                d3.select(this)
+                                    .style('stroke-width', '3px')
                                     .style('stroke', 'white')
                                     .style('fill-opacity', 0.8)
                                     .style('cursor', 'pointer')
 
-                                blink(allPaths[0], 0)
-                            })
-                            .on("mouseout", function (d) {
-                                var allPaths = d3.selectAll("#funnel path").nodes();
-                                d3.select(allPaths[0]).style('stroke', 'none')
-                                removeAnimation(allPaths[0], 0)
-                            })
+                                var colour = this.__data__.fill.raw
 
-                        // // Bottom Arrow Pointer mouseEvent
-                        d3.selectAll("#svg_19,#svg_31")
-                            .on("mouseover", function (d) {
-                                var allPaths = d3.selectAll("#funnel path").nodes();
-                                d3.select(allPaths[5])
-                                    .style('stroke-width', 5)
+                                //d3.select(".funnelTooltip").html(text)
+                                //    .style("left", d3.event.pageX + "px")
+                                //    .style("top", d3.event.pageY + "px")
+                                //    .style('border', 'solid 2px')
+                                //    .style('color', colour)
+                                //    .style('border-color', colour)
+                                //    .style("display", "inline-block")
+                            })
+                            .on("mousemove", function (d, i) {
+
+                                d3.select(this)
+                                    .style('stroke-width', '3px')
                                     .style('stroke', 'white')
                                     .style('fill-opacity', 0.8)
 
-                                blink(allPaths[5], 5)
+                                blink(this, i)
+                                var text = data[d.index].tooltipText;
+                                var colour = this.__data__.fill.raw
+
+                                //d3.select(".funnelTooltip").html(text)
+                                //    .style("left", d3.event.pageX + "px")
+                                //    .style("top", d3.event.pageY + "px")
+                                //    .style('border', 'solid 2px')
+                                //    .style('color', 'black')
+                                //    .style('border-color', colour)
+                                //    .style("display", "inline-block")
+
                             })
-                            .on("mouseout", function (d) {
-                                var allPaths = d3.selectAll("#funnel path").nodes();
-                                d3.select(allPaths[5]).style('stroke', 'none')
+                            .on("mouseout", function (d, i) {
+                                d3.select(".funnelTooltip")
+                                    .style("display", "none")
 
-                                removeAnimation(allPaths[5], 5)
+                                d3.select(this.parentElement).select('path')
+                                    .style('stroke', 'none')
+                                    .style('fill-opacity', 1)
+
+                                removeAnimation(this, d.index);
+                            })
+                            .on("click", function (d, i) {
+                                var text = data[d.index].tooltipText;
+                                d3.select("#hierarchy-info").html(text)
+
+                                var color = $(this).attr('fill')
+
+                                $('#hierarchy-primary').css('border-color', color)
+                                    .css('display', 'block')
+
+                                $('#hierarchy-heading').css('border-color', color)
+                                    .css('background-color', color)
+                                    .text(d.label.raw)
                             })
 
-                        // // Middle Arrow Pointer mouseEvent
-                        d3.select("#svg_20")
-                            .on("mouseover", function (d) {
-                                var allPaths = d3.selectAll("#funnel path").nodes();
-                                d3.select(allPaths[3])
-                                    .style('stroke-width', 5)
-                                    .style('stroke', 'white')
-                                    .style('fill-opacity', 0.8)
-
-                                blink(allPaths[3], 3)
+                        d3.selectAll("#funnel text")
+                            .style('font-size', function (d, i) {
+                                if (i == 5) {
+                                    return '16px';
+                                }
                             })
-                            .on("mouseout", function (d) {
-                                var allPaths = d3.selectAll("#funnel path").nodes();
-                                d3.select(allPaths[3]).style('stroke', 'none')
+                    }
 
-                                removeAnimation(allPaths[3], 3)
-                            })
+                    function blink(ctr, index) {
 
-                        setTimeout(addTooltip, 800);
-
-                        function addTooltip() {
-
-                            d3.selectAll("#svg_24")
-                                .style('fill', rgbToHex(gradientColor(colourValue[0])))
-
-                            d3.selectAll("#svg_26")
-                                .style('stroke', rgbToHex(gradientColor(colourValue[0])))
-                                .style('fill', rgbToHex(gradientColor(colourValue[0])))
-
-                            d3.selectAll("#svg_20")
-                                .style('fill', rgbToHex(gradientColor(colourValue[3])))
-
-                            d3.selectAll("#svg_19")
-                                .style('fill', rgbToHex(gradientColor(colourValue[6])))
-
-                            d3.selectAll("#svg_30")
-                                .style('stroke', rgbToHex(gradientColor(colourValue[6])))
-                                .style('fill', rgbToHex(gradientColor(colourValue[6])))
-
-                            $("#infoSection").removeClass('hidden');
-
-                            d3.selectAll("#funnel path")
-                                .on("mouseover", function (d) {
-                                    var text = data[d.index].tooltipText;
-                                    d3.select(this)
-                                        .style('stroke-width', '3px')
-                                        .style('stroke', 'white')
-                                        .style('fill-opacity', 0.8)
-                                        .style('cursor', 'pointer')
-
-                                    var colour = this.__data__.fill.raw
-
-                                    //d3.select(".funnelTooltip").html(text)
-                                    //    .style("left", d3.event.pageX + "px")
-                                    //    .style("top", d3.event.pageY + "px")
-                                    //    .style('border', 'solid 2px')
-                                    //    .style('color', colour)
-                                    //    .style('border-color', colour)
-                                    //    .style("display", "inline-block")
-                                })
-                                .on("mousemove", function (d, i) {
-
-                                    d3.select(this)
-                                        .style('stroke-width', '3px')
-                                        .style('stroke', 'white')
-                                        .style('fill-opacity', 0.8)
-
-                                    blink(this, i)
-                                    var text = data[d.index].tooltipText;
-                                    var colour = this.__data__.fill.raw
-
-                                    //d3.select(".funnelTooltip").html(text)
-                                    //    .style("left", d3.event.pageX + "px")
-                                    //    .style("top", d3.event.pageY + "px")
-                                    //    .style('border', 'solid 2px')
-                                    //    .style('color', 'black')
-                                    //    .style('border-color', colour)
-                                    //    .style("display", "inline-block")
-
-                                })
-                                .on("mouseout", function (d, i) {
-                                    d3.select(".funnelTooltip")
-                                        .style("display", "none")
-
-                                    d3.select(this.parentElement).select('path')
-                                        .style('stroke', 'none')
-                                        .style('fill-opacity', 1)
-
-                                    removeAnimation(this, d.index);
-                                })
-                                .on("click", function (d, i) {
-                                    var text = data[d.index].tooltipText;
-                                    d3.select("#hierarchy-info").html(text)
-
-                                    var color = $(this).attr('fill')
-
-                                    $('#hierarchy-primary').css('border-color', color)
-                                        .css('display', 'block')
-
-                                    $('#hierarchy-heading').css('border-color', color)
-                                        .css('background-color', color)
-                                        .text(d.label.raw)
-                                })
-
-                            d3.selectAll("#funnel text")
-                                .style('font-size', function (d, i) {
-                                    if (i == 5) {
-                                        return '16px';
-                                    }
-                                })
+                        if (d3.select(ctr.parentNode).select('text').text() == "Dispose") {
+                            fontSize = "12px";
                         }
+                        d3.select(ctr.parentNode).select('text')
+                            .style("fill", hoverColour)
+                            .style("font-size", fontSize + 'px')
+                            .transition()
+                            .duration(200)
+                            .transition()
+                            .duration(200)
+                            .style('fill', function (d, i) {
+                                return textColour;
+                            })
+                            .on("end", function () {
+                                blink(ctr, index);
+                            })
+                    }
 
-                        function blink(ctr, index) {
+                    function removeAnimation(ctr, index) {
+                        d3.select(ctr.parentNode).select('text').transition()
+                            .duration(100)
+                            .style("font-size", fontSize + 'px')
+                            .style('fill', function (d, i) {
+                                return textColour;
+                            })
+                            .style("font-weight", 'normal')
+                    }
 
-                            if (d3.select(ctr.parentNode).select('text').text() == "Dispose") {
-                                fontSize = "12px";
-                            }
-                            d3.select(ctr.parentNode).select('text')
-                                .style("fill", hoverColour)
-                                .style("font-size", fontSize + 'px')
-                                .transition()
-                                .duration(200)
-                                .transition()
-                                .duration(200)
-                                .style('fill', function (d, i) {
-                                    return textColour;
-                                })
-                                .on("end", function () {
-                                    blink(ctr, index);
-                                })
-                        }
-
-                        function removeAnimation(ctr, index) {
-                            d3.select(ctr.parentNode).select('text').transition()
-                                .duration(100)
-                                .style("font-size", fontSize + 'px')
-                                .style('fill', function (d, i) {
-                                    return textColour;
-                                })
-                                .style("font-weight", 'normal')
-                        }
-
-                    </script>
-                </div>
+                </script>
             </div>
         </div>
+        <!--End of Waste hierarchy section-->
+        <!--Benifits of Recycling Section-->
         <div class="row">
             <section class="container-fluid last-section">
-                <div class="row">
+                <div class="container">
                     <div class="row" id="title">
                         <p>Environmental benefits from recycling for saving water</p>
                     </div>
                     <br />
                     <div class="row">
-                        <p>Recycling and reusing items always help to reduce the effects of water and land pollution. By recycling items, we can help to reduce water usage as well as keep the waterways clean. The items shown below are collected for recycling by the Kerbside service from various households in Victoria.</p>
+                        <p>
+                            Recycling and reusing items always help to reduce the effects of water and land pollution.
+                            By recycling items, we can help to reduce water usage as well as keep the waterways clean.
+                            The items shown below are collected for recycling by the Kerbside service from various households
+                            in Victoria.
+                        </p>
                     </div>
                     <div class="row" id="olympic-display">
                         <div class="row">
-                            <div class="col-md-8 col-sm-12 col-xs-12">
+                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                                 <div id="olympic-bar"></div>
                                 <script>
                                     var trace1 = {
@@ -1038,18 +1010,20 @@
                                     Plotly.newPlot('olympic-bar', olympic, layout, { displayModeBar: false, responsive: true });
                                 </script>
                             </div>
-                            <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                 <br class="hidden-xs hidden-sm" />
                                 <br class="hidden-xs hidden-sm" />
                                 <br />
                                 <p>
                                     An Olympic sized swimming pool can approximately store water equivalent to 2500 kL.
                                     <br />
-                                    Recycling the household items can help us save lots of water which otherwise would be required while manufacturing these items.
+                                    Recycling the household items can help us save lots of water which otherwise would be
+                                    required while manufacturing these items.
                                 </p>
                                 <br />
                                 <p>
-                                    For instance, by recycling the kerbside paper waste, the Government was able to save 1503 Olympic swimming pool equivalent water, i.e. 1503 x 2500 which is 3,757,500 kL of Water.
+                                    For instance, by recycling the kerbside paper waste, the Government was able to save
+                                    1503 Olympic swimming pool equivalent water, i.e. 1503 x 2500 which is 3,757,500 kL of Water.
                                 </p>
                                 <br />
 
@@ -1058,74 +1032,77 @@
                     </div>
                     <div class="row">
                         <p>
-                            Similarly, by recycling the glass, the Government has not only saved 65 Olympic swimming pool equivalent water but has also helped to reduce the litter pollution as glass takes approximately 2 million years to breakdown.
+                            Similarly, by recycling the glass, the Government has not only saved 65 Olympic swimming pool
+                            equivalent water but has also helped to reduce the litter pollution as glass takes approximately
+                            2 million years to breakdown.
                         </p>
                     </div>
                 </div>
             </section>
         </div>
+        <!--End of Benifits section-->
+        <!--Drag and Drop Section for Litter Disposal-->
         <div class="container">
+            <div class="row" id="title">
+                <p>Drag and Drop!</p>
+            </div>
+            <br class="hidden-sm hidden-xs" />
+            <br />
             <div class="row">
-                <div class="row" id="title">
-                    <p>Drag and Drop!</p>
-                </div>
-                <br />
-                <br />
+                <p>
+                    Let’s test your knowledge of the disposal of litter. Just drag and drop the items in its appropriate
+                    bins. Try it. It's fun.
+                </p>
+            </div>
+            <div class="row">
                 <div class="row">
-                    <p>Let’s test your knowledge of the disposal of litter. Just drag and drop the items in its appropriate bins. Try it. It's fun.</p>
+                    <div class="col-md-4 col-sm-4 col-xs-4" draggable="true" ondragstart="return dragStart(event)">
+                        <img class="img-responsive grab litter" id="wet-wipes" alt="wet-wipes" src="~/Content/Image/wet-wipes.jpg">
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4" draggable="true" ondragstart="return dragStart(event)">
+                        <img class="img-responsive grab litter" id="egg-carton" alt="egg-carton" src="~/Content/Image/egg-carton-4046693_960_720.jpg">
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4" draggable="true" ondragstart="return dragStart(event)">
+                        <img class="img-responsive grab litter" id="orange-peel" alt="orange-peel" src="~/Content/Image/orange-peel.jpg" />
+                    </div>
                 </div>
+
                 <div class="row">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-4 col-xs-4" draggable="true" ondragstart="return dragStart(event)">
-                            @*<img class="img-responsive grab litter" id="car" alt="car" src="https://cdn.glitch.com/20f985bd-431d-4807-857b-e966e015c91b%2Fcar-20clip-20art-1311497037_Vector_Clipart.png?1519011788408">*@
-                            <img class="img-responsive grab litter" id="wet-wipes" alt="wet-wipes" src="~/Content/Image/wet-wipes.jpg">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="row">
+                            <img src="~/Content/Image/red.png" draggable="false" id="red-bin" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)" />
                         </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4" draggable="true" ondragstart="return dragStart(event)">
-                            @*<img class="img-responsive grab litter" id="egg-carton" alt="egg-carton" src="https://cdn.glitch.com/20f985bd-431d-4807-857b-e966e015c91b%2Fambulance5.png?1519011787610>*@
-                            <img class="img-responsive grab litter" id="egg-carton" alt="egg-carton" src="~/Content/Image/egg-carton-4046693_960_720.jpg">
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4" draggable="true" ondragstart="return dragStart(event)">
-                            @*<img class="img-responsive grab litter" id="bike" alt="bicycle" src="https://cdn.glitch.com/20f985bd-431d-4807-857b-e966e015c91b%2Fbicycle-20clip-20art-bicycle3.png?1519011787816">*@
-                            <img class="img-responsive grab litter" id="orange-peel" alt="orange-peel" src="~/Content/Image/orange-peel.jpg" />
+                        <div class="row" id="bin-text">
+                            Household Bin
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                            <div class="row">
-                                <img src="~/Content/Image/red.png" draggable="false" id="red-bin" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)" />
-                                @*<img src="~/Content/Image/red-open.jpg" style="visibility:hidden" draggable="false" id="purple-box-second" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)" />*@
-                            </div>
-                            <div class="row" id="bin-text">
-                                Household Bin
-                            </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="row">
+                            <img src="~/Content/Image/yellow.png" draggable="false" id="yellow-bin" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
                         </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                            <div class="row">
-                                <img src="~/Content/Image/yellow.png" draggable="false" id="yellow-bin" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
-                            </div>
-                            <div class="row" id="bin-text">
-                                Recycling Bin
-                            </div>
+                        <div class="row" id="bin-text">
+                            Recycling Bin
                         </div>
+                    </div>
 
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                            <div class="row">
-                                <img src="~/Content/Image/green.png" draggable="false" id="green-bin" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
-                            </div>
-                            <div class="row" id="bin-text">
-                                Garden Waste Bin
-                            </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="row">
+                            <img src="~/Content/Image/green.png" draggable="false" id="green-bin" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
+                        </div>
+                        <div class="row" id="bin-text">
+                            Garden Waste Bin
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!--End of Drag and Drop section-->
         <br />
         <br />
         <br />
         <br />
+        <!--Solution FLip Cards-->
         <div class="row">
             <section class="container-fluid tip-section">
                 <br />
@@ -1143,7 +1120,9 @@
                                         <div class="img recycle"></div>
                                         <div class="info">
                                             <h2 style="text-align: center;">Recycle</h2>
-                                            <p align="center">Recycling our waste can help us reduce a major portion of waste being sent to the landfills</p>
+                                            <p align="center">
+                                                Recycling our waste can help us reduce a major portion of waste being sent to the landfills
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="side back">
@@ -1153,7 +1132,6 @@
                                             <ul style="">
                                                 <li>By recycling glass bottles we can produce electricity which can run the television for atleast 1 hour. </li>
                                                 <li>Recycle your empty aerosal cans and sprays. </li>
-                                                <!-- <li>Updated hip bolstering offers superior operator comfort and positioning</li> -->
                                                 <li>Dispose of your papers, books, clothes etc in the right recycle bin reducing the cutting of trees.</li>
                                                 <li>Recycle the batteries by depositing them at the appropriate collection centers.</li>
                                             </ul>
@@ -1171,7 +1149,8 @@
                                         <div class="info">
                                             <h2 style="text-align: center;">Reduce</h2>
                                             <p align="center">
-                                            We can reduce significant amount of waste by reducing the usage of products and develop a reuse culture.
+                                                We can reduce significant amount of waste by reducing the usage of products and develop
+                                                a reuse culture.
                                             </p>
                                         </div>
                                     </div>
@@ -1198,18 +1177,18 @@
                                         <div class="img reuse"></div>
                                         <div class="info">
                                             <h2 style="text-align: center;">Reuse</h2>
-                                            <p align="center">Reusing products helps us reduce the unwanted purchases as well as the overall waste generation.</p>
+                                            <p align="center">
+                                                Reusing products helps us reduce the unwanted purchases as well as the overall waste generation.
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="side back">
                                         <div class="info">
                                             <h2 style="text-align: center;">Reuse</h2>
-
                                             <ul>
                                                 <li>Carry a small reusable bag with you, which can used to carry back the litter when there are no dustbins around.</li>
                                                 <li>Use containers, cans and jars for storing some things or for craft.</li>
                                                 <li>Use empty cardboard boxes to store stationary items.</li>
-
                                             </ul>
                                         </div>
                                     </div>
@@ -1234,6 +1213,8 @@
                 </div>
             </section>
         </div>
+        <!--End of Solution section-->
+        <!--Quiz Section-->
         <div class="container">
             <div class="row" id="quiz">
                 <div class="row">
@@ -1249,9 +1230,6 @@
                                 "footer": "show"
                             };
                             s.src = 'https://i.tryinteract.com/embed/app.js';
-                            //var one = '<div class="interact_responsive_padding" style="padding:0 0 0 0;position:relative;margin-bottom:5px;"><div class="interact_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">';
-                            //var two = ':"";return t+=' + '<iframe id="interactApp' + '+this.key+' + '" class="interact-app-container" height="'
-                            //s.src = 'var InteractApp=function(){this.host=this.host||"quiz.tryinteract.com",this.height="800",this.width="800",this.auto_resize=!0,this.frameUrl="",this.footer=this.footer||"hide",this.initializeComplete=!1,this.initialize=function(t){for(var i in t)this[i]=t[i];this.key=this.ref?this.ref:this.appId+""+Math.floor(1e6*Math.random()),this.generateFrameUrl(),!1===this.initializeComplete&&(this.addEvent(window,"message",this.messageListener.bind(this)),this.initializeDone=!0)},this.generateFrameUrl=function(){var t="https://"+this.host+"/#/";t+=this.preview?"preview/":"",t+=this.template?"preview/template/":"",t+=this.transcript?"preview/transcript/":"",t+=this.appId?this.appId:"",t+=(this.no_cover?"/q/1":"")+"?embed="+this.key,t+=this.mobile?"&mobile=1":"",t+=this.redirect_host?"&redirect_host=1":"",t+=this.auto_resize?"&auto_resize=1":"",t+="&origin="+encodeURIComponent(window.location.origin?window.location.origin:window.location.origin?window.location.origin:window.location.protocol+"//"+window.location.hostname+(window.location.port?":"+window.location.port:""));for(var i in this.user)t+="&user."+i+"="+encodeURIComponent(this.user[i]);this.frameUrl=t},this.messageListener=function(t){if(t.origin=="https://"+this.host){var i=t.data.length?t.data.split("|"):[],e=3===i.length&&i[1]===this.key,r=!!document.getElementById("interactApp"+this.key);e&&r&&("redirectHost"===i[0]&&this.redirect(i[2]||null),"resizeHeight"===i[0]&&this.resizeHeight(i[2]||null))}},this.redirect=function(t){if(!t)return null;window.location.href=t},this.resizeHeight=function(t){if(!this.auto_resize)return null;var i=document.getElementById("interact-"+(this.ref?this.ref:this.appId)),e=document.getElementById("interactApp"+this.key);e.height=t,e.style.height=t+"px";var r=i.getBoundingClientRect();if(r.top<0)if("scrollBehavior"in document.documentElement.style)window.scrollTo(0,window.scrollY+r.top);else{var s=document.scrollingElement||document.documentElement;s.scrollTop=s.scrollTop+r.top}},this.generateFrame=function(){var t=this.aspect_ratio?' + one +
                             s.onload = s.onreadystatechange = function () {
                                 var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return; try { app_5d8084a62406c0001400ebb2 = new InteractApp(); app_5d8084a62406c0001400ebb2.initialize(options); app_5d8084a62406c0001400ebb2.display(); } catch (e) { }
                             }; var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
@@ -1259,5 +1237,7 @@
                 </div>
             </div>
         </div>
+        <!--End of Quiz section-->
     </div>
 </div>
+<!--End of Litter Content-->

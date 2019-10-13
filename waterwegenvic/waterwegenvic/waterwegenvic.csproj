@@ -349,6 +349,7 @@
     <Content Include="Views\Iteration3\Litter.cshtml" />
     <Content Include="Views\Iteration3\Substance.cshtml" />
     <Content Include="Views\Iteration3\Stormwater.cshtml" />
+    <Content Include="Views\Iteration3\_CollapseView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
