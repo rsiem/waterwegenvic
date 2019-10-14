@@ -80,9 +80,6 @@
                                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                             <p class="questionModelDialog">
                                                 <div style="float:left;" class="questionModelDialog">WHAT IS RAIN?</div>
-                                                @*<div style="float:left;">
-                                            <img src="~/Content/Image/WaterCycle/drop.jfif" style="width:50px;">
-                                        </div>*@
                                             </p>
                                             <div style="clear:both;"></div>
                                             <p class="answerModelDialog">
@@ -124,10 +121,10 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align:right; float:left">
-                                            <img src="~/Content/Image/WaterCycle/imark.jpg" draggable="false" style="width:35%;">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align:center;padding:inherit">
+                                            <img src="~/Content/Image/WaterCycle/imark.jpg" draggable="false" style="width:50%;">
                                         </div>
-                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
                                             <p class="questionModelDialog">
                                                 <div style="float:left;" class="questionModelDialog">
                                                     DO YOU KNOW...
@@ -195,10 +192,10 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align:right; float:left">
-                                            <img src="~/Content/Image/WaterCycle/imark.jpg" draggable="false" style="width:45%;">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align:center;padding:inherit">
+                                            <img src="~/Content/Image/WaterCycle/imark.jpg" draggable="false" style="width:50%;">
                                         </div>
-                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
                                             <p class="questionModelDialog">
                                                 <div style="float:left;" class="questionModelDialog">
                                                     DO YOU KNOW...
@@ -255,10 +252,10 @@
                                     </div>
                                     <br />
                                     <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align:right; float:left">
-                                            <img src="~/Content/Image/WaterCycle/imark.jpg" draggable="false" style="width:45%;">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align:center;padding:inherit">
+                                            <img src="~/Content/Image/WaterCycle/imark.jpg" draggable="false" style="width:50%;">
                                         </div>
-                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
                                             <p class="questionModelDialog"><div style="float:left;" class="questionModelDialog">DO YOU KNOW...</div></p>
                                             <div style="clear:both;"></div>
                                             <p class="answerModelDialog">
@@ -308,10 +305,10 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align:right; float:left">
-                                            <img src="~/Content/Image/WaterCycle/imark.jpg" draggable="false" style="width:40%;">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align:center;padding:inherit">
+                                            <img src="~/Content/Image/WaterCycle/imark.jpg" draggable="false" style="width:50%;">
                                         </div>
-                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
                                             <p class="questionModelDialog"><div style="float:left;" class="questionModelDialog">DO YOU KNOW...</div></p>
                                             <div style="clear:both;"></div>
                                             <p class="answerModelDialog">
@@ -572,8 +569,6 @@
                             });
 
                             function showText(event, ui) {
-                                //$('#result').text(ui.item.label)
-                                console.log(ui.item.label);
                                 getPostcode(ui.item.label);
                             }
                         }
@@ -582,17 +577,30 @@
                             //document.getElementById("result-map").hidden = true;
                             //document.getElementById("result-map").style.width = "0";
                             //document.getElementById("result-map").style.height = "0";
-
-                            //pcode = document.forms[0].postcode.value;
+                            
                             var res = pcode.substring(pcode.length - 4, pcode.length);
 
                             // postcode elements
                             pcElements = document.getElementsByClassName("post-code");
 
                             // restricted use elements
-                            ruElements = document.getElementsByClassName("restriced_use");
-
+                            ruElements = document.getElementsByClassName("restricted_use");
                             var i;
+
+                            for (i = 0; i < ruElements.length; i++) {
+                                var restricted = ruElements[i].innerHTML;
+                                if (restricted != null) {
+                                    splittedRestricted = restricted.split(";");
+                                    fRestricted = splittedRestricted[0].trim();
+                                    ruElements[i].innerHTML = fRestricted;
+                            //        if (restricted.length > 1) {
+                            //            sRestricted = splittedRestricted[1].trim();
+                            //            ruElements[i].innerHTML = "<ul><li>" + fRestricted + "</li><li>" + sRestricted + "</li></ul>";
+                            //        } else {
+                            //            ruElements[i].innerHTML = "<ul><li>" + fRestricted + "</li></ul>";
+                            //        }
+                                }
+                            }
                             for (i = 0; i < pcElements.length; i++) {
                                 pcElements[i].closest('tr').hidden = false;
                             }
@@ -640,7 +648,7 @@
                             </th>
                             <th hidden>
                             </th>
-                            <th>
+                            <th hidden>
                                 @Html.DisplayNameFor(model => model.Suburb)
                             </th>
                             <th hidden>
@@ -667,7 +675,7 @@
                                 <td class="post-code" hidden>
                                     @Html.DisplayFor(modelItem => item.Post_Code)
                                 </td>
-                                <td class="suburb">
+                                <td class="suburb" hidden>
                                     @Html.DisplayFor(modelItem => item.Suburb)
                                 </td>
                                 <td hidden class="latitude">
@@ -753,9 +761,11 @@
 
                                             <ul style="">
                                                 <li>Using traps such as grates and screens outside your house or neighbourhood can prevent unwanted litter from entering the stormwater drains.</li>
-                                                <li>Whenever you go out with your pet make sure that you clean and dispose of the pet waste in the right bin.</li>
+                                                <li>Clean and dispose your pet waste in appropriate bins.</li>
+                                                @*<li>Whenever you go out with your pet make sure that you clean and dispose of the pet waste in the right bin.</li>*@
                                                 <li>Reducing the waste and doing Garbage sorting to avoid the litter dropped in the streets and eventually transported into drainage.</li>
-                                                <li>Reusing recyclable waste can help to reduce the total waste generation and reduce unwanted waste from polluting the waterways.</li>
+                                                @*<li>Reusing recyclable waste can help to reduce the total waste generation and reduce unwanted waste from polluting the waterways.</li>*@
+                                                <li>Reuse recyclable waste.</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -780,7 +790,7 @@
                                                 <li>Consider using low environmental impact pest control products for gardening.</li>
                                                 <li>Use the water collected from rainwater harvesting for washing vehicles.</li>
                                                 <li>Using a low-maintenance garden known as Raingarden can help to collect the stormwater that runs off the hard surfaces during the rain.</li>
-                                                <li>Reuse the stormwater to water the garden.</li>
+                                                @*<li>Reuse the stormwater to water the garden.</li>*@
                                             </ul>
                                         </div>
                                     </div>
