@@ -232,6 +232,7 @@
     <Content Include="Content\Image\Solution\recycle.jpg" />
     <Content Include="Content\Image\Solution\wash.jpg" />
     <Content Include="Content\Image\Solution\waste.jpg" />
+    <Content Include="Content\Image\stormwater-box.jpg" />
     <Content Include="Content\Image\substance-box.jpg" />
     <Content Include="Content\Image\template.jpg" />
     <Content Include="Content\Image\third-section-bg.png" />

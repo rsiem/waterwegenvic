@@ -21,6 +21,10 @@
     background-image: url('../Content/Image/substance-box.jpg');
 }
 
+#stormwater-box {
+    background-image: url('../Content/Image/stormwater-box.jpg');
+}
+
 .media {
     background-position: center;
     background-size: cover;
@@ -83,7 +87,7 @@ svg #alpha {
 }
 
 svg .title {
-    font-size: 28px;
+    font-size: 22px;
     font-family: "Montserrat";
     letter-spacing: 5px;
 }
@@ -98,4 +102,10 @@ svg #base-litter {
     fill: white;
     -webkit-mask: url(#mask-litter);
     mask: url(#mask-litter);
+}
+
+svg #base-stormwater {
+    fill: white;
+    -webkit-mask: url(#mask-stormwater);
+    mask: url(#mask-stormwater);
 }
