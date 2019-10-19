@@ -52,6 +52,7 @@ namespace waterwegenvic
             // substance page bundle
             bundles.Add(new StyleBundle("~/Content/substance").Include(
                       "~/Content/lightbox.css",
+                      "~/Content/carousel.css",
                       "~/Content/flipping_card.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/substance").Include(

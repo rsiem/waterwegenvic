@@ -285,10 +285,47 @@
                                     .style('-moz-transform', 'rotateY(0deg)')
                                     .style('-o-transform', 'rotateY(0deg)')
                                     .classed('isActiveText', true)
+                                    .transition()
+                                    .delay(200)
+                                    .style('transform', 'rotateY(180deg)')
+                                    .style('-webkit-transform', 'rotateY(180deg)')
+                                    .style('-ms-transform', 'rotateY(180deg)')
+                                    .style('-moz-transform', 'rotateY(180deg)')
+                                    .style('-o-transform', 'rotateY(180deg)');
+
+                                //readMoreBox :BM:19/10/19
+                                d3.select(this).select('.readMoreBox')
+                                    .style('visibility', "visible")
+                                    .style('fill-opacity', '1')
+                                    .style('transform', 'rotateY(180deg)')
+                                    .style('-webkit-transform', 'rotateY(180deg)')
+                                    .style('-ms-transform', 'rotateY(180deg)')
+                                    .style('-moz-transform', 'rotateY(180deg)')
+                                    .style('-o-transform', 'rotateY(180deg)')
+                                    //.classed('isActiveText', true)
+                                    .transition()
+                                    .delay(200)
+                                    .style('transform', 'rotateY(0deg)')
+                                    .style('-webkit-transform', 'rotateY(0deg)')
+                                    .style('-ms-transform', 'rotateY(0deg)')
+                                    .style('-moz-transform', 'rotateY(0deg)')
+                                    .style('-o-transform', 'rotateY(0deg)');
 
                                 d3.select(this).select('.labelReadmore')
                                     .style('visibility', "visible")
                                     .style('cursor', 'pointer')
+                                    .style('transform', 'rotateY(0deg)')
+                                    .style('-webkit-transform', 'rotateY(0deg)')
+                                    .style('-ms-transform', 'rotateY(0deg)')
+                                    .style('-moz-transform', 'rotateY(0deg)')
+                                    .style('-o-transform', 'rotateY(0deg)')
+                                    .transition()
+                                    .delay(200) //BM:19/10/19
+                                    .style('transform', 'rotateY(180deg)')
+                                    .style('-webkit-transform', 'rotateY(180deg)')
+                                    .style('-ms-transform', 'rotateY(180deg)')
+                                    .style('-moz-transform', 'rotateY(180deg)')
+                                    .style('-o-transform', 'rotateY(180deg)');
 
                                 d3.event.stopPropagation();
 
@@ -306,6 +343,9 @@
                         if (d3.select(this).classed('isActive') == true || d3.event.target.nodeName != "image" || d3.select(this).select('text.readMore').classed('isActiveText') == true && (!d3.select(this).classed("readMore"))) {
 
                             d3.select(this).select('.labelReadmore')
+                                .style('visibility', "hidden")
+
+                            d3.select(this).select('.readMoreBox')
                                 .style('visibility', "hidden")
 
                             d3.select(this).select('.label')
@@ -332,13 +372,7 @@
                 var nodeEnter = rootNode.append('g')
                     .attr('class', 'flip-card-inner')
 
-                // .attr("transform", function (d) {
-                //     return "translate(" + source.x0 + "," + source.y0 + ")";
-                // });
-
-
                 // Add rect for each enter node
-
                 var nodeFront = nodeEnter.append('g')
                     .attr('class', ' flip-card-front');
 
@@ -442,7 +476,7 @@
                     });
 
                 nodeBack.append('rect')
-                    .attr("class", "readMore flip-card-back")
+                    .attr("class", "readMore flip-card-back readMoreBox")
                     .attr("visibility", "hidden")
                     //.attr("pointer-events", "none")
                     .attr('stroke', 'gold')
@@ -460,7 +494,7 @@
                         var content = d.data.content;
                         d3.select("#tree-info").html(text + content);
 
-                        var color = 'rgb(120, 120, 120)';//$(this).attr('fill')
+                        var color = 'rgb(120, 120, 120)';
 
                         $('#tree-primary').css('border-color', color)
                             .css('display', 'block')
@@ -485,7 +519,6 @@
 
 
                 // Let's update the radius now, which was previously zero.
-
                 nodeUpdate.select('rect.node')
                     .attr('r', 10)
                     .style("fill", function (d) {
@@ -493,9 +526,7 @@
                     });
 
                 // Let's work on exiting nodes
-
                 // Remove the node
-
                 var nodeExit = node.exit().transition()
                     .duration(duration)
                     .attr("transform", function (d) {
@@ -511,14 +542,11 @@
                 nodeExit.select('text')
                     .style('fill-opacity', 4);
 
-
                 // Let's draw links
-
                 var link = g.selectAll('path.link')
                     .data(links, function (d) { return d.id; });
 
                 // Work on enter links, draw straight lines
-
                 var linkEnter = link.enter().insert('path', "g")
                     .attr("class", function (d) {
                         return d.data.name.replace(/[ \/]+/g, '_');
@@ -556,15 +584,8 @@
             function diagonal(s, d) {
 
                 // Here we are just drawing lines, we can also draw curves, comment out below path for it.
-
                 var path = `M ${s.x} ${s.y}
-                                                                                                                             L ${d.x} ${d.y}`;
-
-                // var path = `M ${s.x} ${s.y}
-                //         C ${(s.x + d.x) / 2} ${s.y},
-                //           ${(s.x + d.x) / 2} ${d.y},
-                //           ${d.x} ${d.y}`
-
+                                                                                                                                             L ${d.x} ${d.y}`;
                 return path
             }
 
@@ -973,7 +994,7 @@
             <section class="container-fluid last-section">
                 <div class="container">
                     <div class="row" id="title">
-                        <p>Environmental benefits from recycling for saving water</p>
+                        <p>Environmental benefits from recycling</p>
                     </div>
                     <br />
                     <div class="row">
@@ -1038,7 +1059,7 @@
                                 <br class="hidden-xs hidden-sm" />
                                 <br />
                                 <p>
-                                    An Olympic sized swimming pool can approximately store water equivalent to 2500 kL.
+                                    An Olympic sized swimming pool can approximately store water equivalent to 2500 KL.
                                     <br />
                                     Recycling the household items can help us save lots of water which otherwise would be
                                     required while manufacturing these items.
@@ -1046,7 +1067,7 @@
                                 <br />
                                 <p>
                                     For instance, by recycling the kerbside paper waste, the Government was able to save
-                                    1503 Olympic swimming pool equivalent water, i.e. 1503 x 2500 which is 3,757,500 kL of Water.
+                                    1503 Olympic swimming pool equivalent water, i.e. 1503 x 2500 which is 3,757,500 KL of Water.
                                 </p>
                                 <br />
 
@@ -1078,18 +1099,40 @@
                 </p>
             </div>
             <div class="row">
+                <br />
                 <div class="row">
-                    <div class="col-md-4 col-sm-4 col-xs-4" draggable="true" ondragstart="return dragStart(event)">
-                        <img class="img-responsive grab litter" id="wet-wipes" alt="wet-wipes" src="~/Content/Image/wet-wipes.jpg">
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-4" draggable="true" ondragstart="return dragStart(event)">
-                        <img class="img-responsive grab litter" id="egg-carton" alt="egg-carton" src="~/Content/Image/egg-carton-4046693_960_720.jpg">
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-4" draggable="true" ondragstart="return dragStart(event)">
+                    @*<div class="col-md-3 col-sm-3 col-xs-3" draggable="true" ondragstart="return dragStart(event)">
                         <img class="img-responsive grab litter" id="orange-peel" alt="orange-peel" src="~/Content/Image/orange-peel.jpg" />
                     </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3" draggable="true" ondragstart="return dragStart(event)">
+                        <img class="img-responsive grab litter" id="egg-carton" alt="egg-carton" src="~/Content/Image/egg-carton-4046693_960_720.jpg">
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3" draggable="true" ondragstart="return dragStart(event)">
+                        <img class="img-responsive grab litter" id="wet-wipes" alt="wet-wipes" src="~/Content/Image/wet-wipes.jpg">
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3" draggable="true" ondragstart="return dragStart(event)">
+                        <img class="img-responsive grab litter" id="wet-wipes" alt="wet-wipes" src="~/Content/Image/wet-wipes.jpg">
+                    </div>*@
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" draggable="true" ondragstart="return dragStart(event)">
+                        <img class="img-responsive grab litter" id="banana" alt="banana" src="~/Content/Image/DragnDrop/banana.png">
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" draggable="true" ondragstart="return dragStart(event)">
+                        <img class="img-responsive grab litter" id="coffee" alt="coffee" src="~/Content/Image/DragnDrop/coffee.png">
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" draggable="true" ondragstart="return dragStart(event)">
+                        <img class="img-responsive grab litter" id="nappy" alt="nappy" src="~/Content/Image/DragnDrop/nappy.png">
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" draggable="true" ondragstart="return dragStart(event)">
+                        <img class="img-responsive grab litter" id="hay" alt="hay" src="~/Content/Image/DragnDrop/hay.png">
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" draggable="true" ondragstart="return dragStart(event)">
+                        <img class="img-responsive grab litter" id="screw" alt="screw" src="~/Content/Image/DragnDrop/screw.png">
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" draggable="true" ondragstart="return dragStart(event)">
+                        <img class="img-responsive grab litter" id="whiskey" alt="whiskey" src="~/Content/Image/DragnDrop/whiskey.png">
+                    </div>
                 </div>
-
+                <br />
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div class="row">

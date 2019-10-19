@@ -168,6 +168,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\carousel.css" />
     <Content Include="Content\CollapseBox.css" />
     <Content Include="Content\flipping_card.css" />
     <Content Include="Content\footer.css" />
@@ -179,6 +180,14 @@
     <Content Include="Content\Image\bucket-white.png" />
     <Content Include="Content\Image\battery.png" />
     <Content Include="Content\Image\compo_of_storm_pollution.png" />
+    <Content Include="Content\Image\DragnDrop\apple.png" />
+    <Content Include="Content\Image\DragnDrop\banana.png" />
+    <Content Include="Content\Image\DragnDrop\coffee.png" />
+    <Content Include="Content\Image\DragnDrop\cola.png" />
+    <Content Include="Content\Image\DragnDrop\hay.png" />
+    <Content Include="Content\Image\DragnDrop\nappy.png" />
+    <Content Include="Content\Image\DragnDrop\screw.png" />
+    <Content Include="Content\Image\DragnDrop\whiskey.png" />
     <Content Include="Content\Image\drink-ways.png" />
     <Content Include="Content\Image\Solution\eco.jpg" />
     <Content Include="Content\Image\egg-carton-4046693_960_720.jpg" />

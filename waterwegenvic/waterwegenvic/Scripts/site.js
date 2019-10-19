@@ -18,25 +18,30 @@ function dragDrop(ev) {
     var src = ev.dataTransfer.getData("Text");
     var id = ev.target.id;
     if (id == 'red-bin') {
-        if (src == 'wet-wipes') {
+        if (src == 'banana' || src == 'nappy') {
             ev.target.appendChild(document.getElementById(src));
             ev.stopPropagation();
         } else {
-            alert('wrong dustbin.');
+            alert("Wrong Dustbin! " + src + " is not supposed to be put inside a red bin.");
         }
     } else if (id == 'yellow-bin') {
-        if (src == 'egg-carton') {
+        if (src == 'coffee' || src == 'cola' || src == 'screw' || src == 'whiskey') {
             ev.target.appendChild(document.getElementById(src));
             ev.stopPropagation();
         } else {
-            alert('wrong dustbin.');
+            if (src == 'coffee') {
+                src = 'coffee cup';
+            } else if (src == 'whiskey') {
+                src = 'whiskey bottle';
+            }
+            alert("Wrong Dustbin! " + src + " is not supposed to be put inside a red bin.");
         }
     } else if (id == 'green-bin') {
-        if (src == 'orange-peel') {
+        if (src == 'hay') {
             ev.target.appendChild(document.getElementById(src));
             ev.stopPropagation();
         } else {
-            alert('wrong dustbin.');
+            alert("Wrong Dustbin!  " + src + " is not supposed to be put inside a red bin.");
         }
     }
     return false;

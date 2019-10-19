@@ -19,10 +19,12 @@
     text-align: center;
 }
 
-#car, #egg-carton, #bike {
+#orange-peel, #egg-carton, #wet-wipes {
     display: flex;
     margin: auto;
     align-content: center;
+    height: 50%;
+    width: 50%;
 }
 
 .litter {
@@ -98,11 +100,11 @@ g.isActive .readMore {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.flip-card:hover .flip-card-inner {
+/*.flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
-}
+}*/
 
 .flip-card-front,
 .flip-card-back {

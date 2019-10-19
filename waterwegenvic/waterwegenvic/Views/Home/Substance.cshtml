@@ -44,7 +44,7 @@
             <!--Image Grid Section-->
             <div class="container">
                 <div class="row" id="title">
-                    <p>Things That Can Cause Water Pollution</p>
+                    <p>Things That Can Cause Substance Pollution</p>
                 </div>
                 <div class="row">
                     <div class="row" id="lightbox">
@@ -205,7 +205,7 @@
                                     in that area and the number of facilities.
                                     <br />
                                     <br />
-                                    Top 5 most polluted suburb:
+                                    Top 5 most polluted suburbs:
                                     <ul>
                                         <li>Eaglehawk</li>
                                         <li>Truganina</li>
@@ -232,7 +232,7 @@
             <!-- Chemical Content Section-->
             <div class="container">
                 <div class="row" id="title">
-                    <p>The Chemical Content In Waterways</p>
+                    <p>Chemical Contents In the Waterways</p>
                 </div>
                 <br />
                 <div class="row">
@@ -254,16 +254,16 @@
                                     type: 'bar',
                                     x: [97099, 94872, 85717, 62646, 22979, 12390, 12390, 12390, 12376, 12376, 136, 136, 100, 78, 78],
                                     y:
-                                        ['Phosphorus', 'Kjeldahl Nitrogen', 'Fibre-Reinforced Plastic', 'Suspended Solids', 'Silicon Dioxide', 'Copper', 'Zinc', 'Lead', 'Chromium', 'Nickel', 'Anions', 'Cations', 'Fluorine', 'Selenium', 'Molybdenum'],
+                                        ['Phosphorus', 'Kjeldahl Nitrogen', 'Fibre-Reinforced Plastic', 'Suspended Solids', 'Silicon Dioxide', 'Copper', 'Zinc', 'Lead', 'Chromium', 'Nickel'],
                                     orientation: 'h',
                                     marker: {
-                                        color: ['#EF5350', "#FFA500", "#7E57C2", "#CDDC39", "#00BCD4", "#4CAF50", "#FFC107", "#34729E", "#95CE67", "#CAC461", 'rgba(55,128,191,0.6)', "#2a9d8f", "#e76f51", "#264653", "#e9c46a"],
+                                        color: ['#EF5350', "#FFA500", "#7E57C2", "#CDDC39", "#00BCD4", "#4CAF50", "#FFC107", "#34729E", "#95CE67", "#CAC461"],
                                         width: 1
                                     }
                                 }];
 
                                 var layout = {
-                                    title: 'Chemical ',
+                                    title: 'Top 10 Chemical Contents',
                                     showlegend: false,
                                     yaxis: {
                                         fixedrange: true,
@@ -273,7 +273,10 @@
                                             ['Molybdenum', 'Selenium', 'Fluorine', 'Cations', 'Anions', 'Nickel', 'Chromium', 'Lead', 'Zinc', 'Copper', 'Silicon Dioxide', 'Suspended Solids', 'Fibre-Reinforced Plastic', 'Kjeldahl Nitrogen', 'Phosphorus']
                                     },
                                     xaxis: {
-                                        fixedrange: true
+                                        fixedrange: true,
+                                        title: {
+                                            text: 'Quantity Present'
+                                        }
                                     }
                                 };
 
@@ -281,18 +284,18 @@
                             </script>
                         </div>
                         @*<div class="col-md-4 col-sm-12 col-xs-12">
-                            <br class="hidden-xs hidden-sm" />
-                            <br class="hidden-xs hidden-sm" />
-                            <br class="hidden-xs hidden-sm" />
-                            <p>
-                                <br />
-                                The great amount of Phosphorus and Nitrogen indicating the
-                                main pollution comes from the living wastewater including disposal waste,
-                                kitchen waste, etc. As to Slicon Dioxide, it shows that the high turbidity
-                                of waterways and contains a lot of sand.
-                            </p>
-                            <br />
-                        </div>*@
+                    <br class="hidden-xs hidden-sm" />
+                    <br class="hidden-xs hidden-sm" />
+                    <br class="hidden-xs hidden-sm" />
+                    <p>
+                        <br />
+                        The great amount of Phosphorus and Nitrogen indicating the
+                        main pollution comes from the living wastewater including disposal waste,
+                        kitchen waste, etc. As to Slicon Dioxide, it shows that the high turbidity
+                        of waterways and contains a lot of sand.
+                    </p>
+                    <br />
+                </div>*@
                     </div>
                 </div>
                 <!--End of Chemical bar section-->
@@ -301,6 +304,7 @@
                 <div class="row">
                     <div class="container" id="substance-solution">
                         <div class="row">
+
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <div class="element-card">
                                     <div class="front-facing">
@@ -374,7 +378,7 @@
                         <h3 align="center">CARE FOR THE NATURE. SAVE THE FUTURE.</h3>
                     </div>
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             <div class="cardContainerSubstance inactive">
                                 <div class="card">
                                     <div class="side front">
@@ -402,7 +406,32 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="cardContainerSubstance inactive">
+                                <div class="card">
+                                    <div class="side front">
+                                        <div class="img tips"></div>
+                                        <div class="info">
+                                            <h2 style="text-align: center;">Safe Disposal Tips</h2>
+                                            <p align="center">How to safely dispose chemical waste?</p>
+                                        </div>
+                                    </div>
+                                    <div class="side back">
+                                        <div class="info">
+                                            <h2 style="text-align: center;">Disposal Tips</h2>
+                                            <ul>
+                                                <li>Use appropriate containers while disposing of hazardous substances.</li>
+                                                <li>Ensure that the substances do not mix with the disposal as there might be a violent reaction.</li>
+                                                <li>Do not dispose of the electronic waste into the bins instead drop-off it at your nearest collection centers</li>
+                                                <li>Don’t throw paints, oils or other forms of litter down the drain.</li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             <div class="cardContainerSubstance inactive">
                                 <div class="card">
                                     <div class="side front">
@@ -446,6 +475,58 @@
                 </div>
             </div>
             <!--End of Solution flip card section-->
+            <div class="row">
+                <div class="slideshow-container">
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="~/Content/Image/img1.jpg" style="width:100%">
+                        <div class="text">Caption Text</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="~/Content/Image/img2.jpg" style="width:100%">
+                        <div class="text">Caption Two</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="~/Content/Image/img3.jpg" style="width:100%">
+                        <div class="text">Caption Three</div>
+                    </div>
+
+                </div>
+                <br>
+
+                <div style="text-align:center">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+
+                <script>
+                    var slideIndex = 0;
+                    showSlides();
+
+                    function showSlides() {
+                        var i;
+                        var slides = document.getElementsByClassName("mySlides");
+                        var dots = document.getElementsByClassName("dot");
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";
+                        }
+                        slideIndex++;
+                        if (slideIndex > slides.length) { slideIndex = 1 }
+                        for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                        }
+                        slides[slideIndex - 1].style.display = "block";
+                        dots[slideIndex - 1].className += " active";
+                        setTimeout(showSlides, 5000); // Change image every 2 seconds
+                    }
+                </script>
+            </div>
         </div>
     </div>
 </div>
