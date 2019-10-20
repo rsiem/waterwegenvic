@@ -34,13 +34,21 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
     var alt = dots[slideIndex - 1].alt;
     if (alt == "Pesticides") {
-        alt = "Pesticides (e.g. fungicides, herbicides, and insecticides)"
+        alt = "<i class='fas fa-info'></i> Excess pesticides can increase the presence of Nitrate and Phosphate in the waterways."
     } else if (alt == "Detergent Bar") {
-        alt = "Detergent Bar (e.g. Detergent powder, laundry detergent or dish detergent)"
+        alt = "<i class='fas fa-info'></i> Detergent bar can increase the toxic levels in freshwater and result in algal bloom."
     } else if (alt == "Oil") {
-        alt = "Oil (Including canola oil, corn oil, cottonseed oil, olive oil, safflower oil, soybean oil, and sunflower oil.)"
+        alt = "<i class='fas fa-info'></i> The mixture of oil in the waters increases the toxicity levels of water and affects marine biodiversity."
     } else if (alt == "Chlorine") {
-        alt = "Chlorine is used to manufacture household chlorine bleach, which whitens and disinfects clothes and disinfects kitchen and bathroom surfaces."
+        alt = "<i class='fas fa-info'></i> Excess chlorine in waterways can cause chlorine poisoning leading and have a negative effect on both human and marine life."
+    } else if (alt == "Fertilizers") {
+        alt = "<i class='fas fa-info'></i> Fertilizer runoff increases the Nitrogen and Phosphorus contents in the waterways."
+    } else if (alt == "Paint") {
+        alt = "<i class='fas fa-info'></i> The mixtures of paints in waterways increases turbidity which also affects marine life."
+    } else if (alt == "Detergent") {
+        alt = "<i class='fas fa-info'></i> Detergents increase the number of Phosphates in waterways resulting in the algal bloom. As a result, the toxic content increases and the oxygen level depletes."
+    } else if (alt == "Soaps") {
+        alt = "<i class='fas fa-info'></i> Soaps increases the number of Nitrates in the waterways resulting in high toxicity of the water."
     }
     captionText.innerHTML = alt;
 }

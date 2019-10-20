@@ -3,6 +3,8 @@
     //document.getElementById("result-map").style.width = "100%";
     //document.getElementById("result-map").style.height = "50vh";
     //document.getElementById("result-map").hidden = false;
+    document.getElementById("map").style.display = "block";
+    document.getElementById("result-information").style.display = "block";
 
     var locations = [];
 
@@ -12,12 +14,14 @@
         var longitude = $(".longitude", this).text().trim();
         var latitude = $(".latitude", this).text().trim();
         var restricted_use = $(".restricted_use", this).text().trim();
+        var address = $(".address", this).text().trim();
 
         // Create a point data structure to hold the values.
         var point = {
             "latitude": latitude,
             "longitude": longitude,
             "restricted_use": restricted_use
+            "address": address
         };
 
         // Push them all into an array.
@@ -68,6 +72,10 @@
                 "icon-allow-overlap": true
             }
         });
+
+        //for (i = 1; i < data.length; i++) {
+        //    console.log(data[i].geometry.coordinates);
+        //}
 
         // When a click event occurs on a feature in the places layer, open a popup at the
         // location of the feature, with description HTML from its properties.

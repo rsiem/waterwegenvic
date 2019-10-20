@@ -168,7 +168,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\carousel.css" />
     <Content Include="Content\CollapseBox.css" />
     <Content Include="Content\flipping_card.css" />
     <Content Include="Content\footer.css" />
@@ -189,6 +188,7 @@
     <Content Include="Content\Image\DragnDrop\screw.png" />
     <Content Include="Content\Image\DragnDrop\whiskey.png" />
     <Content Include="Content\Image\drink-ways.png" />
+    <Content Include="Content\Image\Solution\Benefits.jpg" />
     <Content Include="Content\Image\Solution\eco.jpg" />
     <Content Include="Content\Image\egg-carton-4046693_960_720.jpg" />
     <Content Include="Content\Image\footer.jpg" />
@@ -279,6 +279,7 @@
     <Content Include="Content\Image\WaterCycle\rain2.png" />
     <Content Include="Content\Image\WaterCycle\rain3.jfif" />
     <Content Include="Content\Image\WaterCycle\rain.png" />
+    <Content Include="Content\Image\WaterCycle\rainfall.png" />
     <Content Include="Content\Image\WaterCycle\rainfall99.png" />
     <Content Include="Content\Image\WaterCycle\stormwater.jpg" />
     <Content Include="Content\Image\WaterCycle\stormwater.png" />

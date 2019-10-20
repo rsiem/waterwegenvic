@@ -117,7 +117,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12 col-sm-12" style="text-align:center;">
-                                            <img src="~/Content/Image/WaterCycle/rainfall99.png" draggable="false" style="width:100%;">
+                                            <img src="~/Content/Image/WaterCycle/rainfall.png" draggable="false" style="width:100%;">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -620,15 +620,16 @@
                                 document.getElementById("no-result").hidden = false;
                                 document.getElementById("gru-table").hidden = true;
                                 document.getElementById("placeholder").hidden = true;
-                                document.getElementById("result-map").hidden = true;
-                                document.getElementById("result-information").hidden = true;
+                                //document.getElementById("result-map").hidden = true;
+                                //document.getElementById("result-information").hidden = true;
                             } else {
                                 document.getElementById("placeholder").innerHTML = "Showing results for " + pcode + ".<br />";
                                 document.getElementById("no-result").hidden = true;
                                 document.getElementById("gru-table").hidden = false;
                                 document.getElementById("placeholder").hidden = false;
-                                document.getElementById("result-map").hidden = false;
-                                document.getElementById("result-information").hidden = false;
+                                document.getElementById("result-button").style.display = "block";
+                                //document.getElementById("result-map").hidden = false;
+                                //document.getElementById("result-information").hidden = false;
                             }
 
                             document.getElementById("postcode").setAttribute("value", pcode);
@@ -669,7 +670,7 @@
                         @foreach (var item in Model)
                         {
                             <tr class="coordinates">
-                                <td>
+                                <td class="address">
                                     @Html.DisplayFor(modelItem => item.Address)
                                 </td>
                                 <td class="post-code" hidden>
@@ -697,12 +698,12 @@
                         }
                     </table>
                 </div>
-                <div class="row" id="result-map" hidden>
-                    <button class="btn btn-default" onclick="openMap()">Show on Map</button>
-                    <div id="map" style="height:50vh;width:100%"></div>
-                </div>
-                <div class="row" id="result-information" hidden>
-                    <p>
+                <div class="row" id="result-map">
+                    <button class="btn btn-default" id="result-button" onclick="openMap()" style="display:none">Show on Map</button>
+                    <br />
+                    <div id="map" style="height:50vh;width:100%;display:none"></div>
+                    <br />
+                    <p id="result-information" style="display:none">
                         The groundwater in the restricted areas is not suitable for drinking purposes.
                         Apart from having harmful effects on human health, it also destroys pumps, metallic
                         pipes and tanks in your houses due to corrosion. The consequences of this problem are

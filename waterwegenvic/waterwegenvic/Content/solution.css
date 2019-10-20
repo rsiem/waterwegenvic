@@ -209,6 +209,10 @@ svg {
     background-image: url('Image/Solution/eco.jpg');
 }
 
+.front .benefits{
+    background-image: url('Image/Solution/Benefits.jpg');
+}
+
 .back {
     position: relative;
 }

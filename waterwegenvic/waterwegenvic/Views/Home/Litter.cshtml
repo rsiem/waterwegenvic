@@ -279,14 +279,14 @@
                                 d3.select(this).select('.readMore')
                                     .style('visibility', "visible")
                                     .style('fill-opacity', '1')
-                                    .style('transform', 'rotateY(0deg)')
-                                    .style('-webkit-transform', 'rotateY(0deg)')
-                                    .style('-ms-transform', 'rotateY(0deg)')
-                                    .style('-moz-transform', 'rotateY(0deg)')
-                                    .style('-o-transform', 'rotateY(0deg)')
+                                    .style('transform', 'rotateY(180deg)') //BM: 0 to 180 -fix the read more text
+                                    .style('-webkit-transform', 'rotateY(180deg)')
+                                    .style('-ms-transform', 'rotateY(180deg)')
+                                    .style('-moz-transform', 'rotateY(180deg)')
+                                    .style('-o-transform', 'rotateY(180deg)')
                                     .classed('isActiveText', true)
                                     .transition()
-                                    .delay(200)
+                                    .delay(300)
                                     .style('transform', 'rotateY(180deg)')
                                     .style('-webkit-transform', 'rotateY(180deg)')
                                     .style('-ms-transform', 'rotateY(180deg)')
@@ -297,31 +297,31 @@
                                 d3.select(this).select('.readMoreBox')
                                     .style('visibility', "visible")
                                     .style('fill-opacity', '1')
-                                    .style('transform', 'rotateY(180deg)')
-                                    .style('-webkit-transform', 'rotateY(180deg)')
-                                    .style('-ms-transform', 'rotateY(180deg)')
-                                    .style('-moz-transform', 'rotateY(180deg)')
-                                    .style('-o-transform', 'rotateY(180deg)')
-                                    //.classed('isActiveText', true)
-                                    .transition()
-                                    .delay(200)
-                                    .style('transform', 'rotateY(0deg)')
+                                    .style('transform', 'rotateY(0deg)') //
                                     .style('-webkit-transform', 'rotateY(0deg)')
-                                    .style('-ms-transform', 'rotateY(0deg)')
+                                    .style('-ms-transform', 'rotateY(0deg)')//BM- 180 to 0 -test
                                     .style('-moz-transform', 'rotateY(0deg)')
-                                    .style('-o-transform', 'rotateY(0deg)');
+                                    .style('-o-transform', 'rotateY(0deg)')
+                                    .classed('isActiveText', true)
+                                //.transition() -- BM: Comment out to fix the issue
+                                //.delay(300)
+                                //.style('transform', 'rotateY(0deg)')
+                                //.style('-webkit-transform', 'rotateY(180deg)')
+                                //.style('-ms-transform', 'rotateY(180deg)')
+                                //.style('-moz-transform', 'rotateY(180deg)')
+                                //.style('-o-transform', 'rotateY(180deg)');
 
                                 d3.select(this).select('.labelReadmore')
                                     .style('visibility', "visible")
                                     .style('cursor', 'pointer')
-                                    .style('transform', 'rotateY(0deg)')
-                                    .style('-webkit-transform', 'rotateY(0deg)')
-                                    .style('-ms-transform', 'rotateY(0deg)')
-                                    .style('-moz-transform', 'rotateY(0deg)')
-                                    .style('-o-transform', 'rotateY(0deg)')
+                                    .style('transform', 'rotateY(180deg)')//BM- 0 to 180 -fix the issue
+                                    .style('-webkit-transform', 'rotateY(180deg)')
+                                    .style('-ms-transform', 'rotateY(180deg)')
+                                    .style('-moz-transform', 'rotateY(180deg)')
+                                    .style('-o-transform', 'rotateY(180deg)')
                                     .transition()
-                                    .delay(200) //BM:19/10/19
-                                    .style('transform', 'rotateY(180deg)')
+                                    .delay(300)
+                                    .style('transform', 'rotateY(0deg)')
                                     .style('-webkit-transform', 'rotateY(180deg)')
                                     .style('-ms-transform', 'rotateY(180deg)')
                                     .style('-moz-transform', 'rotateY(180deg)')
@@ -585,7 +585,7 @@
 
                 // Here we are just drawing lines, we can also draw curves, comment out below path for it.
                 var path = `M ${s.x} ${s.y}
-                                                                                                                                             L ${d.x} ${d.y}`;
+                                                                                                                                                     L ${d.x} ${d.y}`;
                 return path
             }
 
@@ -968,7 +968,8 @@
                             .transition()
                             .duration(200)
                             .style('fill', function (d, i) {
-                                return textColour;
+                                //return textColour;
+                                return hoverColour; //BM:19/10/19
                             })
                             .on("end", function () {
                                 blink(ctr, index);
@@ -1088,7 +1089,7 @@
         <!--Drag and Drop Section for Litter Disposal-->
         <div class="container">
             <div class="row" id="title">
-                <p>Drag and Drop!</p>
+                <p>Test your knowledge on litter disposal</p>
             </div>
             <br class="hidden-sm hidden-xs" />
             <br />
@@ -1102,17 +1103,17 @@
                 <br />
                 <div class="row">
                     @*<div class="col-md-3 col-sm-3 col-xs-3" draggable="true" ondragstart="return dragStart(event)">
-                        <img class="img-responsive grab litter" id="orange-peel" alt="orange-peel" src="~/Content/Image/orange-peel.jpg" />
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-3" draggable="true" ondragstart="return dragStart(event)">
-                        <img class="img-responsive grab litter" id="egg-carton" alt="egg-carton" src="~/Content/Image/egg-carton-4046693_960_720.jpg">
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-3" draggable="true" ondragstart="return dragStart(event)">
-                        <img class="img-responsive grab litter" id="wet-wipes" alt="wet-wipes" src="~/Content/Image/wet-wipes.jpg">
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-3" draggable="true" ondragstart="return dragStart(event)">
-                        <img class="img-responsive grab litter" id="wet-wipes" alt="wet-wipes" src="~/Content/Image/wet-wipes.jpg">
-                    </div>*@
+                            <img class="img-responsive grab litter" id="orange-peel" alt="orange-peel" src="~/Content/Image/orange-peel.jpg" />
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-3" draggable="true" ondragstart="return dragStart(event)">
+                            <img class="img-responsive grab litter" id="egg-carton" alt="egg-carton" src="~/Content/Image/egg-carton-4046693_960_720.jpg">
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-3" draggable="true" ondragstart="return dragStart(event)">
+                            <img class="img-responsive grab litter" id="wet-wipes" alt="wet-wipes" src="~/Content/Image/wet-wipes.jpg">
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-3" draggable="true" ondragstart="return dragStart(event)">
+                            <img class="img-responsive grab litter" id="wet-wipes" alt="wet-wipes" src="~/Content/Image/wet-wipes.jpg">
+                        </div>*@
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" draggable="true" ondragstart="return dragStart(event)">
                         <img class="img-responsive grab litter" id="banana" alt="banana" src="~/Content/Image/DragnDrop/banana.png">
                     </div>
@@ -1192,12 +1193,12 @@
                                         </div>
                                     </div>
                                     <div class="side back">
-                                        <div class="info">
+                                        <div class="info" style="background-color:lightblue">
                                             <h2 style="text-align: center;">Recycle</h2>
 
-                                            <ul style="">
-                                                <li>By recycling glass bottles we can produce electricity which can run the television for atleast 1 hour. </li>
-                                                <li>Recycle your empty aerosal cans and sprays. </li>
+                                            <ul>
+                                                <li>By recycling glass bottles we can produce electricity which can run the television for atleast 1 hour.</li>
+                                                <li>Recycle your empty aerosal cans and sprays.</li>
                                                 <li>Dispose of your papers, books, clothes etc in the right recycle bin reducing the cutting of trees.</li>
                                                 <li>Recycle the batteries by depositing them at the appropriate collection centers.</li>
                                             </ul>
@@ -1221,7 +1222,7 @@
                                         </div>
                                     </div>
                                     <div class="side back">
-                                        <div class="info">
+                                        <div class="info" style="background-color:lightgrey">
                                             <h2 style="text-align: center;">Reduce</h2>
 
                                             <ul>
@@ -1249,7 +1250,7 @@
                                         </div>
                                     </div>
                                     <div class="side back">
-                                        <div class="info">
+                                        <div class="info" style="background-color:lightblue">
                                             <h2 style="text-align: center;">Reuse</h2>
                                             <ul>
                                                 <li>Carry a small reusable bag with you, which can used to carry back the litter when there are no dustbins around.</li>

@@ -1,13 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Mvc;
+using waterwegenvic.Models;
 
 namespace waterwegenvic.Controllers
 {
     public class HomeController : Controller
     {
+
+        private gruModels db = new gruModels(WebConfigurationManager.ConnectionStrings["gruModels"].ConnectionString);
+
         public ActionResult Index()
         {
             return View();
@@ -31,7 +39,7 @@ namespace waterwegenvic.Controllers
         {
             ViewBag.Message = "Your stormwater page.";
 
-            return View();
+            return View(db.grus.ToList());
         }
     }
 }
