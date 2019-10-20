@@ -155,6 +155,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\gruController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Iteration1Controller.cs" />
@@ -369,6 +370,7 @@
     <Content Include="Views\Iteration3\Stormwater.cshtml" />
     <Content Include="Views\Iteration3\_CollapseView.cshtml" />
     <Content Include="Views\Home\_CollapseViewTree.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
