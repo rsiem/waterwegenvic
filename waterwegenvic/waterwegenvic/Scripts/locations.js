@@ -21,7 +21,6 @@
             "latitude": latitude,
             "longitude": longitude,
             "restricted_use": restricted_use
-            "address": address
         };
 
         // Push them all into an array.
