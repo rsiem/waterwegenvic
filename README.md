@@ -133,4 +133,4 @@ Project Link: [https://github.com/rsiem/waterwegenvic](https://github.com/rsiem/
 [license-url]: https://github.com/rsiem/waterwegenvic/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/richard-aldrich-siem-147b73123/
-[product-screenshot]: images/map (1).png
+[product-screenshot]: images/map1.png
