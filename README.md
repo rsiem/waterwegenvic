@@ -7,8 +7,8 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-<!--[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]-->
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -30,6 +30,22 @@
     <a href="https://github.com/rsiem/waterwegenvic/issues">Request Feature</a>
   </p>
 </p>
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 ## Contact
@@ -56,8 +72,8 @@ Project Link: [https://github.com/rsiem/waterwegenvic](https://github.com/rsiem/
 [stars-url]: https://github.com/rsiem/waterwegenvic/stargazers
 [issues-shield]: https://img.shields.io/github/issues/rsiem/waterwegenvic.svg?style=flat-square
 [issues-url]: https://github.com/rsiem/waterwegenvic/issues
-<!--[license-shield]: https://img.shields.io/github/license/rsiem/repo.svg?style=flat-square
-[license-url]: https://github.com/rsiem/repo/blob/master/LICENSE.txt
+[license-shield]: https://img.shields.io/github/license/rsiem/repo.svg?style=flat-square
+[license-url]: https://github.com/rsiem/waterwegenvic/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew-->
+[linkedin-url]: https://www.linkedin.com/in/richard-aldrich-siem-147b73123/
 [product-screenshot]: images/screenshot.png
