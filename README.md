@@ -14,7 +14,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="team_logo.png" alt="Logo" width="80" height="80">
+    <img src="team_logo.png" alt="Logo" width="160" height="160">
   </a>
 
   <h3 align="center">Waterwegenvic</h3>
@@ -42,7 +42,7 @@ Mingyue Sun (Elaine) | msun0015@student.monash.edu | 29204097
 Richard Aldrich Siem | rsie0001@student.monash.edu | 25246860
 Suraj Prabhakar Shenoy | sshe0020@student.monash.edu | 29391466
 
-<img src="team_description.png" alt="Team_Description" width="80" height="80">
+<img src="team_description.png" alt="Team_Description" width="200" height="200">
 
 Project Link: [https://github.com/rsiem/waterwegenvic](https://github.com/rsiem/waterwegenvic)
 
