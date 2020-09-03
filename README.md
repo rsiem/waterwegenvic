@@ -14,7 +14,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/rsiem/waterwegenvic">
-    <img src="team_logo (2).png" alt="Logo" width="500" height="500">
+    <img src="team_logo (2).png" alt="Logo" width="500" height="300">
   </a>
 
   <h3 align="center">Waterwegenvic</h3>
