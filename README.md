@@ -14,7 +14,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/rsiem/waterwegenvic">
-    <img src="team_logo (2).png" alt="Logo" width="500" height="250">
+    <img src="team_logo (2).png" alt="Logo" width="500" height="200">
   </a>
 
   <h3 align="center">Waterwegenvic</h3>
@@ -58,7 +58,7 @@ Mingyue Sun (Elaine) | msun0015@student.monash.edu | 29204097
 Richard Aldrich Siem | rsie0001@student.monash.edu | 25246860
 Suraj Prabhakar Shenoy | sshe0020@student.monash.edu | 29391466
 
-<img src="team_description.png" alt="Team_Description" width="1000" height="700">
+<img src="team_description.png" alt="Team_Description" width="1000" height="650">
 
 Project Link: [https://github.com/rsiem/waterwegenvic](https://github.com/rsiem/waterwegenvic)
 
@@ -73,7 +73,7 @@ Project Link: [https://github.com/rsiem/waterwegenvic](https://github.com/rsiem/
 [issues-shield]: https://img.shields.io/github/issues/rsiem/waterwegenvic.svg?style=flat-square
 [issues-url]: https://github.com/rsiem/waterwegenvic/issues
 [license-shield]: https://img.shields.io/github/license/rsiem/repo.svg?style=flat-square
-[license-url]: https://github.com/rsiem/waterwegenvic/blob/master/LICENSE
+[license-url]: https://github.com/rsiem/waterwegenvic/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/richard-aldrich-siem-147b73123/
 [product-screenshot]: images/screenshot.png
