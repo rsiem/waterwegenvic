@@ -13,8 +13,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="team_logo.png" alt="Logo" width="300" height="300">
+  <a href="https://github.com/rsiem/waterwegenvic">
+    <img src="team_logo (2).png" alt="Logo" width="500" height="500">
   </a>
 
   <h3 align="center">Waterwegenvic</h3>
