@@ -42,7 +42,7 @@ Mingyue Sun (Elaine) | msun0015@student.monash.edu | 29204097
 Richard Aldrich Siem | rsie0001@student.monash.edu | 25246860
 Suraj Prabhakar Shenoy | sshe0020@student.monash.edu | 29391466
 
-<img src="team_description.png" alt="Team_Description" width="2000" height="2000">
+<img src="team_description.png" alt="Team_Description" width="1000" height="700">
 
 Project Link: [https://github.com/rsiem/waterwegenvic](https://github.com/rsiem/waterwegenvic)
 
