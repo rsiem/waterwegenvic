@@ -36,10 +36,6 @@
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
-<!--* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage) -->
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
@@ -103,6 +99,12 @@ Suraj Prabhakar Shenoy | sshe0020@student.monash.edu | 29391466
 * [Img Shields](https://shields.io)
 * [Choose an Open Source License](https://choosealicense.com)
 * [GitHub Pages](https://pages.github.com)
+* [State of Victoria - Department of Environment, Land, Water and Planning](https://www.delwp.vic.gov.au/)
+* [Australian Govenment - Open Source Data](https://data.gov.au/)
+* [Australian Govenment - Bureau of Meteorology](http://www.bom.gov.au/)
+* [City of Melbourne - Open Source Data](https://data.melbourne.vic.gov.au/)
+* [State of Victoria - Sustainability Victoria](https://www.sustainability.vic.gov.au/)
+* [EPA Victoria](https://www.epa.vic.gov.au/)
 <!--* [Animate.css](https://daneden.github.io/animate.css)
 * [Loaders.css](https://connoratherton.com/loaders)
 * [Slick Carousel](https://kenwheeler.github.io/slick)
@@ -110,12 +112,6 @@ Suraj Prabhakar Shenoy | sshe0020@student.monash.edu | 29391466
 * [Sticky Kit](http://leafo.net/sticky-kit)
 * [JVectorMap](http://jvectormap.com)
 * [Font Awesome](https://fontawesome.com)-->
-* [State of Victoria - Department of Environment, Land, Water and Planning](https://www.delwp.vic.gov.au/)
-* [Australian Govenment - Open Source Data](https://data.gov.au/)
-* [Australian Govenment - Bureau of Meteorology](http://www.bom.gov.au/)
-* [City of Melbourne - Open Source Data](https://data.melbourne.vic.gov.au/)
-* [State of Victoria - Sustainability Victoria](https://www.sustainability.vic.gov.au/)
-* [EPA Victoria](https://www.epa.vic.gov.au/)
 
 Project Link: [https://github.com/rsiem/waterwegenvic](https://github.com/rsiem/waterwegenvic)
 
